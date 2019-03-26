@@ -1,82 +1,5 @@
+from update_themes import *
 
-languages = []
-repositories = {}
-configs = {}
-
-def add_language_to_list(language_i, repository, config):
-    languages.append(language_i)
-    repositories[language_i["id"]] = repository
-    configs[language_i["id"]] = config
-
-def ToJSON(python_var):
-    import json
-    return json.dumps(python_var, sort_keys = True, indent=4)
-
-def getFileSyntax(id_lang):
-    id_nospace = id_lang.lower().replace(" ","-") 
-    return "./syntaxes/robodk-%s.json" % id_nospace 
-
-def getFileSnippet(id_lang):
-    id_nospace = id_lang.lower().replace(" ","-") 
-    return "./snippets/robodk-%s.json" % id_nospace 
-
-def getFileConfig(id_lang):
-    id_nospace = id_lang.lower().replace(" ","-") 
-    return "./%s-configuration.json" % id_nospace 
-
-def getScopeName(id_lang):
-    id_nospace = id_lang.lower().replace(" ","-") 
-    return "robodk.%s" % id_nospace 
-
-
-# Set default color names
-# (look for scopes in dark_vs.json)
-name_control = "keyword.control"
-name_movements = "keyword"
-name_builtInTypes = "storage.type"
-name_builtInFcn = "entity.name.tag"
-name_builtInVar = "constant.language"
-name_operator = "keyword.operator"
-name_comment = "comment"
-
-# Set default configuration:
-default_config = {
-    "comments": {
-        "lineComment": ";"    
-    },
-    "brackets": [
-        ["{", "}"],
-        ["[", "]"],
-        ["(", ")"]
-    ],
-    "autoClosingPairs": [
-        ["{", "}"],
-        ["[", "]"],
-        ["(", ")"],
-        ["\"", "\""],
-        ["'", "'"]
-    ],
-    "surroundingPairs": [
-        ["{", "}"],
-        ["[", "]"],
-        ["(", ")"],
-        ["\"", "\""],
-        ["'", "'"]
-    ]
-}
-
-
-
-
-
-
-
-
-
-
-
-#***********************************************************************************************
-#***********************************************************************************************
 #************************************  ABB RAPID language   **************************************
 repository = {}
 #------------------------------------
@@ -134,181 +57,31 @@ language_i["extensions"]  = ".sys .mod .prg .pgf".split(" ")
 language_i["configuration"] = getFileConfig(language_i["id"])
 config_i["comments"] = {"lineComment": "!" }
 
-add_language_to_list(language_i, repository, config_i)
 
 
+print("Updating syntax...")
+update_syntax(language_i["id"], repository)
 
+print("Updating configuration...")
+update_config(language_i["id"], config_i)
 
-#***********************************************************************************************
-#***********************************************************************************************
-#************************************  KUKA language   **************************************
-repository = {}
-#------------------------------------
+print("Done")
 
-repository_i = {}
-match_type = "control"
-match = "REPEAT FOR WHILE LOOP DEF IF THEN ELSE SWITCH LOOP"
-match += " UNTIL ENDFOR ENDWHILE ENDLOOP END ENDIF ENDSWITCH ENDLOOP"
-match += " DEF INI END ENDFCT ENDDAT WAIT GOTO CASE DEFAULT DEFFCT ENDFCT"
-match += " DEFDAT PUBLIC ENDDAT RETURN EXIT HALT"
-match += " INTERRUPT WHEN DO BRAKE RESUME ENABLE DISABLE"
-repository_i['match'] = match.upper() + " " + match.lower()
-repository_i['name'] = name_control
-repository[match_type] = repository_i
-
-repository_i = {}
-match_type = "movement"
-
-
-
-match = "PTP LIN CIRC SPTP SLIN"
-repository_i['match'] = match.upper() + " " + match.lower()
-repository_i['name'] = name_movements
-repository[match_type] = repository_i
-
-repository_i = {}
-match_type = "built-in-fcn"
-match = "BAS SET_KRLMSG EXISTS_KRLMSG CLEAR_KRLMSG TRIGGER DISTANCE SET_KRLDLG EXISTS_KRLDLG"
-repository_i['match'] = match.upper() + " " + match.lower()
-repository_i['name'] = name_builtInFcn
-repository[match_type] = repository_i
-
-repository_i = {}
-match_type = "built-in-types"
-match = "DECL GLOBAL CONST INT REAL BOOL CHAR PRIO FRAME POS E6POS AXIS E6AXIS"
-repository_i['match'] = match.upper() + " " + match.lower()
-repository_i['name'] = name_builtInTypes
-repository[match_type] = repository_i
-
-repository_i = {}
-match_type = "built-in-var"
-match = "FRAME_LIST TOOL_LIST $ADVANCE $TOOL $BASE $AXIS_ACT"
-match += " #INITMOV BWDSTART"
-match += " ANOUT OUT IN ANIN ON OFF TRUE FALSE"
-repository_i['match'] = match.upper() + " " + match.lower()
-repository_i['name'] = name_builtInVar
-repository[match_type] = repository_i
-
-repository_i = {}
-match_type = "operator"
-match = "= &lt; &gt; + - , ( ) { } [ ]"
-repository_i['match'] = match.upper() + " " + match.lower()
-repository_i['name'] = name_operator
-repository[match_type] = repository_i
-
-
-config_i = dict(default_config)
-language_i = {}
-language_i["id"] = "KUKA KRC"
-language_i["aliases"]     = "KUKA KRC2 KRC4 SRC DAT".split(" ")
-language_i["extensions"]  = ".src .dat".split(" ")
-language_i["configuration"] = getFileConfig(language_i["id"])
-config_i["comments"] = {"lineComment": ";" }
-config_i["folding"] = {
-        "markers": {
-            "start": "^\\\\s*;FOLD",
-            "end": "^\\\\s*;ENDFOLD"
-        }
-    }
-
-add_language_to_list(language_i, repository, config_i)
-
-
-
-
-
-
-# ------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-package = {}
-package["languages"] = languages
-grammars = []
-snippets = []
-
-# Auto generate grammars and snippets
-for language_i in languages:
-    id_lang = language_i["id"]   
-    scope_name = getScopeName(id_lang) 
-    file_syntax = getFileSyntax(id_lang) 
-    file_snippet = getFileSnippet(id_lang) 
-
-    grammar_i = {}
-    snippets_i = {}
     
-    grammar_i["language"] = id_lang
-    grammar_i["scopeName"] = scope_name
-    grammar_i["path"] = file_syntax
-    snippets_i["language"] = id_lang
-    snippets_i["path"] = file_snippet    
-
-    grammars.append(grammar_i)
-    snippets.append(snippets_i)
-
-package["grammars"] = grammars
-package["snippets"] = snippets
-
-str_package_contributes = ToJSON(package)
-
-with open("package.json", "w") as fout:
-    with open("package_model.json") as fin:
-        for line in fin:
-            fout.write(line.replace("###contributes###", str_package_contributes))
-
-# For each language: Auto generate patterns (syntax file)
-for language_i in languages:
-    syntax_i = {}
-    id_lang = language_i["id"]
-    file_syntax = getFileSyntax(id_lang) 
-    repository_i = repositories[id_lang]
-    patterns_i = []
-    for key in repository_i.keys():
-        patterns_i.append({"include":"#"+key})
-
-    syntax_i["name"] = id_lang
-    syntax_i["scopeName"] = getScopeName(id_lang) 
-    syntax_i["patterns"] = patterns_i
-    syntax_i["repository"] = repository_i
-    file_str = ToJSON(syntax_i)
-    #print(file_str)
-    with open(file_syntax, "w") as fid:
-        fid.write(file_str)
-
-
-# For each language: Auto generate configuration file
-for language_i in languages:
-    syntax_i = {}
-    id_lang = language_i["id"]
-    file_config = getFileConfig(id_lang) 
-    config_i = configs[id_lang]
-    file_str = ToJSON(config_i)
-    with open(file_config, "w") as fid:
-        fid.write(file_str)
 
 
 
 
 
 
-data = ToJSON(package)
-print(data)
-quit(0)
+
+
+
+
+
+
+
+
+
+
+

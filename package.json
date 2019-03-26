@@ -24,6 +24,11 @@
             "language": "ABB RAPID",
             "path": "./syntaxes/robodk-abb-rapid.json",
             "scopeName": "robodk.abb-rapid"
+        },
+        {
+            "language": "KUKA KRC",
+            "path": "./syntaxes/robodk-kuka-krc.json",
+            "scopeName": "robodk.kuka-krc"
         }
     ],
     "languages": [
@@ -42,12 +47,31 @@
                 ".pgf"
             ],
             "id": "ABB RAPID"
+        },
+        {
+            "aliases": [
+                "KUKA",
+                "KRC2",
+                "KRC4",
+                "SRC",
+                "DAT"
+            ],
+            "configuration": "./kuka-krc-configuration.json",
+            "extensions": [
+                ".src",
+                ".dat"
+            ],
+            "id": "KUKA KRC"
         }
     ],
     "snippets": [
         {
             "language": "ABB RAPID",
             "path": "./snippets/robodk-abb-rapid.json"
+        },
+        {
+            "language": "KUKA KRC",
+            "path": "./snippets/robodk-kuka-krc.json"
         }
     ]
 }
