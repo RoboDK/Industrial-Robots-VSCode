@@ -12,12 +12,10 @@
     "url": "https://github.com/RoboDK/Industrial-Robots-VSCode.git"
   },
   "categories": [
-    "Offline Programming",
-    "Simulation Software",
-    "Robotics",
-    "Robot programming"
+    "Programming Languages",
+    "Other"
   ],
-  "contributes": {
+  "contributes":
     {
     "grammars": [
         {
@@ -75,5 +73,4 @@
         }
     ]
 }
-  }
 }

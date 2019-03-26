@@ -73,7 +73,6 @@ config_i["folding"] = {
     }
 
 
-
 print("Updating syntax...")
 update_syntax(language_i["id"], repository)
 

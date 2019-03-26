@@ -88,8 +88,8 @@ default_config = {
 
 def update_themes_all():
     global language_i
-    global repository
-    global config_i
+    #global repository
+    #global config_i
     languages = []
 
     import os, glob, codecs
@@ -106,7 +106,7 @@ def update_themes_all():
         # Execute the file
         print("\nRunning file: " + file + " ...")
         file_text = codecs.open(file, "r", "utf-8").read()
-        exec(file_text, globals(), locals())
+        exec(file_text, globals())
         print("Done with " + file)
 
         # Add the language to the full list of languages
