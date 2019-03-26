@@ -1,0 +1,55 @@
+{
+  "name": "Robot Programming Theme",
+  "displayName": "Robot Programming",
+  "description": "Robot Programming Highlighting for industrial robots",
+  "version": "0.0.1",
+  "publisher": "RoboDK Inc.",
+  "engines": {
+    "vscode": "^1.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RoboDK/Industrial-Robots-VSCode.git"
+  },
+  "categories": [
+    "Offline Programming",
+    "Simulation Software",
+    "Robotics",
+    "Robot programming"
+  ],
+  "contributes": {
+    {
+    "grammars": [
+        {
+            "language": "ABB RAPID",
+            "path": "./syntaxes/robodk-abb-rapid.json",
+            "scopeName": "robodk.abb-rapid"
+        }
+    ],
+    "languages": [
+        {
+            "aliases": [
+                "RAPID",
+                "S4",
+                "S4C",
+                "IRC5"
+            ],
+            "configuration": "./abb-rapid-configuration.json",
+            "extensions": [
+                ".sys",
+                ".mod",
+                ".prg",
+                ".pgf"
+            ],
+            "id": "ABB RAPID"
+        }
+    ],
+    "snippets": [
+        {
+            "language": "ABB RAPID",
+            "path": "./snippets/robodk-abb-rapid.json"
+        }
+    ]
+}
+  }
+}

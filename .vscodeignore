@@ -1,0 +1,4 @@
+*.py
+.vscode/**
+.gitignore
+*package_model.json

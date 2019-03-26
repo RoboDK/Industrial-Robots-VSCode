@@ -1,0 +1,23 @@
+{
+  "name": "Robot Programming Theme",
+  "displayName": "Robot Programming",
+  "description": "Robot Programming Highlighting for industrial robots",
+  "version": "0.0.1",
+  "publisher": "RoboDK Inc.",
+  "engines": {
+    "vscode": "^1.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RoboDK/Industrial-Robots-VSCode.git"
+  },
+  "categories": [
+    "Offline Programming",
+    "Simulation Software",
+    "Robotics",
+    "Robot programming"
+  ],
+  "contributes": {
+    ###contributes###
+  }
+}
