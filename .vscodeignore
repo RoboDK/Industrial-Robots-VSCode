@@ -1,4 +1,7 @@
-*.py
 .vscode/**
+.vscode-test/**
 .gitignore
+vsc-extension-quickstart.md
 *package_model.json
+./python/*
+*.py

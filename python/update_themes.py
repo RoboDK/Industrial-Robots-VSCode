@@ -8,15 +8,15 @@ def ToJSON(python_var):
 
 def getFileSyntax(id_lang):
     id_nospace = id_lang.lower().replace(" ","-") 
-    return "./syntaxes/robodk-%s.json" % id_nospace 
+    return "./syntaxes/robodk.%s.json" % id_nospace 
 
 def getFileSnippet(id_lang):
     id_nospace = id_lang.lower().replace(" ","-") 
-    return "./snippets/robodk-%s.json" % id_nospace 
+    return "./snippets/robodk.%s.json" % id_nospace 
 
 def getFileConfig(id_lang):
     id_nospace = id_lang.lower().replace(" ","-") 
-    return "./%s-configuration.json" % id_nospace 
+    return "./configuration-%s.json" % id_nospace 
 
 def getScopeName(id_lang):
     id_nospace = id_lang.lower().replace(" ","-") 
