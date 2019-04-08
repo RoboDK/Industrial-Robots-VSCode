@@ -1,0 +1,40 @@
+{
+    "function": {
+        "prefix": "def",
+        "body": [
+            "DEF ${1:name}()",
+            "$0",
+            "END"
+        ],
+        "description": "Function definition"
+    },
+    "for": {
+        "prefix": "for",
+        "body": [
+            "FOR ${1:counter}=${2:start} TO ${3:end}${4: STEP step}",
+            "$0",
+            "ENDFOR"
+        ],
+        "description": "For loop"
+    },
+    "if": {
+        "prefix": "if",
+        "body": [
+            "IF (${1:condition}) THEN",
+            "$0",
+            "ENDIF"
+        ],
+        "description": "If statement"
+    },
+    "swith": {
+        "prefix": "switch",
+        "body": [
+            "SWITCH (${1:variable})",
+            "CASE ${2:switch}",
+            "  $0",
+            "DEFAULT",
+            "ENDSWITCH"
+        ],
+        "description": "Switch statement"
+    }
+}

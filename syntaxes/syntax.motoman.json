@@ -1,0 +1,121 @@
+{
+    "name": "Motoman",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#built-in-fcn"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#fcn-call"
+        },
+        {
+            "include": "#built-in-var"
+        },
+        {
+            "include": "#built-in-types"
+        },
+        {
+            "include": "#movement"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "built-in-fcn": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(SPEED|REFP|PL|FPT|CLEAR|INC|DEC|SET|ADD|SUB|MUL|DIV|CNVRT|NOT|XOR|MFRAME|SETE|GETE|GETS|SQRT|SIN|COS|ATAN|MULMAT|INVMAT|SETFILE|GETFILE|SETREG|GETREG|GETARG|GETTOOL|SETTOOL|JOB|SFTON|SFTOF|MSHIFT|GETPOS|INV)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "built-in-types": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b()\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "built-in-var": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(OFF|ON|TOOL|IN#|OUT#|TL#|OG#|IG#|OT#|IARG#|DIN|DOUT|WAIT|PULSE|AOUT|ARATION|ARATIOF|ANTOUT)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "'",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(IF|UNTIL|ENWAIT|ELSE|ELSEIF|FOR|ENDFOR|IFTHEN|ENDIF|RET|SWITCH|WHILE|ENDWHILE|JUMP|CALL|TIMER|PAUSE|CWAIT|MSG|ADVINIT|ADVSTOP|PRINT|CLS|ABORT|SETUALM|DIALOG|DIALSB)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "fcn-call": {
+            "patterns": [
+                {
+                    "begin": "%",
+                    "end": "%",
+                    "name": "string"
+                }
+            ]
+        },
+        "movement": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(MOVJ|MOVL|MOVC|MOVS|IMOV)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "\\\\b[0-9]\\\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(OR|AND|XOR|+|=|-|%|:|ANDIF|ORIF|NOR)\\b",
+                    "name": "keyword.operator"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"",
+                    "name": "string"
+                }
+            ]
+        }
+    },
+    "scopeName": "robodk.motoman"
+}

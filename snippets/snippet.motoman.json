@@ -1,0 +1,17 @@
+{
+    "function": {
+        "prefix": "movj",
+        "body": [
+            "MOVJ C00000 VJ=100",
+        ],
+        "description": "Joint movement (MovJ)"
+    },
+    "function": {
+        "prefix": "movl",
+        "body": [
+            "MOVL C00000 V=20",
+        ],
+        "description": "Linear movement (MovL)"
+    },
+    
+}

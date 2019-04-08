@@ -1,0 +1,18 @@
+{
+    "module": {
+        "prefix": "J",
+        "body": [
+            "    :J P[${1:position_id}] ${1:speed}% FINE ;"
+        ],
+        "description": "Joint Movement"
+    },
+    "module": {
+        "prefix": "L",
+        "body": [
+            "    :L P[${1:position_id}] ${1:speed}mm/s FINE ;"
+        ],
+        "description": "Joint Movement"
+    },
+    
+    
+}

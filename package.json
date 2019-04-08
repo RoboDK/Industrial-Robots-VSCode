@@ -2,6 +2,7 @@
   "name": "Robot Programming Theme",
   "displayName": "Robot Programming",
   "description": "Robot Programming Highlighting for industrial robots",
+  "icon": "icon.png",
   "version": "0.0.1",
   "publisher": "RoboDK Inc.",
   "engines": {
@@ -19,57 +20,105 @@
     {
     "grammars": [
         {
-            "language": "ABB RAPID",
-            "path": "./syntaxes/robodk-abb-rapid.json",
-            "scopeName": "robodk.abb-rapid"
+            "language": "ABB",
+            "path": "./syntaxes/syntax.abb.json",
+            "scopeName": "robodk.abb"
         },
         {
-            "language": "KUKA KRC",
-            "path": "./syntaxes/robodk-kuka-krc.json",
-            "scopeName": "robodk.kuka-krc"
+            "language": "Fanuc",
+            "path": "./syntaxes/syntax.fanuc.json",
+            "scopeName": "robodk.fanuc"
+        },
+        {
+            "language": "KUKA",
+            "path": "./syntaxes/syntax.kuka.json",
+            "scopeName": "robodk.kuka"
+        },
+        {
+            "language": "Motoman",
+            "path": "./syntaxes/syntax.motoman.json",
+            "scopeName": "robodk.motoman"
         }
     ],
     "languages": [
         {
             "aliases": [
+                "ABB",
                 "RAPID",
                 "S4",
                 "S4C",
                 "IRC5"
             ],
-            "configuration": "./abb-rapid-configuration.json",
+            "configuration": "./cnfg.abb.json",
             "extensions": [
                 ".sys",
                 ".mod",
                 ".prg",
                 ".pgf"
             ],
-            "id": "ABB RAPID"
+            "id": "ABB"
+        },
+        {
+            "aliases": [
+                "Fanuc",
+                "LS",
+                "TP"
+            ],
+            "configuration": "./cnfg.fanuc.json",
+            "extensions": [
+                ".LS"
+            ],
+            "id": "Fanuc"
         },
         {
             "aliases": [
                 "KUKA",
+                "KRC",
                 "KRC2",
                 "KRC4",
                 "SRC",
                 "DAT"
             ],
-            "configuration": "./kuka-krc-configuration.json",
+            "configuration": "./cnfg.kuka.json",
             "extensions": [
                 ".src",
                 ".dat"
             ],
-            "id": "KUKA KRC"
+            "id": "KUKA"
+        },
+        {
+            "aliases": [
+                "Motoman",
+                "Yaskawa",
+                "JBI",
+                "Inform",
+                "InformII",
+                "InformIII"
+            ],
+            "configuration": "./cnfg.motoman.json",
+            "extensions": [
+                ".jbi",
+                ".cnd"
+            ],
+            "id": "Motoman"
         }
     ],
     "snippets": [
         {
-            "language": "ABB RAPID",
-            "path": "./snippets/robodk-abb-rapid.json"
+            "language": "ABB",
+            "path": "./snippets/snippet.abb.json"
         },
         {
-            "language": "KUKA KRC",
-            "path": "./snippets/robodk-kuka-krc.json"
+            "language": "Fanuc",
+            "path": "./snippets/snippet.fanuc.json"
+        },
+        {
+            "language": "KUKA",
+            "path": "./snippets/snippet.kuka.json"
+        },
+        {
+            "language": "Motoman",
+            "path": "./snippets/snippet.motoman.json"
         }
     ]
 }

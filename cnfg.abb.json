@@ -36,12 +36,12 @@
         ]
     ],
     "comments": {
-        "lineComment": ";"
+        "lineComment": "!"
     },
     "folding": {
         "markers": {
-            "end": "^\\\\s*;ENDFOLD",
-            "start": "^\\\\s*;FOLD"
+            "end": "%%%",
+            "start": "%%%"
         }
     },
     "surroundingPairs": [

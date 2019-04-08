@@ -1,0 +1,110 @@
+{
+    "name": "KUKA",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#operator"
+        },
+        {
+            "include": "#built-in-fcn"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#fcn-call"
+        },
+        {
+            "include": "#built-in-types"
+        },
+        {
+            "include": "#movement"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#built-in-var"
+        }
+    ],
+    "repository": {
+        "built-in-fcn": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(BAS|SET_KRLMSG|EXISTS_KRLMSG|CLEAR_KRLMSG|TRIGGER|DISTANCE|SET_KRLDLG|EXISTS_KRLDLG)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "built-in-types": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(DECL|GLOBAL|CONST|INT|REAL|BOOL|CHAR|PRIO|FRAME|POS|E6POS|AXIS|E6AXIS)\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "built-in-var": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(BASE_DATA|TOOL_DATA|$ADVANCE|$TOOL|$BASE|$AXIS_ACT|$ACT_EX_AX|EX_AX_DATA|#INITMOV|BWDSTART|ANOUT|OUT|IN|ANIN|ON|OFF|TRUE|FALSE|$ACC|$VEL|$APO|C_DIS|C_PTP|$TIMER_STOP|$TIMER_FLAG|$TIMER)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "comment": {
+            "patterns": [
+                {
+                    "begin": ";",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(REPEAT|FOR|WHILE|LOOP|DEF|IF|THEN|ELSE|SWITCH|LOOP|UNTIL|ENDFOR|ENDWHILE|ENDLOOP|END|ENDIF|ENDSWITCH|ENDLOOP|DEF|INI|END|ENDFCT|ENDDAT|WAIT|GOTO|CASE|DEFAULT|DEFFCT|ENDFCT|DEFDAT|PUBLIC|ENDDAT|RETURN|EXIT|HALT|INTERRUPT|WHEN|DO|BRAKE|RESUME|ENABLE|DISABLE)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "fcn-call": {
+            "patterns": [
+                {
+                    "begin": "%",
+                    "end": "%",
+                    "name": "string"
+                }
+            ]
+        },
+        "movement": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(PTP|LIN|CIRC|SPTP|SLIN)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "\\\\b= < > + - , ( ) { } [ ]\\\\b",
+                    "name": "keyword.operator"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"",
+                    "name": "string"
+                }
+            ]
+        }
+    },
+    "scopeName": "robodk.kuka"
+}

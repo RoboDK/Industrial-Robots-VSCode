@@ -33,7 +33,7 @@ BAS (#BASE,0)
 $ADVANCE = 5
 
 ;FOLD ---- Quickly skip BCO ----
-; PTP $AXIS_ACT 
+PTP $AXIS_ACT 
 ;ENDFOLD
 
 ;FOLD ---- GO HOME ----

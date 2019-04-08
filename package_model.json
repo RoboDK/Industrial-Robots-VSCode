@@ -2,6 +2,7 @@
   "name": "Robot Programming Theme",
   "displayName": "Robot Programming",
   "description": "Robot Programming Highlighting for industrial robots",
+  "icon": "icon.png",
   "version": "0.0.1",
   "publisher": "RoboDK Inc.",
   "engines": {

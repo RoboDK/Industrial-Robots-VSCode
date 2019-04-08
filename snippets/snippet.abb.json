@@ -1,0 +1,150 @@
+{
+    "module": {
+        "prefix": "module",
+        "body": [
+            "%%%",
+            "  VERSION:1",
+            "  LANGUAGE:ENGLISH",
+            "%%%",
+            "MODULE ${1:name}",
+            "\t$2",
+            "ENDMODULE"
+        ],
+        "description": "Module (ABB RAPID)"
+    },
+    "procedure": {
+		"prefix": "proc",
+		"body": [
+			"PROC ${1:name}()",
+			"\t$2",
+			"ENDPROC"
+		],
+		"description": "Procedure definition"
+	},
+    "function": {
+		"prefix": "func",
+		"body": [
+			"FUNCTION ${1:name}()",
+            "\t$2",
+            "\treturn ${3:return}",
+			"ENDFUNC"
+		],
+		"description": "Function definition"
+    },
+    "trap": {
+		"prefix": "trap",
+		"body": [
+			"TRAP ${1:name}",
+			"\t$2",
+			"ENDTRAP"
+		],
+		"description": "Trap definition (interrupt procedure)"
+    },
+    "for": {
+        "prefix": "for",
+        "body": [
+            "FOR ${1:counter} FROM ${2:start} TO ${3:end} DO",
+            "\t$4",
+            "ENDFOR"
+        ],
+        "description": "For loop"
+    },
+    "while": {
+        "prefix": "while",
+        "body": [
+            "WHILE ${1:condition} DO",
+            "\t$2",
+            "ENDWHILE"
+        ],
+        "description": "While loop"
+    },
+    "if": {
+        "prefix": "if",
+        "body": [
+            "IF ${1:condition} THEN",
+            "\t$2",
+            "ELSE",
+            "\t$3",
+            "ENDIF"
+        ],
+        "description": "If statement"
+    },
+    "switch": {
+        "prefix": "test",
+        "body": [
+            "TEST (${1:variable})",
+            "CASE ${2:switch}:",
+            "\t$0",
+            "CASE ${3:switch}:",
+            "\t$0",
+            "DEFAULT:",
+            "\t$0",
+            "ENDTEST"
+        ],
+        "description": "Switch statement"
+    },
+    "movel": {
+        "prefix": "movel",
+        "body": [
+            "MoveL ${1:var_robtarget}, ${2:var_speeddata}, ${3:var_zonedata}, ${4:pers_tooldata} \\WObj:=WObj0;"
+        ],
+        "description": "Linear motion"
+    },
+    "movej": {
+        "prefix": "movej",
+        "body": [
+            "MoveJ ${1:var_robtarget}, ${2:var_speeddata}, ${3:var_zonedata}, ${4:pers_tooldata} \\WObj:=WObj0;"
+        ],
+        "description": "Joint motion"
+    },
+    "moveabsj": {
+        "prefix": "moveabsj",
+        "body": [
+            "MoveAbsJ ${1:var_jointtarget}, ${2:var_speeddata}, ${3:var_zonedata}, ${4:var_tooldata} \\WObj:=WObj0;"
+        ],
+        "description": "Absolute axis motion"
+    },
+    "robtarget": {
+        "prefix": "robtarget",
+        "body": [
+            "{$1|CONST,PERS,VAR|} robtarget ${2:name} := [[0, 0, 0], [1,0,0,0], [0,0,0,0], [9E9,9E9,9E9,9E9,9E9,9E9]];"
+        ],
+        "description": "robtarget declaration"
+    },
+    "jointtarget": {
+        "prefix": "jointtarget",
+        "body": [
+            "{$1|CONST,PERS,VAR|} jointtarget ${2:name} := [[0, 0, 0, 0, 0, 0],[9E9,9E9,9E9,9E9,9E9,9E9]];"
+        ],
+        "description": "jointtarget variable declaration"
+    },
+    "tooldata": {
+        "prefix": "tooldata",
+        "body": [
+            "PERS tooldata ${1:name} := [TRUE,[[0, 0, 0],[1,0,0,0]],[1,[0,0,20],[1,0,0,0],0,0,0.005]];"
+        ],
+        "description": "tooldata variable declaration"
+    },
+    "wobjdata": {
+        "prefix": "wobjdata",
+        "body": [
+            "PERS wobjdata ${1:name} := [FALSE, TRUE, \"\", [[0, 0, 0],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];"
+        ],
+        "description": "wobjdata variable declaration"
+    },
+    "ConfJ": {
+        "prefix": "ConfJ",
+        "body": [
+            "ConfJ {$1|\\On,\\Off|};"
+        ],
+        "description": "Configuration flag On/Off (MoveL)"
+    }
+    ,
+    "ConfL": {
+        "prefix": "ConfL",
+        "body": [
+            "ConfL {$1|\\On,\\Off|};"
+        ],
+        "description": "Configuration flag On/Off (MoveJ)"
+    }
+}
