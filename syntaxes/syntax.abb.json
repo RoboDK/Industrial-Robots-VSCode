@@ -5,28 +5,28 @@
             "include": "#comment"
         },
         {
-            "include": "#numbers"
-        },
-        {
-            "include": "#built-in-fcn"
-        },
-        {
             "include": "#string"
         },
         {
             "include": "#fcn-call"
         },
         {
-            "include": "#built-in-var"
+            "include": "#numbers"
         },
         {
-            "include": "#built-in-types"
+            "include": "#control"
         },
         {
             "include": "#movement"
         },
         {
-            "include": "#control"
+            "include": "#built-in-var"
+        },
+        {
+            "include": "#built-in-fcn"
+        },
+        {
+            "include": "#built-in-types"
         },
         {
             "include": "#operator"
@@ -94,7 +94,7 @@
         "numbers": {
             "patterns": [
                 {
-                    "match": "\\\\b[0-9]\\\\b",
+                    "match": "\\b-?\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b",
                     "name": "constant.numeric.c"
                 }
             ]

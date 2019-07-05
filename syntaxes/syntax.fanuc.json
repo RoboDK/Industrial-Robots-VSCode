@@ -5,25 +5,28 @@
             "include": "#comment"
         },
         {
-            "include": "#numbers"
-        },
-        {
-            "include": "#built-in-fcn"
-        },
-        {
             "include": "#string"
         },
         {
-            "include": "#built-in-types"
+            "include": "#fcn-call"
         },
         {
-            "include": "#built-in-var"
+            "include": "#numbers"
+        },
+        {
+            "include": "#control"
         },
         {
             "include": "#movement"
         },
         {
-            "include": "#control"
+            "include": "#built-in-var"
+        },
+        {
+            "include": "#built-in-fcn"
+        },
+        {
+            "include": "#built-in-types"
         },
         {
             "include": "#operator"
@@ -71,6 +74,15 @@
                 }
             ]
         },
+        "fcn-call": {
+            "patterns": [
+                {
+                    "begin": "%",
+                    "end": "%",
+                    "name": "string"
+                }
+            ]
+        },
         "movement": {
             "patterns": [
                 {
@@ -82,7 +94,7 @@
         "numbers": {
             "patterns": [
                 {
-                    "match": "\\\\b[0-9]\\\\b",
+                    "match": "\\b-?\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b",
                     "name": "constant.numeric.c"
                 }
             ]
@@ -98,8 +110,8 @@
         "string": {
             "patterns": [
                 {
-                    "begin": "MESSAGE[",
-                    "end": "]",
+                    "begin": "\"",
+                    "end": "\"",
                     "name": "string"
                 }
             ]

@@ -10,7 +10,8 @@ repo_begin_end(repository, "!", r'(?=\n)', name_comment, "comment")
 repo_begin_end(repository, r'"', r'"', name_string, "string")
 repo_begin_end(repository, r'%', r'%', name_string, "fcn-call")
 
-match = r'\\b[0-9]\\b'
+#match = r'\\b[0-9]\\b'
+match = '\\b-?\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b'
 repo_match(repository, match, name_numeric, "numbers")
 
 match = "FOR WHILE FUNC MODULE PROC RECORD TEST TRAP ENDFOR ENDWHILE ENDFUNC ENDMODULE ENDPROC ENDRECORD ENDTEST ENDTRAP"
