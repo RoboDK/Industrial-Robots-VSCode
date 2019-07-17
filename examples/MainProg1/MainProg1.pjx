@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://www.staubli.com/robotics/VAL3/Project/3">
+  <Parameters version="s7.3.1" stackSize="5000" millimeterUnit="true" />
+  <Programs>
+    <Program file="loadNextOne.pgx" />
+    <Program file="start.pgx" />
+    <Program file="stop.pgx" />
+  </Programs>
+  <Database>
+    <Data file="MainProg1.dtx" />
+  </Database>
+  <Libraries>
+    <Library alias="prog" path="./Prog1/Prog1.pjx" />
+    <Library alias="prog_swap" path="./Prog1/Prog1.pjx" />
+    <Library alias="tooldata" path="saveChangeTool" />
+  </Libraries>
+</Project>

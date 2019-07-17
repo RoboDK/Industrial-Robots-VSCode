@@ -1,0 +1,7 @@
+{
+    "[Fanuc]": {}
+	
+   "files.associations": {
+    "*.script": "python",
+  }
+}

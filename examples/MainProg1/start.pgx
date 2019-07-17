@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="start" access="public">
+    <Code><![CDATA[
+begin
+  if prog:libLoad("./Prog1")!=0
+    logMsg("Error Loading RoboDK library")
+    popUpMsg("Error Loading RoboDK library")
+  endIf
+  wait(taskStatus("loading")==-1)
+  prog:fPartReal.trsf=fPartCad.trsf*fCadToReal.trsf
+  prog:tCad.trsf=prog:tCad.trsf*{0,0,tooldata:nLength,0,0,0}
+  call prog:start()
+  
+
+end
+      ]]></Code>
+  </Program>
+</Programs>

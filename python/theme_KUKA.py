@@ -6,7 +6,7 @@ repository = {}
 
 repo_begin_end(repository, ";", r'(?=\n)', name_comment, "comment")
 repo_begin_end(repository, r'"', r'"', name_string, "string")
-repo_begin_end(repository, r'%', r'%', name_string, "fcn-call")
+repo_begin_end(repository, r'EXT', r'()', name_string, "fcn-call")
 
 match = "REPEAT FOR WHILE LOOP DEF IF THEN ELSE SWITCH LOOP"
 match += " UNTIL ENDFOR ENDWHILE ENDLOOP END ENDIF ENDSWITCH ENDLOOP"

@@ -5,28 +5,28 @@
             "include": "#comment"
         },
         {
-            "include": "#operator"
-        },
-        {
-            "include": "#built-in-fcn"
-        },
-        {
             "include": "#string"
         },
         {
             "include": "#fcn-call"
         },
         {
-            "include": "#built-in-types"
+            "include": "#control"
         },
         {
             "include": "#movement"
         },
         {
-            "include": "#control"
+            "include": "#built-in-fcn"
+        },
+        {
+            "include": "#built-in-types"
         },
         {
             "include": "#built-in-var"
+        },
+        {
+            "include": "#operator"
         }
     ],
     "repository": {
@@ -74,8 +74,8 @@
         "fcn-call": {
             "patterns": [
                 {
-                    "begin": "%",
-                    "end": "%",
+                    "begin": "EXT",
+                    "end": "()",
                     "name": "string"
                 }
             ]
