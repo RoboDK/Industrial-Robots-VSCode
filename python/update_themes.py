@@ -43,6 +43,12 @@ def repo_match(repo, match, name, match_type):
     repository_i = {}
     repository_i['match'] = match
     repository_i['name'] = name
+    match_type_seed = match_type
+    count = 0
+    while match_type in repo:
+        count += 1
+        match_type = match_type_seed + str(count)
+        
     repo[match_type] = {'patterns': [repository_i]}
     return repo
 

@@ -30,6 +30,11 @@
             "scopeName": "robodk.fanuc"
         },
         {
+            "language": "ABB",
+            "path": "./syntaxes/syntax.abb.json",
+            "scopeName": "robodk.abb"
+        },
+        {
             "language": "KUKA",
             "path": "./syntaxes/syntax.kuka.json",
             "scopeName": "robodk.kuka"
@@ -38,6 +43,16 @@
             "language": "Motoman",
             "path": "./syntaxes/syntax.motoman.json",
             "scopeName": "robodk.motoman"
+        },
+        {
+            "language": "ABB",
+            "path": "./syntaxes/syntax.abb.json",
+            "scopeName": "robodk.abb"
+        },
+        {
+            "language": "ABB",
+            "path": "./syntaxes/syntax.abb.json",
+            "scopeName": "robodk.abb"
         }
     ],
     "languages": [
@@ -73,6 +88,23 @@
         },
         {
             "aliases": [
+                "ABB",
+                "RAPID",
+                "S4",
+                "S4C",
+                "IRC5"
+            ],
+            "configuration": "./cnfg.abb.json",
+            "extensions": [
+                ".sys",
+                ".mod",
+                ".prg",
+                ".pgf"
+            ],
+            "id": "ABB"
+        },
+        {
+            "aliases": [
                 "KUKA",
                 "KRC",
                 "KRC2",
@@ -102,6 +134,40 @@
                 ".cnd"
             ],
             "id": "Motoman"
+        },
+        {
+            "aliases": [
+                "ABB",
+                "RAPID",
+                "S4",
+                "S4C",
+                "IRC5"
+            ],
+            "configuration": "./cnfg.abb.json",
+            "extensions": [
+                ".sys",
+                ".mod",
+                ".prg",
+                ".pgf"
+            ],
+            "id": "ABB"
+        },
+        {
+            "aliases": [
+                "ABB",
+                "RAPID",
+                "S4",
+                "S4C",
+                "IRC5"
+            ],
+            "configuration": "./cnfg.abb.json",
+            "extensions": [
+                ".sys",
+                ".mod",
+                ".prg",
+                ".pgf"
+            ],
+            "id": "ABB"
         }
     ],
     "snippets": [
@@ -114,12 +180,24 @@
             "path": "./snippets/snippet.fanuc.json"
         },
         {
+            "language": "ABB",
+            "path": "./snippets/snippet.abb.json"
+        },
+        {
             "language": "KUKA",
             "path": "./snippets/snippet.kuka.json"
         },
         {
             "language": "Motoman",
             "path": "./snippets/snippet.motoman.json"
+        },
+        {
+            "language": "ABB",
+            "path": "./snippets/snippet.abb.json"
+        },
+        {
+            "language": "ABB",
+            "path": "./snippets/snippet.abb.json"
         }
     ]
 }

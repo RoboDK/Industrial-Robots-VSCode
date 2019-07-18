@@ -11,6 +11,9 @@
             "include": "#fcn-call"
         },
         {
+            "include": "#numbers"
+        },
+        {
             "include": "#control"
         },
         {
@@ -49,7 +52,7 @@
         "built-in-var": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(BASE_DATA|TOOL_DATA|$ADVANCE|$TOOL|$BASE|$AXIS_ACT|$ACT_EX_AX|EX_AX_DATA|#INITMOV|BWDSTART|ANOUT|OUT|IN|ANIN|ON|OFF|TRUE|FALSE|$ACC|$VEL|$APO|C_DIS|C_PTP|$TIMER_STOP|$TIMER_FLAG|$TIMER)\\b",
+                    "match": "(?i)\\b(BASE_DATA|TOOL_DATA|ADVANCE|TOOL|BASE|AXIS_ACT|ACT_EX_AX|EX_AX_DATA|#INITMOV|BWDSTART|ANOUT|OUT|IN|ANIN|ON|OFF|TRUE|FALSE|$ACC|$VEL|$APO|C_DIS|C_PTP|$TIMER_STOP|$TIMER_FLAG|$TIMER)\\b",
                     "name": "entity.name.function.c"
                 }
             ]
@@ -66,7 +69,7 @@
         "control": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(REPEAT|FOR|WHILE|LOOP|DEF|IF|THEN|ELSE|SWITCH|LOOP|UNTIL|ENDFOR|ENDWHILE|ENDLOOP|END|ENDIF|ENDSWITCH|ENDLOOP|DEF|INI|END|ENDFCT|ENDDAT|WAIT|GOTO|CASE|DEFAULT|DEFFCT|ENDFCT|DEFDAT|PUBLIC|ENDDAT|RETURN|EXIT|HALT|INTERRUPT|WHEN|DO|BRAKE|RESUME|ENABLE|DISABLE)\\b",
+                    "match": "(?i)\\b(REPEAT|FOR|WHILE|LOOP|DEF|IF|THEN|ELSE|SWITCH|LOOP|UNTIL|ENDFOR|ENDWHILE|ENDLOOP|END|ENDIF|ENDSWITCH|ENDLOOP|DEF|INI|END|ENDFCT|ENDDAT|WAIT|GOTO|CASE|DEFAULT|DEFFCT|ENDFCT|DEFDAT|PUBLIC|ENDDAT|RETURN|EXIT|HALT|INTERRUPT|WHEN|DO|BRAKE|RESUME|ENABLE|DISABLE|X|Y|Z|A|B|C|E1|E2|E3|E4|E5|E6|A1|A2|A3|A4|A5|A6)\\b",
                     "name": "keyword.control"
                 }
             ]
@@ -75,7 +78,7 @@
             "patterns": [
                 {
                     "begin": "EXT",
-                    "end": "()",
+                    "end": "( )",
                     "name": "string"
                 }
             ]
@@ -85,6 +88,14 @@
                 {
                     "match": "(?i)\\b(PTP|LIN|CIRC|SPTP|SLIN)\\b",
                     "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "\\&.+",
+                    "name": "constant.numeric.c"
                 }
             ]
         },
