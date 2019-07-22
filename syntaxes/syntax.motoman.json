@@ -17,26 +17,80 @@
             "include": "#control"
         },
         {
+            "include": "#control1"
+        },
+        {
+            "include": "#control2"
+        },
+        {
+            "include": "#control3"
+        },
+        {
+            "include": "#control4"
+        },
+        {
+            "include": "#control5"
+        },
+        {
+            "include": "#control6"
+        },
+        {
+            "include": "#control7"
+        },
+        {
+            "include": "#control8"
+        },
+        {
+            "include": "#control9"
+        },
+        {
+            "include": "#control10"
+        },
+        {
+            "include": "#control11"
+        },
+        {
+            "include": "#control12"
+        },
+        {
+            "include": "#control13"
+        },
+        {
+            "include": "#control14"
+        },
+        {
+            "include": "#control15"
+        },
+        {
+            "include": "#control16"
+        },
+        {
             "include": "#movement"
         },
         {
             "include": "#built-in-var"
         },
         {
+            "include": "#built-in-var1"
+        },
+        {
+            "include": "#built-in-var2"
+        },
+        {
+            "include": "#control17"
+        },
+        {
             "include": "#built-in-fcn"
         },
         {
             "include": "#built-in-types"
-        },
-        {
-            "include": "#operator"
         }
     ],
     "repository": {
         "built-in-fcn": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(SPEED|REFP|PL|FPT|CLEAR|INC|DEC|SET|ADD|SUB|MUL|DIV|CNVRT|NOT|XOR|MFRAME|SETE|GETE|GETS|SQRT|SIN|COS|ATAN|MULMAT|INVMAT|SETFILE|GETFILE|SETREG|GETREG|GETARG|GETTOOL|SETTOOL|JOB|SFTON|SFTOF|MSHIFT|GETPOS|INV)\\b",
+                    "match": "(?i)\\b(NOP|SETE|SETTOOL|TIMER|MSG|CALL|DOUT|WAIT|PAUSE|END)\\b",
                     "name": "entity.name.function.c"
                 }
             ]
@@ -44,7 +98,7 @@
         "built-in-types": {
             "patterns": [
                 {
-                    "match": "(?i)\\b()\\b",
+                    "match": "(?i)\\b(ON|OFF|PULSE|BASE|SC|RW|RJ|RB1)\\b",
                     "name": "storage.type.c"
                 }
             ]
@@ -52,7 +106,23 @@
         "built-in-var": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(OFF|ON|TOOL|IN#|OUT#|TL#|OG#|IG#|OT#|IARG#|DIN|DOUT|WAIT|PULSE|AOUT|ARATION|ARATIOF|ANTOUT)\\b",
+                    "match": "(?i)\\b(V|VJ)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var1": {
+            "patterns": [
+                {
+                    "match": "\\WOT#\\(\\d\\)",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var2": {
+            "patterns": [
+                {
+                    "match": "\\WIN#\\(\\d\\)",
                     "name": "constant.language"
                 }
             ]
@@ -69,7 +139,143 @@
         "control": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(IF|UNTIL|ENWAIT|ELSE|ELSEIF|FOR|ENDFOR|IFTHEN|ENDIF|RET|SWITCH|WHILE|ENDWHILE|JUMP|CALL|TIMER|PAUSE|CWAIT|MSG|ADVINIT|ADVSTOP|PRINT|CLS|ABORT|SETUALM|DIALOG|DIALSB)\\b",
+                    "match": "\\/JOB",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control1": {
+            "patterns": [
+                {
+                    "match": "\\//NAME",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control10": {
+            "patterns": [
+                {
+                    "match": "\\///DATE",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control11": {
+            "patterns": [
+                {
+                    "match": "\\///COMM",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control12": {
+            "patterns": [
+                {
+                    "match": "\\///ATTR",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control13": {
+            "patterns": [
+                {
+                    "match": "\\///GROUP\\d+",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control14": {
+            "patterns": [
+                {
+                    "match": "\\WP\\d+",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control15": {
+            "patterns": [
+                {
+                    "match": "\\WC\\d+",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control16": {
+            "patterns": [
+                {
+                    "match": "\\w\\d\\d\\d\\d\\d=",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control17": {
+            "patterns": [
+                {
+                    "match": "\\WTL#\\(\\d\\)",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control2": {
+            "patterns": [
+                {
+                    "match": "\\//POS",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control3": {
+            "patterns": [
+                {
+                    "match": "\\///NPOS",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control4": {
+            "patterns": [
+                {
+                    "match": "\\///TOOL",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control5": {
+            "patterns": [
+                {
+                    "match": "\\///POSTYPE",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control6": {
+            "patterns": [
+                {
+                    "match": "\\///PULSE",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control7": {
+            "patterns": [
+                {
+                    "match": "\\///RECTAN",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control8": {
+            "patterns": [
+                {
+                    "match": "\\///RCONF",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control9": {
+            "patterns": [
+                {
+                    "match": "\\//INST",
                     "name": "keyword.control"
                 }
             ]
@@ -94,16 +300,8 @@
         "numbers": {
             "patterns": [
                 {
-                    "match": "\\\\b[0-9]\\\\b",
+                    "match": "\\-?\\d+(\\.\\d+)?",
                     "name": "constant.numeric.c"
-                }
-            ]
-        },
-        "operator": {
-            "patterns": [
-                {
-                    "match": "(?i)\\b(OR|AND|XOR|+|=|-|%|:|ANDIF|ORIF|NOR)\\b",
-                    "name": "keyword.operator"
                 }
             ]
         },

@@ -10,29 +10,81 @@ repo_begin_end(repository, "'", r'(?=\n)', name_comment, "comment")
 repo_begin_end(repository, r'"', r'"', name_string, "string")
 repo_begin_end(repository, r'%', r'%', name_string, "fcn-call")
 
-match = r'\\b[0-9]\\b'
+#match = r'\\b[0-9]\\b'
+match = r'\-?\d+(\.\d+)?' #regex for numeric constants
 repo_match(repository, match, name_numeric, "numbers")
 
-match = "IF UNTIL ENWAIT ELSE ELSEIF FOR ENDFOR IFTHEN ENDIF RET SWITCH WHILE ENDWHILE JUMP CALL TIMER PAUSE CWAIT MSG ADVINIT ADVSTOP PRINT CLS ABORT SETUALM DIALOG DIALSB"
+#Because of the complicated use of / in the header the easy method won't work
+#So every word uses a regex
+match = r'\/JOB' #regex
 repo_match(repository, match, name_control, "control")
+match = r'\//NAME' #regex
+repo_match(repository, match, name_control, "control")
+match = r'\//POS' #regex
+repo_match(repository, match, name_control, "control")
+match = r'\///NPOS' #regex for ///NPOS configuration
+repo_match(repository, match, name_control, "control")
+match = r'\///TOOL' #regex
+repo_match(repository, match, name_control, "control")
+match = r'\///POSTYPE' #regex
+repo_match(repository, match, name_control, "control")
+match = r'\///PULSE' #regex
+repo_match(repository, match, name_control, "control")
+match = r'\///RECTAN' #regex
+repo_match(repository, match, name_control, "control")
+match = r'\///RCONF' #regex
+repo_match(repository, match, name_control, "control")
+match = r'\//INST' #regex
+repo_match(repository, match, name_control, "control")
+match = r'\///DATE' #regex
+repo_match(repository, match, name_control, "control")
+match = r'\///COMM' #regex
+repo_match(repository, match, name_control, "control")
+match = r'\///ATTR' #regex
+repo_match(repository, match, name_control, "control")
+match = r'\///GROUP\d+' #regex
+repo_match(repository, match, name_control, "control")
+
+
+match = r'\WP\d+' #regex for position use ex P00095
+repo_match(repository, match, name_control, "control")
+match = r'\WC\d+' #regex for position constant use ex C00001
+repo_match(repository, match, name_control, "control")
+
+#Wont work
+#Ideal
+#match = r'C\d\d\d\d\d=(\-?\d+\.\d+[,\d])+'#REGEX for position constants ex C00002=418.570,147.321,251.179,-180.00,23.13,0.00
+#Workaround
+#match = r'\w\d\d\d\d\d=(\-?\d+[,\d\W])+'#REGEX for position constants ex C00002=418.570,147.321,251.179,-180.00,23.13,0.00
+match = r'\w\d\d\d\d\d='#REGEX for position constants ex C00002=418.570,147.321,251.179,-180.00,23.13,0.00
+repo_match(repository, match, name_control, "control")
+
+
+
 
 match = "MOVJ MOVL MOVC MOVS IMOV"
 repo_match(repository, match, name_movements, "movement")
 
-match = "OFF ON TOOL"
-match += " IN# OUT# TL# OG# IG# OT# IARG#"
-match += " DIN DOUT WAIT PULSE AOUT ARATION ARATIOF ANTOUT"
+match = "V VJ"
 repo_match(repository, match, name_builtInVar, "built-in-var")
+#regex for output ex OT#(5)
+match = r'\WOT#\(\d\)'
+repo_match(repository, match, name_builtInVar, "built-in-var")
+#regex for input IN#(5)
+match = r'\WIN#\(\d\)'
+repo_match(repository, match, name_builtInVar, "built-in-var")
+match = r'\WTL#\(\d\)' #regex for tool number use ex TL#(9)
+repo_match(repository, match, name_control, "control")
 
-match = "SPEED REFP PL FPT"
-match += " CLEAR INC DEC SET ADD SUB MUL DIV CNVRT NOT XOR MFRAME SETE GETE GETS SQRT SIN COS ATAN MULMAT INVMAT SETFILE GETFILE SETREG GETREG GETARG GETTOOL SETTOOL JOB SFTON SFTOF MSHIFT GETPOS INV"
+
+match = 'NOP SETE SETTOOL TIMER MSG CALL DOUT WAIT PAUSE END' 
 repo_match(repository, match, name_builtInFcn, "built-in-fcn")
 
-match = ""
+match = "ON OFF PULSE BASE SC RW RJ RB1"
 repo_match(repository, match, name_builtInTypes, "built-in-types")
 
-match = "OR AND XOR + = - % : ANDIF ORIF NOR"
-repo_match(repository, match, name_operator, "operator")
+#match = "OR AND XOR + = - % : ANDIF ORIF NOR"
+#repo_match(repository, match, name_operator, "operator")
 
 
 config_i = dict(default_config)

@@ -30,9 +30,9 @@
             "scopeName": "robodk.fanuc"
         },
         {
-            "language": "ABB",
-            "path": "./syntaxes/syntax.abb.json",
-            "scopeName": "robodk.abb"
+            "language": "Universal_Robots",
+            "path": "./syntaxes/syntax.universal_robots.json",
+            "scopeName": "robodk.universal_robots"
         },
         {
             "language": "KUKA",
@@ -45,14 +45,19 @@
             "scopeName": "robodk.motoman"
         },
         {
-            "language": "ABB",
-            "path": "./syntaxes/syntax.abb.json",
-            "scopeName": "robodk.abb"
+            "language": "Comau",
+            "path": "./syntaxes/syntax.comau.json",
+            "scopeName": "robodk.comau"
         },
         {
-            "language": "ABB",
-            "path": "./syntaxes/syntax.abb.json",
-            "scopeName": "robodk.abb"
+            "language": "Staubli",
+            "path": "./syntaxes/syntax.staubli.json",
+            "scopeName": "robodk.staubli"
+        },
+        {
+            "language": "Kawasaki",
+            "path": "./syntaxes/syntax.kawasaki.json",
+            "scopeName": "robodk.kawasaki"
         }
     ],
     "languages": [
@@ -88,23 +93,6 @@
         },
         {
             "aliases": [
-                "ABB",
-                "RAPID",
-                "S4",
-                "S4C",
-                "IRC5"
-            ],
-            "configuration": "./cnfg.abb.json",
-            "extensions": [
-                ".sys",
-                ".mod",
-                ".prg",
-                ".pgf"
-            ],
-            "id": "ABB"
-        },
-        {
-            "aliases": [
                 "KUKA",
                 "KRC",
                 "KRC2",
@@ -137,37 +125,54 @@
         },
         {
             "aliases": [
-                "ABB",
-                "RAPID",
-                "S4",
-                "S4C",
-                "IRC5"
+                "Universal",
+                "Universal Robots",
+                "universal robots",
+				"Universal-Robots",
+				"Universal_Robots",
+				"universal_robots"
             ],
-            "configuration": "./cnfg.abb.json",
+            "configuration": "./cnfg.universal_robots.json",
             "extensions": [
-                ".sys",
-                ".mod",
-                ".prg",
-                ".pgf"
+                ".script",
+                ".urp"
             ],
-            "id": "ABB"
+            "id": "Universal_Robots"
+        },
+		{
+            "aliases": [
+                "Comau",
+                "comau"
+            ],
+            "configuration": "./cnfg.comau.json",
+            "extensions": [
+                ".pdl"
+            ],
+            "id": "Comau"
         },
         {
             "aliases": [
-                "ABB",
-                "RAPID",
-                "S4",
-                "S4C",
-                "IRC5"
+                "Staubli",
+                "Scara",
+                "Stäubli"
             ],
-            "configuration": "./cnfg.abb.json",
+            "configuration": "./cnfg.staubli.json",
             "extensions": [
-                ".sys",
-                ".mod",
-                ".prg",
-                ".pgf"
+                ".pgx",
+                ".pjx",
+                ".dtx"
             ],
-            "id": "ABB"
+            "id": "Staubli"
+        },
+        {
+            "aliases": [
+                "Kawasaki"
+            ],
+            "configuration": "./cnfg.Kawasaki.json",
+            "extensions": [
+                ".pg"
+            ],
+            "id": "Kawasaki"
         }
     ],
     "snippets": [
@@ -180,10 +185,6 @@
             "path": "./snippets/snippet.fanuc.json"
         },
         {
-            "language": "ABB",
-            "path": "./snippets/snippet.abb.json"
-        },
-        {
             "language": "KUKA",
             "path": "./snippets/snippet.kuka.json"
         },
@@ -192,13 +193,21 @@
             "path": "./snippets/snippet.motoman.json"
         },
         {
-            "language": "ABB",
-            "path": "./snippets/snippet.abb.json"
+            "language": "Comau",
+            "path": "./snippets/snippet.comau.json"
         },
         {
-            "language": "ABB",
-            "path": "./snippets/snippet.abb.json"
-        }
+            "language": "Universal_Robots",
+            "path": "./snippets/snippet.universal_robots.json"
+        },
+        {
+            "language": "Staubli",
+            "path": "./snippets/snippet.staubli.json"
+        },
+        {
+            "language": "Kawasaki",
+            "path": "./snippets/snippet.kawasaki.json"
+        }	
     ]
 }
 }

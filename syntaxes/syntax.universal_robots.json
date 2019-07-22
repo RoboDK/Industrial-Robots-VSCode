@@ -1,0 +1,121 @@
+{
+    "name": "universal_robots",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#fcn-call"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#movement"
+        },
+        {
+            "include": "#built-in-var"
+        },
+        {
+            "include": "#built-in-var1"
+        },
+        {
+            "include": "#built-in-fcn"
+        },
+        {
+            "include": "#built-in-fcn1"
+        }
+    ],
+    "repository": {
+        "built-in-fcn": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(set_standard_digital_out|get_standard_digital_in|sync|set_tcp)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "built-in-fcn1": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(speed_ms|speed_rads|accel_mss|accel_radss|blend_radius_m|blocking)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "built-in-var": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(global|TRUE|FALSE)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var1": {
+            "patterns": [
+                {
+                    "match": "\\p\\[(-?\\d+\\.?\\d+?,?\\s?)+\\]",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "#",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(if|else|end|def|while)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "fcn-call": {
+            "patterns": [
+                {
+                    "begin": "CALL",
+                    "end": ";",
+                    "name": "string"
+                }
+            ]
+        },
+        "movement": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(movej|movel|movec|popup|sleep)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "\\-?\\d+(\\.\\d+)?",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"",
+                    "name": "string"
+                }
+            ]
+        }
+    },
+    "scopeName": "robodk.universal_robots"
+}

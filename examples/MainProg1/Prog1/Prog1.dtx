@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Database xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Data/2">
   <Datas>
+    <Data name="do5" access="private" xsi:type="array" type="dio" size="1">
+      <Value key="0" link="fiodo5" />
+    </Data>
     <Data name="fPartReal" access="public" xsi:type="array" type="frame" size="1">
       <Value key="0" x="0.000" y="0.000" z="0.000" rx="-0.000" ry="0.000" rz="-0.000" fatherId="world[0]" />
     </Data>
@@ -15,6 +18,7 @@
       <Value key="0" accel="100" vel="100" decel="100" tmax="99999" rmax="99999" blend="off" leave="50" reach="50" />
     </Data>
     <Data name="mSpeed" access="public" xsi:type="array" type="mdesc" size="1">
+      <Value key="0" tmax="500.0" rmax="100" leave="0.1" reach="0.1" blend="cartesian" />
     </Data>
     <Data name="nTraj" access="public" xsi:type="array" type="num" size="1"/>
     <Data name="nTimeStop" access="private" xsi:type="array" type="num" size="1"/>
@@ -27,6 +31,7 @@
       <Value key="2" x="881.362" y="96.973" z="737.831" rx="0.000" ry="90.000" rz="0.000" shoulder="lefty" elbow="epositive" wrist="wpositive" fatherId="fPartReal[0]" />
     </Data>
     <Data name="tCad" access="public" xsi:type="array" type="tool" size="1">
+      <Value key="0" x="0.000" y="0.000" z="0.000" rx="-0.000" ry="0.000" rz="-0.000" fatherId="flange[0]" ioLink="valve1" />
     </Data>
   </Datas>
 </Database>

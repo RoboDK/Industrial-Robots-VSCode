@@ -17,7 +17,28 @@
             "include": "#control"
         },
         {
+            "include": "#control1"
+        },
+        {
+            "include": "#control2"
+        },
+        {
+            "include": "#control3"
+        },
+        {
+            "include": "#control4"
+        },
+        {
+            "include": "#control5"
+        },
+        {
+            "include": "#control6"
+        },
+        {
             "include": "#movement"
+        },
+        {
+            "include": "#movement1"
         },
         {
             "include": "#built-in-var"
@@ -26,7 +47,22 @@
             "include": "#built-in-fcn"
         },
         {
+            "include": "#built-in-fcn1"
+        },
+        {
+            "include": "#built-in-fcn2"
+        },
+        {
             "include": "#built-in-types"
+        },
+        {
+            "include": "#built-in-types1"
+        },
+        {
+            "include": "#built-in-types2"
+        },
+        {
+            "include": "#built-in-types3"
         },
         {
             "include": "#operator"
@@ -41,10 +77,50 @@
                 }
             ]
         },
+        "built-in-fcn1": {
+            "patterns": [
+                {
+                    "match": "\\sMESSAGE\\[[a-zA-Z0-9\\s]+\\]",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "built-in-fcn2": {
+            "patterns": [
+                {
+                    "match": "\\sUTOOL\\[\\d\\]",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
         "built-in-types": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(DATE|TIME|deg|mm|FINE|UF|UT|J1|J2|J3|J4|J5|J6|J7|J8|X|Y|Z|W|P|R|READ_WRITE)\\b",
+                    "match": "(?i)\\b(DATE|TIME|deg|mm|FINE|UF|UT|J1|J2|J3|J4|J5|J6|J7|J8|X|Y|Z|W|R|READ_WRITE|ON|OFF)\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "built-in-types1": {
+            "patterns": [
+                {
+                    "match": "\\b[LJ][\\s]P\\[\\d\\]",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "built-in-types2": {
+            "patterns": [
+                {
+                    "match": "\\sPR\\[\\d,\\d\\]",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "built-in-types3": {
+            "patterns": [
+                {
+                    "match": "\\P\\[\\d\\]",
                     "name": "storage.type.c"
                 }
             ]
@@ -69,7 +145,55 @@
         "control": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(PROG_SIZE|CREATE|MODIFIED|FILE_NAME|VERSION|LINE_COUNT|MEMORY_SIZE|PROTECT|TCD|DEFAULT_GROUP|CONTROL_CODE|OWNER|COMMENT|ATTR|PROG)\\b",
+                    "match": "(?i)\\b(PROG_SIZE|CREATE|MODIFIED|FILE_NAME|VERSION|LINE_COUNT|MEMORY_SIZE|PROTECT|TCD|DEFAULT_GROUP|CONTROL_CODE|OWNER|COMMENT)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control1": {
+            "patterns": [
+                {
+                    "match": "\\s[^\\w]\\d+:",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control2": {
+            "patterns": [
+                {
+                    "match": "\\/PROG",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control3": {
+            "patterns": [
+                {
+                    "match": "\\/ATTR",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control4": {
+            "patterns": [
+                {
+                    "match": "\\/MN",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control5": {
+            "patterns": [
+                {
+                    "match": "\\/POS",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control6": {
+            "patterns": [
+                {
+                    "match": "\\/END",
                     "name": "keyword.control"
                 }
             ]
@@ -86,7 +210,15 @@
         "movement": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(MN|POS|PR|DO|WAIT|DI|END)\\b",
+                    "match": "(?i)\\b(MN|POS|WAIT|DI|END)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "movement1": {
+            "patterns": [
+                {
+                    "match": "\\sD[OI]\\[\\d\\]",
                     "name": "entity.name.function.preprocessor.c"
                 }
             ]
@@ -94,7 +226,7 @@
         "numbers": {
             "patterns": [
                 {
-                    "match": "\\b-?\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b",
+                    "match": "\\-?\\d+\\.\\d+",
                     "name": "constant.numeric.c"
                 }
             ]

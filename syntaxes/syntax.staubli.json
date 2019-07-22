@@ -1,0 +1,143 @@
+{
+    "name": "Staubli",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#fcn-call"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#movement"
+        },
+        {
+            "include": "#built-in-var"
+        },
+        {
+            "include": "#built-in-fcn"
+        },
+        {
+            "include": "#built-in-fcn1"
+        },
+        {
+            "include": "#built-in-fcn2"
+        },
+        {
+            "include": "#built-in-fcn3"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "built-in-fcn": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(version|xmlns|xsi|name|access|CDATA|key|file|link|alias|path|popUpMsg|delay|WAIT|FOR|waitEndMove|TIMEOUT|stackSize|millimeterUnit)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "built-in-fcn1": {
+            "patterns": [
+                {
+                    "match": "\\Wd[oi]\\d+",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "built-in-fcn2": {
+            "patterns": [
+                {
+                    "match": "\\W[a-zA-Z]+\\(\\)",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "built-in-fcn3": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(x|y|z|rx|ry|rz|shoulder|elbow|wrist|fatherId|type|size|j1|j2|j3|j4|j5|j6|accel|vel|decel|tmax|rmax|blend|leave|reach|ioLink)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "built-in-var": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(xml|encoding|programs|program|code|Database|Datas|Data|Value|Project|Parameter|Parameters|Libraries|Library|nTraj|jJoint|pPoint|flange|mNomSpeed|true|false|on|off)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "//",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(END|BEGIN)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "fcn-call": {
+            "patterns": [
+                {
+                    "begin": "%",
+                    "end": "%",
+                    "name": "string"
+                }
+            ]
+        },
+        "movement": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(movej|movel|movec)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "\\b-?\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(!)\\b",
+                    "name": "keyword.operator"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"",
+                    "name": "string"
+                }
+            ]
+        }
+    },
+    "scopeName": "robodk.staubli"
+}

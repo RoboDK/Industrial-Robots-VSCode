@@ -14,10 +14,16 @@
             "include": "#numbers"
         },
         {
+            "include": "#numbers1"
+        },
+        {
             "include": "#control"
         },
         {
             "include": "#movement"
+        },
+        {
+            "include": "#movement1"
         },
         {
             "include": "#built-in-fcn"
@@ -36,7 +42,7 @@
         "built-in-fcn": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(BAS|SET_KRLMSG|EXISTS_KRLMSG|CLEAR_KRLMSG|TRIGGER|DISTANCE|SET_KRLDLG|EXISTS_KRLDLG)\\b",
+                    "match": "(?i)\\b(BAS|SET_KRLMSG|EXISTS_KRLMSG|CLEAR_KRLMSG|TRIGGER|DISTANCE|SET_KRLDLG|EXISTS_KRLDLG|StrClear|LOOP_MSG|LOOP_CONT)\\b",
                     "name": "entity.name.function.c"
                 }
             ]
@@ -52,7 +58,7 @@
         "built-in-var": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(BASE_DATA|TOOL_DATA|ADVANCE|TOOL|BASE|AXIS_ACT|ACT_EX_AX|EX_AX_DATA|#INITMOV|BWDSTART|ANOUT|OUT|IN|ANIN|ON|OFF|TRUE|FALSE|$ACC|$VEL|$APO|C_DIS|C_PTP|$TIMER_STOP|$TIMER_FLAG|$TIMER)\\b",
+                    "match": "(?i)\\b(BASE_DATA|TOOL_DATA|ADVANCE|TOOL|BASE|AXIS_ACT|ACT_EX_AX|EX_AX_DATA|#INITMOV|BWDSTART|INITMOV|VEL_PTP|ACC_PTP|VEL.CP|ANOUT|OUT|IN|ANIN|ON|OFF|TRUE|FALSE|$ACC|$VEL|$APO|C_DIS|C_PTP|$TIMER_STOP|$TIMER_FLAG|$TIMER)\\b",
                     "name": "entity.name.function.c"
                 }
             ]
@@ -69,7 +75,7 @@
         "control": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(REPEAT|FOR|WHILE|LOOP|DEF|IF|THEN|ELSE|SWITCH|LOOP|UNTIL|ENDFOR|ENDWHILE|ENDLOOP|END|ENDIF|ENDSWITCH|ENDLOOP|DEF|INI|END|ENDFCT|ENDDAT|WAIT|GOTO|CASE|DEFAULT|DEFFCT|ENDFCT|DEFDAT|PUBLIC|ENDDAT|RETURN|EXIT|HALT|INTERRUPT|WHEN|DO|BRAKE|RESUME|ENABLE|DISABLE|X|Y|Z|A|B|C|E1|E2|E3|E4|E5|E6|A1|A2|A3|A4|A5|A6)\\b",
+                    "match": "(?i)\\b(REPEAT|FOR|WHILE|LOOP|DEF|IF|THEN|ELSE|SWITCH|LOOP|UNTIL|ENDFOR|ENDWHILE|ENDLOOP|END|ENDIF|ENDSWITCH|ENDLOOP|DEF|INI|END|ENDFCT|ENDDAT|WAIT|GOTO|CASE|DEFAULT|DEFFCT|ENDFCT|SEC|DEFDAT|PUBLIC|ENDDAT|RETURN|EXIT|HALT|INTERRUPT|WHEN|DO|BRAKE|RESUME|ENABLE|DISABLE|X|Y|Z|A|B|C|E1|E2|E3|E4|E5|E6|A1|A2|A3|A4|A5|A6)\\b",
                     "name": "keyword.control"
                 }
             ]
@@ -91,10 +97,26 @@
                 }
             ]
         },
+        "movement1": {
+            "patterns": [
+                {
+                    "match": "\\w+\\(\\)",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
         "numbers": {
             "patterns": [
                 {
                     "match": "\\&.+",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "numbers1": {
+            "patterns": [
+                {
+                    "match": "\\-?\\d+(\\.\\d+)?",
                     "name": "constant.numeric.c"
                 }
             ]

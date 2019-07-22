@@ -1,0 +1,110 @@
+{
+    "name": "Comau",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#fcn-call"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#movement"
+        },
+        {
+            "include": "#movement1"
+        },
+        {
+            "include": "#built-in-var"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "built-in-var": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(SPD_LIN|ON|OFF|TRUE|FALSE|RS_WORLD|JOINT|LINEAR|CIRCULAR|NOSETTLE|FLY_CART|FLY_PASS|POS)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "--",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(PROGRAM|IMPORT|VAR|ROUTINE|BEGIN|END|EXPORTED|FROM|GLOBAL|REPEAT|UNTIL|IF|THEN|ENDIF)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "fcn-call": {
+            "patterns": [
+                {
+                    "begin": "CALL",
+                    "end": ";",
+                    "name": "string"
+                }
+            ]
+        },
+        "movement": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(MOVE|TO|DELAY)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "movement1": {
+            "patterns": [
+                {
+                    "match": "\\W\\$\\w+",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "\\W\\-?\\d+(\\.\\d+)?",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b([|])\\b",
+                    "name": "keyword.operator"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"",
+                    "name": "string"
+                }
+            ]
+        }
+    },
+    "scopeName": "robodk.comau"
+}

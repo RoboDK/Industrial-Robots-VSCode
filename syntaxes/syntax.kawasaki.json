@@ -1,0 +1,143 @@
+{
+    "name": "Kawasaki",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#fcn-call"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#control1"
+        },
+        {
+            "include": "#movement"
+        },
+        {
+            "include": "#built-in-var"
+        },
+        {
+            "include": "#built-in-fcn"
+        },
+        {
+            "include": "#built-in-types"
+        },
+        {
+            "include": "#built-in-types1"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "built-in-fcn": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(BASE|JMOVE|LMOVE|CALL|ALWAYS|NEVER)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "built-in-types": {
+            "patterns": [
+                {
+                    "match": "\\WMM\\/S",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "built-in-types1": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(TYPE|TWAIT|SIGNAL|WAIT|SIG|TOOL)\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "built-in-var": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(SPEED|ACCEL)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "comment": {
+            "patterns": [
+                {
+                    "begin": ";",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "\\.PROGRAM",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control1": {
+            "patterns": [
+                {
+                    "match": "\\.END",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "fcn-call": {
+            "patterns": [
+                {
+                    "begin": "%",
+                    "end": "%",
+                    "name": "string"
+                }
+            ]
+        },
+        "movement": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(TRANS|C1MOVE|C2MOVE)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "\\b-?\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(<|>)\\b",
+                    "name": "keyword.operator"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"",
+                    "name": "string"
+                }
+            ]
+        }
+    },
+    "scopeName": "robodk.kawasaki"
+}
