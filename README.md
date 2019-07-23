@@ -1,65 +1,51 @@
-# industrial-robots README
+# Industrial Robots README
 
-This is the README for your extension "industrial-robots". After writing up a brief description, we recommend including the following sections.
+Industrial Robots is an open source visual studio code and VSCodium extension that aims to provide syntax highlighting. This extension aims to support most of the industrial robots currently in use.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Currently Industrial Robots supports the following robots and their associated programing languages.
+> - ABB
+> - KUKA
+> - Comau
+> - Motoman
+> - Fanuc
+> - Universal Robots
+> - Staubli
+> - Kawasaki
 
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+Additional screenshots of the syntax highlighting are attached at the bottom
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Installing the add-on has no requirements, simply install Industrial Robots from within visual studio like any other add-on.
+If you are using RoboDK the add-on should already be installed in the integrated version of VSCodium.
 
-## Extension Settings
+## Building and making changes
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+The files in the python directory of the plugin are used to add and remove keywords and regular expressions to the add-on. The python scripts run under python 2 or 3. You edit the python called theme_NAME which relies uses a common library to apply the changes to the plugin.
 
-For example:
+Most of the functions contained within the python files are self descriptive and can be understood by looking at on the languages implementation.
 
-This extension contributes the following settings:
+repo_match() can either take a list of keywords to add to that category or a regular expression. If there is a "\\" at the start of the string it will be interpreted as a regular expression and passed as is to the json in field specified in the function.
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+If there is not a "\\" at the start of the string it will generate a regular expression that highlights all the space separated words in the string. As such you must not have any trailing spaces in these strings or the regular expression generated will break that files syntax.
+
+To add a new language you would make a new python file based on the currently existing ones and modify the keywords as necessary. After modifying and running the script you also need to manually edit the plugins package.json file and the files that where generated.
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+No known issues.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
 
 ### 1.0.0
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+Initial release of Industrial Robots plugin.
 
 -----------------------------------------------------------------------------------------------------------
 
-## Working with Markdown
+## Screenshots
 
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+![Image of Yaktocat](/screenshots/Fanuc.png)
