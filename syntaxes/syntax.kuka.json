@@ -58,8 +58,8 @@
         "built-in-var": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(BASE_DATA|TOOL_DATA|ADVANCE|TOOL|BASE|AXIS_ACT|ACT_EX_AX|EX_AX_DATA|#INITMOV|BWDSTART|INITMOV|VEL_PTP|ACC_PTP|VEL.CP|ANOUT|OUT|IN|ANIN|ON|OFF|TRUE|FALSE|$ACC|$VEL|$APO|C_DIS|C_PTP|$TIMER_STOP|$TIMER_FLAG|$TIMER)\\b",
-                    "name": "entity.name.function.c"
+                    "match": "(?i)\\b(BASE_DATA|TOOL_DATA|$ADVANCE|$TOOL|$BASE|$AXIS_ACT|$ACT_EX_AX|$EX_AX_DATA|#INITMOV|BWDSTART|INITMOV|VEL_PTP|ACC_PTP|ANOUT|OUT|IN|ANIN|ON|OFF|TRUE|FALSE|$ACC|$VEL|$APO|C_DIS|C_PTP|$TIMER_STOP|$TIMER_FLAG|$TIMER|$VEL.CP|$ACT_BASE|$APO.CPTP|$APO.CDIS|$VEL.ORI1|$VEL.ORI2|$ACC.ORI1|$ACC.ORI2)\\b",
+                    "name": "constant.language"
                 }
             ]
         },

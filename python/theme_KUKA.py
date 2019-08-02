@@ -47,12 +47,17 @@ match_type = "built-in-types"
 match = "DECL GLOBAL CONST INT REAL BOOL CHAR PRIO FRAME POS E6POS AXIS E6AXIS"
 repo_match(repository, match, name_builtInTypes, "built-in-types")
 
-match = "BASE_DATA TOOL_DATA ADVANCE TOOL BASE AXIS_ACT ACT_EX_AX EX_AX_DATA"
-match += " #INITMOV BWDSTART INITMOV VEL_PTP ACC_PTP VEL.CP"
+match = "BASE_DATA TOOL_DATA $ADVANCE $TOOL $BASE $AXIS_ACT $ACT_EX_AX $EX_AX_DATA"
+match += " #INITMOV BWDSTART INITMOV VEL_PTP ACC_PTP"
 match += " ANOUT OUT IN ANIN ON OFF TRUE FALSE"
 match += " $ACC $VEL $APO C_DIS C_PTP"
 match += " $TIMER_STOP $TIMER_FLAG $TIMER"
-repo_match(repository, match, name_builtInFcn, "built-in-var")
+match += " $VEL.CP $ACT_BASE $APO.CPTP $APO.CDIS"
+match += " $VEL.ORI1 $VEL.ORI2 $ACC.ORI1 $ACC.ORI2"
+
+# KUKA dollar sign does not work
+#match = match.replace('$','$$')
+repo_match(repository, match, name_builtInVar, "built-in-var")
 
 match_type = "operator"
 match = r'\\b= < > + - , ( ) { } [ ]\\b'
