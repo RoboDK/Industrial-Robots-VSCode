@@ -2,6 +2,8 @@
 
 The Industrial Robots extension for VSCode/VSCodium is an open source extension that aims to provide syntax highlighting for programs. This extension aims to support most of the industrial robots currently in use.
 
+If you installed [RoboDK v3.8.5 for Windows](https://robodk.com/download) or later you should already have this extension installed with VSCodium.
+
 ![VSCode in RoboDK](/screenshots/VSCode-in-RoboDK.png)
 
 ## Features
@@ -16,9 +18,19 @@ This extension currently supports the following robots and their corresponding r
  - Staubli (VAL3/XML)
  - Kawasaki (PRG)
 
+## About RoboDK
+
+This extension is developed and maintained by RoboDK Software. You can simulate and program any industrial robot with RoboDK. 
+
+Useful links:
+ - RoboDK Website: https://robodk.com/
+ - Robot post processors: https://robodk.com/doc/en/Post-Processors.html
+ - RoboDK API: https://github.com/RoboDK/RoboDK-API
+ 
 ## Requirements
 
 Installing the extension has no requirements, simply install Industrial Robots from within visual studio like any other add-on.
+
 If you installed RoboDK v3.8.5 or later you should have VSCodium with this extension available. VSCodium is a simplified version of VSCode with almost the same functionality.
 
 ## Building and making changes
