@@ -4,5 +4,6 @@
 vsc-extension-quickstart.md
 *package_model.json
 ./python/*
+./screenshots/*
 *.py
 *.rdk
