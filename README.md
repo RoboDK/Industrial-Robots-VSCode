@@ -7,7 +7,7 @@ The Industrial Robots extension for VSCode/VSCodium is an open source extension 
 ## Features
 
 This extension currently supports the following robots and their corresponding robot controllers and programing languages.
- - ABB (MOD,PRG files)
+ - ABB (MOD/PRG files)
  - KUKA (SRC/DAT files)
  - Comau (PDL)
  - Motoman (JBI)
