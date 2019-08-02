@@ -29,10 +29,238 @@
             "include": "#built-in-fcn"
         },
         {
+            "include": "#built-in-fcn1"
+        },
+        {
+            "include": "#built-in-fcn2"
+        },
+        {
             "include": "#built-in-types"
         },
         {
             "include": "#built-in-var"
+        },
+        {
+            "include": "#built-in-var1"
+        },
+        {
+            "include": "#built-in-var2"
+        },
+        {
+            "include": "#built-in-var3"
+        },
+        {
+            "include": "#built-in-var4"
+        },
+        {
+            "include": "#built-in-var5"
+        },
+        {
+            "include": "#built-in-var6"
+        },
+        {
+            "include": "#built-in-var7"
+        },
+        {
+            "include": "#built-in-var8"
+        },
+        {
+            "include": "#built-in-var9"
+        },
+        {
+            "include": "#built-in-var10"
+        },
+        {
+            "include": "#built-in-var11"
+        },
+        {
+            "include": "#built-in-var12"
+        },
+        {
+            "include": "#built-in-var13"
+        },
+        {
+            "include": "#built-in-var14"
+        },
+        {
+            "include": "#built-in-var15"
+        },
+        {
+            "include": "#built-in-var16"
+        },
+        {
+            "include": "#built-in-var17"
+        },
+        {
+            "include": "#built-in-var18"
+        },
+        {
+            "include": "#built-in-var19"
+        },
+        {
+            "include": "#built-in-var20"
+        },
+        {
+            "include": "#built-in-var21"
+        },
+        {
+            "include": "#built-in-var22"
+        },
+        {
+            "include": "#built-in-var23"
+        },
+        {
+            "include": "#built-in-var24"
+        },
+        {
+            "include": "#built-in-var25"
+        },
+        {
+            "include": "#built-in-var26"
+        },
+        {
+            "include": "#built-in-var27"
+        },
+        {
+            "include": "#built-in-var28"
+        },
+        {
+            "include": "#built-in-var29"
+        },
+        {
+            "include": "#built-in-var30"
+        },
+        {
+            "include": "#built-in-var31"
+        },
+        {
+            "include": "#built-in-var32"
+        },
+        {
+            "include": "#built-in-var33"
+        },
+        {
+            "include": "#built-in-var34"
+        },
+        {
+            "include": "#built-in-var35"
+        },
+        {
+            "include": "#built-in-var36"
+        },
+        {
+            "include": "#built-in-var37"
+        },
+        {
+            "include": "#built-in-var38"
+        },
+        {
+            "include": "#built-in-var39"
+        },
+        {
+            "include": "#built-in-var40"
+        },
+        {
+            "include": "#built-in-var41"
+        },
+        {
+            "include": "#built-in-var42"
+        },
+        {
+            "include": "#built-in-var43"
+        },
+        {
+            "include": "#built-in-var44"
+        },
+        {
+            "include": "#built-in-var45"
+        },
+        {
+            "include": "#built-in-var46"
+        },
+        {
+            "include": "#built-in-var47"
+        },
+        {
+            "include": "#built-in-var48"
+        },
+        {
+            "include": "#built-in-var49"
+        },
+        {
+            "include": "#built-in-var50"
+        },
+        {
+            "include": "#built-in-var51"
+        },
+        {
+            "include": "#built-in-var52"
+        },
+        {
+            "include": "#built-in-var53"
+        },
+        {
+            "include": "#built-in-var54"
+        },
+        {
+            "include": "#built-in-var55"
+        },
+        {
+            "include": "#built-in-var56"
+        },
+        {
+            "include": "#built-in-var57"
+        },
+        {
+            "include": "#built-in-var58"
+        },
+        {
+            "include": "#built-in-var59"
+        },
+        {
+            "include": "#built-in-var60"
+        },
+        {
+            "include": "#built-in-var61"
+        },
+        {
+            "include": "#built-in-var62"
+        },
+        {
+            "include": "#built-in-var63"
+        },
+        {
+            "include": "#built-in-var64"
+        },
+        {
+            "include": "#built-in-var65"
+        },
+        {
+            "include": "#built-in-var66"
+        },
+        {
+            "include": "#built-in-var67"
+        },
+        {
+            "include": "#built-in-var68"
+        },
+        {
+            "include": "#built-in-var69"
+        },
+        {
+            "include": "#built-in-var70"
+        },
+        {
+            "include": "#built-in-var71"
+        },
+        {
+            "include": "#built-in-var72"
+        },
+        {
+            "include": "#built-in-var73"
+        },
+        {
+            "include": "#built-in-var74"
         },
         {
             "include": "#operator"
@@ -43,6 +271,22 @@
             "patterns": [
                 {
                     "match": "(?i)\\b(BAS|SET_KRLMSG|EXISTS_KRLMSG|CLEAR_KRLMSG|TRIGGER|DISTANCE|SET_KRLDLG|EXISTS_KRLDLG|StrClear|LOOP_MSG|LOOP_CONT)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "built-in-fcn1": {
+            "patterns": [
+                {
+                    "match": "\\$LOOP_MSG",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "built-in-fcn2": {
+            "patterns": [
+                {
+                    "match": "\\$LOOP_CONT",
                     "name": "entity.name.function.c"
                 }
             ]
@@ -58,7 +302,599 @@
         "built-in-var": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(BASE_DATA|TOOL_DATA|$ADVANCE|$TOOL|$BASE|$AXIS_ACT|$ACT_EX_AX|$EX_AX_DATA|#INITMOV|BWDSTART|INITMOV|VEL_PTP|ACC_PTP|ANOUT|OUT|IN|ANIN|ON|OFF|TRUE|FALSE|$ACC|$VEL|$APO|C_DIS|C_PTP|$TIMER_STOP|$TIMER_FLAG|$TIMER|$VEL.CP|$ACT_BASE|$APO.CPTP|$APO.CDIS|$VEL.ORI1|$VEL.ORI2|$ACC.ORI1|$ACC.ORI2)\\b",
+                    "match": "(?i)\\b(BASE_DATA|TOOL_DATA|ADVANCE|TOOL|BASE|AXIS_ACT|ACT_EX_AX|EX_AX_DATA|INITMOV|BWDSTART|INITMOV|VEL_PTP|ACC_PTP|ANOUT|OUT|IN|ANIN|ON|OFF|TRUE|FALSE|ACC|VEL|APO|C_DIS|C_PTP|TIMER_STOP|TIMER_FLAG|TIMER|VEL.CP|ACT_BASE|APO.CPTP|APO.CDIS|VEL.ORI1|VEL.ORI2|ACC.ORI1|ACC.ORI2)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var1": {
+            "patterns": [
+                {
+                    "match": "\\#BASE_DATA",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var10": {
+            "patterns": [
+                {
+                    "match": "\\$BASE",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var11": {
+            "patterns": [
+                {
+                    "match": "\\#AXIS_ACT",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var12": {
+            "patterns": [
+                {
+                    "match": "\\$AXIS_ACT",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var13": {
+            "patterns": [
+                {
+                    "match": "\\#ACT_EX_AX",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var14": {
+            "patterns": [
+                {
+                    "match": "\\$ACT_EX_AX",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var15": {
+            "patterns": [
+                {
+                    "match": "\\#EX_AX_DATA",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var16": {
+            "patterns": [
+                {
+                    "match": "\\$EX_AX_DATA",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var17": {
+            "patterns": [
+                {
+                    "match": "\\#INITMOV",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var18": {
+            "patterns": [
+                {
+                    "match": "\\$INITMOV",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var19": {
+            "patterns": [
+                {
+                    "match": "\\#BWDSTART",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var2": {
+            "patterns": [
+                {
+                    "match": "\\$BASE_DATA",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var20": {
+            "patterns": [
+                {
+                    "match": "\\$BWDSTART",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var21": {
+            "patterns": [
+                {
+                    "match": "\\#INITMOV",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var22": {
+            "patterns": [
+                {
+                    "match": "\\$INITMOV",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var23": {
+            "patterns": [
+                {
+                    "match": "\\#VEL_PTP",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var24": {
+            "patterns": [
+                {
+                    "match": "\\$VEL_PTP",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var25": {
+            "patterns": [
+                {
+                    "match": "\\#ACC_PTP",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var26": {
+            "patterns": [
+                {
+                    "match": "\\$ACC_PTP",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var27": {
+            "patterns": [
+                {
+                    "match": "\\#ANOUT",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var28": {
+            "patterns": [
+                {
+                    "match": "\\$ANOUT",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var29": {
+            "patterns": [
+                {
+                    "match": "\\#OUT",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var3": {
+            "patterns": [
+                {
+                    "match": "\\#TOOL_DATA",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var30": {
+            "patterns": [
+                {
+                    "match": "\\$OUT",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var31": {
+            "patterns": [
+                {
+                    "match": "\\#IN",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var32": {
+            "patterns": [
+                {
+                    "match": "\\$IN",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var33": {
+            "patterns": [
+                {
+                    "match": "\\#ANIN",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var34": {
+            "patterns": [
+                {
+                    "match": "\\$ANIN",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var35": {
+            "patterns": [
+                {
+                    "match": "\\#ON",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var36": {
+            "patterns": [
+                {
+                    "match": "\\$ON",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var37": {
+            "patterns": [
+                {
+                    "match": "\\#OFF",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var38": {
+            "patterns": [
+                {
+                    "match": "\\$OFF",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var39": {
+            "patterns": [
+                {
+                    "match": "\\#TRUE",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var4": {
+            "patterns": [
+                {
+                    "match": "\\$TOOL_DATA",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var40": {
+            "patterns": [
+                {
+                    "match": "\\$TRUE",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var41": {
+            "patterns": [
+                {
+                    "match": "\\#FALSE",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var42": {
+            "patterns": [
+                {
+                    "match": "\\$FALSE",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var43": {
+            "patterns": [
+                {
+                    "match": "\\#ACC",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var44": {
+            "patterns": [
+                {
+                    "match": "\\$ACC",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var45": {
+            "patterns": [
+                {
+                    "match": "\\#VEL",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var46": {
+            "patterns": [
+                {
+                    "match": "\\$VEL",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var47": {
+            "patterns": [
+                {
+                    "match": "\\#APO",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var48": {
+            "patterns": [
+                {
+                    "match": "\\$APO",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var49": {
+            "patterns": [
+                {
+                    "match": "\\#C_DIS",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var5": {
+            "patterns": [
+                {
+                    "match": "\\#ADVANCE",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var50": {
+            "patterns": [
+                {
+                    "match": "\\$C_DIS",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var51": {
+            "patterns": [
+                {
+                    "match": "\\#C_PTP",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var52": {
+            "patterns": [
+                {
+                    "match": "\\$C_PTP",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var53": {
+            "patterns": [
+                {
+                    "match": "\\#TIMER_STOP",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var54": {
+            "patterns": [
+                {
+                    "match": "\\$TIMER_STOP",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var55": {
+            "patterns": [
+                {
+                    "match": "\\#TIMER_FLAG",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var56": {
+            "patterns": [
+                {
+                    "match": "\\$TIMER_FLAG",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var57": {
+            "patterns": [
+                {
+                    "match": "\\#TIMER",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var58": {
+            "patterns": [
+                {
+                    "match": "\\$TIMER",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var59": {
+            "patterns": [
+                {
+                    "match": "\\#VEL.CP",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var6": {
+            "patterns": [
+                {
+                    "match": "\\$ADVANCE",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var60": {
+            "patterns": [
+                {
+                    "match": "\\$VEL.CP",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var61": {
+            "patterns": [
+                {
+                    "match": "\\#ACT_BASE",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var62": {
+            "patterns": [
+                {
+                    "match": "\\$ACT_BASE",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var63": {
+            "patterns": [
+                {
+                    "match": "\\#APO.CPTP",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var64": {
+            "patterns": [
+                {
+                    "match": "\\$APO.CPTP",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var65": {
+            "patterns": [
+                {
+                    "match": "\\#APO.CDIS",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var66": {
+            "patterns": [
+                {
+                    "match": "\\$APO.CDIS",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var67": {
+            "patterns": [
+                {
+                    "match": "\\#VEL.ORI1",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var68": {
+            "patterns": [
+                {
+                    "match": "\\$VEL.ORI1",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var69": {
+            "patterns": [
+                {
+                    "match": "\\#VEL.ORI2",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var7": {
+            "patterns": [
+                {
+                    "match": "\\#TOOL",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var70": {
+            "patterns": [
+                {
+                    "match": "\\$VEL.ORI2",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var71": {
+            "patterns": [
+                {
+                    "match": "\\#ACC.ORI1",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var72": {
+            "patterns": [
+                {
+                    "match": "\\$ACC.ORI1",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var73": {
+            "patterns": [
+                {
+                    "match": "\\#ACC.ORI2",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var74": {
+            "patterns": [
+                {
+                    "match": "\\$ACC.ORI2",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var8": {
+            "patterns": [
+                {
+                    "match": "\\$TOOL",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var9": {
+            "patterns": [
+                {
+                    "match": "\\#BASE",
                     "name": "constant.language"
                 }
             ]
