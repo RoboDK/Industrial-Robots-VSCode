@@ -59,6 +59,8 @@ CONTROL_CODE	= 00000000 00000000;
   38:  MESSAGE[Wait for digital inp] ;
   39:  MESSAGE[ut 5 to turn ON] ;
   40:  WAIT DI[5]=ON ;
+  100:
+  9999:
 /POS
 P[1]{
    GP1:

@@ -27,6 +27,9 @@ match = r'\/POS' #regex for /POS
 repo_match(repository, match, name_control, "control")
 match = r'\/END' #regex for /END
 repo_match(repository, match, name_control, "control")
+#More of a built-in type but looks better as control
+match = r'\d+mm/sec' #regex for NUMmm/s
+repo_match(repository, match, name_control, "control")
 
 
 match = "MN POS WAIT DI END"
@@ -50,9 +53,9 @@ match = "DATE TIME deg mm FINE UF UT J1 J2 J3 J4 J5 J6 J7 J8 X Y Z W R READ_WRIT
 repo_match(repository, match, name_builtInTypes, "built-in-types")
 match = r'\b[LJ][\s]P\[\d\]' #regex for linear and joint movement
 repo_match(repository, match, name_builtInTypes, "built-in-types")
-match = r'\sPR\[\d,\d\]' #regex for single joint movement
+match = r'\sPR\[\d,\d\]' #regex for single joint movement PR[]
 repo_match(repository, match, name_builtInTypes, "built-in-types")
-match = r'\P\[\d\]' #regex for position configuration ex p[4]
+match = r'\PR?\[\d\]' #regex for position configuration ex p[4]
 repo_match(repository, match, name_builtInTypes, "built-in-types")
 
 
