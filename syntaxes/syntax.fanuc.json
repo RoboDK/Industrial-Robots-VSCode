@@ -107,7 +107,7 @@
         "built-in-types1": {
             "patterns": [
                 {
-                    "match": "\\b[LJ][\\s]P\\[\\d\\]",
+                    "match": "\\b[LJ][\\s]P\\[\\d+\\]",
                     "name": "storage.type.c"
                 }
             ]
@@ -123,7 +123,7 @@
         "built-in-types3": {
             "patterns": [
                 {
-                    "match": "\\PR?\\[\\d\\]",
+                    "match": "\\PR?\\[\\d+\\]",
                     "name": "storage.type.c"
                 }
             ]
@@ -156,7 +156,7 @@
         "control1": {
             "patterns": [
                 {
-                    "match": "\\s[^\\w]\\d+:",
+                    "match": "\\s\\d+:",
                     "name": "keyword.control"
                 }
             ]

@@ -15,7 +15,7 @@ repo_match(repository, match, name_numeric, "numbers")
 
 match = "PROG_SIZE CREATE MODIFIED FILE_NAME VERSION LINE_COUNT MEMORY_SIZE PROTECT TCD DEFAULT_GROUP CONTROL_CODE OWNER COMMENT"
 repo_match(repository, match, name_control, "control")
-match = r'\s[^\w]\d+:' #regex for line count ex 1:
+match = r'\s\d+:' #regex for line count ex 1:
 repo_match(repository, match, name_control, "control")
 match = r'\/PROG' #regex for /PROG
 repo_match(repository, match, name_control, "control")
@@ -51,11 +51,11 @@ repo_match(repository, match, name_builtInFcn, "built-in-fcn")
 
 match = "DATE TIME deg mm FINE UF UT J1 J2 J3 J4 J5 J6 J7 J8 X Y Z W R READ_WRITE ON OFF"
 repo_match(repository, match, name_builtInTypes, "built-in-types")
-match = r'\b[LJ][\s]P\[\d\]' #regex for linear and joint movement
+match = r'\b[LJ][\s]P\[\d+\]' #regex for linear and joint movement
 repo_match(repository, match, name_builtInTypes, "built-in-types")
 match = r'\sPR\[\d,\d\]' #regex for single joint movement PR[]
 repo_match(repository, match, name_builtInTypes, "built-in-types")
-match = r'\PR?\[\d\]' #regex for position configuration ex p[4]
+match = r'\PR?\[\d+\]' #regex for position configuration ex p[4]
 repo_match(repository, match, name_builtInTypes, "built-in-types")
 
 
