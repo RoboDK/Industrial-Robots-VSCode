@@ -58,17 +58,17 @@ No known issues.
 ## Screenshots
 
 ABB (MOD,PRG files)
-![ABB](/screenshots/ABB.png)
+![ABB](/screenshots/ABB.PNG)
 
 KUKA (SRC/DAT files)
-![KUKA](/screenshots/KUKA.png)
+![KUKA](/screenshots/KUKA.PNG)
 
 Motoman (JBI)
-![Motoman](/screenshots/Motoman.png)
+![Motoman](/screenshots/Motoman.PNG)
 
 Fanuc (LS files)
 ![Fanuc](/screenshots/Fanuc.png)
 
 Universal Robots (script)
-![Universal Robots](/screenshots/UR.png)
+![Universal Robots](/screenshots/UR.PNG)
 
