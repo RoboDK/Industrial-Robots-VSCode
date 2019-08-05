@@ -47,6 +47,8 @@ match = r'\sMESSAGE\[[a-zA-Z0-9\s]+\]' #regex for MESSAGE command
 repo_match(repository, match, name_builtInFcn, "built-in-fcn")
 match = r'\sUTOOL\[\d\]' #regex for UTOOL configuration
 repo_match(repository, match, name_builtInFcn, "built-in-fcn")
+match = r'\sUFRAME\[\d+\]3' #regex for UFRAME configuration
+repo_match(repository, match, name_builtInFcn, "built-in-fcn")
 
 
 match = "DATE TIME deg mm FINE UF UT J1 J2 J3 J4 J5 J6 J7 J8 X Y Z W R READ_WRITE ON OFF"

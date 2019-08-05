@@ -56,6 +56,9 @@
             "include": "#built-in-fcn2"
         },
         {
+            "include": "#built-in-fcn3"
+        },
+        {
             "include": "#built-in-types"
         },
         {
@@ -92,6 +95,14 @@
             "patterns": [
                 {
                     "match": "\\sUTOOL\\[\\d\\]",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "built-in-fcn3": {
+            "patterns": [
+                {
+                    "match": "\\sUFRAME\\[\\d+\\]",
                     "name": "entity.name.function.c"
                 }
             ]
