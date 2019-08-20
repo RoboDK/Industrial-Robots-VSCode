@@ -1,6 +1,6 @@
 # Industrial Robots extension for VSCode
 
-The Industrial Robots extension for VSCode/VSCodium is an open source extension that aims to provide syntax highlighting for programs. This extension aims to support most of the industrial robots currently in use.
+The Industrial Robots extension for VSCode/VSCodium is an open source extension that aims to provide syntax highlighting for programs. This extension aims to support all industrial robots currently in use.
 
 If you installed [RoboDK v4.0 for Windows](https://robodk.com/download) or later you should already have this extension installed with VSCodium.
 
