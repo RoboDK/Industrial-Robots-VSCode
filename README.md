@@ -64,10 +64,13 @@ KUKA KRC2 or KUKA KRC4(SRC/DAT files)
 ![KUKA](/screenshots/KUKA.PNG)
 
 Yaskawa Motoman (JBI)
-![Motoman](/screenshots/Motoman.PNG)
+![Motoman JBI](/screenshots/Motoman.PNG)
 
 Fanuc (LS files)
-![Fanuc](/screenshots/Fanuc.png)
+![Fanuc LS](/screenshots/Fanuc.PNG)
+
+Stäubli (VAL3)
+![Saubli VAL3](/screenshots/Staubli.PNG)
 
 Universal Robots (script)
 ![Universal Robots](/screenshots/Universal-Robots.PNG)
