@@ -67,7 +67,7 @@ Yaskawa Motoman (JBI)
 ![Motoman JBI](/screenshots/Motoman.PNG)
 
 Fanuc (LS files)
-![Fanuc LS](/screenshots/Fanuc.PNG)
+![Fanuc LS](/screenshots/Fanuc-LS.PNG)
 
 Stäubli (VAL3)
 ![Saubli VAL3](/screenshots/Staubli.PNG)
