@@ -57,18 +57,18 @@ No known issues.
 
 ## Screenshots
 
-ABB (MOD,PRG files)
+ABB IRC5 (MOD,PRG files)
 ![ABB](/screenshots/ABB.PNG)
 
-KUKA (SRC/DAT files)
+KUKA KRC2 or KUKA KRC4(SRC/DAT files)
 ![KUKA](/screenshots/KUKA.PNG)
 
-Motoman (JBI)
+Yaskawa Motoman (JBI)
 ![Motoman](/screenshots/Motoman.PNG)
 
 Fanuc (LS files)
 ![Fanuc](/screenshots/Fanuc.png)
 
 Universal Robots (script)
-![Universal Robots](/screenshots/UR.PNG)
+![Universal Robots](/screenshots/Universal-Robots.PNG)
 

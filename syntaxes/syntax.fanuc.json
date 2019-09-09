@@ -78,7 +78,7 @@
         "built-in-fcn": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(GP1|MESSAGE|UTOOL|PAUSE|UFRAME_NUM|UTOOL_NUM)\\b",
+                    "match": "(?i)\\b(GP1|MESSAGE|UFRAME|UTOOL|PAUSE|UFRAME_NUM|UTOOL_NUM)\\b",
                     "name": "entity.name.function.c"
                 }
             ]
@@ -102,7 +102,7 @@
         "built-in-fcn3": {
             "patterns": [
                 {
-                    "match": "\\sUFRAME\\[\\d+\\]",
+                    "match": "\\sUFRAME\\[\\d+\\]3",
                     "name": "entity.name.function.c"
                 }
             ]

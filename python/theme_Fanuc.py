@@ -41,7 +41,7 @@ repo_match(repository, match, name_movements, "movement")
 match = "STACK_SIZE TASK_PRIORITY TIME_SLICE BUSY_LAMP_OFF ABORT_REQUEST PAUSE_REQUEST CONFIG"
 repo_match(repository, match, name_builtInVar, "built-in-var")
 
-match = "GP1 MESSAGE UTOOL PAUSE UFRAME_NUM UTOOL_NUM"
+match = "GP1 MESSAGE UFRAME UTOOL PAUSE UFRAME_NUM UTOOL_NUM"
 repo_match(repository, match, name_builtInFcn, "built-in-fcn")
 match = r'\sMESSAGE\[[a-zA-Z0-9\s]+\]' #regex for MESSAGE command
 repo_match(repository, match, name_builtInFcn, "built-in-fcn")

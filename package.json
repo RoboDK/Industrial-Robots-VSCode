@@ -164,7 +164,7 @@
             ],
             "configuration": "./cnfg.universal_robots.json",
             "extensions": [
-                ".script"
+                ".pdl"
             ],
             "id": "universal_robots"
         }
