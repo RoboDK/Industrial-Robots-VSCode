@@ -2,8 +2,10 @@
 .vscode-test/**
 .gitignore
 vsc-extension-quickstart.md
-*package_model.json
-./python/*
-./screenshots/*
+package_model.json
+python/**
+examples/**
+screenshots/**
 *.py
 *.rdk
+*.ps1

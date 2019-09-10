@@ -1,17 +1,52 @@
 {
-  "name": "Robot Programming Theme",
-  "displayName": "Robot Programming",
-  "description": "Robot Programming Highlighting for industrial robots",
+  "name": "Industrial-Robots",
+  "displayName": "Industrial Robots",
+  "description": "Robot Programming Syntax Highlighting for Industrial Robots. Supported languages include: ABB, Fanuc, KUKA, Kawasaki, Yaskawa/Motoman, Stäubli, Universal Robots, ...",
   "icon": "icon.png",
-  "version": "0.0.1",
-  "publisher": "RoboDK Inc.",
+  "version": "0.1.2",
+  "publisher": "RoboDK",
   "engines": {
     "vscode": "^1.5.0"
   },
+  "author": {
+    "name": "RoboDK Inc."
+  },
+  "license": "MIT",
+  "homepage": "https://robodk.com/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/RoboDK/Industrial-Robots-VSCode.git"
+    "url": "https://github.com/RoboDK/Industrial-Robots-VSCode"
   },
+  "bugs": {
+      "url": "https://robodk.com/forum"
+  },
+  "keywords": [
+      "industrial robots",
+      "robot arm",
+      "robot simulation",
+      "offline programming",
+      "robot manufacturing",
+      "robot machining",
+      "pick and place",
+      "CAD",
+      "CAM",
+      "ABB",
+      "IRC5",
+      "RAPID",
+      "Fanuc",
+      "R30iA",
+      "LS",
+      "KUKA",
+      "KRC2",
+      "KRC4",
+      "Kawasaki",
+      "Yaskawa",
+      "Motoman",
+      "Inform",
+      "Staubli",
+      "VAL3",
+      "Universal Robots"
+  ],
   "categories": [
     "Programming Languages",
     "Other"
