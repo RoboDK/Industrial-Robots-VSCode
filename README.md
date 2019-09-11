@@ -59,25 +59,26 @@ No known issues.
 
 ABB IRC5 (MOD,PRG files)
 
-![ABB](/screenshots/ABB.PNG =800x)
+<img src="screenshots/ABB.PNG" alt="ABB IRC5 RAPID robot program" width="800px"/>
 
 KUKA KRC2 or KUKA KRC4(SRC/DAT files)
 
-![KUKA](/screenshots/KUKA.PNG =800x)
+<img src="screenshots/KUKA.PNG" alt="KUKA KRC robot program" width="800px"/>
 
 Yaskawa Motoman (JBI =800x)
 
-![Motoman JBI](/screenshots/Motoman.PNG =800x)
+<img src="screenshots/Motoman.PNG" alt="Motoman Inform JBI robot program" width="800px"/>
 
 Fanuc (LS files)
 
-![Fanuc LS](/screenshots/Fanuc-LS.PNG =800x)
+<img src="screenshots/Fanuc-LS.PNG" alt="Fanuc LS robot program" width="800px"/>
 
 Stäubli (VAL3)
 
-![Saubli VAL3](/screenshots/Staubli.PNG =800x)
+<img src="screenshots/Staubli.PNG" alt="Staubli VAL3 robot program" width="800px"/>
 
 Universal Robots (script)
 
-![Universal Robots](/screenshots/Universal-Robots.PNG =800x)
+<img src="screenshots/Universal-Robots.PNG" alt="Universal Robots Script robot program" width="800px"/>
+
 
