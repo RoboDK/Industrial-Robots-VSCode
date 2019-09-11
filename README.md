@@ -4,7 +4,7 @@ The Industrial Robots extension for VSCode/VSCodium is an open source extension 
 
 If you installed [RoboDK v4.0 for Windows](https://robodk.com/download) or later you should already have this extension installed with VSCodium.
 
-<img src="screenshots/VSCode-in-RoboDK.png" alt="VSCode in RoboDK" width="800px"/>
+<img src="https://raw.githubusercontent.com/RoboDK/Industrial-Robots-VSCode/master/screenshots/VSCode-in-RoboDK.png" alt="VSCode in RoboDK" width="800px"/>
 
 ## Features
 
@@ -57,28 +57,28 @@ No known issues.
 
 ## Screenshots
 
-ABB IRC5 (MOD,PRG files)
+ABB IRC5 (MOD/PRG files)
 
-<img src="screenshots/ABB.PNG" alt="ABB IRC5 RAPID robot program" width="800px"/>
+<img src="https://raw.githubusercontent.com/RoboDK/Industrial-Robots-VSCode/master/screenshots/ABB.PNG" alt="ABB IRC5 RAPID robot program" width="800px"/>
 
 KUKA KRC2 or KUKA KRC4(SRC/DAT files)
 
-<img src="screenshots/KUKA.PNG" alt="KUKA KRC robot program" width="800px"/>
+<img src="https://raw.githubusercontent.com/RoboDK/Industrial-Robots-VSCode/master/screenshots/KUKA.PNG" alt="KUKA KRC robot program" width="800px"/>
 
 Yaskawa Motoman (JBI =800x)
 
-<img src="screenshots/Motoman.PNG" alt="Motoman Inform JBI robot program" width="800px"/>
+<img src="https://raw.githubusercontent.com/RoboDK/Industrial-Robots-VSCode/master/screenshots/Motoman.PNG" alt="Motoman Inform JBI robot program" width="800px"/>
 
 Fanuc (LS files)
 
-<img src="screenshots/Fanuc-LS.PNG" alt="Fanuc LS robot program" width="800px"/>
+<img src="https://raw.githubusercontent.com/RoboDK/Industrial-Robots-VSCode/master/screenshots/Fanuc-LS.PNG" alt="Fanuc LS robot program" width="800px"/>
 
 Stäubli (VAL3)
 
-<img src="screenshots/Staubli.PNG" alt="Staubli VAL3 robot program" width="800px"/>
+<img src="https://raw.githubusercontent.com/RoboDK/Industrial-Robots-VSCode/master/screenshots/Staubli.PNG" alt="Staubli VAL3 robot program" width="800px"/>
 
 Universal Robots (script)
 
-<img src="screenshots/Universal-Robots.PNG" alt="Universal Robots Script robot program" width="800px"/>
+<img src="https://raw.githubusercontent.com/RoboDK/Industrial-Robots-VSCode/master/screenshots/Universal-Robots.PNG" alt="Universal Robots Script robot program" width="800px"/>
 
 
