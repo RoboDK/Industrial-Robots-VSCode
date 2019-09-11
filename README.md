@@ -4,7 +4,7 @@ The Industrial Robots extension for VSCode/VSCodium is an open source extension 
 
 If you installed [RoboDK v4.0 for Windows](https://robodk.com/download) or later you should already have this extension installed with VSCodium.
 
-![VSCode in RoboDK](/screenshots/VSCode-in-RoboDK.png =800x)
+<img src="screenshots/VSCode-in-RoboDK.png" alt="VSCode in RoboDK" width="800px"/>
 
 ## Features
 
