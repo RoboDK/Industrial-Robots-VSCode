@@ -4,7 +4,7 @@ The Industrial Robots extension for VSCode/VSCodium is an open source extension 
 
 If you installed [RoboDK v4.0 for Windows](https://robodk.com/download) or later you should already have this extension installed with VSCodium.
 
-![VSCode in RoboDK](/screenshots/VSCode-in-RoboDK.png)
+![VSCode in RoboDK](/screenshots/VSCode-in-RoboDK.png =800x)
 
 ## Features
 
@@ -58,20 +58,26 @@ No known issues.
 ## Screenshots
 
 ABB IRC5 (MOD,PRG files)
-![ABB](/screenshots/ABB.PNG)
+
+![ABB](/screenshots/ABB.PNG =800x)
 
 KUKA KRC2 or KUKA KRC4(SRC/DAT files)
-![KUKA](/screenshots/KUKA.PNG)
 
-Yaskawa Motoman (JBI)
-![Motoman JBI](/screenshots/Motoman.PNG)
+![KUKA](/screenshots/KUKA.PNG =800x)
+
+Yaskawa Motoman (JBI =800x)
+
+![Motoman JBI](/screenshots/Motoman.PNG =800x)
 
 Fanuc (LS files)
-![Fanuc LS](/screenshots/Fanuc-LS.PNG)
+
+![Fanuc LS](/screenshots/Fanuc-LS.PNG =800x)
 
 Stäubli (VAL3)
-![Saubli VAL3](/screenshots/Staubli.PNG)
+
+![Saubli VAL3](/screenshots/Staubli.PNG =800x)
 
 Universal Robots (script)
-![Universal Robots](/screenshots/Universal-Robots.PNG)
+
+![Universal Robots](/screenshots/Universal-Robots.PNG =800x)
 
