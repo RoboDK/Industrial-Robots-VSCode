@@ -135,7 +135,7 @@
     "ConfJ": {
         "prefix": "ConfJ",
         "body": [
-            "ConfJ {$1|\\On,\\Off|};"
+            "ConfJ ${1|\\On,\\Off|};"
         ],
         "description": "Configuration flag On/Off (MoveL)"
     }
@@ -143,7 +143,7 @@
     "ConfL": {
         "prefix": "ConfL",
         "body": [
-            "ConfL {$1|\\On,\\Off|};"
+            "ConfL ${1|\\On,\\Off|};"
         ],
         "description": "Configuration flag On/Off (MoveJ)"
     }
