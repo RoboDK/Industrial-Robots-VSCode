@@ -107,7 +107,9 @@
             "configuration": "./cnfg.abb.json",
             "extensions": [
                 ".sys",
+                ".sysx",
                 ".mod",
+                ".modx",
                 ".prg",
                 ".pgf"
             ],
