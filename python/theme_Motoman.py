@@ -1,6 +1,6 @@
 from update_themes import *
 
-#************************************  ABB RAPID language   **************************************
+#************************************  YASKAWA INFORM language   **************************************
 repository = {}
 #------------------------------------
 
@@ -46,20 +46,10 @@ match = r'\///GROUP\d+' #regex
 repo_match(repository, match, name_control, "control")
 
 
-match = r'\WP\d+' #regex for position use ex P00095
+match = r'\bP\d{5}' #regex for position use ex P00095
 repo_match(repository, match, name_control, "control")
-match = r'\WC\d+' #regex for position constant use ex C00001
+match = r'\b[BE]?C\d{5}' #regex for position constant use ex C00001, BC00001, EC00001
 repo_match(repository, match, name_control, "control")
-
-#Wont work
-#Ideal
-#match = r'C\d\d\d\d\d=(\-?\d+\.\d+[,\d])+'#REGEX for position constants ex C00002=418.570,147.321,251.179,-180.00,23.13,0.00
-#Workaround
-#match = r'\w\d\d\d\d\d=(\-?\d+[,\d\W])+'#REGEX for position constants ex C00002=418.570,147.321,251.179,-180.00,23.13,0.00
-match = r'\w\d\d\d\d\d='#REGEX for position constants ex C00002=418.570,147.321,251.179,-180.00,23.13,0.00
-repo_match(repository, match, name_control, "control")
-
-
 
 
 match = "MOVJ MOVL MOVC MOVS IMOV"

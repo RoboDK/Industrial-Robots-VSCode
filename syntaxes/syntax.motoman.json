@@ -62,9 +62,6 @@
             "include": "#control15"
         },
         {
-            "include": "#control16"
-        },
-        {
             "include": "#movement"
         },
         {
@@ -77,7 +74,7 @@
             "include": "#built-in-var2"
         },
         {
-            "include": "#control17"
+            "include": "#control16"
         },
         {
             "include": "#built-in-fcn"
@@ -187,7 +184,7 @@
         "control14": {
             "patterns": [
                 {
-                    "match": "\\WP\\d+",
+                    "match": "\\bP\\d{5}",
                     "name": "keyword.control"
                 }
             ]
@@ -195,20 +192,12 @@
         "control15": {
             "patterns": [
                 {
-                    "match": "\\WC\\d+",
+                    "match": "\\b[BE]?C\\d{5}",
                     "name": "keyword.control"
                 }
             ]
         },
         "control16": {
-            "patterns": [
-                {
-                    "match": "\\w\\d\\d\\d\\d\\d=",
-                    "name": "keyword.control"
-                }
-            ]
-        },
-        "control17": {
             "patterns": [
                 {
                     "match": "\\WTL#\\(\\d\\)",
