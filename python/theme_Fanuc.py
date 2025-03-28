@@ -4,7 +4,7 @@ from update_themes import *
 repository = {}
 #------------------------------------
 
-repo_begin_end(repository, "!", r'(?=\n)', name_comment, "comment")
+repo_begin_end(repository, r'(?<!IF.*)!', r'(?=\n)', name_comment, "comment")
 repo_begin_end(repository, r'"', r'"', name_string, "string")
 repo_begin_end(repository, r'CALL', r';', name_string, "fcn-call")
 

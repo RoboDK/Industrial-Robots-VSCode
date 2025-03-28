@@ -150,7 +150,7 @@
         "comment": {
             "patterns": [
                 {
-                    "begin": "!",
+                    "begin": "(?<!IF.*)!",
                     "end": "(?=\\n)",
                     "name": "comment"
                 }
