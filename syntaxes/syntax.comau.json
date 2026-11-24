@@ -8,9 +8,6 @@
             "include": "#string"
         },
         {
-            "include": "#fcn-call"
-        },
-        {
             "include": "#numbers"
         },
         {
@@ -52,15 +49,6 @@
                 {
                     "match": "(?i)\\b(PROGRAM|IMPORT|VAR|ROUTINE|BEGIN|END|EXPORTED|FROM|GLOBAL|REPEAT|UNTIL|IF|THEN|ENDIF)\\b",
                     "name": "keyword.control"
-                }
-            ]
-        },
-        "fcn-call": {
-            "patterns": [
-                {
-                    "begin": "CALL",
-                    "end": ";",
-                    "name": "string"
                 }
             ]
         },

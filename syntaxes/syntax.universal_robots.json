@@ -8,9 +8,6 @@
             "include": "#string"
         },
         {
-            "include": "#fcn-call"
-        },
-        {
             "include": "#numbers"
         },
         {
@@ -36,7 +33,7 @@
         "built-in-fcn": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(set_standard_digital_out|get_standard_digital_in|sync|set_tcp)\\b",
+                    "match": "(?i)\\b(set_tcp|set_payload|set_gravity|get_actual_joint_positions|get_actual_tcp_pose|get_target_joint_positions|get_target_tcp_pose|get_inverse_kin|get_forward_kin|pose_trans|pose_inv|pose_add|pose_sub|pose_dist|set_digital_out|get_digital_in|get_digital_out|set_analog_out|get_analog_in|set_tool_digital_out|get_tool_digital_in|set_tool_voltage|set_configurable_digital_out|get_configurable_digital_in|set_standard_digital_out|get_standard_digital_in|get_standard_digital_out|set_standard_analog_out|get_standard_analog_in|textmsg|str_cat|to_str|to_num|socket_open|socket_close|socket_send_string|socket_send_line|socket_send_int|socket_read_string|socket_read_ascii_float|socket_read_binary_integer|socket_set_var|socket_get_var|force_mode|end_force_mode|freedrive_mode|end_freedrive_mode|zero_ftsensor|get_tcp_force|rpc_factory|sin|cos|tan|asin|acos|atan|atan2|sqrt|pow|log|exp|floor|ceil|abs|norm|d2r|r2d)\\b",
                     "name": "entity.name.function.c"
                 }
             ]
@@ -52,7 +49,7 @@
         "built-in-var": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(global|TRUE|FALSE)\\b",
+                    "match": "(?i)\\b(global|local|True|False|None)\\b",
                     "name": "constant.language"
                 }
             ]
@@ -77,24 +74,15 @@
         "control": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(if|else|end|def|while)\\b",
+                    "match": "(?i)\\b(if|elif|else|end|def|sec|thread|while|return|run|kill|halt|break|continue|and|or|not)\\b",
                     "name": "keyword.control"
-                }
-            ]
-        },
-        "fcn-call": {
-            "patterns": [
-                {
-                    "begin": "CALL",
-                    "end": ";",
-                    "name": "string"
                 }
             ]
         },
         "movement": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(movej|movel|movec|popup|sleep)\\b",
+                    "match": "(?i)\\b(movej|movel|movec|movep|servoj|servoc|speedj|speedl|stopj|stopl|popup|sleep|sync)\\b",
                     "name": "entity.name.function.preprocessor.c"
                 }
             ]

@@ -14,28 +14,32 @@ repository = {}
 
 repo_begin_end(repository, "#", r'(?=\n)', name_comment, "comment")
 repo_begin_end(repository, r'"', r'"', name_string, "string")
-repo_begin_end(repository, r'CALL', r';', name_string, "fcn-call")
 
 #match = r'\\b[0-9]\\b'
 #match = '\\b-?\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b'
 match = r'\-?(?<![\w.])\d+(\.\d+)?\b' #regex for numeric constants (not digits inside identifiers)
 repo_match(repository, match, name_numeric, "numbers")
 
-match = "if else end def while"
+match = "if elif else end def sec thread while return run kill halt break continue and or not"
 repo_match(repository, match, name_control, "control")
 
 
-match = "movej movel movec popup sleep"
+match = "movej movel movec movep servoj servoc speedj speedl stopj stopl popup sleep sync"
 repo_match(repository, match, name_movements, "movement")
 #match = r"\W\$\w+" # regex $NAME is used for control variables ex $ORNT_TYPE
 #repo_match(repository, match, name_movements, "movement")
 
-match = "global TRUE FALSE"
+match = "global local True False None"
 repo_match(repository, match, name_builtInVar, "built-in-var")
 match = r'\p\[(-?\d+\.?\d+?,?\s?)+\]' #regex for xyzwpr position
 repo_match(repository, match, name_builtInVar, "built-in-var")
 
-match = "set_standard_digital_out get_standard_digital_in sync set_tcp"
+match = "set_tcp set_payload set_gravity get_actual_joint_positions get_actual_tcp_pose get_target_joint_positions get_target_tcp_pose get_inverse_kin get_forward_kin pose_trans pose_inv pose_add pose_sub pose_dist"
+match += " set_digital_out get_digital_in get_digital_out set_analog_out get_analog_in set_tool_digital_out get_tool_digital_in set_tool_voltage set_configurable_digital_out get_configurable_digital_in"
+match += " set_standard_digital_out get_standard_digital_in get_standard_digital_out set_standard_analog_out get_standard_analog_in"
+match += " textmsg str_cat to_str to_num socket_open socket_close socket_send_string socket_send_line socket_send_int socket_read_string socket_read_ascii_float socket_read_binary_integer socket_set_var socket_get_var"
+match += " force_mode end_force_mode freedrive_mode end_freedrive_mode zero_ftsensor get_tcp_force rpc_factory"
+match += " sin cos tan asin acos atan atan2 sqrt pow log exp floor ceil abs norm d2r r2d"
 repo_match(repository, match, name_builtInFcn, "built-in-fcn")
 
 
