@@ -57,7 +57,7 @@ def repo_match(repo, match, name, match_type):
 def update_config(id_lang, config_i):
     file_config = getFileConfig(id_lang) 
     file_str = ToJSON(config_i)
-    with open("../" + file_config, "w") as fid:
+    with open("../" + file_config, "w", newline="\n") as fid:
         fid.write(file_str)
 
 def update_syntax(id_lang, repository_i):
@@ -78,7 +78,7 @@ def update_syntax(id_lang, repository_i):
         syntax_i["repository"] = repository_i
         file_str = ToJSON(syntax_i)
         #print(file_str)
-        with open("../" + file_syntax, "w") as fid:
+        with open("../" + file_syntax, "w", newline="\n") as fid:
             fid.write(file_str)
 
 
@@ -130,7 +130,7 @@ def update_themes_all():
     #global config_i
     languages = []
 
-    import os, glob, codecs
+    import os, glob
     import copy
     #os.chdir(".")
 
@@ -139,11 +139,13 @@ def update_themes_all():
     language_i = {}
 
     # Iterate through all theme files
-    theme_files = glob.glob("./theme_*.py")
+    # Sort so that package.json does not depend on filesystem order
+    theme_files = sorted(glob.glob("./theme_*.py"), key=str.lower)
     for file in theme_files:
         # Execute the file
         print("\nRunning theme: " + file + " ...")
-        file_text = codecs.open(file, "r", "utf-8").read()
+        with open(file, "r", encoding="utf-8") as fid:
+            file_text = fid.read()
         exec(file_text, globals())
         print("Done with " + file)
 
@@ -184,8 +186,8 @@ def update_themes_all():
 
     str_package_contributes = ToJSON(package)
 
-    with open("../package.json", "w") as fout:
-        with open("../package_model.json") as fin:
+    with open("../package.json", "w", newline="\n") as fout:
+        with open("../package_model.json", newline="") as fin:
             for line in fin:
                 fout.write(line.replace("###contributes###", str_package_contributes))
                 
