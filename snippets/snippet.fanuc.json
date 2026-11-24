@@ -1,18 +1,16 @@
 {
-    "module": {
+    "joint_move": {
         "prefix": "J",
         "body": [
-            "    :J P[${1:position_id}] ${1:speed}% FINE ;"
+            "    :J P[${1:position_id}] ${2:100}% FINE ;"
         ],
-        "description": "Joint Movement"
+        "description": "Joint movement"
     },
-    "module": {
+    "linear_move": {
         "prefix": "L",
         "body": [
-            "    :L P[${1:position_id}] ${1:speed}mm/s FINE ;"
+            "    :L P[${1:position_id}] ${2:100}mm/sec FINE ;"
         ],
-        "description": "Joint Movement"
-    },
-    
-    
+        "description": "Linear movement"
+    }
 }
