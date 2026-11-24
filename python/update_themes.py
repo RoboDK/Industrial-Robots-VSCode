@@ -28,7 +28,8 @@ def matchRegex(string):
     if string.startswith("\\"):
         return string
     
-    return "(?i)\\b(" + string.replace(" ", "|") +")\\b"
+    # Escape dots so that keywords such as VEL.CP do not use . as a wildcard
+    return "(?i)\\b(" + string.replace(".", "\\.").replace(" ", "|") +")\\b"
     
     
 def repo_begin_end(repo, begin, end, name, match_type):

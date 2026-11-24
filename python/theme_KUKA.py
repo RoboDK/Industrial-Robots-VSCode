@@ -66,13 +66,12 @@ match += " VEL.ORI1 VEL.ORI2 ACC.ORI1 ACC.ORI2"
 repo_match(repository, match, name_builtInVar, "built-in-var")
 
 #Kuka variables can also be accessed with a # or a $
-for word in match.split():
-    matchKeyWord1 = '\\#'
-    matchKeyWord1 += word
-    matchKeyWord2 = '\\$'
-    matchKeyWord2 += word
-    repo_match(repository, matchKeyWord1, name_builtInVar, "built-in-var")
-    repo_match(repository, matchKeyWord2, name_builtInVar, "built-in-var")
+#One rule with the longest names first so that $VEL.CP wins over $VEL
+import re
+words = sorted(match.split(), key=len, reverse=True)
+alternatives = "|".join(re.escape(w) for w in words)
+match = r'\#(?i:' + alternatives + r')\b|\$(?i:' + alternatives + r')\b'
+repo_match(repository, match, name_builtInVar, "built-in-var")
 
 #matchlist = r"$ACC $ADVANCE $TOOL $BASE $AXIS_ACT $ACT_EX_AX $EX_AX_DATA #INITMOV $ACC $VEL $APO"
 #matchlist += r" $TIMER_STOP $TIMER_FLAG $TIMER $VEL.CP $ACT_BASE $APO.CPTP $APO.CDIS"
