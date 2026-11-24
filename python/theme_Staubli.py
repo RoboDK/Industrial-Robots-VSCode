@@ -51,12 +51,6 @@ language_i["aliases"]     = "Staubli Scara Stäubli".split(" ")
 language_i["extensions"]  = ".pgx .pjx .dtx".split(" ")
 language_i["configuration"] = getFileConfig(language_i["id"])
 config_i["comments"] = {"lineComment": "//" }
-config_i["folding"] = {
-        "markers": {
-            "start": r'%%%',
-            "end": r'%%%'
-        }
-    }
 
 print("Updating syntax...")
 update_syntax(language_i["id"], repository)

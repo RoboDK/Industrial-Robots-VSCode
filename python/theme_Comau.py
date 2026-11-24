@@ -47,8 +47,8 @@ language_i["configuration"] = getFileConfig(language_i["id"])
 config_i["comments"] = {"lineComment": "--" }
 config_i["folding"] = {
         "markers": {
-            "start": r'POS',
-            "end": r'END'
+            "start": r'^\s*BEGIN\b',
+            "end": r'^\s*END\b'
         }
     }
 

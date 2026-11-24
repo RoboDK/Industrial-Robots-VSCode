@@ -40,8 +40,8 @@
     },
     "folding": {
         "markers": {
-            "end": "END",
-            "start": "POS"
+            "end": "^\\s*END\\b",
+            "start": "^\\s*BEGIN\\b"
         }
     },
     "surroundingPairs": [
