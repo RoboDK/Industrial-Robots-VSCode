@@ -8,7 +8,7 @@ If you installed [RoboDK v4.0 for Windows](https://robodk.com/download) or later
 
 ## Features
 
-This extension currently supports the following robots and their corresponding robot controllers and programing languages.
+This extension currently supports the following robots and their corresponding robot controllers and programming languages.
  - ABB (MOD/PRG files)
  - KUKA (SRC/DAT files)
  - Comau (PDL)
@@ -44,7 +44,7 @@ Most of the functions contained within the python files are self descriptive and
 
 repo_match() can either take a list of keywords to add to that category or a regular expression. If there is a "\\" at the start of the string it will be interpreted as a regular expression and passed as is to the json in field specified in the function. If there isn't a "\\" at the start of the string it will generate a regular expression that highlights all the space separated words in the string. As such you must not have any trailing spaces in these strings or the regular expression generated will break that files syntax.
 
-To add a new language you would create a new python file based on the currently existing ones and modify the keywords as necessary. After modifying and running the script you also need to manually edit the plugins package.json file and the files that where generated.
+To add a new language you would create a new python file based on the currently existing ones and modify the keywords as necessary. After modifying and running the script you also need to manually edit the plugins package.json file and the files that were generated.
 
 ## Known Issues
 
