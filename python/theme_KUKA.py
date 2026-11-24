@@ -11,7 +11,7 @@ repo_begin_end(repository, ";", r'(?=\n)', name_comment, "comment")
 repo_begin_end(repository, r'"', r'"', name_string, "string")
 
 # Declaration of external calls
-repo_begin_end(repository, r'EXT', r'( )', name_string, "fcn-call")
+repo_begin_end(repository, r'\bEXT\b', r'( )', name_string, "fcn-call")
 
 # Special header comment match
 match = r'\&.+'

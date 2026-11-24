@@ -919,7 +919,7 @@
         "fcn-call": {
             "patterns": [
                 {
-                    "begin": "EXT",
+                    "begin": "\\bEXT\\b",
                     "end": "( )",
                     "name": "string"
                 }
