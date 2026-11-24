@@ -15,6 +15,10 @@ repo_match(repository, match, name_numeric, "numbers")
 
 match = "PROG_SIZE CREATE MODIFIED FILE_NAME VERSION LINE_COUNT MEMORY_SIZE PROTECT TCD DEFAULT_GROUP CONTROL_CODE OWNER COMMENT"
 repo_match(repository, match, name_control, "control")
+match = r'\bLBL\[\d+\]' #regex for labels ex LBL[1] (before the keyword list so the full token wins)
+repo_match(repository, match, name_control, "control")
+match = "IF THEN ELSE ENDIF JMP LBL FOR ENDFOR SELECT RUN ABORT AND OR NOT"
+repo_match(repository, match, name_control, "control")
 match = r'\s\d+:' #regex for line count ex 1:
 repo_match(repository, match, name_control, "control")
 match = r'\/PROG' #regex for /PROG
@@ -30,6 +34,8 @@ repo_match(repository, match, name_control, "control")
 #More of a built-in type but looks better as control
 match = r'\d+mm/sec' #regex for NUMmm/s
 repo_match(repository, match, name_control, "control")
+match = r'\d+%' #regex for joint speed ex 50%
+repo_match(repository, match, name_control, "control")
 
 
 # Specific patterns go before the keyword list: when two rules match at the
@@ -42,6 +48,8 @@ repo_match(repository, match, name_movements, "movement")
 
 match = "STACK_SIZE TASK_PRIORITY TIME_SLICE BUSY_LAMP_OFF ABORT_REQUEST PAUSE_REQUEST CONFIG"
 repo_match(repository, match, name_builtInVar, "built-in-var")
+match = r'\b(R|AR|SR|GI|GO|AI|AO|RI|RO|UI|UO|SI|SO|F|TIMER)\[\d+\]' #regex for registers and I/O ex R[1], TIMER[2]
+repo_match(repository, match, name_builtInVar, "built-in-var")
 
 match = r'\bMESSAGE\[[^\]]*\]' #regex for MESSAGE command
 repo_match(repository, match, name_builtInFcn, "built-in-fcn")
@@ -53,6 +61,8 @@ match = "GP1 MESSAGE UFRAME UTOOL PAUSE UFRAME_NUM UTOOL_NUM"
 repo_match(repository, match, name_builtInFcn, "built-in-fcn")
 
 
+match = r'\bCNT\d+' #regex for continuous termination ex CNT50
+repo_match(repository, match, name_builtInTypes, "built-in-types")
 match = "DATE TIME deg mm FINE UF UT J1 J2 J3 J4 J5 J6 J7 J8 X Y Z W R READ_WRITE ON OFF"
 repo_match(repository, match, name_builtInTypes, "built-in-types")
 match = r'\b[LJ][\s]P\[\d+\]' #regex for linear and joint movement
