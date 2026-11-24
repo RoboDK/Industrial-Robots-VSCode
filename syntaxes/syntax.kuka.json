@@ -960,7 +960,7 @@
         "operator": {
             "patterns": [
                 {
-                    "match": "\\\\b= < > + - , ( ) { } [ ]\\\\b",
+                    "match": "\\==|<>|<=|>=|[-+*/=<>]",
                     "name": "keyword.operator"
                 }
             ]

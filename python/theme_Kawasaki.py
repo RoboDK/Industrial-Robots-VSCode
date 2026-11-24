@@ -36,7 +36,7 @@ match = r"TYPE TWAIT SIGNAL WAIT SIG TOOL"
 repo_match(repository, match, name_builtInTypes, "built-in-types")
 
 
-match = "< >" # &lt;TDN&gt; &lt;DDN&gt; &lt;RDN&gt; &lt;PAR&gt; &lt;ALT&gt; &lt;DIM&gt; &lt;SMT&gt; &lt;VAR&gt; &lt;EIT&gt; &lt;CSE&gt; &lt;EXP&gt; &lt;ARG&gt; &lt;ID&gt; "
+match = r'\==|<>|<=|>=|[-+*/=<>]' #regex for operators
 repo_match(repository, match, name_operator, "operator")
 
 

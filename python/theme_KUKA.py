@@ -85,7 +85,7 @@ for word in match.split():
 
 
 match_type = "operator"
-match = r'\\b= < > + - , ( ) { } [ ]\\b'
+match = r'\==|<>|<=|>=|[-+*/=<>]' #regex for operators
 repo_match(repository, match, name_operator, "operator")
 
 

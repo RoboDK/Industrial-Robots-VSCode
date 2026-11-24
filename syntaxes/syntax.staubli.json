@@ -33,9 +33,6 @@
         },
         {
             "include": "#built-in-fcn3"
-        },
-        {
-            "include": "#operator"
         }
     ],
     "repository": {
@@ -118,14 +115,6 @@
                 {
                     "match": "\\b-?\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b",
                     "name": "constant.numeric.c"
-                }
-            ]
-        },
-        "operator": {
-            "patterns": [
-                {
-                    "match": "(?i)\\b(!)\\b",
-                    "name": "keyword.operator"
                 }
             ]
         },

@@ -157,7 +157,7 @@
         "operator": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(<|>)\\b",
+                    "match": "\\:=|<>|<=|>=|[-+*/=<>]",
                     "name": "keyword.operator"
                 }
             ]

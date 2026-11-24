@@ -42,8 +42,6 @@ match = "x y z rx ry rz shoulder elbow wrist fatherId type size j1 j2 j3 j4 j5 j
 #repo_match(repository, match, name_builtInTypes, "built-in-types")
 repo_match(repository, match, name_builtInFcn, "built-in-fcn")
 
-match = "!" # &lt;TDN&gt; &lt;DDN&gt; &lt;RDN&gt; &lt;PAR&gt; &lt;ALT&gt; &lt;DIM&gt; &lt;SMT&gt; &lt;VAR&gt; &lt;EIT&gt; &lt;CSE&gt; &lt;EXP&gt; &lt;ARG&gt; &lt;ID&gt; "
-repo_match(repository, match, name_operator, "operator")
 
 
 config_i = dict(default_config)
