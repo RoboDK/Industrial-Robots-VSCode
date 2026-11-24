@@ -24,9 +24,9 @@
     "function": {
 		"prefix": "func",
 		"body": [
-			"FUNCTION ${1:name}()",
-            "\t$2",
-            "\treturn ${3:return}",
+			"FUNC ${1:num} ${2:name}()",
+            "\t$3",
+            "\tRETURN ${4:value};",
 			"ENDFUNC"
 		],
 		"description": "Function definition"
@@ -107,14 +107,14 @@
     "robtarget": {
         "prefix": "robtarget",
         "body": [
-            "{$1|CONST,PERS,VAR|} robtarget ${2:name} := [[0, 0, 0], [1,0,0,0], [0,0,0,0], [9E9,9E9,9E9,9E9,9E9,9E9]];"
+            "${1|CONST,PERS,VAR|} robtarget ${2:name} := [[0, 0, 0], [1,0,0,0], [0,0,0,0], [9E9,9E9,9E9,9E9,9E9,9E9]];"
         ],
         "description": "robtarget declaration"
     },
     "jointtarget": {
         "prefix": "jointtarget",
         "body": [
-            "{$1|CONST,PERS,VAR|} jointtarget ${2:name} := [[0, 0, 0, 0, 0, 0],[9E9,9E9,9E9,9E9,9E9,9E9]];"
+            "${1|CONST,PERS,VAR|} jointtarget ${2:name} := [[0, 0, 0, 0, 0, 0],[9E9,9E9,9E9,9E9,9E9,9E9]];"
         ],
         "description": "jointtarget variable declaration"
     },
@@ -137,14 +137,13 @@
         "body": [
             "ConfJ ${1|\\On,\\Off|};"
         ],
-        "description": "Configuration flag On/Off (MoveL)"
-    }
-    ,
+        "description": "Joint configuration control On/Off (MoveJ, MoveAbsJ)"
+    },
     "ConfL": {
         "prefix": "ConfL",
         "body": [
             "ConfL ${1|\\On,\\Off|};"
         ],
-        "description": "Configuration flag On/Off (MoveJ)"
+        "description": "Linear configuration control On/Off (MoveL, MoveC)"
     }
 }
