@@ -18,7 +18,7 @@ match = r'\&.+'
 repo_match(repository, match, name_numeric, "numbers")
 
 #Numeric constants
-match = r'\-?\d+(\.\d+)?'
+match = r'\-?(?<![\w.])\d+(\.\d+)?\b' #regex for numeric constants (not digits inside identifiers)
 repo_match(repository, match, name_numeric, "numbers")
 
 # 

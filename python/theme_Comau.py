@@ -10,7 +10,7 @@ repo_begin_end(repository, r'CALL', r';', name_string, "fcn-call")
 
 #match = r'\\b[0-9]\\b'
 #match = '\\b-?\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b'
-match = r'\W\-?\d+(\.\d+)?' #regex for numeric constants
+match = r'\-?(?<![\w.])\d+(\.\d+)?\b' #regex for numeric constants (not digits inside identifiers)
 repo_match(repository, match, name_numeric, "numbers")
 
 match = "PROGRAM IMPORT VAR ROUTINE BEGIN END EXPORTED FROM GLOBAL"

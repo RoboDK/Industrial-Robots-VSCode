@@ -952,7 +952,7 @@
         "numbers1": {
             "patterns": [
                 {
-                    "match": "\\-?\\d+(\\.\\d+)?",
+                    "match": "\\-?(?<![\\w.])\\d+(\\.\\d+)?\\b",
                     "name": "constant.numeric.c"
                 }
             ]

@@ -11,7 +11,7 @@ repo_begin_end(repository, r'"', r'"', name_string, "string")
 repo_begin_end(repository, r'%', r'%', name_string, "fcn-call")
 
 #match = r'\\b[0-9]\\b'
-match = r'\-?\d+(\.\d+)?' #regex for numeric constants
+match = r'\-?(?<![\w.])\d+(\.\d+)?\b' #regex for numeric constants (not digits inside identifiers)
 repo_match(repository, match, name_numeric, "numbers")
 
 #Because of the complicated use of / in the header the easy method won't work

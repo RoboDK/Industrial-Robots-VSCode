@@ -83,7 +83,7 @@
         "numbers": {
             "patterns": [
                 {
-                    "match": "\\W\\-?\\d+(\\.\\d+)?",
+                    "match": "\\-?(?<![\\w.])\\d+(\\.\\d+)?\\b",
                     "name": "constant.numeric.c"
                 }
             ]
