@@ -58,12 +58,12 @@ repo_match(repository, match, name_movements, "movement")
 match = "V VJ"
 repo_match(repository, match, name_builtInVar, "built-in-var")
 #regex for output ex OT#(5)
-match = r'\WOT#\(\d\)'
+match = r'\bOT#\(\d+\)'
 repo_match(repository, match, name_builtInVar, "built-in-var")
 #regex for input IN#(5)
-match = r'\WIN#\(\d\)'
+match = r'\bIN#\(\d+\)'
 repo_match(repository, match, name_builtInVar, "built-in-var")
-match = r'\WTL#\(\d\)' #regex for tool number use ex TL#(9)
+match = r'\bTL#\(\d+\)' #regex for tool number use ex TL#(9), TL#(10)
 repo_match(repository, match, name_control, "control")
 
 
