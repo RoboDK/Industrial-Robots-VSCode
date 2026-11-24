@@ -20,7 +20,7 @@ repo_match(repository, match, name_control, "control")
 
 match = "MOVE TO DELAY"
 repo_match(repository, match, name_movements, "movement")
-match = r"\W\$\w+" # regex $NAME is used for control variables ex $ORNT_TYPE
+match = r"\$\w+" # regex $NAME is used for control variables ex $ORNT_TYPE
 repo_match(repository, match, name_movements, "movement")
 
 match = "SPD_LIN ON OFF TRUE FALSE RS_WORLD JOINT LINEAR CIRCULAR NOSETTLE FLY_CART FLY_PASS POS"
@@ -30,7 +30,7 @@ repo_match(repository, match, name_builtInVar, "built-in-var")
 #repo_match(repository, match, name_builtInFcn, "built-in-fcn")
 
 
-#match = r"\W\$\w+" # regex $NAME is used for control variables ex $ORNT_TYPE
+#match = r"\$\w+" # regex $NAME is used for control variables ex $ORNT_TYPE
 #repo_match(repository, match, name_builtInTypes, "built-in-types")
 
 

@@ -91,7 +91,7 @@
         "built-in-var3": {
             "patterns": [
                 {
-                    "match": "\\WD_OUT_\\d+",
+                    "match": "\\bD_OUT_\\d+",
                     "name": "constant.language"
                 }
             ]
@@ -99,7 +99,7 @@
         "built-in-var4": {
             "patterns": [
                 {
-                    "match": "\\WD_IN_\\d+",
+                    "match": "\\bD_IN_\\d+",
                     "name": "constant.language"
                 }
             ]

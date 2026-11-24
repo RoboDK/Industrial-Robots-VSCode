@@ -32,9 +32,9 @@ match = "version xmlns xsi name access CDATA key file link alias path"
 #Programming related keywords
 match += " popUpMsg delay WAIT FOR waitEndMove TIMEOUT stackSize millimeterUnit"
 repo_match(repository, match, name_builtInFcn, "built-in-fcn")
-match = r'\Wd[oi]\d+' #regex for do#/di# ex do5
+match = r'\bd[oi]\d+\b' #regex for do#/di# ex do5
 repo_match(repository, match, name_builtInFcn, "built-in-fcn")
-match = r'\W[a-zA-Z]+\(\)' #regex for void function call ex waitEndMove()
+match = r'\b[a-zA-Z]+\(\)' #regex for void function call ex waitEndMove()
 repo_match(repository, match, name_builtInFcn, "built-in-fcn")
 
 match = "x y z rx ry rz shoulder elbow wrist fatherId type size j1 j2 j3 j4 j5 j6 accel vel decel tmax rmax blend leave reach ioLink"

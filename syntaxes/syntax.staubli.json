@@ -47,7 +47,7 @@
         "built-in-fcn1": {
             "patterns": [
                 {
-                    "match": "\\Wd[oi]\\d+",
+                    "match": "\\bd[oi]\\d+\\b",
                     "name": "entity.name.function.c"
                 }
             ]
@@ -55,7 +55,7 @@
         "built-in-fcn2": {
             "patterns": [
                 {
-                    "match": "\\W[a-zA-Z]+\\(\\)",
+                    "match": "\\b[a-zA-Z]+\\(\\)",
                     "name": "entity.name.function.c"
                 }
             ]

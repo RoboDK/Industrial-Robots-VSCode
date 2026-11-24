@@ -30,7 +30,7 @@ match = "BASE JMOVE LMOVE CALL ALWAYS NEVER"
 repo_match(repository, match, name_builtInFcn, "built-in-fcn")
 
 
-match = r'\WMM\/S' #regex for mm/s
+match = r'\bMM\/S' #regex for mm/s
 repo_match(repository, match, name_builtInTypes, "built-in-types")
 match = r"TYPE TWAIT SIGNAL WAIT SIG TOOL"
 repo_match(repository, match, name_builtInTypes, "built-in-types")

@@ -50,7 +50,7 @@
         "built-in-types": {
             "patterns": [
                 {
-                    "match": "\\WMM\\/S",
+                    "match": "\\bMM\\/S",
                     "name": "storage.type.c"
                 }
             ]

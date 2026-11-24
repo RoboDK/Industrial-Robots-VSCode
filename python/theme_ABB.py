@@ -27,9 +27,9 @@ match = r'\\On' #regex for \On
 repo_match(repository, match, name_builtInVar, "built-in-var")
 match = r'\\Off' #regex for \Off
 repo_match(repository, match, name_builtInVar, "built-in-var")
-match = r'\WD_OUT_\d+' #regex for D_OUT_#
+match = r'\bD_OUT_\d+' #regex for D_OUT_#
 repo_match(repository, match, name_builtInVar, "built-in-var")
-match = r'\WD_IN_\d+' #regex for D_IN_#
+match = r'\bD_IN_\d+' #regex for D_IN_#
 repo_match(repository, match, name_builtInVar, "built-in-var")
 match = r'\\WObj:' #regex for \WObj:
 repo_match(repository, match, name_builtInVar, "built-in-var")
