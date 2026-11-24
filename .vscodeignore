@@ -1,11 +1,13 @@
 .vscode/**
 .vscode-test/**
 .gitignore
+.gitattributes
 vsc-extension-quickstart.md
 package_model.json
 python/**
 examples/**
 screenshots/**
+CLAUDE.md
 *.py
 *.rdk
 *.ps1
