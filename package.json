@@ -212,16 +212,8 @@
             "path": "./snippets/snippet.abb.json"
         },
         {
-            "language": "Comau",
-            "path": "./snippets/snippet.comau.json"
-        },
-        {
             "language": "Fanuc",
             "path": "./snippets/snippet.fanuc.json"
-        },
-        {
-            "language": "Kawasaki",
-            "path": "./snippets/snippet.kawasaki.json"
         },
         {
             "language": "KUKA",
@@ -230,14 +222,6 @@
         {
             "language": "Motoman",
             "path": "./snippets/snippet.motoman.json"
-        },
-        {
-            "language": "Staubli",
-            "path": "./snippets/snippet.staubli.json"
-        },
-        {
-            "language": "universal_robots",
-            "path": "./snippets/snippet.universal_robots.json"
         }
     ]
 }

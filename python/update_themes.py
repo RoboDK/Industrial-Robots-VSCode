@@ -179,7 +179,11 @@ def update_themes_all():
         snippets_i["path"] = file_snippet    
 
         grammars.append(grammar_i)
-        snippets.append(snippets_i)
+        # Snippet files are hand written: only reference the ones that exist
+        if os.path.isfile("../" + file_snippet):
+            snippets.append(snippets_i)
+        else:
+            print("No snippet file for %s (%s)" % (id_lang, file_snippet))
 
     package["grammars"] = grammars
     package["snippets"] = snippets
