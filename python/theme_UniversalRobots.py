@@ -1,13 +1,6 @@
 from update_themes import *
 
-#Mostly just python,
-#You can add the file assosiation in the users settings.json or 
-#just copy paste the one in this directory over the old one.
-#You can find your settings.json in the following locations
-#Windows %APPDATA%\Code\User\settings.json
-#macOS $HOME/Library/Application Support/Code/User/settings.json
-#Linux $HOME/.config/Code/User/settings.json
-#This file just adds the keywords python is missing for now
+#URScript: a Python-like language used by Universal Robots controllers
 #************************************  Universal robots Listing language   **************************************
 repository = {}
 #------------------------------------
