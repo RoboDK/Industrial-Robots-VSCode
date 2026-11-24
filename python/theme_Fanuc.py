@@ -32,22 +32,24 @@ match = r'\d+mm/sec' #regex for NUMmm/s
 repo_match(repository, match, name_control, "control")
 
 
-match = "MN POS WAIT DI END"
+# Specific patterns go before the keyword list: when two rules match at the
+# same position TextMate keeps the first one, so DO[10] must come before DO
+match = r'\bD[OI]\[\d+\]' #regex for DI and DO ex DO[1], DI[101]
 repo_match(repository, match, name_movements, "movement")
-match = r'\sD[OI]\[\d\]' #regex for DI and DO ex DO[1]
+match = "MN POS WAIT DI END"
 repo_match(repository, match, name_movements, "movement")
 
 
 match = "STACK_SIZE TASK_PRIORITY TIME_SLICE BUSY_LAMP_OFF ABORT_REQUEST PAUSE_REQUEST CONFIG"
 repo_match(repository, match, name_builtInVar, "built-in-var")
 
+match = r'\bMESSAGE\[[^\]]*\]' #regex for MESSAGE command
+repo_match(repository, match, name_builtInFcn, "built-in-fcn")
+match = r'\bUTOOL\[\d+\]' #regex for UTOOL configuration
+repo_match(repository, match, name_builtInFcn, "built-in-fcn")
+match = r'\bUFRAME\[\d+\]' #regex for UFRAME configuration
+repo_match(repository, match, name_builtInFcn, "built-in-fcn")
 match = "GP1 MESSAGE UFRAME UTOOL PAUSE UFRAME_NUM UTOOL_NUM"
-repo_match(repository, match, name_builtInFcn, "built-in-fcn")
-match = r'\sMESSAGE\[[a-zA-Z0-9\s]+\]' #regex for MESSAGE command
-repo_match(repository, match, name_builtInFcn, "built-in-fcn")
-match = r'\sUTOOL\[\d\]' #regex for UTOOL configuration
-repo_match(repository, match, name_builtInFcn, "built-in-fcn")
-match = r'\sUFRAME\[\d+\]3' #regex for UFRAME configuration
 repo_match(repository, match, name_builtInFcn, "built-in-fcn")
 
 
@@ -55,9 +57,9 @@ match = "DATE TIME deg mm FINE UF UT J1 J2 J3 J4 J5 J6 J7 J8 X Y Z W R READ_WRIT
 repo_match(repository, match, name_builtInTypes, "built-in-types")
 match = r'\b[LJ][\s]P\[\d+\]' #regex for linear and joint movement
 repo_match(repository, match, name_builtInTypes, "built-in-types")
-match = r'\sPR\[\d,\d\]' #regex for single joint movement PR[]
+match = r'\bPR\[\d+,\d+\]' #regex for position register element ex PR[9,1]
 repo_match(repository, match, name_builtInTypes, "built-in-types")
-match = r'\PR?\[\d+\]' #regex for position configuration ex p[4]
+match = r'\bPR?\[\d+\]' #regex for position or position register ex P[4], PR[9]
 repo_match(repository, match, name_builtInTypes, "built-in-types")
 
 

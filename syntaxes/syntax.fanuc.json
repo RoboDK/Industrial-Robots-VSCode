@@ -78,7 +78,7 @@
         "built-in-fcn": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(GP1|MESSAGE|UFRAME|UTOOL|PAUSE|UFRAME_NUM|UTOOL_NUM)\\b",
+                    "match": "\\bMESSAGE\\[[^\\]]*\\]",
                     "name": "entity.name.function.c"
                 }
             ]
@@ -86,7 +86,7 @@
         "built-in-fcn1": {
             "patterns": [
                 {
-                    "match": "\\sMESSAGE\\[[a-zA-Z0-9\\s]+\\]",
+                    "match": "\\bUTOOL\\[\\d+\\]",
                     "name": "entity.name.function.c"
                 }
             ]
@@ -94,7 +94,7 @@
         "built-in-fcn2": {
             "patterns": [
                 {
-                    "match": "\\sUTOOL\\[\\d\\]",
+                    "match": "\\bUFRAME\\[\\d+\\]",
                     "name": "entity.name.function.c"
                 }
             ]
@@ -102,7 +102,7 @@
         "built-in-fcn3": {
             "patterns": [
                 {
-                    "match": "\\sUFRAME\\[\\d+\\]3",
+                    "match": "(?i)\\b(GP1|MESSAGE|UFRAME|UTOOL|PAUSE|UFRAME_NUM|UTOOL_NUM)\\b",
                     "name": "entity.name.function.c"
                 }
             ]
@@ -126,7 +126,7 @@
         "built-in-types2": {
             "patterns": [
                 {
-                    "match": "\\sPR\\[\\d,\\d\\]",
+                    "match": "\\bPR\\[\\d+,\\d+\\]",
                     "name": "storage.type.c"
                 }
             ]
@@ -134,7 +134,7 @@
         "built-in-types3": {
             "patterns": [
                 {
-                    "match": "\\PR?\\[\\d+\\]",
+                    "match": "\\bPR?\\[\\d+\\]",
                     "name": "storage.type.c"
                 }
             ]
@@ -232,7 +232,7 @@
         "movement": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(MN|POS|WAIT|DI|END)\\b",
+                    "match": "\\bD[OI]\\[\\d+\\]",
                     "name": "entity.name.function.preprocessor.c"
                 }
             ]
@@ -240,7 +240,7 @@
         "movement1": {
             "patterns": [
                 {
-                    "match": "\\sD[OI]\\[\\d\\]",
+                    "match": "(?i)\\b(MN|POS|WAIT|DI|END)\\b",
                     "name": "entity.name.function.preprocessor.c"
                 }
             ]
