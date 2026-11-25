@@ -26,6 +26,7 @@
   {"post": "Epson_RC", "file": "MAIN_1.prg", "language": "Epson"},
   {"post": "Estun_RCS2", "file": "MAIN_1.erd", "language": "Estun"},
   {"post": "Estun_RCS2", "file": "MAIN_1.erp", "language": "Estun"},
+  {"post": "Estun_RCS3", "file": "MainModule.jlt", "language": "Estun_RCS3"},
   {"post": "Fanuc_R30i", "file": "MAIN_1.LS", "language": "Fanuc"},
   {"post": "Fanuc_R30i", "file": "PROG1_with.LS", "language": "Fanuc"},
   {"post": "Fanuc_RJ3", "file": "MAIN_1.LS", "language": "Fanuc"},

@@ -1,0 +1,125 @@
+{
+    "name": "Estun_RCS3",
+    "scopeName": "robodk.estun_rcs3",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#types"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#constant"
+        },
+        {
+            "include": "#type-annotation"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "#=",
+                    "end": "=#",
+                    "name": "comment"
+                },
+                {
+                    "begin": "#",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][-+]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "\\b(MovCircle|MovC|MovH|MovJ|MovL)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "\\b(continue|function|elseif|export|import|module|return|struct|begin|break|const|using|while|else|end|for|let|var|if|in)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "types": {
+            "patterns": [
+                {
+                    "match": "\\b(Float64|Payload|Poscfg|String|Coord|Speed|Apos|Bool|Cpos|Dict|Tool|Zone|Int)\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "\\b(SetBlendParam|PulseOut|SetCoord|SetTool|WaitIO|Print|SetAO|SetDO|Wait)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "constant": {
+            "patterns": [
+                {
+                    "match": "\\b(nothing|false|true)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "type-annotation": {
+            "patterns": [
+                {
+                    "match": "::",
+                    "name": "keyword.operator"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "==|!=|<=|>=|[-+*/=<>]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}

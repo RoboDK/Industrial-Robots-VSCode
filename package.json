@@ -547,6 +547,17 @@
         "configuration": "./cnfg.estun.json"
       },
       {
+        "id": "Estun_RCS3",
+        "aliases": [
+          "Estun RCS3",
+          "Estun Julia"
+        ],
+        "extensions": [
+          ".jlt"
+        ],
+        "configuration": "./cnfg.estun_rcs3.json"
+      },
+      {
         "id": "Chaifu",
         "aliases": [
           "Chaifu",
@@ -796,6 +807,11 @@
         "language": "Estun",
         "scopeName": "robodk.estun",
         "path": "./syntaxes/syntax.estun.json"
+      },
+      {
+        "language": "Estun_RCS3",
+        "scopeName": "robodk.estun_rcs3",
+        "path": "./syntaxes/syntax.estun_rcs3.json"
       },
       {
         "language": "Chaifu",
