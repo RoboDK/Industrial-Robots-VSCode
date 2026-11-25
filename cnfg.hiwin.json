@@ -1,0 +1,61 @@
+{
+    "comments": {
+        "lineComment": ";"
+    },
+    "brackets": [
+        [
+            "(",
+            ")"
+        ],
+        [
+            "[",
+            "]"
+        ],
+        [
+            "{",
+            "}"
+        ]
+    ],
+    "autoClosingPairs": [
+        [
+            "(",
+            ")"
+        ],
+        [
+            "[",
+            "]"
+        ],
+        [
+            "{",
+            "}"
+        ],
+        [
+            "\"",
+            "\""
+        ]
+    ],
+    "surroundingPairs": [
+        [
+            "(",
+            ")"
+        ],
+        [
+            "[",
+            "]"
+        ],
+        [
+            "{",
+            "}"
+        ],
+        [
+            "\"",
+            "\""
+        ]
+    ],
+    "folding": {
+        "markers": {
+            "start": "(?i)^\\s*(WHILE|FOR|IF|LOOP|REPEAT|SWITCH|DEF|DEFFCT)\\b",
+            "end": "(?i)^\\s*(ENDWHILE|ENDFOR|ENDIF|ENDLOOP|UNTIL|ENDSWITCH|END|ENDFCT)\\b"
+        }
+    }
+}

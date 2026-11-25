@@ -407,6 +407,18 @@
         "configuration": "./cnfg.gsk.json"
       },
       {
+        "id": "HIWIN",
+        "aliases": [
+          "HIWIN",
+          "HRSS",
+          "HRB"
+        ],
+        "extensions": [
+          ".hrb"
+        ],
+        "configuration": "./cnfg.hiwin.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -576,6 +588,11 @@
         "language": "GSK",
         "scopeName": "robodk.gsk",
         "path": "./syntaxes/syntax.gsk.json"
+      },
+      {
+        "language": "HIWIN",
+        "scopeName": "robodk.hiwin",
+        "path": "./syntaxes/syntax.hiwin.json"
       }
     ],
     "snippets": [
