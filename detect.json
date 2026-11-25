@@ -11,6 +11,7 @@
     {"id": "Omron", "patterns": ["^\\s*(MOVES?|APPROS?|DEPARTS?|ATTACH|DETACH|SELECT ROBOT)\\b", "\\bMMPS\\b"]}
   ],
   ".script": [
+    {"id": "Techman", "patterns": ["^\\s*(PTP|Line|Circle)\\(\"[JC][PA][PR]\"", "^main\\s*\\{"]},
     {"id": "python", "patterns": ["\\bcc_client\\.\\w+\\("]},
     {"id": "lua", "patterns": ["^\\s*function\\s+[\\w.:]+\\s*\\(.*\\)\\s*$"]}
   ],

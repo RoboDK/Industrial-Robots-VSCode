@@ -339,6 +339,19 @@
         "configuration": "./cnfg.newker.json"
       },
       {
+        "id": "Techman",
+        "aliases": [
+          "Techman",
+          "TMscript",
+          "TM Robot",
+          "Omron TM"
+        ],
+        "extensions": [
+          ".scpt"
+        ],
+        "configuration": "./cnfg.techman.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -478,6 +491,11 @@
         "language": "NEWKer",
         "scopeName": "robodk.newker",
         "path": "./syntaxes/syntax.newker.json"
+      },
+      {
+        "language": "Techman",
+        "scopeName": "robodk.techman",
+        "path": "./syntaxes/syntax.techman.json"
       }
     ],
     "snippets": [
