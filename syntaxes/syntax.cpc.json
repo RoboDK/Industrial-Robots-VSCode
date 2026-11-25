@@ -1,0 +1,158 @@
+{
+    "name": "CPC",
+    "scopeName": "robodk.cpc",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#xml-tag"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#parameter"
+        },
+        {
+            "include": "#io"
+        },
+        {
+            "include": "#sub-call"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#built-in-2"
+        },
+        {
+            "include": "#constant"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "//",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                },
+                {
+                    "begin": "\\(\\*",
+                    "end": "\\*\\)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "xml-tag": {
+            "patterns": [
+                {
+                    "match": "</?[A-Za-z_][\\w:.-]*|/?>|<\\?xml|\\?>",
+                    "name": "entity.name.tag"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "\\bMC_\\w*Move\\w*",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "\\bMC_\\w+",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "parameter": {
+            "patterns": [
+                {
+                    "match": "#\\w+(?=\\s*:=)",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "io": {
+            "patterns": [
+                {
+                    "match": "\\b(DO|DI|AO|AI)(?=\\[)",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "sub-call": {
+            "patterns": [
+                {
+                    "match": "\\b[A-Za-z_]\\w*(?=\\s*\\(\\s*\\))",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "\\b(END_FUNCTION|END_WHILE|FUNCTION|END_FOR|END_SUB|END_VAR|END_IF|RETURN|ELSIF|WHILE|ELSE|THEN|FOR|SUB|VAR|DO|IF|TO)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "built-in-2": {
+            "patterns": [
+                {
+                    "match": "\\b(Print|Sleep)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "constant": {
+            "patterns": [
+                {
+                    "match": "\\b(FALSE|TRUE)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": ":=|==|<>|<=|>=|[-+*/=<>]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}

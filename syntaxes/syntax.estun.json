@@ -1,0 +1,142 @@
+{
+    "name": "Estun",
+    "scopeName": "robodk.estun",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#scope-prefix"
+        },
+        {
+            "include": "#label"
+        },
+        {
+            "include": "#data-type"
+        },
+        {
+            "include": "#field"
+        },
+        {
+            "include": "#sub-call"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#constant"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "//",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "scope-prefix": {
+            "patterns": [
+                {
+                    "match": "\\bt_[lsg](?=\\.)",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "label": {
+            "patterns": [
+                {
+                    "match": "^\\s*(Start|End)\\b[:;]?",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "data-type": {
+            "patterns": [
+                {
+                    "match": "(?<=_type=\")[A-Za-z]+(?=\")",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "field": {
+            "patterns": [
+                {
+                    "match": "\\b[A-Za-z_]\\w*(?==)",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "sub-call": {
+            "patterns": [
+                {
+                    "match": "\\b[A-Za-z_]\\w*(?=\\s*\\(\\s*\\))",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][-+]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "\\b(MovJSearch|MovLSearch|MovCircle|MovC|MovH|MovJ|MovL)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "\\b(SetBlendParam|SetPayload|SetCoord|SetTool|Return|WaitDI|WaitDO|Delay|Print|SetAO|SetDO|Call|Wait)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "constant": {
+            "patterns": [
+                {
+                    "match": "\\b(false|true)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "==|~=|<=|>=|[-+*/=<>]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}

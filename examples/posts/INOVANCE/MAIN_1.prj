@@ -1,0 +1,17 @@
+{
+  "FileType": "RobotProjectConfigFile",
+  "Company": "Inovance",
+  "MajorVersion": 2,
+  "MinorVersion": 1,
+  "IsMainActive": true,
+  "MultiTaskCount": 0,
+  "MultiTaskInfos": [],
+  "ProgramFilesCount": 1,
+  "ProgramFiles": [
+    "main.pro"
+  ],
+  "RobPointFilesCount": 1,
+  "RobPointFiles": [
+    "P.pts"
+  ]
+}

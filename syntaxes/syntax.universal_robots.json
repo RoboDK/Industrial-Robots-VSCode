@@ -8,6 +8,9 @@
             "include": "#string"
         },
         {
+            "include": "#string-single"
+        },
+        {
             "include": "#numbers"
         },
         {
@@ -23,6 +26,9 @@
             "include": "#built-in-var1"
         },
         {
+            "include": "#urcap-functions"
+        },
+        {
             "include": "#built-in-fcn"
         },
         {
@@ -33,7 +39,7 @@
         "built-in-fcn": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(set_tcp|set_payload|set_gravity|get_actual_joint_positions|get_actual_tcp_pose|get_target_joint_positions|get_target_tcp_pose|get_inverse_kin|get_forward_kin|pose_trans|pose_inv|pose_add|pose_sub|pose_dist|set_digital_out|get_digital_in|get_digital_out|set_analog_out|get_analog_in|set_tool_digital_out|get_tool_digital_in|set_tool_voltage|set_configurable_digital_out|get_configurable_digital_in|set_standard_digital_out|get_standard_digital_in|get_standard_digital_out|set_standard_analog_out|get_standard_analog_in|textmsg|str_cat|to_str|to_num|socket_open|socket_close|socket_send_string|socket_send_line|socket_send_int|socket_read_string|socket_read_ascii_float|socket_read_binary_integer|socket_set_var|socket_get_var|force_mode|end_force_mode|freedrive_mode|end_freedrive_mode|zero_ftsensor|get_tcp_force|rpc_factory|sin|cos|tan|asin|acos|atan|atan2|sqrt|pow|log|exp|floor|ceil|abs|norm|d2r|r2d)\\b",
+                    "match": "(?i)\\b(set_tcp|set_payload|set_gravity|get_actual_joint_positions|get_actual_tcp_pose|get_target_joint_positions|get_target_tcp_pose|get_inverse_kin|get_forward_kin|pose_trans|pose_inv|pose_add|pose_sub|pose_dist|set_digital_out|get_digital_in|get_digital_out|set_analog_out|get_analog_in|set_tool_digital_out|get_tool_digital_in|set_tool_voltage|set_configurable_digital_out|get_configurable_digital_in|set_standard_digital_out|get_standard_digital_in|get_standard_digital_out|set_standard_analog_out|get_standard_analog_in|textmsg|str_cat|to_str|to_num|socket_open|socket_close|socket_send_string|socket_send_line|socket_send_int|socket_read_string|socket_read_ascii_float|socket_read_binary_integer|socket_set_var|socket_get_var|force_mode|end_force_mode|freedrive_mode|end_freedrive_mode|zero_ftsensor|get_tcp_force|rpc_factory|sin|cos|tan|asin|acos|atan|atan2|sqrt|pow|log|exp|floor|ceil|abs|norm|d2r|r2d|track_conveyor_linear|track_conveyor_circular|stop_conveyor_tracking|set_conveyor_tick_count|get_conveyor_tick_count|conveyor_pulse_decode|enter_critical|exit_critical|set_runstate_standard_digital_output_to_value|set_runstate_configurable_digital_output_to_value|set_runstate_tool_digital_output_to_value|set_tool_analog_input_domain|set_analog_inputrange|set_analog_outputdomain|set_standard_analog_input_domain|get_steptime|attach_frame|frame_tracking_enable|frame_tracking_disable|write_output_integer_register|write_output_float_register|write_output_boolean_register|read_input_integer_register|read_input_float_register|read_input_boolean_register|read_output_integer_register|read_port_bit|write_port_bit|read_port_register|write_port_register|get_actual_joint_speeds|get_actual_tcp_speed|get_actual_tool_flange_pose|get_tcp_offset|get_joint_torques|get_target_tcp_speed|interpolate_pose|is_within_safety_limits|is_steady|wrench_trans|set_target_payload|set_safety_mode_transition_hardness|teach_mode|end_teach_mode|position_deviation_warning|reset_revolution_counter|set_pos|stopc|servol|speedl|movej|movel|str_len|str_at|str_sub|str_find|str_empty|length|binary_list_to_integer|integer_to_binary_list|point_dist|rotvec2rpy|rpy2rotvec|random|powerdown|set_flag|get_flag|get_configurable_digital_out|get_tool_digital_out|get_standard_analog_out|get_tool_analog_in|set_tool_communication|set_tool_digital_output_mode)\\b",
                     "name": "entity.name.function.c"
                 }
             ]
@@ -41,7 +47,7 @@
         "built-in-fcn1": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(speed_ms|speed_rads|accel_mss|accel_radss|blend_radius_m|blocking)\\b",
+                    "match": "(?i)\\b(speed_ms|speed_rads|accel_mss|accel_radss|blend_radius_m|blocking|a|v|r|t)\\b",
                     "name": "entity.name.function.c"
                 }
             ]
@@ -74,7 +80,7 @@
         "control": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(if|elif|else|end|def|sec|thread|while|return|run|kill|halt|break|continue|and|or|not)\\b",
+                    "match": "(?i)\\b(if|elif|else|end|def|sec|thread|while|return|run|kill|halt|break|continue|and|or|not|join)\\b",
                     "name": "keyword.control"
                 }
             ]
@@ -101,6 +107,23 @@
                     "begin": "\"",
                     "end": "\"",
                     "name": "string"
+                }
+            ]
+        },
+        "string-single": {
+            "patterns": [
+                {
+                    "begin": "'",
+                    "end": "'|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "urcap-functions": {
+            "patterns": [
+                {
+                    "match": "\\b(rq_\\w+|axis_group_\\w+|\\w+_with_axis_group|modbus_\\w+|socket_\\w+|rpc_\\w+)\\b(?=\\s*\\()",
+                    "name": "entity.name.function.c"
                 }
             ]
         }

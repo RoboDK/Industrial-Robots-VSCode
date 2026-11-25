@@ -1,0 +1,150 @@
+{
+    "name": "GPL",
+    "scopeName": "robodk.gpl",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#header"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#object"
+        },
+        {
+            "include": "#member"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#types"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#constant"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "'",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                },
+                {
+                    "match": "^\\s*%.*$",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "header": {
+            "patterns": [
+                {
+                    "match": "^\\s*(VERSION|Creator)(?=:)",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "\\bMove\\.\\w+",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "object": {
+            "patterns": [
+                {
+                    "match": "\\b(Controller|Robot|Signal|Thread|Math|Console|Latch|Location|Profile|RefFrame)\\b(?=\\.)",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "member": {
+            "patterns": [
+                {
+                    "match": "(?<=\\.)[A-Za-z_]\\w*",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][-+]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(Function|Finally|Imports|Private|ElseIf|Module|Public|Return|Select|Shared|ByRef|ByVal|Catch|Class|Const|Throw|Until|While|Case|Else|Exit|GoTo|Loop|Next|Step|Then|Dim|End|For|New|Sub|Try|As|Do|If|To)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "types": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(Exception|Location|RefFrame|Boolean|Integer|Profile|Double|Object|Single|String|Thread|Short|Byte|Long)\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "\\b(BASE_FRAME|TOOL_FRAME)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "constant": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(Nothing|False|True)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(AndAlso|OrElse|And|Mod|Not|Xor|Or)\\b",
+                    "name": "keyword.operator"
+                },
+                {
+                    "match": "<>|<=|>=|[-+*/=<>&]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}

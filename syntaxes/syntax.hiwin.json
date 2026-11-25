@@ -1,0 +1,153 @@
+{
+    "name": "HIWIN",
+    "scopeName": "robodk.hiwin",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#system-variable"
+        },
+        {
+            "include": "#tool-base"
+        },
+        {
+            "include": "#motion-parameter"
+        },
+        {
+            "include": "#axis"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#types"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#constant"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": ";",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "system-variable": {
+            "patterns": [
+                {
+                    "match": "\\$[A-Za-z_]\\w*",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "tool-base": {
+            "patterns": [
+                {
+                    "match": "\\b(TOOL|BASE)\\[\\d+\\]",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "motion-parameter": {
+            "patterns": [
+                {
+                    "match": "\\b(Vel|Acc)(?==)|(?<=\\d)(mm/s|%)",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "axis": {
+            "patterns": [
+                {
+                    "match": "\\b(A[1-6]|E[1-6]|[XYZABC])(?=\\s+-?\\.?\\d)",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "\\b(CIRC_REL|LIN_REL|PTP_REL|SPLINE|CIRC|LIN|PTP)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "\\b(ENDSWITCH|CONTINUE|ENDWHILE|DEFAULT|ENDLOOP|DEFFCT|ENDFCT|ENDFOR|REPEAT|RETURN|SWITCH|ENDIF|UNTIL|WHILE|CASE|ELSE|EXIT|GOTO|HALT|LOOP|STEP|THEN|WAIT|DEF|END|FOR|SEC|IF|TO)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "types": {
+            "patterns": [
+                {
+                    "match": "\\b(E6POINT|E6AXIS|GLOBAL|CONST|E6POS|FRAME|BOOL|CHAR|DECL|REAL|INT)\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "\\b(SET_OVERRIDE_SPEED|ADD_PAYLOAD|SET_PAYLOAD|SET_SPEED|SET_BASE|SET_TOOL|SET_ACC|C_LIN|C_PTP|CLIN|CONT|CPTP|FINE)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "constant": {
+            "patterns": [
+                {
+                    "match": "\\b(FALSE|TRUE|OFF|ON)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "==|!=|<>|<=|>=|[-+*/=<>]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}

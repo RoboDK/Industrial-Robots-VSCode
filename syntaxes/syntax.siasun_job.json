@@ -1,0 +1,175 @@
+{
+    "name": "Siasun_JOB",
+    "scopeName": "robodk.siasun_job",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#section"
+        },
+        {
+            "include": "#line-number"
+        },
+        {
+            "include": "#point"
+        },
+        {
+            "include": "#io"
+        },
+        {
+            "include": "#motion-parameter"
+        },
+        {
+            "include": "#message"
+        },
+        {
+            "include": "#field"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#constant"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "//",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "section": {
+            "patterns": [
+                {
+                    "match": "^/[A-Z_]+\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "line-number": {
+            "patterns": [
+                {
+                    "match": "^\\d+\\s*:",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "point": {
+            "patterns": [
+                {
+                    "match": "\\bP\\d+\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "io": {
+            "patterns": [
+                {
+                    "match": "\\b(OT|IN)#\\d+|\\b(AO|AI)\\d+\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "motion-parameter": {
+            "patterns": [
+                {
+                    "match": "\\b(VJ|VL|VC|ACC|DEC|CNT|PL|T)(?==)",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "message": {
+            "patterns": [
+                {
+                    "match": "(?<=\\bMESSAGE)\\[[^\\]\\n]*\\]",
+                    "name": "string"
+                }
+            ]
+        },
+        "field": {
+            "patterns": [
+                {
+                    "match": "\\b[A-Z][A-Z_0-9]*(?=\\s*=)",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "\\b(MOVC|MOVJ|MOVL|MOVS)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "\\b(ENDWHILE|ELSEIF|ENDIF|LABEL|WHILE|CALL|ELSE|JUMP|END|NOP|RET|IF)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "\\b(MESSAGE|DELAY|PULSE|AOUT|DATE|TIME|WAIT|DEC|INC|OUT|SET)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "constant": {
+            "patterns": [
+                {
+                    "match": "\\b(OFF|ON)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "[-+*/=<>]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}

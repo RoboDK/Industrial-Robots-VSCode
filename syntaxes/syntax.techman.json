@@ -1,0 +1,125 @@
+{
+    "name": "Techman",
+    "scopeName": "robodk.techman",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#io"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#types"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#constant"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "//",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                },
+                {
+                    "begin": "/\\*",
+                    "end": "\\*/",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "io": {
+            "patterns": [
+                {
+                    "match": "\\bIO(?=\\[)|(?<=\\.)(DO|DI|AO|AI)(?=\\[)",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "\\b(Move_PLine|Move_Line|Move_PTP|Circle|PLine|Line|PTP)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "\\b(continue|define|return|break|while|else|main|for|do|if)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "types": {
+            "patterns": [
+                {
+                    "match": "\\b(double|string|float|int16|int32|bool|byte|int|var)\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "\\b(StopAndClearBuffer|modbus_read_string|modbus_read_float|modbus_read_int16|modbus_read_int32|WaitQueueTag|modbus_write|modbus_read|socket_read|socket_send|ChangeBase|ChangeLoad|ListenSend|ChangeTCP|GetString|GetBytes|QueueTag|ToString|Display|ToInt32|WaitFor|Length|Resume|Pause|Sleep|Exit)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "constant": {
+            "patterns": [
+                {
+                    "match": "\\b(False|false|True|true)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "==|!=|<=|>=|&&|\\|\\||[-+*/=<>!]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}

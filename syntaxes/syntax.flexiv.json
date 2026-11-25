@@ -1,0 +1,76 @@
+{
+    "name": "Flexiv",
+    "scopeName": "robodk.flexiv",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#block"
+        },
+        {
+            "include": "#field"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#constant"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "#",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "block": {
+            "patterns": [
+                {
+                    "match": "\\b[A-Za-z_]\\w*(?=\\s*\\{)",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "field": {
+            "patterns": [
+                {
+                    "match": "\\b[A-Za-z_]\\w*(?=\\s*:)",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "constant": {
+            "patterns": [
+                {
+                    "match": "\\b(false|true)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        }
+    }
+}

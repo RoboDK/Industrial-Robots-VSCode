@@ -11,10 +11,16 @@
             "include": "#fcn-call"
         },
         {
+            "include": "#binary-literal"
+        },
+        {
             "include": "#numbers"
         },
         {
             "include": "#numbers1"
+        },
+        {
+            "include": "#label"
         },
         {
             "include": "#control"
@@ -38,16 +44,33 @@
             "include": "#built-in-types"
         },
         {
+            "include": "#system-variable"
+        },
+        {
+            "include": "#enum-value"
+        },
+        {
             "include": "#built-in-var"
         },
         {
             "include": "#built-in-var1"
         },
         {
+            "include": "#motion-data"
+        },
+        {
             "include": "#operator"
         }
     ],
     "repository": {
+        "binary-literal": {
+            "patterns": [
+                {
+                    "match": "'[BH][0-9A-Fa-f]+'",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
         "built-in-fcn": {
             "patterns": [
                 {
@@ -75,7 +98,7 @@
         "built-in-types": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(DECL|GLOBAL|CONST|INT|REAL|BOOL|CHAR|PRIO|FRAME|POS|E6POS|AXIS|E6AXIS)\\b",
+                    "match": "(?i)\\b(DECL|GLOBAL|CONST|INT|REAL|BOOL|CHAR|PRIO|FRAME|POS|E6POS|AXIS|E6AXIS|FDAT|LDAT|PDAT|E3POS|E3AXIS|E6POINT|STATE_T|MODUS_T|LOAD|INERTIA|SPL_VEL)\\b",
                     "name": "storage.type.c"
                 }
             ]
@@ -108,8 +131,16 @@
         "control": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(REPEAT|FOR|WHILE|LOOP|DEF|IF|THEN|ELSE|SWITCH|LOOP|UNTIL|ENDFOR|ENDWHILE|ENDLOOP|END|ENDIF|ENDSWITCH|ENDLOOP|DEF|INI|END|ENDFCT|ENDDAT|WAIT|GOTO|CASE|DEFAULT|DEFFCT|ENDFCT|SEC|DEFDAT|PUBLIC|ENDDAT|RETURN|EXIT|HALT|INTERRUPT|WHEN|DO|BRAKE|RESUME|ENABLE|DISABLE|X|Y|Z|A|B|C|E1|E2|E3|E4|E5|E6|A1|A2|A3|A4|A5|A6)\\b",
+                    "match": "(?i)\\b(REPEAT|FOR|WHILE|LOOP|DEF|IF|THEN|ELSE|SWITCH|LOOP|UNTIL|ENDFOR|ENDWHILE|ENDLOOP|END|ENDIF|ENDSWITCH|ENDLOOP|DEF|INI|END|ENDFCT|ENDDAT|WAIT|GOTO|CASE|DEFAULT|DEFFCT|ENDFCT|SEC|DEFDAT|PUBLIC|ENDDAT|RETURN|EXIT|HALT|INTERRUPT|WHEN|DO|BRAKE|RESUME|ENABLE|DISABLE|X|Y|Z|A|B|C|E1|E2|E3|E4|E5|E6|A1|A2|A3|A4|A5|A6|SPLINE|ENDSPLINE|PTP_SPLINE|WITH|CONTINUE|AND|OR|NOT|EXOR|B_AND|B_OR|B_NOT|B_EXOR|TRIGGER|DELAY|ENDTRIGGER|TIME_BLOCK|ENDTIME_BLOCK|CONST_VEL|STRUC|ENUM|SIGNAL|IMPORT|IS|EXT|EXTFCT|CHANNEL|ANIN|ANOUT|PULSE|CWRITE|CREAD|COPEN|CCLOSE)\\b",
                     "name": "keyword.control"
+                }
+            ]
+        },
+        "enum-value": {
+            "patterns": [
+                {
+                    "match": "#[A-Za-z_]\\w*",
+                    "name": "constant.language"
                 }
             ]
         },
@@ -122,10 +153,26 @@
                 }
             ]
         },
+        "label": {
+            "patterns": [
+                {
+                    "match": "^\\s*[A-Za-z_]\\w*:(?![=:])",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "motion-data": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(GEAR_JERK|IPO_FRAME|APO_DIST|APO_MODE|AXIS_ACC|AXIS_VEL|CIRC_TYP|EXAX_IGN|FDAT_ACT|JERK_FAC|LDAT_ACT|PDAT_ACT|TQ_STATE|APO_FAC|BASE_NO|ORI_TYP|TOOL_NO|POINT2|CONT)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
         "movement": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(PTP|LIN|CIRC|SPTP|SLIN)\\b",
+                    "match": "(?i)\\b(PTP|LIN|CIRC|SPTP|SLIN|SPL|SCIRC|PTP_REL|LIN_REL|CIRC_REL|SPTP_REL|SLIN_REL|SCIRC_REL)\\b",
                     "name": "entity.name.function.preprocessor.c"
                 }
             ]
@@ -168,6 +215,14 @@
                     "begin": "\"",
                     "end": "\"",
                     "name": "string"
+                }
+            ]
+        },
+        "system-variable": {
+            "patterns": [
+                {
+                    "match": "\\$[A-Za-z_][\\w.]*",
+                    "name": "constant.language"
                 }
             ]
         }

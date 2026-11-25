@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Root>
+  <RobotPoints>
+  </RobotPoints>
+  <RobotBases>
+    <Base name="RobotBase" basedata="0,0,0,0,0,0" type="R" number="0" />
+    <Base name="FramePickandPlace" basedata="719.013,-664.003,0.000,0.0000,0.0000,0.0000" type="C" number="1" />
+    <Base name="FrameCircular" basedata="577.670,392.250,0.000,0.0000,0.0000,38.9595" type="C" number="114" />
+    <Base name="FrameInspection" basedata="0.000,782.714,377.610,0.0000,0.0000,0.0000" type="C" number="225" />
+    <Base name="FrameInspection" basedata="13.637,-840.080,0.000,0.0000,0.0000,-90.0000" type="C" number="337" />
+    <Base name="FramePickandPlace" basedata="719.013,-664.003,0.000,0.0000,0.0000,0.0000" type="C" number="451" />
+    <Base name="Frame1_withaverylongnameandspecialcharacters" basedata="0.000,1000.000,0.000,0.0000,0.0000,0.0000" type="C" number="566" />
+  </RobotBases>
+  <VirtualTCP>
+  </VirtualTCP>
+  <Network>
+  </Network>
+  <FTSensor>
+  </FTSensor>
+  <FineTuneVariable>
+  </FineTuneVariable>
+  <Conveyor>
+  </Conveyor>
+  <DisplayMgr>
+    <Pwd pwd="" />
+  </DisplayMgr>
+  <SafetySpace>
+  </SafetySpace>
+  <MaxBaseNumber>
+    <Custom max="706" />
+    <Vision max="0" />
+  </MaxBaseNumber>
+  <ModbusDevice>
+    <Device DeviceName="localhost" Type="TCP" IP="127.0.0.1" Port="502" ID="1" Timeout="10000" />
+  </ModbusDevice>
+  <DisableSmartSafetySpeed value="false" />
+  <RefreshDILPeriod value="300" />
+  <RunStopSetting />
+  <RunErrorSetting />
+</Root>

@@ -1,0 +1,186 @@
+{
+    "name": "Siemens",
+    "scopeName": "robodk.siemens",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#line-number"
+        },
+        {
+            "include": "#label"
+        },
+        {
+            "include": "#system-variable"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#g-code"
+        },
+        {
+            "include": "#m-code"
+        },
+        {
+            "include": "#cycle"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#types"
+        },
+        {
+            "include": "#constant"
+        },
+        {
+            "include": "#address"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": ";",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "line-number": {
+            "patterns": [
+                {
+                    "match": "^\\s*N\\d+\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "label": {
+            "patterns": [
+                {
+                    "match": "\\b[A-Za-z_]\\w*:(?!=)",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "system-variable": {
+            "patterns": [
+                {
+                    "match": "\\$[A-Z_]+\\d*",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "\\bG0?[0-3]\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "g-code": {
+            "patterns": [
+                {
+                    "match": "\\bG\\d+\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "m-code": {
+            "patterns": [
+                {
+                    "match": "\\bM\\d+\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "cycle": {
+            "patterns": [
+                {
+                    "match": "\\bCYCLE\\d+\\b|\\bPOCKET\\d+\\b|\\bHOLES\\d+\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "\\b(ENDWHILE|DEFAULT|ENDLOOP|ENDFOR|EXTERN|REPEAT|STOPRE|ENDIF|GOTOB|GOTOC|GOTOF|UNTIL|WHILE|CALL|CASE|ELSE|GOTO|LOOP|PROC|DEF|FOR|MSG|RET|IF|OF|TO)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "\\b(DYNSEMIFIN|DYNFINISH|STARTFIFO|COMPCURV|DYNROUGH|FIFOCTRL|ORIEULER|ORIVIRT1|ORIVIRT2|STOPFIFO|AMIRROR|CMIRROR|COMPCAD|DYNNORM|ORIAXES|ORIVECT|TRAFOOF|ASCALE|ATRANS|COMPOF|COMPON|CSCALE|CTRANS|DYNPOS|MIRROR|ORIMKS|ORIRPY|ORIWKS|TRAORI|BRISK|DRIVE|FFWOF|FFWON|FNORM|SCALE|SETMS|SPCOF|SPCON|TRAFO|TRANS|WAITS|AROT|CROT|FCUB|FLIN|SOFT|SPOS|SUPA|ROT)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "types": {
+            "patterns": [
+                {
+                    "match": "\\b(STRING|FRAME|AXIS|BOOL|CHAR|REAL|INT)\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "constant": {
+            "patterns": [
+                {
+                    "match": "\\b_[A-Z][A-Z0-9_]*\\b|\\b(OFF|ON|TRUE|FALSE)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "address": {
+            "patterns": [
+                {
+                    "match": "\\b(RA\\d|ST\\d|[A-Z]\\d?)(?==)|\\b[A-Z](?=-?\\.?\\d)",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "==|<>|<=|>=|:|[-+*/=<>]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}

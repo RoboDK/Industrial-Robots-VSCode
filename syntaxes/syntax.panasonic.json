@@ -1,0 +1,136 @@
+{
+    "name": "Panasonic",
+    "scopeName": "robodk.panasonic",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#section"
+        },
+        {
+            "include": "#header"
+        },
+        {
+            "include": "#point"
+        },
+        {
+            "include": "#io"
+        },
+        {
+            "include": "#unit"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#constant"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "^\\s*REM,",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                },
+                {
+                    "begin": "^/",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "section": {
+            "patterns": [
+                {
+                    "match": "^\\[\\w+\\]",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "header": {
+            "patterns": [
+                {
+                    "match": "^(Robot|Comment|Mechanism|Tool|Creator|User coordinates|Create|Update|Original|Edit)(?=,)",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "point": {
+            "patterns": [
+                {
+                    "match": "\\bP\\d{3}\\b|(?<=,\\s)R[JPT](?=,)",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "io": {
+            "patterns": [
+                {
+                    "match": "\\b[oi]\\d#\\(\\d+:\\)",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "unit": {
+            "patterns": [
+                {
+                    "match": "\\b(m/min|cm/min|mm/s|N|CIR_NORMAL|CIR_FIX|NOP)\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "\\b(MOVECW|MOVELW|MOVEC|MOVEL|MOVEP)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "\\b(ARC\\-OFF|ARC\\-SET|WAIT_IP|ARC\\-ON|DELAY|LABEL|CALL|HOLD|JUMP|STOP|TOOL|WAIT|OUT|IF|IN)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "constant": {
+            "patterns": [
+                {
+                    "match": "\\b(OFF|ON)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        }
+    }
+}

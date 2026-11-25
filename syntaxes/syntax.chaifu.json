@@ -1,0 +1,98 @@
+{
+    "name": "Chaifu",
+    "scopeName": "robodk.chaifu",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#io"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#sub-call"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "##",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "io": {
+            "patterns": [
+                {
+                    "match": "\\b(DO|DI|AO|AI)\\d+\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "sub-call": {
+            "patterns": [
+                {
+                    "match": "\\b[A-Za-z_]\\w*(?=\\(\\)\\s*$)",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "\\b(MOVCE|MOVCM|MOVC|MOVJ|MOVL)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "\\b(RETURN|Sleep|CALL|WAIT|TP)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "==|!=|<=|>=|[-+*/=<>]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,131 @@
+{
+    "name": "Elite",
+    "scopeName": "robodk.elite",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#variable"
+        },
+        {
+            "include": "#io"
+        },
+        {
+            "include": "#motion-parameter"
+        },
+        {
+            "include": "#label"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "//",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "variable": {
+            "patterns": [
+                {
+                    "match": "\\b[PVBIDR]\\d{3}\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "io": {
+            "patterns": [
+                {
+                    "match": "\\b(OT|IN|AO|AI|TOOL|USER|M|GO|GI|VO|VI)\\s?#\\(\\d+\\)",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "motion-parameter": {
+            "patterns": [
+                {
+                    "match": "\\b(VJ|V|CR|ACC|DEC|PL|TF|T|AV|SPL|ConstP|ConstV)(?==)|(?<=\\d)(MM/S|MM|%|S)\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "label": {
+            "patterns": [
+                {
+                    "match": "\\*[A-Za-z_]\\w*|\\bJOB(?=:)",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "\\b(MOVDRAG|MOVEC|MOVEJ|MOVEL|MOVML|MOVC|MOVJ|MOVL)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "\\b(ENDWHILE|ELSEIF|ENDIF|LABEL|PAUSE|WHILE|CALL|ELSE|JUMP|STOP|END|NOP|RET|IF)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "\\b(SETTOOLNUMBER|SETTOOLFRAME|SETUSERFRAME|SETPAYLOAD|SETJOINT|SETPOSE|TPWRITE|MFRAME|CCOOD|CLEAR|PULSE|TIMER|AOUT|DOUT|GETE|SETE|WAIT|ADD|AIN|DIN|DIV|INC|MUL|SET|SUB)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "<>|<=|>=|==|[-+*/=<>]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}

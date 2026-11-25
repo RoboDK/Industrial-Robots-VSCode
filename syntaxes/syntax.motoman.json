@@ -11,6 +11,18 @@
             "include": "#fcn-call"
         },
         {
+            "include": "#motion-tags"
+        },
+        {
+            "include": "#second-group-move"
+        },
+        {
+            "include": "#job-call"
+        },
+        {
+            "include": "#user-frame"
+        },
+        {
             "include": "#numbers"
         },
         {
@@ -278,6 +290,22 @@
                 }
             ]
         },
+        "job-call": {
+            "patterns": [
+                {
+                    "match": "\\bJOB(?=:)",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "motion-tags": {
+            "patterns": [
+                {
+                    "match": "\\b(ACC|DEC|PL|SPDL|CR|NWAIT|UNTIL|FPT)\\b(?==|\\s|$)",
+                    "name": "constant.language"
+                }
+            ]
+        },
         "movement": {
             "patterns": [
                 {
@@ -294,12 +322,28 @@
                 }
             ]
         },
+        "second-group-move": {
+            "patterns": [
+                {
+                    "match": "\\+(MOVJ|MOVL|MOVC|MOVS)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
         "string": {
             "patterns": [
                 {
                     "begin": "\"",
                     "end": "\"",
                     "name": "string"
+                }
+            ]
+        },
+        "user-frame": {
+            "patterns": [
+                {
+                    "match": "\\b(UF|BF|RF|TF)#\\(\\d+\\)|\\bB\\d{3}\\b|\\b[IDRS]\\d{3}\\b",
+                    "name": "keyword.control"
                 }
             ]
         }

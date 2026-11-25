@@ -17,6 +17,9 @@
             "include": "#control"
         },
         {
+            "include": "#arc-welding"
+        },
+        {
             "include": "#movement"
         },
         {
@@ -38,6 +41,15 @@
             "include": "#built-in-var5"
         },
         {
+            "include": "#analog-signal"
+        },
+        {
+            "include": "#switch-argument"
+        },
+        {
+            "include": "#rokae-target"
+        },
+        {
             "include": "#built-in-fcn"
         },
         {
@@ -48,6 +60,22 @@
         }
     ],
     "repository": {
+        "analog-signal": {
+            "patterns": [
+                {
+                    "match": "\\bA_(OUT|IN)_\\d+",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "arc-welding": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(ArcMoveAbsJ|ArcC1Start|ArcL1Start|ArcCStart|ArcLStart|ArcC1End|ArcL1End|ArcMoveC|ArcMoveJ|ArcMoveL|ArcCEnd|ArcLEnd|TriggC|TriggJ|TriggL|ArcC1|ArcL1|SpotJ|SpotL|ArcC|ArcL)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
         "built-in-fcn": {
             "patterns": [
                 {
@@ -124,7 +152,7 @@
         "control": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(FOR|WHILE|FUNC|MODULE|PROC|RECORD|TEST|TRAP|ENDFOR|ENDWHILE|ENDFUNC|ENDMODULE|ENDPROC|ENDRECORD|ENDTEST|ENDTRAP|ALIAS|AND|BACKWARD|CASE|CONNECT|DEFAULT|DIV|DO|ELSE|ELSEIF|ENDIF|ERROR|EXIT|FROM|GOTO|IF|INOUT|LOCAL|MOD|NOSTEPIN|NOT|NOVIEW|OR|RAISE|READONLY|RETRY|RETURN|STEP|SYSMODULE|THEN|TO|TRYNEXT|UNDO|VIEWONLY|WITH|XOR)\\b",
+                    "match": "(?i)\\b(FOR|WHILE|FUNC|MODULE|PROC|RECORD|TEST|TRAP|ENDFOR|ENDWHILE|ENDFUNC|ENDMODULE|ENDPROC|ENDRECORD|ENDTEST|ENDTRAP|ALIAS|AND|BACKWARD|CASE|CONNECT|DEFAULT|DIV|DO|ELSE|ELSEIF|ENDIF|ERROR|EXIT|FROM|GOTO|IF|INOUT|LOCAL|MOD|NOSTEPIN|NOT|NOVIEW|OR|RAISE|READONLY|RETRY|RETURN|STEP|SYSMODULE|THEN|TO|TRYNEXT|UNDO|VIEWONLY|WITH|XOR|GLOBAL)\\b",
                     "name": "keyword.control"
                 }
             ]
@@ -149,7 +177,7 @@
         "numbers": {
             "patterns": [
                 {
-                    "match": "\\b-?\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b",
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b",
                     "name": "constant.numeric.c"
                 }
             ]
@@ -162,12 +190,28 @@
                 }
             ]
         },
+        "rokae-target": {
+            "patterns": [
+                {
+                    "match": "\\bp:(?=\\{)|\\b(cfg|Ej)\\b(?=\\s*-?\\d)",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
         "string": {
             "patterns": [
                 {
                     "begin": "\"",
                     "end": "\"",
                     "name": "string"
+                }
+            ]
+        },
+        "switch-argument": {
+            "patterns": [
+                {
+                    "match": "\\\\[A-Za-z_]\\w*",
+                    "name": "constant.language"
                 }
             ]
         }

@@ -1,0 +1,168 @@
+{
+    "name": "Huashu",
+    "scopeName": "robodk.huashu",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#section"
+        },
+        {
+            "include": "#position"
+        },
+        {
+            "include": "#register"
+        },
+        {
+            "include": "#point-field"
+        },
+        {
+            "include": "#label"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#motion-parameter"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#constant"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "'",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "section": {
+            "patterns": [
+                {
+                    "match": "^<(attr|pos|program|end)>",
+                    "name": "keyword.control"
+                },
+                {
+                    "match": "^(VERSION|GROUP)(?=:)",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "position": {
+            "patterns": [
+                {
+                    "match": "\\bP\\[\\d+\\]",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "register": {
+            "patterns": [
+                {
+                    "match": "\\b(LR|JR|R|IR|DR|DO|DI|AO|AI|M)\\[\\d+\\]",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "point-field": {
+            "patterns": [
+                {
+                    "match": "\\b(GP|UF|UT|JNT|CFG|LOC)(?=:)",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "label": {
+            "patterns": [
+                {
+                    "match": "\\bLBL\\[\\d+\\]",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "^\\s*(J|L|C|A)\\b(?=\\s+(P|JR|LR)\\[)",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "motion-parameter": {
+            "patterns": [
+                {
+                    "match": "\\b(CNT|CR|VEL|ACC|DEC|J_VEL|J_ACC|J_DEC|L_VEL|L_ACC|L_DEC|C_VEL|C_ACC|LEVEL|FINE)\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(END_WHILE|END_FOR|TIMEOUT|END_IF|RETURN|THROW|WHILE|CALL|ELSE|GOTO|THEN|TIME|WAIT|AND|END|FOR|LBL|NOT|BY|IF|OR|TO)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(UFRAME_NUM|SET_FRAME|UTOOL_NUM|SET_TOOL|UFRAME|PRINT|SLEEP|UTOOL)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "constant": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(WARNING|ERROR|FALSE|INFO|TRUE|OFF|ON)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "<>|<=|>=|==|:=|[-+*/=<>]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}

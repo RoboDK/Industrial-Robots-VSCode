@@ -1,0 +1,134 @@
+{
+    "name": "AllenBradley",
+    "scopeName": "robodk.allenbradley",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#member"
+        },
+        {
+            "include": "#unit"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#constant"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "\\(\\*",
+                    "end": "\\*\\)",
+                    "name": "comment"
+                },
+                {
+                    "begin": "//",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "'",
+                    "end": "'|(?=\\n)",
+                    "name": "string"
+                },
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "\\b(MAM|MAJ|MAS|MAH|MAG|MCD|MCCM|MCLM|MCCD|MCS|MCT|MCTP|MRP|MSO|MSF|MAFR|MASD|MASR|MDO|MDF|MDS|MAOC|MAW|MAR|MDOC)\\b(?=\\s*\\()",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "\\b(JSR|SBR|RET|TON|TOF|RTO|CTU|CTD|RES|OTE|OTL|OTU|ONS|OSR|OSF|MOV|COP|FLL|ABS|SQR|SIN|COS|TAN|ASN|ACS|ATN|LN|LOG|TRN|GSV|SSV|MSG|EVENT|UID|UIE|AFI|NOP|TND)\\b(?=\\s*\\()",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "member": {
+            "patterns": [
+                {
+                    "match": "(?<=\\.)(PC|IP|ER|DN|EN|ServoActionStatus|PositionLockStatus|ActualPosition|CommandPosition|ACC|PRE)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "unit": {
+            "patterns": [
+                {
+                    "match": "%(ofMaximum|ofTime)\\b|\\b(Unitspersec|Unitspersec2|None|Actual|Command|Real|Disabled|Enabled|Trapezoidal|S-Curve)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(end_repeat|end_while|end_case|end_for|end_if|repeat|return|elsif|until|while|case|else|exit|then|for|by|do|if|of|to)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "constant": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(FALSE|TRUE)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(AND|MOD|NOT|XOR|OR)\\b",
+                    "name": "keyword.operator"
+                },
+                {
+                    "match": "\\[:=\\]|:=|<>|<=|>=|[-+*/=<>&]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}

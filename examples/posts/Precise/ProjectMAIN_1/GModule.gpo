@@ -1,0 +1,758 @@
+Module GModule
+  Public prof1 As Profile
+  Public Home_Angular As Location
+  Public TargetInit1_Angular As Location
+  Public TargetInit2_Cartesian As Location
+  Public Loc4 As Location
+  Public Loc5 As Location
+  Public Loc6 As Location
+  Public Loc7 As Location
+  Public Loc8 As Location
+  Public Loc9 As Location
+  Public Loc10 As Location
+  Public Loc11 As Location
+  Public Loc12 As Location
+  Public Loc13 As Location
+  Public Loc14 As Location
+  Public Loc15 As Location
+  Public Loc16 As Location
+  Public Loc17 As Location
+  Public Loc18 As Location
+  Public Loc19 As Location
+  Public Loc20 As Location
+  Public Loc21 As Location
+  Public Loc22 As Location
+  Public Loc23 As Location
+  Public Loc24 As Location
+  Public Loc25 As Location
+  Public Loc26 As Location
+  Public Loc27 As Location
+  Public Loc28 As Location
+  Public Loc29 As Location
+  Public Loc30 As Location
+  Public Loc31 As Location
+  Public Loc32 As Location
+  Public Loc33 As Location
+  Public Loc34 As Location
+  Public Loc35 As Location
+  Public Loc36 As Location
+  Public Loc37 As Location
+  Public Loc38 As Location
+  Public Loc39 As Location
+  Public Loc40 As Location
+  Public Loc41 As Location
+  Public Loc42 As Location
+  Public Loc43 As Location
+  Public Loc44 As Location
+  Public Loc45 As Location
+  Public Loc46 As Location
+  Public Loc47 As Location
+  Public Loc48 As Location
+  Public Loc49 As Location
+  Public Loc50 As Location
+  Public Loc51 As Location
+  Public Loc52 As Location
+  Public Loc53 As Location
+  Public Loc54 As Location
+  Public Loc55 As Location
+  Public Loc56 As Location
+  Public Loc57 As Location
+  Public Loc58 As Location
+  Public Loc59 As Location
+  Public Loc60 As Location
+  Public Loc61 As Location
+  Public Loc62 As Location
+  Public Loc63 As Location
+  Public Loc64 As Location
+  Public Loc65 As Location
+  Public Loc66 As Location
+  Public Loc67 As Location
+  Public Loc68 As Location
+  Public Loc69 As Location
+  Public Loc70 As Location
+  Public Loc71 As Location
+  Public Loc72 As Location
+  Public Loc73 As Location
+  Public Target1_withaverylongnameandspecialcharacters_Angular As Location
+
+  Public Sub Init
+    '<MotionProfile>prof1
+    prof1 = New Profile
+    prof1.Speed = 25
+    prof1.Speed2 = 0
+    prof1.Accel = 100
+    prof1.Decel = 100
+    prof1.AccelRamp = 0.1
+    prof1.DecelRamp = 0.1
+    prof1.Straight = False
+    prof1.InRange = 10
+    '</MotionProfile>
+
+    '<MotionLocation>Home_Angular
+    Home_Angular = New Location
+    Home_Angular.Type = 1
+    Home_Angular.Angles(-0.000,0.000,0.000,0.000,0.000,-0.000,0.000,0.000,0.000,0.000,0.000,0.000)
+    Home_Angular.ZWorld = False
+    Home_Angular.ZClearance = 1E+32
+    Home_Angular.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>TargetInit1_Angular
+    TargetInit1_Angular = New Location
+    TargetInit1_Angular.Type = 1
+    TargetInit1_Angular.Angles(0.000,3.211,-15.424,0.000,12.213,-0.000,0.000,0.000,0.000,0.000,0.000,0.000)
+    TargetInit1_Angular.ZWorld = False
+    TargetInit1_Angular.ZClearance = 1E+32
+    TargetInit1_Angular.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>TargetInit2_Cartesian
+    TargetInit2_Cartesian = New Location
+    TargetInit2_Cartesian.Type = 0
+    TargetInit2_Cartesian.XYZ(1015.000,0.000,1272.000,0.000,90.000,0.000)
+    TargetInit2_Cartesian.ZWorld = False
+    TargetInit2_Cartesian.ZClearance = 1E+32
+    TargetInit2_Cartesian.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc4
+    Loc4 = New Location
+    Loc4.Type = 1
+    Loc4.Angles(-29.332,46.677,-0.025,26.546,25.396,-51.634,0.000,0.000,0.000,0.000,0.000,0.000)
+    Loc4.ZWorld = False
+    Loc4.ZClearance = 1E+32
+    Loc4.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc5
+    Loc5 = New Location
+    Loc5.Type = 0
+    Loc5.XYZ(906.799,-538.504,139.112,1.276,179.820,1.273)
+    Loc5.ZWorld = False
+    Loc5.ZClearance = 1E+32
+    Loc5.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc6
+    Loc6 = New Location
+    Loc6.Type = 0
+    Loc6.XYZ(906.285,-216.481,305.347,-0.620,179.815,-0.619)
+    Loc6.ZWorld = False
+    Loc6.ZClearance = 1E+32
+    Loc6.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc7
+    Loc7 = New Location
+    Loc7.Type = 0
+    Loc7.XYZ(906.864,-216.486,126.235,-0.620,179.815,-0.619)
+    Loc7.ZWorld = False
+    Loc7.ZClearance = 1E+32
+    Loc7.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc8
+    Loc8 = New Location
+    Loc8.Type = 0
+    Loc8.XYZ(906.285,-216.481,305.347,-0.620,179.815,-0.619)
+    Loc8.ZWorld = False
+    Loc8.ZClearance = 1E+32
+    Loc8.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc9
+    Loc9 = New Location
+    Loc9.Type = 1
+    Loc9.Angles(52.186,45.676,6.920,66.734,19.932,-92.730,0.000,0.000,0.000,0.000,0.000,0.000)
+    Loc9.ZWorld = False
+    Loc9.ZClearance = 1E+32
+    Loc9.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc10
+    Loc10 = New Location
+    Loc10.Type = 0
+    Loc10.XYZ(884.547,696.689,231.503,89.999,168.767,5.482)
+    Loc10.ZWorld = False
+    Loc10.ZClearance = 1E+32
+    Loc10.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc11
+    Loc11 = New Location
+    Loc11.Type = 0
+    Loc11.XYZ(759.304,342.075,161.073,89.999,168.767,5.482)
+    Loc11.ZWorld = False
+    Loc11.ZClearance = 1E+32
+    Loc11.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc12
+    Loc12 = New Location
+    Loc12.Type = 0
+    Loc12.XYZ(636.704,815.780,255.156,89.999,168.767,5.482)
+    Loc12.ZWorld = False
+    Loc12.ZClearance = 1E+32
+    Loc12.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc13
+    Loc13 = New Location
+    Loc13.Type = 1
+    Loc13.Angles(88.676,29.602,-6.429,-1.984,49.479,4.548,0.000,0.000,0.000,0.000,0.000,0.000)
+    Loc13.ZWorld = False
+    Loc13.ZClearance = 1E+32
+    Loc13.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc14
+    Loc14 = New Location
+    Loc14.Type = 0
+    Loc14.XYZ(19.898,957.021,396.618,-90.001,174.554,-175.096)
+    Loc14.ZWorld = False
+    Loc14.ZClearance = 1E+32
+    Loc14.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc15
+    Loc15 = New Location
+    Loc15.Type = 0
+    Loc15.XYZ(378.402,957.130,396.607,-90.001,174.554,-175.096)
+    Loc15.ZWorld = False
+    Loc15.ZClearance = 1E+32
+    Loc15.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc16
+    Loc16 = New Location
+    Loc16.Type = 0
+    Loc16.XYZ(380.996,895.077,412.492,-90.000,161.791,-174.970)
+    Loc16.ZWorld = False
+    Loc16.ZClearance = 1E+32
+    Loc16.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc17
+    Loc17 = New Location
+    Loc17.Type = 0
+    Loc17.XYZ(16.551,897.073,411.836,-90.000,161.791,-174.970)
+    Loc17.ZWorld = False
+    Loc17.ZClearance = 1E+32
+    Loc17.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc18
+    Loc18 = New Location
+    Loc18.Type = 0
+    Loc18.XYZ(26.434,837.238,423.682,89.996,175.632,5.441)
+    Loc18.ZWorld = False
+    Loc18.ZClearance = 1E+32
+    Loc18.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc19
+    Loc19 = New Location
+    Loc19.Type = 0
+    Loc19.XYZ(385.448,830.764,422.747,89.998,168.767,5.482)
+    Loc19.ZWorld = False
+    Loc19.ZClearance = 1E+32
+    Loc19.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc20
+    Loc20 = New Location
+    Loc20.Type = 0
+    Loc20.XYZ(385.448,781.089,672.861,89.998,168.767,5.482)
+    Loc20.ZWorld = False
+    Loc20.ZClearance = 1E+32
+    Loc20.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc21
+    Loc21 = New Location
+    Loc21.Type = 1
+    Loc21.Angles(-68.090,24.202,26.785,38.213,36.202,-98.796,0.000,0.000,0.000,0.000,0.000,0.000)
+    Loc21.ZWorld = False
+    Loc21.ZClearance = 1E+32
+    Loc21.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc22
+    Loc22 = New Location
+    Loc22.Type = 0
+    Loc22.XYZ(266.896,-790.185,319.999,-4.051,179.646,-4.051)
+    Loc22.ZWorld = False
+    Loc22.ZClearance = 1E+32
+    Loc22.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc23
+    Loc23 = New Location
+    Loc23.Type = 0
+    Loc23.XYZ(263.637,-840.080,270.000,-4.051,179.646,-4.051)
+    Loc23.ZWorld = False
+    Loc23.ZClearance = 1E+32
+    Loc23.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc24
+    Loc24 = New Location
+    Loc24.Type = 0
+    Loc24.XYZ(261.092,-875.659,270.000,-12.265,179.647,-12.265)
+    Loc24.ZWorld = False
+    Loc24.ZClearance = 1E+32
+    Loc24.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc25
+    Loc25 = New Location
+    Loc25.Type = 0
+    Loc25.XYZ(253.510,-910.513,270.000,-20.536,179.647,-20.537)
+    Loc25.ZWorld = False
+    Loc25.ZClearance = 1E+32
+    Loc25.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc26
+    Loc26 = New Location
+    Loc26.Type = 0
+    Loc26.XYZ(241.045,-943.934,270.000,-28.597,179.647,-28.597)
+    Loc26.ZWorld = False
+    Loc26.ZClearance = 1E+32
+    Loc26.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc27
+    Loc27 = New Location
+    Loc27.Type = 0
+    Loc27.XYZ(223.950,-975.240,270.000,-36.837,179.646,-36.838)
+    Loc27.ZWorld = False
+    Loc27.ZClearance = 1E+32
+    Loc27.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc28
+    Loc28 = New Location
+    Loc28.Type = 0
+    Loc28.XYZ(202.574,-1003.795,270.000,-45.000,179.646,-45.000)
+    Loc28.ZWorld = False
+    Loc28.ZClearance = 1E+32
+    Loc28.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc29
+    Loc29 = New Location
+    Loc29.Type = 0
+    Loc29.XYZ(177.352,-1029.017,270.000,-53.162,179.646,-53.163)
+    Loc29.ZWorld = False
+    Loc29.ZClearance = 1E+32
+    Loc29.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc30
+    Loc30 = New Location
+    Loc30.Type = 0
+    Loc30.XYZ(148.797,-1050.393,270.000,-61.338,179.646,-61.338)
+    Loc30.ZWorld = False
+    Loc30.ZClearance = 1E+32
+    Loc30.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc31
+    Loc31 = New Location
+    Loc31.Type = 0
+    Loc31.XYZ(117.491,-1067.488,270.000,-69.520,179.646,-69.520)
+    Loc31.ZWorld = False
+    Loc31.ZClearance = 1E+32
+    Loc31.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc32
+    Loc32 = New Location
+    Loc32.Type = 0
+    Loc32.XYZ(84.070,-1079.953,270.000,-77.770,179.646,-77.770)
+    Loc32.ZWorld = False
+    Loc32.ZClearance = 1E+32
+    Loc32.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc33
+    Loc33 = New Location
+    Loc33.Type = 0
+    Loc33.XYZ(49.216,-1087.535,270.000,-85.949,179.646,-85.949)
+    Loc33.ZWorld = False
+    Loc33.ZClearance = 1E+32
+    Loc33.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc34
+    Loc34 = New Location
+    Loc34.Type = 0
+    Loc34.XYZ(13.637,-1090.080,270.000,-94.051,179.646,-94.051)
+    Loc34.ZWorld = False
+    Loc34.ZClearance = 1E+32
+    Loc34.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc35
+    Loc35 = New Location
+    Loc35.Type = 0
+    Loc35.XYZ(-21.942,-1087.535,270.000,-102.230,179.646,-102.230)
+    Loc35.ZWorld = False
+    Loc35.ZClearance = 1E+32
+    Loc35.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc36
+    Loc36 = New Location
+    Loc36.Type = 0
+    Loc36.XYZ(-56.796,-1079.953,270.000,-110.480,179.646,-110.480)
+    Loc36.ZWorld = False
+    Loc36.ZClearance = 1E+32
+    Loc36.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc37
+    Loc37 = New Location
+    Loc37.Type = 0
+    Loc37.XYZ(-90.217,-1067.488,270.000,-118.662,179.646,-118.662)
+    Loc37.ZWorld = False
+    Loc37.ZClearance = 1E+32
+    Loc37.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc38
+    Loc38 = New Location
+    Loc38.Type = 0
+    Loc38.XYZ(-121.523,-1050.393,270.000,-126.838,179.646,-126.837)
+    Loc38.ZWorld = False
+    Loc38.ZClearance = 1E+32
+    Loc38.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc39
+    Loc39 = New Location
+    Loc39.Type = 0
+    Loc39.XYZ(-150.078,-1029.017,270.000,-135.000,179.646,-135.000)
+    Loc39.ZWorld = False
+    Loc39.ZClearance = 1E+32
+    Loc39.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc40
+    Loc40 = New Location
+    Loc40.Type = 0
+    Loc40.XYZ(-175.300,-1003.795,270.000,-143.163,179.646,-143.162)
+    Loc40.ZWorld = False
+    Loc40.ZClearance = 1E+32
+    Loc40.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc41
+    Loc41 = New Location
+    Loc41.Type = 0
+    Loc41.XYZ(-196.676,-975.240,270.000,-151.339,179.646,-151.338)
+    Loc41.ZWorld = False
+    Loc41.ZClearance = 1E+32
+    Loc41.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc42
+    Loc42 = New Location
+    Loc42.Type = 0
+    Loc42.XYZ(-213.771,-943.934,270.000,-159.520,179.646,-159.520)
+    Loc42.ZWorld = False
+    Loc42.ZClearance = 1E+32
+    Loc42.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc43
+    Loc43 = New Location
+    Loc43.Type = 0
+    Loc43.XYZ(-226.236,-910.513,270.000,-167.770,179.646,-167.770)
+    Loc43.ZWorld = False
+    Loc43.ZClearance = 1E+32
+    Loc43.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc44
+    Loc44 = New Location
+    Loc44.Type = 0
+    Loc44.XYZ(-233.818,-875.659,270.000,-175.949,179.646,-175.949)
+    Loc44.ZWorld = False
+    Loc44.ZClearance = 1E+32
+    Loc44.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc45
+    Loc45 = New Location
+    Loc45.Type = 0
+    Loc45.XYZ(-236.363,-840.080,270.000,-175.949,179.646,-175.949)
+    Loc45.ZWorld = False
+    Loc45.ZClearance = 1E+32
+    Loc45.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc46
+    Loc46 = New Location
+    Loc46.Type = 0
+    Loc46.XYZ(-236.363,-840.080,270.000,175.949,179.646,175.949)
+    Loc46.ZWorld = False
+    Loc46.ZClearance = 1E+32
+    Loc46.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc47
+    Loc47 = New Location
+    Loc47.Type = 0
+    Loc47.XYZ(-233.818,-804.501,270.000,167.770,179.646,167.770)
+    Loc47.ZWorld = False
+    Loc47.ZClearance = 1E+32
+    Loc47.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc48
+    Loc48 = New Location
+    Loc48.Type = 0
+    Loc48.XYZ(-226.236,-769.647,270.000,159.464,179.647,159.463)
+    Loc48.ZWorld = False
+    Loc48.ZClearance = 1E+32
+    Loc48.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc49
+    Loc49 = New Location
+    Loc49.Type = 0
+    Loc49.XYZ(-213.771,-736.226,270.000,151.403,179.647,151.403)
+    Loc49.ZWorld = False
+    Loc49.ZClearance = 1E+32
+    Loc49.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc50
+    Loc50 = New Location
+    Loc50.Type = 0
+    Loc50.XYZ(-196.676,-704.920,270.000,143.163,179.646,143.162)
+    Loc50.ZWorld = False
+    Loc50.ZClearance = 1E+32
+    Loc50.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc51
+    Loc51 = New Location
+    Loc51.Type = 0
+    Loc51.XYZ(-175.300,-676.365,270.000,135.000,179.646,135.000)
+    Loc51.ZWorld = False
+    Loc51.ZClearance = 1E+32
+    Loc51.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc52
+    Loc52 = New Location
+    Loc52.Type = 0
+    Loc52.XYZ(-150.078,-651.143,270.000,126.838,179.646,126.837)
+    Loc52.ZWorld = False
+    Loc52.ZClearance = 1E+32
+    Loc52.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc53
+    Loc53 = New Location
+    Loc53.Type = 0
+    Loc53.XYZ(-121.523,-629.767,270.000,118.598,179.647,118.597)
+    Loc53.ZWorld = False
+    Loc53.ZClearance = 1E+32
+    Loc53.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc54
+    Loc54 = New Location
+    Loc54.Type = 0
+    Loc54.XYZ(-90.217,-612.672,270.000,110.385,179.647,110.384)
+    Loc54.ZWorld = False
+    Loc54.ZClearance = 1E+32
+    Loc54.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc55
+    Loc55 = New Location
+    Loc55.Type = 0
+    Loc55.XYZ(-56.796,-600.207,270.000,102.230,179.646,102.230)
+    Loc55.ZWorld = False
+    Loc55.ZClearance = 1E+32
+    Loc55.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc56
+    Loc56 = New Location
+    Loc56.Type = 0
+    Loc56.XYZ(-21.942,-592.625,270.000,94.051,179.646,94.051)
+    Loc56.ZWorld = False
+    Loc56.ZClearance = 1E+32
+    Loc56.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc57
+    Loc57 = New Location
+    Loc57.Type = 0
+    Loc57.XYZ(13.637,-590.080,270.000,85.949,179.646,85.949)
+    Loc57.ZWorld = False
+    Loc57.ZClearance = 1E+32
+    Loc57.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc58
+    Loc58 = New Location
+    Loc58.Type = 0
+    Loc58.XYZ(49.216,-592.625,270.000,77.735,179.647,77.735)
+    Loc58.ZWorld = False
+    Loc58.ZClearance = 1E+32
+    Loc58.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc59
+    Loc59 = New Location
+    Loc59.Type = 0
+    Loc59.XYZ(84.070,-600.207,270.000,69.615,179.647,69.616)
+    Loc59.ZWorld = False
+    Loc59.ZClearance = 1E+32
+    Loc59.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc60
+    Loc60 = New Location
+    Loc60.Type = 0
+    Loc60.XYZ(117.491,-612.672,270.000,61.338,179.646,61.338)
+    Loc60.ZWorld = False
+    Loc60.ZClearance = 1E+32
+    Loc60.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc61
+    Loc61 = New Location
+    Loc61.Type = 0
+    Loc61.XYZ(148.797,-629.767,270.000,53.162,179.646,53.163)
+    Loc61.ZWorld = False
+    Loc61.ZClearance = 1E+32
+    Loc61.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc62
+    Loc62 = New Location
+    Loc62.Type = 0
+    Loc62.XYZ(177.352,-651.143,270.000,45.000,179.646,45.000)
+    Loc62.ZWorld = False
+    Loc62.ZClearance = 1E+32
+    Loc62.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc63
+    Loc63 = New Location
+    Loc63.Type = 0
+    Loc63.XYZ(202.574,-676.365,270.000,36.837,179.646,36.838)
+    Loc63.ZWorld = False
+    Loc63.ZClearance = 1E+32
+    Loc63.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc64
+    Loc64 = New Location
+    Loc64.Type = 0
+    Loc64.XYZ(223.950,-704.920,270.000,28.597,179.647,28.597)
+    Loc64.ZWorld = False
+    Loc64.ZClearance = 1E+32
+    Loc64.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc65
+    Loc65 = New Location
+    Loc65.Type = 0
+    Loc65.XYZ(241.045,-736.226,270.000,20.480,179.646,20.480)
+    Loc65.ZWorld = False
+    Loc65.ZClearance = 1E+32
+    Loc65.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc66
+    Loc66 = New Location
+    Loc66.Type = 0
+    Loc66.XYZ(253.510,-769.647,270.000,12.230,179.646,12.230)
+    Loc66.ZWorld = False
+    Loc66.ZClearance = 1E+32
+    Loc66.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc67
+    Loc67 = New Location
+    Loc67.Type = 0
+    Loc67.XYZ(261.092,-804.501,270.000,4.051,179.646,4.051)
+    Loc67.ZWorld = False
+    Loc67.ZClearance = 1E+32
+    Loc67.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc68
+    Loc68 = New Location
+    Loc68.Type = 0
+    Loc68.XYZ(263.637,-840.080,270.000,4.051,179.646,4.051)
+    Loc68.ZWorld = False
+    Loc68.ZClearance = 1E+32
+    Loc68.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc69
+    Loc69 = New Location
+    Loc69.Type = 0
+    Loc69.XYZ(266.895,-889.975,319.999,4.051,179.646,4.051)
+    Loc69.ZWorld = False
+    Loc69.ZClearance = 1E+32
+    Loc69.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc70
+    Loc70 = New Location
+    Loc70.Type = 0
+    Loc70.XYZ(266.279,-890.019,419.997,4.051,179.646,4.051)
+    Loc70.ZWorld = False
+    Loc70.ZClearance = 1E+32
+    Loc70.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc71
+    Loc71 = New Location
+    Loc71.Type = 1
+    Loc71.Angles(-29.332,46.677,-0.025,26.546,25.396,-51.634,0.000,0.000,0.000,0.000,0.000,0.000)
+    Loc71.ZWorld = False
+    Loc71.ZClearance = 1E+32
+    Loc71.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc72
+    Loc72 = New Location
+    Loc72.Type = 0
+    Loc72.XYZ(906.799,-538.504,139.112,1.276,179.820,1.273)
+    Loc72.ZWorld = False
+    Loc72.ZClearance = 1E+32
+    Loc72.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Loc73
+    Loc73 = New Location
+    Loc73.Type = 0
+    Loc73.XYZ(906.277,-538.516,305.356,-0.000,179.816,-0.000)
+    Loc73.ZWorld = False
+    Loc73.ZClearance = 1E+32
+    Loc73.Config = 0
+    '</MotionLocation>
+
+    '<MotionLocation>Target1_withaverylongnameandspecialcharacters_Angular
+    Target1_withaverylongnameandspecialcharacters_Angular = New Location
+    Target1_withaverylongnameandspecialcharacters_Angular.Type = 1
+    Target1_withaverylongnameandspecialcharacters_Angular.Angles(-0.000,0.000,0.000,0.000,0.000,-0.000,0.000,0.000,0.000,0.000,0.000,0.000)
+    Target1_withaverylongnameandspecialcharacters_Angular.ZWorld = False
+    Target1_withaverylongnameandspecialcharacters_Angular.ZClearance = 1E+32
+    Target1_withaverylongnameandspecialcharacters_Angular.Config = 0
+    '</MotionLocation>
+
+  End Sub
+End Module

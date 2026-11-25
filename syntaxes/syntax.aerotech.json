@@ -1,0 +1,133 @@
+{
+    "name": "Aerotech",
+    "scopeName": "robodk.aerotech",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#constant"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#g-code"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#address"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "//",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                },
+                {
+                    "begin": "'",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "constant": {
+            "patterns": [
+                {
+                    "match": "\\bDF_\\w+",
+                    "name": "constant.language"
+                },
+                {
+                    "match": "\\b(OFF|ON)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "\\b(CIRCULAR|FREERUN|MOVEABS|MOVEINC|JOINTS|LINEAR|RAPID|HOME|CCW|CW)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                },
+                {
+                    "match": "\\bG0?[0-3]\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "g-code": {
+            "patterns": [
+                {
+                    "match": "\\b[GM]\\d+\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "\\b(ENDWHILE|PROGRAM|ELSEIF|ENDDFS|ENDRPT|REPEAT|RETURN|ENDIF|WHILE|CALL|DVAR|ELSE|GOTO|NEXT|STEP|THEN|DFS|END|FOR|IF|TO)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "\\b(INCREMENTAL|MSGDISPLAY|MOVEDELAY|SECONDARY|ABSOLUTE|CRITICAL|ROUNDING|VELOCITY|DISABLE|PRIMARY|ENABLE|MSGBOX|ABORT|DWELL|START|MODE|RAMP|RATE|TIME|WAIT)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "address": {
+            "patterns": [
+                {
+                    "match": "\\b[A-Z]{1,2}(?=\\s*-?\\.?\\d)",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "==|<>|<=|>=|[-+*/=<>]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}

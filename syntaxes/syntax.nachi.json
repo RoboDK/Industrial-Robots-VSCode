@@ -1,0 +1,142 @@
+{
+    "name": "Nachi",
+    "scopeName": "robodk.nachi",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#mechanism"
+        },
+        {
+            "include": "#interpolation"
+        },
+        {
+            "include": "#motion-parameter"
+        },
+        {
+            "include": "#io"
+        },
+        {
+            "include": "#label"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "'",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "mechanism": {
+            "patterns": [
+                {
+                    "match": "\\bM\\d[JXE]\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "interpolation": {
+            "patterns": [
+                {
+                    "match": "(?<=,)(P|L|C1|C2)(?=,)",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "motion-parameter": {
+            "patterns": [
+                {
+                    "match": "\\b(S|H|A|SM|R|D|T)(?==)|\\b(MS|MH)\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "io": {
+            "patterns": [
+                {
+                    "match": "\\[\\d+\\]|\\bP\\*|\\b[VLP]\\d*[%!$]",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "label": {
+            "patterns": [
+                {
+                    "match": "^\\s*\\*\\w+|(?<=\\s)\\*\\w+",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "\\b(MOVEJ|MOVEX|MOVE)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "\\b(CALLFARI|CALLFAR|CALLMCR|CALLPI|ELSEIF|RETURN|CALLP|ENDIF|GOSUB|WHILE|ELSE|ENDW|GOTO|JMPI|JMPP|NEXT|STEP|STOP|THEN|DIM|END|FOR|JMP|NOP|REM|IF|ON|TO)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "\\b(CHGCOORD|LETPOSE|CHGGUN|CHGMEC|USRERR|DELAY|INPUT|LETVF|LETVI|LETVS|PAUSE|PRINT|RESET|TIMER|WAITI|WAITJ|SETM|SPOT|WAIT|ASM|SET|USE|AE|AS|FN)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "<>|<=|>=|==|[-+*/=<>]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}

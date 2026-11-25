@@ -8,10 +8,16 @@
             "include": "#string"
         },
         {
+            "include": "#xml-tag"
+        },
+        {
             "include": "#fcn-call"
         },
         {
             "include": "#numbers"
+        },
+        {
+            "include": "#library-prefix"
         },
         {
             "include": "#control"
@@ -21,6 +27,18 @@
         },
         {
             "include": "#built-in-var"
+        },
+        {
+            "include": "#val3-constants"
+        },
+        {
+            "include": "#val3-types"
+        },
+        {
+            "include": "#val3-functions"
+        },
+        {
+            "include": "#val3-fields"
         },
         {
             "include": "#built-in-fcn"
@@ -88,7 +106,7 @@
         "control": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(END|BEGIN)\\b",
+                    "match": "(?i)\\b(END|BEGIN|if|else|elseIf|endIf|while|endWhile|do|until|for|to|step|endFor|switch|case|break|default|endSwitch|return|call)\\b",
                     "name": "keyword.control"
                 }
             ]
@@ -102,10 +120,18 @@
                 }
             ]
         },
+        "library-prefix": {
+            "patterns": [
+                {
+                    "match": "\\b[a-zA-Z_]\\w*:(?=[a-zA-Z_])",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
         "movement": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(movej|movel|movec)\\b",
+                    "match": "(?i)\\b(movej|movel|movec|movejf|movelf|resetMotion|stopMove|restartMove|autoConnectMove)\\b",
                     "name": "entity.name.function.preprocessor.c"
                 }
             ]
@@ -113,7 +139,7 @@
         "numbers": {
             "patterns": [
                 {
-                    "match": "\\b-?\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b",
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b",
                     "name": "constant.numeric.c"
                 }
             ]
@@ -124,6 +150,46 @@
                     "begin": "\"",
                     "end": "\"",
                     "name": "string"
+                }
+            ]
+        },
+        "val3-constants": {
+            "patterns": [
+                {
+                    "match": "\\b(lefty|righty|ssame|sfree|epositive|enegative|esame|efree|wpositive|wnegative|wsame|wfree|cartesian)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "val3-fields": {
+            "patterns": [
+                {
+                    "match": "(?<=\\.)(trsf|config|tvel|rvel|tmax|rmax|accel|vel|decel|blend|leave|reach|shoulder|elbow|wrist|otool|ftool|gripper|stime|ctime)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "val3-functions": {
+            "patterns": [
+                {
+                    "match": "\\b(getMonitorSpeed|setMonitorSpeed|taskCreateSync|disablePower|jointToPoint|pointToJoint|enablePower|taskSuspend|taskCreate|taskResume|taskStatus|isDefined|isInRange|isPowered|isSettled|roundDown|distance|position|setFrame|taskKill|toString|userPage|aioLink|compose|dioLink|getData|isEmpty|libLoad|libPath|libSave|roundUp|setData|aioGet|aioSet|append|delete|dioGet|dioSet|gotoxy|insert|logMsg|resize|appro|clock|close|herej|limit|putln|round|toNum|watch|bAnd|bNot|bXor|help|here|link|open|size|sqrt|wait|abs|bOr|cls|cos|get|max|min|put|sel|sin|tan)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "val3-types": {
+            "patterns": [
+                {
+                    "match": "\\b(num|bool|string|dio|aio|sio|config|configRx|configRs|trsf|frame|tool|point|pointRx|pointRs|joint|jointRx|jointRs|mdesc)\\b(?=\\s+[A-Za-z_]|\\[|\")",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "xml-tag": {
+            "patterns": [
+                {
+                    "match": "</?[A-Za-z_][\\w:.-]*|/?>|<\\?xml|\\?>|<!\\[CDATA\\[|\\]\\]>",
+                    "name": "entity.name.tag"
                 }
             ]
         }

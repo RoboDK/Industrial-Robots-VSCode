@@ -1,0 +1,135 @@
+{
+    "name": "Cloos",
+    "scopeName": "robodk.cloos",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#io"
+        },
+        {
+            "include": "#point-number"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#constant"
+        },
+        {
+            "include": "#system"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "!",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                },
+                {
+                    "match": "^\\s*\\(.*\\)\\s*$",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "io": {
+            "patterns": [
+                {
+                    "match": "\\b(OT|IN)#\\(\\d+\\)",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "point-number": {
+            "patterns": [
+                {
+                    "match": "(?<=\\b(GP|GC|PTP|LIN|CIR)\\s\\()\\d+(?=\\))",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "\\b(SPLINE|GCIRC|ARC|CIR|LIN|PTP|GC|GP)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "\\b(ENDWHILE|RESTART|REPEAT|ENDIF|UNTIL|WHILE|CALL|ELSE|GOTO|LIST|MAIN|NEXT|THEN|END|FOR|RET|IF)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "\\b(ARCOFF|ARCON|DELAY|RESET|SPEED|WAITM|WAITS|WEAVE|BASE|DOUT|STCP|STOV|TOOL|WAIT|DIN|SET)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "constant": {
+            "patterns": [
+                {
+                    "match": "\\b(OFF|ON)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "system": {
+            "patterns": [
+                {
+                    "match": "^\\s*\\$(?=\\s*\\()",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "<>|<=|>=|[-+*/=<>]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}

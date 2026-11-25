@@ -1,0 +1,142 @@
+{
+    "name": "Inovance",
+    "scopeName": "robodk.inovance",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#section"
+        },
+        {
+            "include": "#data"
+        },
+        {
+            "include": "#frame-field"
+        },
+        {
+            "include": "#header-field"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#constant"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "#",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "section": {
+            "patterns": [
+                {
+                    "match": "^\\s*(ProgramInfo|EndProgramInfo|FileInfo|EndFileInfo|Start;|End;)",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "data": {
+            "patterns": [
+                {
+                    "match": "\\b(P|JP|V|Z|T|Tool|Wobj|DO|DI|AO|AI|R|I|B)(?=\\[)",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "frame-field": {
+            "patterns": [
+                {
+                    "match": "(?<=\\.)(TFrame|UFrame|X|Y|Z|A|B|C|Load|Mass)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "header-field": {
+            "patterns": [
+                {
+                    "match": "^\\s*(Version|VRC|Time|RobotName|FileType|SystemVersion)(?=\\s*=)",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "\\b(MovAbsJ|MovC|MovJ|MovL|Movc|Movj|Movl|Movs)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "\\b(EndWhile|ElseIf|EndFor|Return|EndIf|Label|While|Call|Else|Goto|Then|Wait|For|If)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "\\b(Delay|Print|SetAO|SetDO|Fine|TP)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "constant": {
+            "patterns": [
+                {
+                    "match": "\\b(FALSE|TRUE)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "==|<>|<=|>=|[-+*/=<>]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,61 @@
+{
+    "comments": {
+        "lineComment": "'"
+    },
+    "brackets": [
+        [
+            "(",
+            ")"
+        ],
+        [
+            "[",
+            "]"
+        ],
+        [
+            "{",
+            "}"
+        ]
+    ],
+    "autoClosingPairs": [
+        [
+            "(",
+            ")"
+        ],
+        [
+            "[",
+            "]"
+        ],
+        [
+            "{",
+            "}"
+        ],
+        [
+            "\"",
+            "\""
+        ]
+    ],
+    "surroundingPairs": [
+        [
+            "(",
+            ")"
+        ],
+        [
+            "[",
+            "]"
+        ],
+        [
+            "{",
+            "}"
+        ],
+        [
+            "\"",
+            "\""
+        ]
+    ],
+    "folding": {
+        "markers": {
+            "start": "(?i)^\\s*(FOR|WHILE|SUB|SELECT)\\b",
+            "end": "(?i)^\\s*(NEXT|WEND|END SUB|END SELECT)\\b"
+        }
+    }
+}

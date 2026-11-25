@@ -1,0 +1,131 @@
+{
+    "name": "KEBA",
+    "scopeName": "robodk.keba",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#method"
+        },
+        {
+            "include": "#field"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#types"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#constant"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "//",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "method": {
+            "patterns": [
+                {
+                    "match": "(?<=\\.)(Set|Wait|Pulse|Connect|Start|Stop|Reset)\\b(?=\\()",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "field": {
+            "patterns": [
+                {
+                    "match": "\\b[A-Za-z_]\\w*(?=\\s*:=)",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "\\b(MoveRobotAxis|LinSearch|PTPSearch|LinRel|PTPRel|Circ|Lin|PTP)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "\\b(END_WHILE|END_LOOP|END_IF|RETURN|ELSIF|LABEL|WHILE|CALL|ELSE|GOTO|KILL|LOOP|THEN|WAIT|RUN|DO|IF)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "types": {
+            "patterns": [
+                {
+                    "match": "\\b(CARTREFSYSVAR|BOOLSIGOUT|CARTREFSYS|DINTSIGOUT|REALSIGOUT|BOOLSIGIN|DINTSIGIN|OVLSUPPOS|REALSIGIN|AXISPOS|CARTPOS|DYNAMIC|OVLABS|OVLREL|STRING|CLOCK|LREAL|TIMER|BOOL|DINT|REAL|TOOL|INT)\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "\\b(WaitIsFinished|WaitJustInTime|Workpiece|WaitTime|Warning|DynOvr|Notice|RefSys|Error|Info|Load|Ramp|SQRT|Stop|Tool|ABS|COS|Dyn|MAP|Ovl|SIN|TAN)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "constant": {
+            "patterns": [
+                {
+                    "match": "\\b(BEGINTRANSFORMATION|FALSE|World|TRUE)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": ":=|<>|<=|>=|[-+*/=<>:]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}

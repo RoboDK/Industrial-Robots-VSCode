@@ -1,0 +1,61 @@
+{
+    "comments": {
+        "lineComment": "'"
+    },
+    "brackets": [
+        [
+            "(",
+            ")"
+        ],
+        [
+            "[",
+            "]"
+        ],
+        [
+            "{",
+            "}"
+        ]
+    ],
+    "autoClosingPairs": [
+        [
+            "(",
+            ")"
+        ],
+        [
+            "[",
+            "]"
+        ],
+        [
+            "{",
+            "}"
+        ],
+        [
+            "\"",
+            "\""
+        ]
+    ],
+    "surroundingPairs": [
+        [
+            "(",
+            ")"
+        ],
+        [
+            "[",
+            "]"
+        ],
+        [
+            "{",
+            "}"
+        ],
+        [
+            "\"",
+            "\""
+        ]
+    ],
+    "folding": {
+        "markers": {
+            "start": "(?i)^\\s*(\\d+\\s+)?(If\\b.*\\bThen\\s*$|For\\b|While\\b|Select\\b|Function\\b)",
+            "end": "(?i)^\\s*(\\d+\\s+)?(EndIf|Next|WEnd|End Select|FEnd)\\b"
+        }
+    }
+}

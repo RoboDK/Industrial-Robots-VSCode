@@ -51,7 +51,7 @@
         "numbers": {
             "patterns": [
                 {
-                    "match": "\\b-?\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b",
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b",
                     "name": "constant.numeric.c"
                 }
             ]
@@ -99,7 +99,7 @@
         "task-control": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(Xqt|Pause|Cont|Halt|Quit|Resume|MyTask|TaskDone|TaskState|TaskWait|Restart|Recover|RecoverPos|StartMain|SyncLock|SyncUnlock|WaitSig|Signal|Error|ErrorOn|PauseOn|EStopOn)\\b",
+                    "match": "(?i)\\b(Xqt|Timeout|Pause|Cont|Halt|Quit|Resume|MyTask|TaskDone|TaskState|TaskWait|Restart|Recover|RecoverPos|StartMain|SyncLock|SyncUnlock|WaitSig|Signal|Error|ErrorOn|PauseOn|EStopOn)\\b",
                     "name": "entity.name.function.preprocessor.c"
                 }
             ]

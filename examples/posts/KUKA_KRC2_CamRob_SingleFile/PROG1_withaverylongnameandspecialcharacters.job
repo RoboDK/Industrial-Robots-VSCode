@@ -1,0 +1,23 @@
+[Comment]
+This file has been generated using RoboDK
+
+[Version]
+MajorVersion = 1
+MinorVersion = 1
+
+[Info]
+Author = Your name
+Company = Company name
+Division = Company division
+ProjectsDir = C:\
+ProjectName = PROG1_withaverylongnameandspecialcharacters
+JobName = PROG1_withaverylongnameandspecialcharacters
+Comment = PROG1_withaverylongnameandspecialcharacters
+
+[Files]
+SRCFile = PROG1_withaverylongnameandspecialcharacters.src
+DATFile = PROG1_withaverylongnameandspecialcharacters.dat
+HTMFile =
+XMLFile =
+NumBin = 1
+BinFile_1=Carbo_drill

@@ -1,0 +1,97 @@
+{
+    "name": "NEWKer",
+    "scopeName": "robodk.newker",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#g-code"
+        },
+        {
+            "include": "#m-code"
+        },
+        {
+            "include": "#io"
+        },
+        {
+            "include": "#address"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": ";",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "\\b(MOVJ|MOVL|MOVC)\\b|\\bG0?[0-3]\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "g-code": {
+            "patterns": [
+                {
+                    "match": "\\bG\\d+\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "m-code": {
+            "patterns": [
+                {
+                    "match": "\\bM\\d+\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "io": {
+            "patterns": [
+                {
+                    "match": "\\b(OUT|WAT)\\s*[-+](?=[MXY]\\d)|\\bMSG(?=\\()",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "address": {
+            "patterns": [
+                {
+                    "match": "\\b(VJ|V|PL|J[1-6]|T|P|L)(?==|\\d)|[XYZABCIJKxyzabc](?=-?\\.?\\d)",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?\\b|(?<=[XYZABCIJKxyzabcMT])-?\\d+(\\.\\d+)?",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "[-+=]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}

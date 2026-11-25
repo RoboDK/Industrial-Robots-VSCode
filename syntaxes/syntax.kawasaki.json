@@ -14,10 +14,16 @@
             "include": "#numbers"
         },
         {
+            "include": "#joint-target"
+        },
+        {
             "include": "#control"
         },
         {
             "include": "#control1"
+        },
+        {
+            "include": "#control-flow"
         },
         {
             "include": "#movement"
@@ -42,7 +48,7 @@
         "built-in-fcn": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(BASE|JMOVE|LMOVE|CALL|ALWAYS|NEVER)\\b",
+                    "match": "(?i)\\b(BASE|JMOVE|LMOVE|CALL|ALWAYS|NEVER|FINE|MM/MIN|DEG/S|ON|OFF)\\b",
                     "name": "entity.name.function.c"
                 }
             ]
@@ -58,7 +64,7 @@
         "built-in-types1": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(TYPE|TWAIT|SIGNAL|WAIT|SIG|TOOL)\\b",
+                    "match": "(?i)\\b(TYPE|TWAIT|SIGNAL|WAIT|SIG|TOOL|SWAIT|PULSE|DLYSIG|PRINT|PAUSE|HALT|STOP|RETURN|LWS|LWC|LWE|BREAK|HERE|POINT)\\b",
                     "name": "storage.type.c"
                 }
             ]
@@ -66,7 +72,7 @@
         "built-in-var": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(SPEED|ACCEL)\\b",
+                    "match": "(?i)\\b(SPEED|ACCEL|ACCURACY|DECEL|WEIGHT)\\b",
                     "name": "constant.language"
                 }
             ]
@@ -88,6 +94,14 @@
                 }
             ]
         },
+        "control-flow": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(UNTIL|VALUE|WHILE|CASE|ELSE|GOTO|STEP|THEN|AND|ANY|END|FOR|NOT|DO|IF|OF|OR|TO)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
         "control1": {
             "patterns": [
                 {
@@ -105,10 +119,18 @@
                 }
             ]
         },
+        "joint-target": {
+            "patterns": [
+                {
+                    "match": "#PPOINT\\b|#(?=\\[)",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
         "movement": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(TRANS|C1MOVE|C2MOVE)\\b",
+                    "match": "(?i)\\b(TRANS|C1MOVE|C2MOVE|HMOVE|JAPPRO|LAPPRO|JDEPART|LDEPART|DRAW|TDRAW|DRIVE|HOME|ALIGN|XMOVE)\\b",
                     "name": "entity.name.function.preprocessor.c"
                 }
             ]
@@ -116,7 +138,7 @@
         "numbers": {
             "patterns": [
                 {
-                    "match": "\\b-?\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b",
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b",
                     "name": "constant.numeric.c"
                 }
             ]
