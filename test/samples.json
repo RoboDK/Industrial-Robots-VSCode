@@ -30,6 +30,7 @@
   {"post": "Fanuc_R30i", "file": "MAIN_1.LS", "language": "Fanuc"},
   {"post": "Fanuc_R30i", "file": "PROG1_with.LS", "language": "Fanuc"},
   {"post": "Fanuc_RJ3", "file": "MAIN_1.LS", "language": "Fanuc"},
+  {"post": "Flexiv", "file": "MAIN_1.traj", "language": "Flexiv"},
   {"post": "GCode_BnR", "file": "MAIN_1.cnc", "language": "GCode"},
   {"post": "GCode_NCP", "file": "MAIN_1.cnc", "language": "GCode"},
   {"post": "KUKA_CNC", "file": "MAIN_1.nc", "language": "GCode"},

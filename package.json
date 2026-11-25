@@ -578,6 +578,17 @@
         "configuration": "./cnfg.comau_lsv.json"
       },
       {
+        "id": "Flexiv",
+        "aliases": [
+          "Flexiv",
+          "Flexiv trajectory"
+        ],
+        "extensions": [
+          ".traj"
+        ],
+        "configuration": "./cnfg.flexiv.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -822,6 +833,11 @@
         "language": "Comau_LSV",
         "scopeName": "robodk.comau_lsv",
         "path": "./syntaxes/syntax.comau_lsv.json"
+      },
+      {
+        "language": "Flexiv",
+        "scopeName": "robodk.flexiv",
+        "path": "./syntaxes/syntax.flexiv.json"
       }
     ],
     "snippets": [
