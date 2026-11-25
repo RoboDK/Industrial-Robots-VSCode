@@ -1,0 +1,169 @@
+{
+    "name": "Hyundai",
+    "scopeName": "robodk.hyundai",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#header"
+        },
+        {
+            "include": "#step"
+        },
+        {
+            "include": "#label"
+        },
+        {
+            "include": "#interpolation"
+        },
+        {
+            "include": "#motion-parameter"
+        },
+        {
+            "include": "#joint-target"
+        },
+        {
+            "include": "#io"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "'",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                },
+                {
+                    "begin": "^\\s*REM\\b",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "header": {
+            "patterns": [
+                {
+                    "match": "^Program File Format Version|\\b(MechType|TotalAxis|AuxAxis)(?=:)",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "step": {
+            "patterns": [
+                {
+                    "match": "^S\\d+\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "label": {
+            "patterns": [
+                {
+                    "match": "^\\s*\\*\\w+|(?<=\\s)\\*\\w+",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "interpolation": {
+            "patterns": [
+                {
+                    "match": "(?<=\\bMOVE )[JLCP]\\b|(?<=\\bSMOV )[JLCP]\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "motion-parameter": {
+            "patterns": [
+                {
+                    "match": "\\b(S|A|T|H|G|X\\d|UT|UF)(?==)|(?<=\\d)(mm/sec|mm/s|cm/min|sec|%)",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "joint-target": {
+            "patterns": [
+                {
+                    "match": "#(?=\\()",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "io": {
+            "patterns": [
+                {
+                    "match": "\\b(DO|DI|AO|AI|GO|GI|SO|SI|FB\\d*\\.\\w+|_\\w+)\\d*\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "\\b(MOVE|SMOV)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "\\b(END_SELECT|END_TRY|ELSEIF|RETURN|SELECT|CATCH|ENDIF|GOSUB|WHILE|CALL|CASE|ELSE|ENDW|GOTO|JMPP|NEXT|STEP|STOP|THEN|END|FOR|TRY|IF|TO)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "\\b(ENET_CLOSE|ENET_OPEN|CHGCOORD|CLR_RBUF|ONLTRACK|CHGTOOL|SELTOOL|SELUCRD|MKUCRD|WEAVOF|WEAVON|ARCOF|ARCON|DELAY|INPUT|PRINT|PULSE|RESET|REFP|SPOT|TONE|WAIT|GUN|SET)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "<>|<=|>=|==|[-+*/=<>]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}

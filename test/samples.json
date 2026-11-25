@@ -17,6 +17,7 @@
   {"post": "Fanuc_R30i", "file": "PROG1_with.LS", "language": "Fanuc"},
   {"post": "Fanuc_RJ3", "file": "MAIN_1.LS", "language": "Fanuc"},
   {"post": "HUASHU_HSR", "file": "MAIN_1.PRG", "language": "Huashu"},
+  {"post": "Hyundai", "file": "1.JOB", "language": "Hyundai"},
   {"post": "KUKA_KRC2_CamRob_SingleFile", "file": "PROG1_withaverylongnameandspecialcharacters.job", "language": "ini"},
   {"post": "JAKA", "file": "variable.vi", "language": "json"},
   {"post": "Omron_PathNode", "file": "Projects/MAIN_1/MAIN_1.flow", "language": "json"},

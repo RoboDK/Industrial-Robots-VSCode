@@ -258,6 +258,19 @@
         "configuration": "./cnfg.denso.json"
       },
       {
+        "id": "Hyundai",
+        "aliases": [
+          "Hyundai",
+          "HRScript",
+          "Hi5",
+          "Hi6"
+        ],
+        "extensions": [
+          ".job"
+        ],
+        "configuration": "./cnfg.hyundai.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -362,6 +375,11 @@
         "language": "Denso",
         "scopeName": "robodk.denso",
         "path": "./syntaxes/syntax.denso.json"
+      },
+      {
+        "language": "Hyundai",
+        "scopeName": "robodk.hyundai",
+        "path": "./syntaxes/syntax.hyundai.json"
       }
     ],
     "snippets": [
