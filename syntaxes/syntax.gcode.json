@@ -1,0 +1,151 @@
+{
+    "name": "GCode",
+    "scopeName": "robodk.gcode",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#program-header"
+        },
+        {
+            "include": "#line-number"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#g-code"
+        },
+        {
+            "include": "#m-code"
+        },
+        {
+            "include": "#kernel-command"
+        },
+        {
+            "include": "#address"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#constant"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": ";",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                },
+                {
+                    "begin": "//",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                },
+                {
+                    "match": "(?<![\\w\\]])\\([^()\\n]*\\)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "program-header": {
+            "patterns": [
+                {
+                    "match": "^%.*$",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "line-number": {
+            "patterns": [
+                {
+                    "match": "^\\s*N\\d+\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "\\bG(0?[0-3]|10[0-3]|2202)(?!\\d)[AB]?",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "g-code": {
+            "patterns": [
+                {
+                    "match": "\\bG\\d+(\\.\\d+)?",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "m-code": {
+            "patterns": [
+                {
+                    "match": "\\bM\\d+(\\.\\d+)?\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "kernel-command": {
+            "patterns": [
+                {
+                    "match": "#[A-Z_]+",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "address": {
+            "patterns": [
+                {
+                    "match": "\\b[A-Z](\\d(?=\\s*=|\\s+-?\\d))?(?=\\s*=?\\s*-?\\.?\\d)",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "constant": {
+            "patterns": [
+                {
+                    "match": "\\b(TRACK_DEV|PATH_DEV|BSPLINE|OPMODE|FALSE|TRUE|ALL|DEF|OFF|ON)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "==|<>|<=|>=|[-+*/=<>]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}

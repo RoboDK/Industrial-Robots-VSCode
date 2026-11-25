@@ -291,6 +291,22 @@
         "configuration": "./cnfg.nachi.json"
       },
       {
+        "id": "GCode",
+        "aliases": [
+          "G-code",
+          "GCode",
+          "CNC",
+          "NC",
+          "KUKA.CNC",
+          "B&R"
+        ],
+        "extensions": [
+          ".cnc",
+          ".nc"
+        ],
+        "configuration": "./cnfg.gcode.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -410,6 +426,11 @@
         "language": "Nachi",
         "scopeName": "robodk.nachi",
         "path": "./syntaxes/syntax.nachi.json"
+      },
+      {
+        "language": "GCode",
+        "scopeName": "robodk.gcode",
+        "path": "./syntaxes/syntax.gcode.json"
       }
     ],
     "snippets": [
