@@ -589,6 +589,18 @@
         "configuration": "./cnfg.flexiv.json"
       },
       {
+        "id": "Panasonic",
+        "aliases": [
+          "Panasonic",
+          "CSR",
+          "G3"
+        ],
+        "extensions": [
+          ".csr"
+        ],
+        "configuration": "./cnfg.panasonic.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -838,6 +850,11 @@
         "language": "Flexiv",
         "scopeName": "robodk.flexiv",
         "path": "./syntaxes/syntax.flexiv.json"
+      },
+      {
+        "language": "Panasonic",
+        "scopeName": "robodk.panasonic",
+        "path": "./syntaxes/syntax.panasonic.json"
       }
     ],
     "snippets": [
