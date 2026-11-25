@@ -18,254 +18,260 @@
     "url": "https://github.com/RoboDK/Industrial-Robots-VSCode"
   },
   "bugs": {
-      "url": "https://robodk.com/forum"
+    "url": "https://robodk.com/forum"
   },
   "keywords": [
-      "industrial robots",
-      "robot arm",
-      "robot simulation",
-      "offline programming",
-      "robot manufacturing",
-      "robot machining",
-      "pick and place",
-      "CAD",
-      "CAM",
-      "ABB",
-      "IRC5",
-      "RAPID",
-      "Fanuc",
-      "R30iA",
-      "LS",
-      "KUKA",
-      "KRC2",
-      "KRC4",
-      "Kawasaki",
-      "Yaskawa",
-      "Motoman",
-      "Inform",
-      "Staubli",
-      "VAL3",
-      "Universal Robots"
+    "industrial robots",
+    "robot arm",
+    "robot simulation",
+    "offline programming",
+    "robot manufacturing",
+    "robot machining",
+    "pick and place",
+    "CAD",
+    "CAM",
+    "ABB",
+    "IRC5",
+    "RAPID",
+    "Fanuc",
+    "R30iA",
+    "LS",
+    "KUKA",
+    "KRC2",
+    "KRC4",
+    "Kawasaki",
+    "Yaskawa",
+    "Motoman",
+    "Inform",
+    "Staubli",
+    "VAL3",
+    "Universal Robots"
   ],
   "categories": [
     "Programming Languages",
     "Other"
   ],
-  "contributes":
-    {
-    "grammars": [
-        {
-            "language": "ABB",
-            "path": "./syntaxes/syntax.abb.json",
-            "scopeName": "robodk.abb"
-        },
-        {
-            "language": "Comau",
-            "path": "./syntaxes/syntax.comau.json",
-            "scopeName": "robodk.comau"
-        },
-        {
-            "language": "Fanuc",
-            "path": "./syntaxes/syntax.fanuc.json",
-            "scopeName": "robodk.fanuc"
-        },
-        {
-            "language": "Kawasaki",
-            "path": "./syntaxes/syntax.kawasaki.json",
-            "scopeName": "robodk.kawasaki"
-        },
-        {
-            "language": "KUKA",
-            "path": "./syntaxes/syntax.kuka.json",
-            "scopeName": "robodk.kuka"
-        },
-        {
-            "language": "Motoman",
-            "path": "./syntaxes/syntax.motoman.json",
-            "scopeName": "robodk.motoman"
-        },
-        {
-            "language": "Staubli",
-            "path": "./syntaxes/syntax.staubli.json",
-            "scopeName": "robodk.staubli"
-        },
-        {
-            "language": "universal_robots",
-            "path": "./syntaxes/syntax.universal_robots.json",
-            "scopeName": "robodk.universal_robots"
-        },
-        {
-            "language": "Epson",
-            "path": "./syntaxes/syntax.epson.json",
-            "scopeName": "robodk.epson"
-        },
-        {
-            "language": "Omron",
-            "path": "./syntaxes/syntax.omron.json",
-            "scopeName": "robodk.omron"
-        }
-    ],
+  "scripts": {
+    "test": "node test/manifest.test.js && node test/samples.test.js"
+  },
+  "devDependencies": {
+    "vscode-oniguruma": "^2.0.1",
+    "vscode-textmate": "^9.0.0"
+  },
+  "contributes": {
     "languages": [
-        {
-            "aliases": [
-                "ABB",
-                "RAPID",
-                "S4",
-                "S4C",
-                "IRC5"
-            ],
-            "configuration": "./cnfg.abb.json",
-            "extensions": [
-                ".sys",
-                ".sysx",
-                ".mod",
-                ".modx",
-                ".prg",
-                ".pgf"
-            ],
-            "id": "ABB"
-        },
-        {
-            "aliases": [
-                "Comau",
-                "pdl"
-            ],
-            "configuration": "./cnfg.comau.json",
-            "extensions": [
-                ".pdl"
-            ],
-            "id": "Comau"
-        },
-        {
-            "aliases": [
-                "Fanuc",
-                "LS",
-                "TP"
-            ],
-            "configuration": "./cnfg.fanuc.json",
-            "extensions": [
-                ".LS",
-                ".ls"
-            ],
-            "id": "Fanuc"
-        },
-        {
-            "aliases": [
-                "Kawasaki"
-            ],
-            "configuration": "./cnfg.kawasaki.json",
-            "extensions": [
-                ".pg"
-            ],
-            "id": "Kawasaki"
-        },
-        {
-            "aliases": [
-                "KUKA",
-                "KRC",
-                "KRC2",
-                "KRC4",
-                "SRC",
-                "DAT"
-            ],
-            "configuration": "./cnfg.kuka.json",
-            "extensions": [
-                ".src",
-                ".dat"
-            ],
-            "id": "KUKA"
-        },
-        {
-            "aliases": [
-                "Motoman",
-                "Yaskawa",
-                "JBI",
-                "Inform",
-                "InformII",
-                "InformIII"
-            ],
-            "configuration": "./cnfg.motoman.json",
-            "extensions": [
-                ".jbi",
-                ".cnd"
-            ],
-            "id": "Motoman"
-        },
-        {
-            "aliases": [
-                "Staubli",
-                "Scara",
-                "St\u00e4ubli"
-            ],
-            "configuration": "./cnfg.staubli.json",
-            "extensions": [
-                ".pgx",
-                ".pjx",
-                ".dtx"
-            ],
-            "id": "Staubli"
-        },
-        {
-            "aliases": [
-                "Universal_Robots"
-            ],
-            "configuration": "./cnfg.universal_robots.json",
-            "extensions": [
-                ".script"
-            ],
-            "id": "universal_robots"
-        },
-        {
-            "aliases": [
-                "Epson",
-                "SPEL+",
-                "SPEL"
-            ],
-            "configuration": "./cnfg.epson.json",
-            "extensions": [
-                ".prg"
-            ],
-            "id": "Epson"
-        },
-        {
-            "aliases": [
-                "Omron",
-                "Adept",
-                "V+",
-                "eV+"
-            ],
-            "configuration": "./cnfg.omron.json",
-            "extensions": [
-                ".pg"
-            ],
-            "id": "Omron"
-        }
+      {
+        "aliases": [
+          "ABB",
+          "RAPID",
+          "S4",
+          "S4C",
+          "IRC5"
+        ],
+        "configuration": "./cnfg.abb.json",
+        "extensions": [
+          ".sys",
+          ".sysx",
+          ".mod",
+          ".modx",
+          ".prg",
+          ".pgf"
+        ],
+        "id": "ABB"
+      },
+      {
+        "aliases": [
+          "Comau",
+          "pdl"
+        ],
+        "configuration": "./cnfg.comau.json",
+        "extensions": [
+          ".pdl"
+        ],
+        "id": "Comau"
+      },
+      {
+        "aliases": [
+          "Fanuc",
+          "LS",
+          "TP"
+        ],
+        "configuration": "./cnfg.fanuc.json",
+        "extensions": [
+          ".LS",
+          ".ls"
+        ],
+        "id": "Fanuc"
+      },
+      {
+        "aliases": [
+          "Kawasaki"
+        ],
+        "configuration": "./cnfg.kawasaki.json",
+        "extensions": [
+          ".pg"
+        ],
+        "id": "Kawasaki"
+      },
+      {
+        "aliases": [
+          "KUKA",
+          "KRC",
+          "KRC2",
+          "KRC4",
+          "SRC",
+          "DAT"
+        ],
+        "configuration": "./cnfg.kuka.json",
+        "extensions": [
+          ".src",
+          ".dat"
+        ],
+        "id": "KUKA"
+      },
+      {
+        "aliases": [
+          "Motoman",
+          "Yaskawa",
+          "JBI",
+          "Inform",
+          "InformII",
+          "InformIII"
+        ],
+        "configuration": "./cnfg.motoman.json",
+        "extensions": [
+          ".jbi",
+          ".cnd"
+        ],
+        "id": "Motoman"
+      },
+      {
+        "aliases": [
+          "Staubli",
+          "Scara",
+          "Stäubli"
+        ],
+        "configuration": "./cnfg.staubli.json",
+        "extensions": [
+          ".pgx",
+          ".pjx",
+          ".dtx"
+        ],
+        "id": "Staubli"
+      },
+      {
+        "aliases": [
+          "Universal_Robots"
+        ],
+        "configuration": "./cnfg.universal_robots.json",
+        "extensions": [
+          ".script"
+        ],
+        "id": "universal_robots"
+      },
+      {
+        "aliases": [
+          "Epson",
+          "SPEL+",
+          "SPEL"
+        ],
+        "configuration": "./cnfg.epson.json",
+        "extensions": [
+          ".prg"
+        ],
+        "id": "Epson"
+      },
+      {
+        "aliases": [
+          "Omron",
+          "Adept",
+          "V+",
+          "eV+"
+        ],
+        "configuration": "./cnfg.omron.json",
+        "extensions": [
+          ".pg"
+        ],
+        "id": "Omron"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ABB",
+        "path": "./syntaxes/syntax.abb.json",
+        "scopeName": "robodk.abb"
+      },
+      {
+        "language": "Comau",
+        "path": "./syntaxes/syntax.comau.json",
+        "scopeName": "robodk.comau"
+      },
+      {
+        "language": "Fanuc",
+        "path": "./syntaxes/syntax.fanuc.json",
+        "scopeName": "robodk.fanuc"
+      },
+      {
+        "language": "Kawasaki",
+        "path": "./syntaxes/syntax.kawasaki.json",
+        "scopeName": "robodk.kawasaki"
+      },
+      {
+        "language": "KUKA",
+        "path": "./syntaxes/syntax.kuka.json",
+        "scopeName": "robodk.kuka"
+      },
+      {
+        "language": "Motoman",
+        "path": "./syntaxes/syntax.motoman.json",
+        "scopeName": "robodk.motoman"
+      },
+      {
+        "language": "Staubli",
+        "path": "./syntaxes/syntax.staubli.json",
+        "scopeName": "robodk.staubli"
+      },
+      {
+        "language": "universal_robots",
+        "path": "./syntaxes/syntax.universal_robots.json",
+        "scopeName": "robodk.universal_robots"
+      },
+      {
+        "language": "Epson",
+        "path": "./syntaxes/syntax.epson.json",
+        "scopeName": "robodk.epson"
+      },
+      {
+        "language": "Omron",
+        "path": "./syntaxes/syntax.omron.json",
+        "scopeName": "robodk.omron"
+      }
     ],
     "snippets": [
-        {
-            "language": "ABB",
-            "path": "./snippets/snippet.abb.json"
-        },
-        {
-            "language": "Fanuc",
-            "path": "./snippets/snippet.fanuc.json"
-        },
-        {
-            "language": "KUKA",
-            "path": "./snippets/snippet.kuka.json"
-        },
-        {
-            "language": "Motoman",
-            "path": "./snippets/snippet.motoman.json"
-        },
-        {
-            "language": "Epson",
-            "path": "./snippets/snippet.epson.json"
-        },
-        {
-            "language": "Omron",
-            "path": "./snippets/snippet.omron.json"
-        }
+      {
+        "language": "ABB",
+        "path": "./snippets/snippet.abb.json"
+      },
+      {
+        "language": "Fanuc",
+        "path": "./snippets/snippet.fanuc.json"
+      },
+      {
+        "language": "KUKA",
+        "path": "./snippets/snippet.kuka.json"
+      },
+      {
+        "language": "Motoman",
+        "path": "./snippets/snippet.motoman.json"
+      },
+      {
+        "language": "Epson",
+        "path": "./snippets/snippet.epson.json"
+      },
+      {
+        "language": "Omron",
+        "path": "./snippets/snippet.omron.json"
+      }
     ]
-}
+  }
 }

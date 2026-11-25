@@ -1,0 +1,28 @@
+/JOB
+//NAME PROG1_W
+//POS
+///NPOS 1,0,0,0,0,0
+///TOOL 1
+///POSTYPE PULSE
+///PULSE
+C00000=0,0,0,0,0,0
+//INST
+///DATE 2023/01/01 00:00
+///COMM Generated using RoboDK
+///ATTR SC,RW
+///GROUP1 RB1
+NOP
+'This is a subprogram call to 
+'PROG_1
+'Using Frame 1 _.-[]/\;,><&*:%
+'=+@!#^|?^ with a very long na
+'me and special characters (ta
+'rgets wrt base):
+'0.0,1000.0,0.0,0.0,0.0,0.0
+'Tool 1 (Tool 1 _.-[]/\;,><&*:
+'%=+@!#^|?^ with a very long n
+'ame and s) should be close to
+':
+'0.0,0.0,200.0,0.0,0.0,0.0
+MOVJ C00000 VJ=100.0 ACC=100 DEC=100
+END

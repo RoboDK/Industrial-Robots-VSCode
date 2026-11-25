@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="MoveCirc">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nX" type="num" xsi:type="element" />
+      <Parameter name="x_nY" type="num" xsi:type="element" />
+      <Parameter name="x_nZ" type="num" xsi:type="element" />
+      <Parameter name="x_nRx" type="num" xsi:type="element" />
+      <Parameter name="x_nRy" type="num" xsi:type="element" />
+      <Parameter name="x_nRz" type="num" xsi:type="element" />
+      <Parameter name="x_nX2" type="num" xsi:type="element" />
+      <Parameter name="x_nY2" type="num" xsi:type="element" />
+      <Parameter name="x_nZ2" type="num" xsi:type="element" />
+      <Parameter name="x_nRx2" type="num" xsi:type="element" />
+      <Parameter name="x_nRy2" type="num" xsi:type="element" />
+      <Parameter name="x_nRz2" type="num" xsi:type="element" />
+    </Parameters>
+    <Code><![CDATA[begin
+  pPointRx.trsf.x = x_nX
+  pPointRx.trsf.y = x_nY
+  pPointRx.trsf.z = x_nZ
+  pPointRx.trsf.rx = x_nRx
+  pPointRx.trsf.ry = x_nRy
+  pPointRx.trsf.rz = x_nRz
+  pPointRx2.trsf.x = x_nX2
+  pPointRx2.trsf.y = x_nY2
+  pPointRx2.trsf.z = x_nZ2
+  pPointRx2.trsf.rx = x_nRx2
+  pPointRx2.trsf.ry = x_nRy2
+  pPointRx2.trsf.rz = x_nRz2
+  movec(pPointRx,pPointRx2,tCurrentTool,mCurrentSpeed)
+end]]></Code>
+  </Program>
+</Programs>

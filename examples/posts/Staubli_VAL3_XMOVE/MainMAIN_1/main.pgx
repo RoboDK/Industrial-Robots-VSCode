@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="main" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_fCellule" type="frame" xsi:type="element" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nRef0" type="num" xsi:type="array" size="1" />
+      <Local name="l_nResult" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[
+begin
+ 
+ 
+  link(fWorld0,x_fCellule)
+  l_nRef0 =0
+  fWorld0.trsf = $Xposition(world,x_fCellule,l_nRef0)
+ 
+  if prog:libLoad("./PROG1_withaverylongnameandspecialcharacters")!=0
+    logMsg("Error Loading RoboDK library")
+    popUpMsg("Error Loading RoboDK library")
+  endIf
+  wait(taskStatus("loading")==-1)
+  prog:fPartReal.trsf=fPartCad.trsf*fCadToReal.trsf
+  prog:tCad.trsf=tCad.trsf*tAdjust.trsf
+  call prog:setLink(fWorld0)
+  call prog:start()
+  
+
+ 
+end
+      ]]></Code>
+  </Program>
+</Programs>

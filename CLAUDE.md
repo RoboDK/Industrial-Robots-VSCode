@@ -48,6 +48,17 @@ Language ids are brand names (`ABB`, `KUKA`, `Mitsubishi`, ...); file names use 
 - `examples/`: hand-picked programs for the original languages (the `.rdk` files are the RoboDK stations that produced them).
 - `examples/posts/<PostName>/`: one output per RoboDK post processor, copied from the `tests/outputs/MAIN_1` folder of the RoboDK-Post-Processors repository. Use these when writing or checking a grammar.
 
+## Tests
+
+```
+npm install     # once: installs vscode-textmate and vscode-oniguruma (dev only)
+npm test
+```
+
+- `test/manifest.test.js` checks `package.json` against the files on disk: every language has its config and grammar, scope names and file names follow the convention, snippet files exist, JSON has no duplicate keys, no extension is claimed by two languages (apart from the grandfathered `.prg` and `.pg` pairs), and no generic extension is claimed.
+- `test/samples.test.js` tokenizes every sample listed in `test/samples.json` with the real VS Code engine and fails if a grammar does not compile, if fewer than 80% of the non-blank lines get any highlighting, or if a comment line is not scoped as a comment. Every language with a grammar needs at least one sample. Useful flags: `--only <LanguageId>`, `--verbose` (lists unscoped lines), `--root <dir>` (check `<dir>/<Post>/<file>`, e.g. the `tests/outputs/MAIN_1/Posts` folder of RoboDK-Post-Processors).
+- Inspect how a single file is tokenized: `node test/tokenize.js <LanguageId> <file> [maxLines]`.
+
 ## Trying changes
 
 Launch the Extension Development Host with the `.vscode/launch.json` "Extension" config, or from the repo root:
