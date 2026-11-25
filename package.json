@@ -234,6 +234,16 @@
         "configuration": "./cnfg.yamaha.json"
       },
       {
+        "id": "Huashu",
+        "aliases": [
+          "Huashu",
+          "HUASHU",
+          "HSR"
+        ],
+        "extensions": [],
+        "configuration": "./cnfg.huashu.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -328,6 +338,11 @@
         "language": "Yamaha",
         "scopeName": "robodk.yamaha",
         "path": "./syntaxes/syntax.yamaha.json"
+      },
+      {
+        "language": "Huashu",
+        "scopeName": "robodk.huashu",
+        "path": "./syntaxes/syntax.huashu.json"
       }
     ],
     "snippets": [
