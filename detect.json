@@ -49,6 +49,7 @@
     {"id": "json", "patterns": ["^\\s*[\\[{]"]}
   ],
   ".NNN": [
+    {"id": "Nachi", "patterns": ["^MOVEX [AM]", "^\\s*(CALLP|CHGCOORD|WAITI) "]},
     {"id": "Hyundai", "patterns": ["^S\\d+\\s+MOVE [JLCP],", "^Program File Format Version"]}
   ]
 }

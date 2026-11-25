@@ -44,6 +44,7 @@
   {"post": "Motoman", "file": "PROG1_w.JBI", "language": "Motoman"},
   {"post": "Motoman_Cartesian", "file": "MAIN_1.JBI", "language": "Motoman"},
   {"post": "Motoman_CartesianOnly", "file": "MAIN_1.JBI", "language": "Motoman"},
+  {"post": "Nachi_AX_FD", "file": "Industrial-01-A.001", "language": "Nachi"},
   {"post": "Adept_Staubli_Vplus_custom", "file": "MAIN_1.V2", "language": "Omron"},
   {"post": "Adept_Vplus", "file": "MAIN_1.vb1", "language": "Omron"},
   {"post": "Omron_Adept_Vplus", "file": "MAIN_1.vb1", "language": "Omron"},
