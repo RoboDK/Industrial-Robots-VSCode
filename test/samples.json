@@ -24,6 +24,7 @@
   {"post": "KUKA_CNC", "file": "MAIN_1.nc", "language": "GCode"},
   {"post": "Post_Generic", "file": "MAIN_1.cnc", "language": "GCode"},
   {"post": "uArm", "file": "MAIN_1.cnc", "language": "GCode"},
+  {"post": "GSK", "file": "MAIN_1.PRL", "language": "GSK"},
   {"post": "HUASHU_HSR", "file": "MAIN_1.PRG", "language": "Huashu"},
   {"post": "Hyundai", "file": "1.JOB", "language": "Hyundai"},
   {"post": "Inexbot", "file": "M_Mold.JBR", "language": "Inexbot"},

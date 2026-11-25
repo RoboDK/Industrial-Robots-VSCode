@@ -396,6 +396,17 @@
         "configuration": "./cnfg.siasun_job.json"
       },
       {
+        "id": "GSK",
+        "aliases": [
+          "GSK",
+          "PRL"
+        ],
+        "extensions": [
+          ".prl"
+        ],
+        "configuration": "./cnfg.gsk.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -560,6 +571,11 @@
         "language": "Siasun_JOB",
         "scopeName": "robodk.siasun_job",
         "path": "./syntaxes/syntax.siasun_job.json"
+      },
+      {
+        "language": "GSK",
+        "scopeName": "robodk.gsk",
+        "path": "./syntaxes/syntax.gsk.json"
       }
     ],
     "snippets": [
