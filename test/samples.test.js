@@ -65,13 +65,14 @@ async function main() {
     try { lines = await tokenize(s.language, text); }
     catch (e) { failures.push(`${label}: ${e.message}`); continue; }
 
-    // 3. most lines get some highlighting, and comment lines are comments
+    // 3. most lines with words or numbers get some highlighting, and comment lines are comments
     const config = JSON.parse(fs.readFileSync(path.join(ROOT, languages[s.language].configuration), 'utf8'));
     const lineComment = config.comments && config.comments.lineComment;
     let nonBlank = 0, scoped = 0;
     const unscoped = [];
     for (const l of lines) {
-      if (!l.text.trim()) continue;
+      // blank lines and lines with only punctuation (a closing brace...) have nothing to highlight
+      if (!/[A-Za-z0-9]/.test(l.text)) continue;
       nonBlank++;
       if (l.tokens.some((t) => t.scopes.length)) scoped++; else unscoped.push(l.text);
       if (lineComment && l.text.trim().startsWith(lineComment)) {

@@ -66,7 +66,7 @@ npm test
 ```
 
 - `test/manifest.test.js` checks `package.json` against the files on disk: every language has its config and grammar, scope names and file names follow the convention, snippet files exist, JSON has no duplicate keys, no extension is claimed by two languages (apart from the grandfathered `.prg` and `.pg` pairs), and no generic extension is claimed.
-- `test/samples.test.js` tokenizes every sample listed in `test/samples.json` with the real VS Code engine and fails if a grammar does not compile, if fewer than 80% of the non-blank lines get any highlighting, or if a comment line is not scoped as a comment. Every language with a grammar needs at least one sample. Useful flags: `--only <LanguageId>`, `--verbose` (lists unscoped lines), `--root <dir>` (check `<dir>/<Post>/<file>`, e.g. the `tests/outputs/MAIN_1/Posts` folder of RoboDK-Post-Processors).
+- `test/samples.test.js` tokenizes every sample listed in `test/samples.json` with the real VS Code engine and fails if a grammar does not compile, if fewer than 80% of the lines containing letters or digits get any highlighting, or if a comment line is not scoped as a comment. Every language with a grammar needs at least one sample. Useful flags: `--only <LanguageId>`, `--verbose` (lists unscoped lines), `--root <dir>` (check `<dir>/<Post>/<file>`, e.g. the `tests/outputs/MAIN_1/Posts` folder of RoboDK-Post-Processors).
 - When `detect.json` exists, the sample test also asserts that each sample opens as its expected language (detected, or the static default of its extension).
 - `test/extension.test.js` runs `extension.js` against a stub of the `vscode` API (activation, guards, setting).
 - Inspect how a single file is tokenized: `node test/tokenize.js <LanguageId> <file> [maxLines]`.
