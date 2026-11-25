@@ -43,7 +43,7 @@
         "numbers": {
             "patterns": [
                 {
-                    "match": "\\b-?\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b",
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b",
                     "name": "constant.numeric.c"
                 }
             ]
@@ -51,11 +51,11 @@
         "program-structure": {
             "patterns": [
                 {
-                    "match": "(?i)^\\.PROGRAM\\b",
+                    "match": "(?i)^\\s*\\.PROGRAM\\b",
                     "name": "keyword.control"
                 },
                 {
-                    "match": "(?i)^\\.END\\b",
+                    "match": "(?i)^\\s*\\.END\\b",
                     "name": "keyword.control"
                 }
             ]
@@ -91,7 +91,7 @@
         "speed-accel": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(SPEED|ACCEL|CP|CPOFF|CPON|SINGLE|DURATION|PAYLOAD)\\b",
+                    "match": "(?i)\\b(SPEED|ACCEL|CP|CPOFF|CPON|SINGLE|DURATION|PAYLOAD|ALWAYS|MONITOR)\\b",
                     "name": "entity.name.function.preprocessor.c"
                 }
             ]
@@ -123,7 +123,7 @@
         "task-control": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(EXECUTE|KILL|ABORT|HALT|PAUSE|PROCEED|STOP|ESTOP|DISABLE|ENABLE|RESET|RETRY|ATTACH|DETACH|LOCK|RELEASE|KEYMODE|PENDANT|DOS|JOG|VRUN|VWAITI|PRIME|PANIC|CYCLE\\.END)\\b",
+                    "match": "(?i)\\b(EXECUTE|KILL|ABORT|HALT|PAUSE|DELAY|TIMEOUT|PROCEED|STOP|ESTOP|DISABLE|ENABLE|RESET|RETRY|ATTACH|DETACH|LOCK|RELEASE|KEYMODE|PENDANT|DOS|JOG|VRUN|VWAITI|PRIME|PANIC|CYCLE\\.END)\\b",
                     "name": "entity.name.function.preprocessor.c"
                 }
             ]
@@ -187,7 +187,7 @@
                     "name": "entity.name.function.c"
                 },
                 {
-                    "match": "#[A-Z.]+",
+                    "match": "#[A-Za-z.]+",
                     "name": "constant.language"
                 }
             ]
@@ -211,7 +211,7 @@
         "system-fn": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(DEFINED|ID|FREE|LAST|NETWORK|PRIORITY|SELECT|STATE|STATUS|TASK|TAS|TPS|DEVICE|TIME|TIMER|VRESULT|VSTATE|VPARAMETER|PARAMETER|WINDOW|BELT|ERROR|ACCEL|SPEED|INRANGE)\\b",
+                    "match": "(?i)\\b(DEFINED|ID|FREE|LAST|NETWORK|PRIORITY|SELECT|STATE|STATUS|TASK|TAS|TPS|DEVICE|TIME|TIMER|VRESULT|VSTATE|VPARAMETER|PARAMETER|VTIMEOUT|POWER|ROBOT|WINDOW|BELT|ERROR|ACCEL|SPEED|INRANGE)\\b",
                     "name": "entity.name.function.c"
                 },
                 {
