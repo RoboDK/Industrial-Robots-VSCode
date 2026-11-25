@@ -512,6 +512,17 @@
         "configuration": "./cnfg.cloos.json"
       },
       {
+        "id": "CPC",
+        "aliases": [
+          "CPC",
+          "PLCopen Robot Program"
+        ],
+        "extensions": [
+          ".cpc"
+        ],
+        "configuration": "./cnfg.cpc.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -726,6 +737,11 @@
         "language": "Cloos",
         "scopeName": "robodk.cloos",
         "path": "./syntaxes/syntax.cloos.json"
+      },
+      {
+        "language": "CPC",
+        "scopeName": "robodk.cpc",
+        "path": "./syntaxes/syntax.cpc.json"
       }
     ],
     "snippets": [

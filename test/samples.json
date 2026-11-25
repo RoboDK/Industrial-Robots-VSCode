@@ -13,6 +13,7 @@
   {"post": "Comau_C5G", "file": "MAIN_1.pdl", "language": "Comau"},
   {"post": "Comau_C5G_Joints", "file": "MAIN_1.pdl", "language": "Comau"},
   {"post": "Comau_Nodal", "file": "MAIN_1.pdl", "language": "Comau"},
+  {"post": "CPC", "file": "MAIN_1.cpc", "language": "CPC"},
   {"post": "Denso_RC7", "file": "MAIN_1.pac", "language": "Denso"},
   {"post": "Denso_RC8", "file": "MAIN_1.pcs", "language": "Denso"},
   {"post": "Denso_RC9", "file": "MAIN_1.pcs", "language": "Denso"},

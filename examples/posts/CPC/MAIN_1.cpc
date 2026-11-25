@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <InterpreterProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <ProgramList>
+          <Program>
+            <ProgramName>MAIN_1.cpc</ProgramName>
+            <ProgramContent>FUNCTION MAIN_1()
+            MC_Robot_MoveThetaAbsolute(#GroupId := 0, #Velocity := 100.0, #Acceleration := 100.0, #Deceleration := 100.0, #Jerk := 5000, #J1 := -0.000001, #J2 := 0.000000, #J3 := 0.000000, #J4 := 0.000000, #J5 := 0.000000, #J6 := -0.000000);
+            MC_Robot_MoveThetaAbsolute(#GroupId := 0, #Velocity := 100.0, #Acceleration := 100.0, #Deceleration := 100.0, #Jerk := 5000, #J1 := 0.000000, #J2 := 3.211240, #J3 := -15.423700, #J4 := 0.000000, #J5 := 12.212500, #J6 := -0.000000);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 500.0, #Acceleration := 2000.0, #Deceleration := 2000.0, #Jerk := 5000, #Coord := 1, #J1:=1015.000, #J2:=0.000, #J3:=1272.000, #J4:=0.000, #J5:=90.000, #J6:=0.000);
+            DO[5]=TRUE
+            DO[5]=TRUE
+            DO[5]=TRUE
+            DO[5]=TRUE
+            AO[5]=1.000
+            AO[5]=2.000
+            AO[5]=0.500
+            AO[5]=1.000
+            var=val
+            var=val
+            WAIT FOR DI[5]==TRUE
+            WAIT FOR DI[5]==TRUE
+            WAIT FOR DI[5]==TRUE
+            WAIT FOR DI[5]==TRUE
+            WAIT FOR DI[5]==TRUE TIMEOUT=100.0
+            WAIT FOR var==val
+            WAIT FOR var==val TIMEOUT=100.0
+            REMOTE_PROG_CALL_171()
+            CODE_INSERT_172
+            MC_AddPCS(#GroupId := 0, #PCS_ID := 0, #x:=719.013, #y:=-664.003, #z:=0.000, #u:=0.000, #v:=0.000, #w:=0.000);
+            MC_SetPCS(#GroupId := 0, #PCS_ID := 0);
+            MC_AddTools(#TOOL_ID := 0, #x:=129.073, #y:=0.000, #z:=85.477, #u:=0.000, #v:=22.849, #w:=0.000, #r := 0, #weight:= 0, #MassX := 0, #MassY:= 0, #MassZ:=0);
+            MC_SetTool(#GroupId := 0, #TOOL_ID := 0);
+            MC_Robot_MoveThetaAbsolute(#GroupId := 0, #Velocity := 500.0, #Acceleration := 800.0, #Deceleration := 800.0, #Jerk := 5000, #J1 := -29.332200, #J2 := 46.677000, #J3 := -0.024523, #J4 := 26.545600, #J5 := 25.395700, #J6 := -51.634000);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 100.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=187.786, #J2:=125.499, #J3:=139.112, #J4:=179.996, #J5:=0.180, #J6:=-179.997);
+            DO[5]=TRUE
+            PICK_PART_111()
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 300.0, #Acceleration := 600.0, #Deceleration := 600.0, #Jerk := 5000, #Coord := 1, #J1:=187.272, #J2:=447.522, #J3:=305.347, #J4:=-179.998, #J5:=0.185, #J6:=179.999);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 100.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=187.851, #J2:=447.517, #J3:=126.235, #J4:=-179.998, #J5:=0.185, #J6:=179.999);
+            DO[5]=FALSE
+            PLACE_PART_112()
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 100.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=187.272, #J2:=447.522, #J3:=305.347, #J4:=-179.998, #J5:=0.185, #J6:=179.999);
+            MC_AddPCS(#GroupId := 0, #PCS_ID := 0, #x:=577.670, #y:=392.250, #z:=0.000, #u:=0.000, #v:=0.000, #w:=38.960);
+            MC_SetPCS(#GroupId := 0, #PCS_ID := 0);
+            MC_Robot_MoveThetaAbsolute(#GroupId := 0, #Velocity := 500.0, #Acceleration := 800.0, #Deceleration := 800.0, #Jerk := 5000, #J1 := 52.186000, #J2 := 45.675800, #J3 := 6.920000, #J4 := 66.734200, #J5 := 19.932300, #J6 := -92.730000);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 100.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=312.208, #J2:=292.214, #J3:=255.156, #J4:=178.913, #J5:=11.181, #J6:=-134.549);
+            MC_Robot_MoveThetaAbsolute(#GroupId := 0, #Velocity := 500.0, #Acceleration := 800.0, #Deceleration := 800.0, #Jerk := 5000, #J1 := -0.000001, #J2 := 0.000000, #J3 := 0.000000, #J4 := 0.000000, #J5 := 0.000000, #J6 := -0.000000);
+            MC_AddPCS(#GroupId := 0, #PCS_ID := 0, #x:=0.000, #y:=782.714, #z:=377.610, #u:=0.000, #v:=0.000, #w:=0.000);
+            MC_SetPCS(#GroupId := 0, #PCS_ID := 0);
+            MC_Robot_MoveThetaAbsolute(#GroupId := 0, #Velocity := 500.0, #Acceleration := 800.0, #Deceleration := 800.0, #Jerk := 5000, #J1 := 88.676000, #J2 := 29.601600, #J3 := -6.428830, #J4 := -1.984220, #J5 := 49.479200, #J6 := 4.547690);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 100.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=19.898, #J2:=174.307, #J3:=19.008, #J4:=-179.533, #J5:=-5.426, #J6:=-94.928);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 100.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=378.402, #J2:=174.416, #J3:=18.997, #J4:=-179.533, #J5:=-5.426, #J6:=-94.928);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 100.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=380.996, #J2:=112.363, #J3:=34.882, #J4:=-178.348, #J5:=-18.136, #J6:=-95.294);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 100.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=16.551, #J2:=114.359, #J3:=34.226, #J4:=-178.348, #J5:=-18.136, #J6:=-95.294);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 100.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=26.434, #J2:=54.524, #J3:=46.072, #J4:=179.585, #J5:=4.348, #J6:=-95.461);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 100.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=385.448, #J2:=48.050, #J3:=45.137, #J4:=178.913, #J5:=11.181, #J6:=-95.590);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 100.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=385.448, #J2:=-1.625, #J3:=295.251, #J4:=178.913, #J5:=11.181, #J6:=-95.590);
+            MC_Robot_MoveThetaAbsolute(#GroupId := 0, #Velocity := 500.0, #Acceleration := 800.0, #Deceleration := 800.0, #Jerk := 5000, #J1 := -0.000001, #J2 := 0.000000, #J3 := 0.000000, #J4 := 0.000000, #J5 := 0.000000, #J6 := -0.000000);
+            EVENT_PROG_START_101()
+            MC_AddPCS(#GroupId := 0, #PCS_ID := 0, #x:=13.637, #y:=-840.080, #z:=0.000, #u:=0.000, #v:=0.000, #w:=-90.000);
+            MC_SetPCS(#GroupId := 0, #PCS_ID := 0);
+            MC_Robot_MoveThetaAbsolute(#GroupId := 0, #Velocity := 500.0, #Acceleration := 800.0, #Deceleration := 800.0, #Jerk := 5000, #J1 := -68.090300, #J2 := 24.201900, #J3 := 26.785500, #J4 := 38.213400, #J5 := 36.201700, #J6 := -98.796400);
+            EVENT_PATH_APPROACH_102()
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 1000.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=-49.895, #J2:=253.259, #J3:=319.999, #J4:=-179.975, #J5:=0.353, #J6:=-90.000);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 1000.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=0.000, #J2:=250.000, #J3:=270.000, #J4:=-179.975, #J5:=0.353, #J6:=-90.000);
+            EVENT_PATH_START_103()
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=35.579, #J2:=247.455, #J3:=270.000, #J4:=-179.925, #J5:=0.345, #J6:=-90.000);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=70.433, #J2:=239.873, #J3:=270.000, #J4:=-179.876, #J5:=0.331, #J6:=-89.999);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=103.854, #J2:=227.408, #J3:=270.000, #J4:=-179.831, #J5:=0.310, #J6:=-89.999);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=135.160, #J2:=210.313, #J3:=270.000, #J4:=-179.788, #J5:=0.283, #J6:=-89.999);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=163.715, #J2:=188.937, #J3:=270.000, #J4:=-179.750, #J5:=0.250, #J6:=-89.999);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=188.937, #J2:=163.715, #J3:=270.000, #J4:=-179.717, #J5:=0.212, #J6:=-89.999);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=210.313, #J2:=135.160, #J3:=270.000, #J4:=-179.689, #J5:=0.170, #J6:=-89.999);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=227.408, #J2:=103.854, #J3:=270.000, #J4:=-179.668, #J5:=0.124, #J6:=-89.999);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=239.873, #J2:=70.433, #J3:=270.000, #J4:=-179.654, #J5:=0.075, #J6:=-90.000);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=247.455, #J2:=35.579, #J3:=270.000, #J4:=-179.647, #J5:=0.025, #J6:=-90.000);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=250.000, #J2:=0.000, #J3:=270.000, #J4:=-179.647, #J5:=-0.025, #J6:=-90.000);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=247.455, #J2:=-35.579, #J3:=270.000, #J4:=-179.654, #J5:=-0.075, #J6:=-90.000);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=239.873, #J2:=-70.433, #J3:=270.000, #J4:=-179.668, #J5:=-0.124, #J6:=-90.001);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=227.408, #J2:=-103.854, #J3:=270.000, #J4:=-179.689, #J5:=-0.170, #J6:=-90.001);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=210.313, #J2:=-135.160, #J3:=270.000, #J4:=-179.717, #J5:=-0.212, #J6:=-90.001);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=188.937, #J2:=-163.715, #J3:=270.000, #J4:=-179.750, #J5:=-0.250, #J6:=-90.001);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=163.715, #J2:=-188.937, #J3:=270.000, #J4:=-179.788, #J5:=-0.283, #J6:=-90.001);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=135.160, #J2:=-210.313, #J3:=270.000, #J4:=-179.830, #J5:=-0.311, #J6:=-90.001);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=103.854, #J2:=-227.408, #J3:=270.000, #J4:=-179.876, #J5:=-0.332, #J6:=-90.001);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=70.433, #J2:=-239.873, #J3:=270.000, #J4:=-179.925, #J5:=-0.346, #J6:=-90.000);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=35.579, #J2:=-247.455, #J3:=270.000, #J4:=-179.975, #J5:=-0.353, #J6:=-90.000);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=0.000, #J2:=-250.000, #J3:=270.000, #J4:=-179.975, #J5:=-0.353, #J6:=-90.000);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=0.000, #J2:=-250.000, #J3:=270.000, #J4:=179.975, #J5:=-0.353, #J6:=-90.000);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=-35.579, #J2:=-247.455, #J3:=270.000, #J4:=179.925, #J5:=-0.346, #J6:=-90.000);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=-70.433, #J2:=-239.873, #J3:=270.000, #J4:=179.876, #J5:=-0.331, #J6:=-89.999);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=-103.854, #J2:=-227.408, #J3:=270.000, #J4:=179.831, #J5:=-0.310, #J6:=-89.999);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=-135.160, #J2:=-210.313, #J3:=270.000, #J4:=179.788, #J5:=-0.283, #J6:=-89.999);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=-163.715, #J2:=-188.937, #J3:=270.000, #J4:=179.750, #J5:=-0.250, #J6:=-89.999);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=-188.937, #J2:=-163.715, #J3:=270.000, #J4:=179.717, #J5:=-0.212, #J6:=-89.999);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=-210.313, #J2:=-135.160, #J3:=270.000, #J4:=179.690, #J5:=-0.169, #J6:=-89.999);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=-227.408, #J2:=-103.854, #J3:=270.000, #J4:=179.669, #J5:=-0.123, #J6:=-89.999);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=-239.873, #J2:=-70.433, #J3:=270.000, #J4:=179.654, #J5:=-0.075, #J6:=-90.000);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=-247.455, #J2:=-35.579, #J3:=270.000, #J4:=179.647, #J5:=-0.025, #J6:=-90.000);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=-250.000, #J2:=0.000, #J3:=270.000, #J4:=179.647, #J5:=0.025, #J6:=-90.000);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=-247.455, #J2:=35.579, #J3:=270.000, #J4:=179.655, #J5:=0.075, #J6:=-90.000);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=-239.873, #J2:=70.433, #J3:=270.000, #J4:=179.669, #J5:=0.123, #J6:=-90.001);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=-227.408, #J2:=103.854, #J3:=270.000, #J4:=179.689, #J5:=0.170, #J6:=-90.001);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=-210.313, #J2:=135.160, #J3:=270.000, #J4:=179.717, #J5:=0.212, #J6:=-90.001);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=-188.937, #J2:=163.715, #J3:=270.000, #J4:=179.750, #J5:=0.250, #J6:=-90.001);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=-163.715, #J2:=188.937, #J3:=270.000, #J4:=179.788, #J5:=0.283, #J6:=-90.001);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=-135.160, #J2:=210.313, #J3:=270.000, #J4:=179.831, #J5:=0.310, #J6:=-90.001);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=-103.854, #J2:=227.408, #J3:=270.000, #J4:=179.876, #J5:=0.332, #J6:=-90.001);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=-70.433, #J2:=239.873, #J3:=270.000, #J4:=179.925, #J5:=0.346, #J6:=-90.000);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=-35.579, #J2:=247.455, #J3:=270.000, #J4:=179.975, #J5:=0.353, #J6:=-90.000);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 50.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=0.000, #J2:=250.000, #J3:=270.000, #J4:=179.975, #J5:=0.353, #J6:=-90.000);
+            EVENT_PATH_FINISH_105()
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 1000.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=49.895, #J2:=253.258, #J3:=319.999, #J4:=179.975, #J5:=0.353, #J6:=-90.000);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 1000.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=49.939, #J2:=252.642, #J3:=419.997, #J4:=179.975, #J5:=0.353, #J6:=-90.000);
+            EVENT_PATH_RETRACT_106()
+            EVENT_PROG_FINISH_107()
+            MC_AddPCS(#GroupId := 0, #PCS_ID := 0, #x:=719.013, #y:=-664.003, #z:=0.000, #u:=0.000, #v:=0.000, #w:=0.000);
+            MC_SetPCS(#GroupId := 0, #PCS_ID := 0);
+            MC_Robot_MoveThetaAbsolute(#GroupId := 0, #Velocity := 500.0, #Acceleration := 800.0, #Deceleration := 800.0, #Jerk := 5000, #J1 := -29.332200, #J2 := 46.677000, #J3 := -0.024523, #J4 := 26.545600, #J5 := 25.395700, #J6 := -51.634000);
+            Sleep(#ms :=  1250.000);
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 1000.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=187.786, #J2:=125.499, #J3:=139.112, #J4:=179.996, #J5:=0.180, #J6:=-179.997);
+            WAIT FOR DI[1]==TRUE
+            MC_Robot_MoveLinearRelative( #GroupId := 0, #Velocity := 1000.0, #Acceleration := 200.0, #Deceleration := 200.0, #Jerk := 5000, #Coord := 1, #J1:=187.264, #J2:=125.487, #J3:=305.356, #J4:=-180.000, #J5:=0.184, #J6:=180.000);
+            PROG1_withaverylongnameandspecialcharacters()
+END_FUNCTION</ProgramContent>
+    <ScrollVoffset>0</ScrollVoffset>
+    </Program>
+
+          SUB PROG1_withaverylongnameandspecialcharacters()
+            MC_AddPCS(#GroupId := 0, #PCS_ID := 0, #x:=0.000, #y:=1000.000, #z:=0.000, #u:=0.000, #v:=0.000, #w:=0.000);
+            MC_SetPCS(#GroupId := 0, #PCS_ID := 0);
+            MC_AddTools(#TOOL_ID := 0, #x:=0.000, #y:=0.000, #z:=200.000, #u:=0.000, #v:=0.000, #w:=0.000, #r := 0, #weight:= 0, #MassX := 0, #MassY:= 0, #MassZ:=0);
+            MC_SetTool(#GroupId := 0, #TOOL_ID := 0);
+            MC_Robot_MoveThetaAbsolute(#GroupId := 0, #Velocity := 500.0, #Acceleration := 800.0, #Deceleration := 800.0, #Jerk := 5000, #J1 := -0.000001, #J2 := 0.000000, #J3 := 0.000000, #J4 := 0.000000, #J5 := 0.000000, #J6 := -0.000000);
+END_FUNCTION</ProgramContent>
+    <ScrollVoffset>0</ScrollVoffset>
+    </Program>
+</ProgramList>
+  <UUID>6e6f4782-2cba-42d7-8cb5-eede7a322159</UUID>
+  <ProjectName>MAIN_1</ProjectName>
+  <ProgramName>MAIN_1.cpc</ProgramName>
+  <PauseProgram />
+  <PauseLine>-1</PauseLine>
+</InterpreterProject>
