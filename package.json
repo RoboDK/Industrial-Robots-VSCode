@@ -623,6 +623,18 @@
         "configuration": "./cnfg.rainbow.json"
       },
       {
+        "id": "Inovance",
+        "aliases": [
+          "Inovance",
+          "IRCB501",
+          "InoRobot"
+        ],
+        "extensions": [
+          ".pts"
+        ],
+        "configuration": "./cnfg.inovance.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -887,6 +899,11 @@
         "language": "Rainbow",
         "scopeName": "robodk.rainbow",
         "path": "./syntaxes/syntax.rainbow.json"
+      },
+      {
+        "language": "Inovance",
+        "scopeName": "robodk.inovance",
+        "path": "./syntaxes/syntax.inovance.json"
       }
     ],
     "snippets": [
