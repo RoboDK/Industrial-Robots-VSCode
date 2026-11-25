@@ -457,6 +457,16 @@
         "configuration": "./cnfg.mecademic.json"
       },
       {
+        "id": "Toshiba",
+        "aliases": [
+          "Toshiba",
+          "SCOL",
+          "Shibaura"
+        ],
+        "extensions": [],
+        "configuration": "./cnfg.toshiba.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -646,6 +656,11 @@
         "language": "Mecademic",
         "scopeName": "robodk.mecademic",
         "path": "./syntaxes/syntax.mecademic.json"
+      },
+      {
+        "language": "Toshiba",
+        "scopeName": "robodk.toshiba",
+        "path": "./syntaxes/syntax.toshiba.json"
       }
     ],
     "snippets": [
