@@ -1,0 +1,162 @@
+{
+    "name": "Denso",
+    "scopeName": "robodk.denso",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#interpolation"
+        },
+        {
+            "include": "#pass-option"
+        },
+        {
+            "include": "#io"
+        },
+        {
+            "include": "#constructor"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#declaration"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#constant"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "'",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                },
+                {
+                    "begin": "(?i)^\\s*Rem\\b",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "interpolation": {
+            "patterns": [
+                {
+                    "match": "(?i)(?<=\\bMOVE\\s)[PLCS]\\b(?=\\s*,)",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "pass-option": {
+            "patterns": [
+                {
+                    "match": "@(P|E|\\d+)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "io": {
+            "patterns": [
+                {
+                    "match": "(?i)\\bIO\\[\\d+\\]|\\bIO\\d+\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "constructor": {
+            "patterns": [
+                {
+                    "match": "\\b[PJTV](?=\\()",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(Approach|RotateH|Arrive|CurJnt|CurPos|Depart|DriveA|GoHome|Rotate|Drive|Draw|Move)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(Function|Program|ElseIf|Resume|Return|Select|EndIf|Error|GoSub|Until|While|Call|Case|Else|Exit|GoTo|Halt|Hold|Loop|Next|Step|Stop|Then|Wend|Dim|End|For|Sub|As|Do|If|On|To)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "declaration": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(Position|Integer|Variant|DefDbl|DefInt|DefJnt|DefPos|DefSng|DefStr|DefTrn|DefVec|Double|Object|Single|String|Vector|DefIO|Joint|Trans|Long)\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(ChangeTool|ChangeWork|Interrupt|ResetArea|ExtSpeed|PrintDbg|PrintMsg|GiveArm|SetArea|SetOutp|Sprintf|TakeArm|TakeVis|JAccel|JDecel|JSpeed|MsgBox|Accel|Decel|Delay|Motor|Reset|Right|Speed|Timer|Keep|Left|Tool|Wait|Work|Abs|Asc|Atn|Chr|Cos|Dps|Int|Len|Mid|Mps|Out|Set|Sin|Sqr|Str|Tan|Val|In)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "constant": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(False|True|OFF|ON|PB|PI)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(And|Mod|Not|Xor|Or)\\b",
+                    "name": "keyword.operator"
+                },
+                {
+                    "match": "<>|<=|>=|==|:=|[-+*/=<>]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}

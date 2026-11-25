@@ -244,6 +244,20 @@
         "configuration": "./cnfg.huashu.json"
       },
       {
+        "id": "Denso",
+        "aliases": [
+          "Denso",
+          "PAC",
+          "PacScript",
+          "Foxbot"
+        ],
+        "extensions": [
+          ".pac",
+          ".pcs"
+        ],
+        "configuration": "./cnfg.denso.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -343,6 +357,11 @@
         "language": "Huashu",
         "scopeName": "robodk.huashu",
         "path": "./syntaxes/syntax.huashu.json"
+      },
+      {
+        "language": "Denso",
+        "scopeName": "robodk.denso",
+        "path": "./syntaxes/syntax.denso.json"
       }
     ],
     "snippets": [
