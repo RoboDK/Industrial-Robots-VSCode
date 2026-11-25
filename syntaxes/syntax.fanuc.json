@@ -11,6 +11,9 @@
             "include": "#fcn-call"
         },
         {
+            "include": "#config-string"
+        },
+        {
             "include": "#numbers"
         },
         {
@@ -53,6 +56,9 @@
             "include": "#movement1"
         },
         {
+            "include": "#system-variable"
+        },
+        {
             "include": "#built-in-var"
         },
         {
@@ -74,6 +80,9 @@
             "include": "#built-in-types"
         },
         {
+            "include": "#acc"
+        },
+        {
             "include": "#built-in-types1"
         },
         {
@@ -90,6 +99,14 @@
         }
     ],
     "repository": {
+        "acc": {
+            "patterns": [
+                {
+                    "match": "\\bACC\\d+",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
         "built-in-fcn": {
             "patterns": [
                 {
@@ -117,7 +134,7 @@
         "built-in-fcn3": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(GP1|MESSAGE|UFRAME|UTOOL|PAUSE|UFRAME_NUM|UTOOL_NUM)\\b",
+                    "match": "(?i)\\b(GP1|MESSAGE|UFRAME|UTOOL|PAUSE|UFRAME_NUM|UTOOL_NUM|GP2|GP3|TIMER_START|PAYLOAD|COL|RSR|UOP)\\b",
                     "name": "entity.name.function.c"
                 }
             ]
@@ -133,7 +150,7 @@
         "built-in-types1": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(DATE|TIME|deg|mm|FINE|UF|UT|J1|J2|J3|J4|J5|J6|J7|J8|X|Y|Z|W|R|READ_WRITE|ON|OFF)\\b",
+                    "match": "(?i)\\b(DATE|TIME|deg|mm|FINE|UF|UT|J1|J2|J3|J4|J5|J6|J7|J8|X|Y|Z|W|R|READ_WRITE|ON|OFF|E1|E2|E3|sec|msec|INC)\\b",
                     "name": "storage.type.c"
                 }
             ]
@@ -187,6 +204,14 @@
                 }
             ]
         },
+        "config-string": {
+            "patterns": [
+                {
+                    "match": "'[^'\\n]*'",
+                    "name": "string"
+                }
+            ]
+        },
         "control": {
             "patterns": [
                 {
@@ -214,7 +239,7 @@
         "control2": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(IF|THEN|ELSE|ENDIF|JMP|LBL|FOR|ENDFOR|SELECT|RUN|ABORT|AND|OR|NOT)\\b",
+                    "match": "(?i)\\b(IF|THEN|ELSE|ENDIF|JMP|LBL|FOR|ENDFOR|SELECT|RUN|ABORT|AND|OR|NOT|TIMEOUT|CALL|END|SKIP|OFFSET|TOOL_OFFSET|UALM|OVERRIDE|ENDSELECT)\\b",
                     "name": "keyword.control"
                 }
             ]
@@ -322,6 +347,14 @@
                     "begin": "\"",
                     "end": "\"",
                     "name": "string"
+                }
+            ]
+        },
+        "system-variable": {
+            "patterns": [
+                {
+                    "match": "\\$[A-Z_][A-Z0-9_.]*(\\[\\d+\\])?",
+                    "name": "constant.language"
                 }
             ]
         }
