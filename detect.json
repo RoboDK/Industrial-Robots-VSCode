@@ -22,7 +22,8 @@
     {"id": "ini", "patterns": ["^\\[(Comment|Version|Info|Files)\\]\\s*$"]}
   ],
   ".txt": [
-    {"id": "python", "patterns": ["^\\s*global speed_mms\\b", "# move_id = \\d+\\s*$"]}
+    {"id": "python", "patterns": ["^\\s*global speed_mms\\b", "# move_id = \\d+\\s*$"]},
+    {"id": "NEWKer", "patterns": ["^G0? G53 VJ=", "^G53 T\\d+ G90", "^(MOVJ VJ|MOVL V|MOVC V)=", "^WAT ?[-+]X\\d"]}
   ],
   ".task": [
     {"id": "xml", "patterns": ["^\\s*<\\?xml\\b", "^\\s*<[A-Za-z][\\w:.-]*[\\s/>]"]}

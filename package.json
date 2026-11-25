@@ -330,6 +330,15 @@
         "configuration": "./cnfg.siemens.json"
       },
       {
+        "id": "NEWKer",
+        "aliases": [
+          "NEWKer",
+          "NEWKer CNC"
+        ],
+        "extensions": [],
+        "configuration": "./cnfg.newker.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -464,6 +473,11 @@
         "language": "Siemens",
         "scopeName": "robodk.siemens",
         "path": "./syntaxes/syntax.siemens.json"
+      },
+      {
+        "language": "NEWKer",
+        "scopeName": "robodk.newker",
+        "path": "./syntaxes/syntax.newker.json"
       }
     ],
     "snippets": [
