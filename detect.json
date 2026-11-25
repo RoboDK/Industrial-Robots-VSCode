@@ -18,6 +18,7 @@
     {"id": "xml", "patterns": ["^\\s*<\\?xml\\b", "^\\s*<[A-Za-z][\\w:.-]*[\\s/>]"]}
   ],
   ".job": [
+    {"id": "Robostar", "patterns": ["^\\[(DESC|PNT|JOB)\\]", "^(JMOV|LMOV|CMOV) P\\d+"]},
     {"id": "ini", "patterns": ["^\\[(Comment|Version|Info|Files)\\]\\s*$"]}
   ],
   ".txt": [

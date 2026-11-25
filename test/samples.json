@@ -52,6 +52,7 @@
   {"post": "Doosan_Robotics", "file": "MAIN_1.drl", "language": "python"},
   {"post": "Hans", "file": "MAIN_1.script", "language": "python"},
   {"post": "JAKA", "file": "MAIN_1.jks", "language": "python"},
+  {"post": "Robostar", "file": "MAIN_1.JOB", "language": "Robostar"},
   {"post": "Staubli_S6", "file": "PROG1withaverylongnameandspecialcharacters/prog1withaverylongnameandspecialcharacters.ltx", "language": "Staubli"},
   {"post": "Staubli_S6", "file": "PROG1withaverylongnameandspecialcharacters/start.pgx", "language": "Staubli"},
   {"post": "Staubli_VAL3", "file": "MAIN_1/main.pgx", "language": "Staubli"},

@@ -271,6 +271,15 @@
         "configuration": "./cnfg.hyundai.json"
       },
       {
+        "id": "Robostar",
+        "aliases": [
+          "Robostar",
+          "RRL"
+        ],
+        "extensions": [],
+        "configuration": "./cnfg.robostar.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -380,6 +389,11 @@
         "language": "Hyundai",
         "scopeName": "robodk.hyundai",
         "path": "./syntaxes/syntax.hyundai.json"
+      },
+      {
+        "language": "Robostar",
+        "scopeName": "robodk.robostar",
+        "path": "./syntaxes/syntax.robostar.json"
       }
     ],
     "snippets": [

@@ -1,0 +1,135 @@
+{
+    "name": "Robostar",
+    "scopeName": "robodk.robostar",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#section"
+        },
+        {
+            "include": "#point"
+        },
+        {
+            "include": "#io"
+        },
+        {
+            "include": "#motion-parameter"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "//",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "section": {
+            "patterns": [
+                {
+                    "match": "^\\[(DESC|PNT|JOB)\\]",
+                    "name": "keyword.control"
+                },
+                {
+                    "match": "^\\s*(MAIN|EOP)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "point": {
+            "patterns": [
+                {
+                    "match": "\\bP\\d+\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "io": {
+            "patterns": [
+                {
+                    "match": "\\b(OUT|IN)(?=\\()",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "motion-parameter": {
+            "patterns": [
+                {
+                    "match": "\\b(VEL|ACC|DEC|FOS|PASS)\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "\\b(AMOV|CMOV|HMOV|IMOV|JMOV|LMOV|PMOV)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "\\b(ENDWHILE|ENDIF|GOSUB|JCALL|WHILE|CALL|ELSE|GOTO|NEXT|STOP|THEN|END|FOR|LBL|RET|IF)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "\\b(DELAY|PRINT|DLAY|PULS|TOOL|USER|WAIT|SPD)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "<>|<=|>=|==|[-+*/=<>]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}
