@@ -1,0 +1,134 @@
+{
+    "name": "Inexbot",
+    "scopeName": "robodk.inexbot",
+    "patterns": [
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#header"
+        },
+        {
+            "include": "#setting-value"
+        },
+        {
+            "include": "#position"
+        },
+        {
+            "include": "#motion-parameter"
+        },
+        {
+            "include": "#io"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "header": {
+            "patterns": [
+                {
+                    "match": "^///?[A-Z]+\\b",
+                    "name": "keyword.control"
+                },
+                {
+                    "match": "^(ROBOTTYPE|DOUBLEROBOT|PROVERSION)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "setting-value": {
+            "patterns": [
+                {
+                    "match": "(?<=\\[)[\\w.]+(?=\\])",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "position": {
+            "patterns": [
+                {
+                    "match": "\\b[PE]\\d{4}\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "motion-parameter": {
+            "patterns": [
+                {
+                    "match": "(?:\\b|(?<=mm/s))(VJ|V|PL|ACC|DEC|T|SYNC)(?=\\s*=)|(?<=\\d\\s)(mm/s|%)|(?<=\\d)(mm/s|%)",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "io": {
+            "patterns": [
+                {
+                    "match": "\\b(OT|IN|AO|AI|ASF|AEF)#\\(\\d+\\)|\\bJOB(?=:)",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "\\b(MOVCEXT|MOVJEXT|MOVLEXT|IMOV|MOVC|MOVJ|MOVL|MOVS)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "\\b(ENDWHILE|ELSEIF|ENDIF|LABEL|PAUSE|UNTIL|WHILE|CALL|ELSE|JUMP|END|NOP|RET|IF)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "\\b(SWITCHTOOL|SWITCHUSER|ARCOF|ARCON|TIMER|AOUT|DOUT|WAIT|ADD|AIN|DEC|DIN|DIV|INC|MSG|MUL|SET|SUB)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "<>|<=|>=|==|[-+*/=<>]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}

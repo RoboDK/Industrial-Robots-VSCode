@@ -363,6 +363,18 @@
         "configuration": "./cnfg.elite.json"
       },
       {
+        "id": "Inexbot",
+        "aliases": [
+          "Inexbot",
+          "Ligent",
+          "JBR"
+        ],
+        "extensions": [
+          ".jbr"
+        ],
+        "configuration": "./cnfg.inexbot.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -512,6 +524,11 @@
         "language": "Elite",
         "scopeName": "robodk.elite",
         "path": "./syntaxes/syntax.elite.json"
+      },
+      {
+        "language": "Inexbot",
+        "scopeName": "robodk.inexbot",
+        "path": "./syntaxes/syntax.inexbot.json"
       }
     ],
     "snippets": [
