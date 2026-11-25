@@ -7,6 +7,7 @@
   {"post": "Rokae", "file": "MAIN_1.mod", "language": "ABB"},
   {"post": "GCode_A3200", "file": "MAIN_1.cnc", "language": "Aerotech"},
   {"post": "Allen_Bradley_Logix5000", "file": "MAIN_1.txt", "language": "AllenBradley"},
+  {"post": "Annin_Robotics", "file": "MAIN_1.ar4", "language": "Annin"},
   {"post": "Comau_C5G", "file": "MAIN_1.pdl", "language": "Comau"},
   {"post": "Comau_C5G_Joints", "file": "MAIN_1.pdl", "language": "Comau"},
   {"post": "Comau_Nodal", "file": "MAIN_1.pdl", "language": "Comau"},

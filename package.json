@@ -487,6 +487,19 @@
         "configuration": "./cnfg.allenbradley.json"
       },
       {
+        "id": "Annin",
+        "aliases": [
+          "Annin Robotics",
+          "AR2",
+          "AR3",
+          "AR4"
+        ],
+        "extensions": [
+          ".ar4"
+        ],
+        "configuration": "./cnfg.annin.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -691,6 +704,11 @@
         "language": "AllenBradley",
         "scopeName": "robodk.allenbradley",
         "path": "./syntaxes/syntax.allenbradley.json"
+      },
+      {
+        "language": "Annin",
+        "scopeName": "robodk.annin",
+        "path": "./syntaxes/syntax.annin.json"
       }
     ],
     "snippets": [

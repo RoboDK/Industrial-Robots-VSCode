@@ -1,0 +1,87 @@
+{
+    "name": "Annin",
+    "scopeName": "robodk.annin",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#parameter"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "#",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "^\\s*Move [JLCA]\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "parameter": {
+            "patterns": [
+                {
+                    "match": "\\b(J[1-7]|[XYZWPRT]|Sp|Ad|As|Dd|Ds)\\b(?=\\s+-?\\.?\\d)|\\$[NF]\\b|\\[\\*\\]",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "\\b(Position|Register|Gripper|Return|Vision|MoveC|MoveJ|MoveL|Servo|Call|Jump|Wait|Off|Set|Tab|If|On)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "==|<=|>=|[-+*/=<>]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}
