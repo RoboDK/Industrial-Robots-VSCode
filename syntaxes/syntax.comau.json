@@ -38,6 +38,9 @@
             "include": "#built-in-fcn"
         },
         {
+            "include": "#routine-call"
+        },
+        {
             "include": "#operator"
         }
     ],
@@ -128,6 +131,14 @@
                 {
                     "match": "\\:=|<>|<=|>=|[-+*/=<>]",
                     "name": "keyword.operator"
+                }
+            ]
+        },
+        "routine-call": {
+            "patterns": [
+                {
+                    "match": "\\b[A-Za-z_]\\w*(?=\\s*\\(\\s*\\))",
+                    "name": "entity.name.function.c"
                 }
             ]
         },

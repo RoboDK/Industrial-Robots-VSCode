@@ -24,6 +24,9 @@
             "include": "#io"
         },
         {
+            "include": "#sub-call"
+        },
+        {
             "include": "#numbers"
         },
         {
@@ -100,6 +103,14 @@
                 {
                     "match": "\\b(DO|DI|AO|AI)(?=\\[)",
                     "name": "constant.language"
+                }
+            ]
+        },
+        "sub-call": {
+            "patterns": [
+                {
+                    "match": "\\b[A-Za-z_]\\w*(?=\\s*\\(\\s*\\))",
+                    "name": "entity.name.function.c"
                 }
             ]
         },
