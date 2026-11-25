@@ -523,6 +523,17 @@
         "configuration": "./cnfg.cpc.json"
       },
       {
+        "id": "CRP",
+        "aliases": [
+          "CRP",
+          "CRP G9"
+        ],
+        "extensions": [
+          ".r0"
+        ],
+        "configuration": "./cnfg.crp.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -742,6 +753,11 @@
         "language": "CPC",
         "scopeName": "robodk.cpc",
         "path": "./syntaxes/syntax.cpc.json"
+      },
+      {
+        "language": "CRP",
+        "scopeName": "robodk.crp",
+        "path": "./syntaxes/syntax.crp.json"
       }
     ],
     "snippets": [

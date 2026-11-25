@@ -1,0 +1,109 @@
+{
+    "name": "CRP",
+    "scopeName": "robodk.crp",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#section"
+        },
+        {
+            "include": "#metadata"
+        },
+        {
+            "include": "#argument"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "//",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "section": {
+            "patterns": [
+                {
+                    "match": "^\\s*\\[[A-Z]+\\]",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "metadata": {
+            "patterns": [
+                {
+                    "match": "^\\s*[A-Z_]+(?=:)",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "argument": {
+            "patterns": [
+                {
+                    "match": "\\b(bodyJoint|posture|extJoint|cfg|VJ|VL|PL|T)\\b(?=\\s*[:=])",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "\\b(MoveCircle|MoveAbsJ|MoveC|MoveJ|MoveL)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "\\b(Return|WaitDI|Delay|SetAO|SetDO|Call|Wait)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "[-+*/=<>]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}
