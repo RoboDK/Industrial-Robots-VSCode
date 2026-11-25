@@ -1,0 +1,25 @@
+{
+    "autoClosingPairs": [
+        ["(", ")"],
+        ["[", "]"],
+        ["\"", "\""]
+    ],
+    "brackets": [
+        ["(", ")"],
+        ["[", "]"]
+    ],
+    "comments": {
+        "lineComment": ";"
+    },
+    "folding": {
+        "markers": {
+            "start": "(?i)^\\.PROGRAM\\b",
+            "end": "(?i)^\\.END\\b"
+        }
+    },
+    "surroundingPairs": [
+        ["(", ")"],
+        ["[", "]"],
+        ["\"", "\""]
+    ]
+}
