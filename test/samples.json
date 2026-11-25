@@ -5,6 +5,7 @@
   {"post": "ABB_RAPID_OmniCore", "file": "MAIN_1.modx", "language": "ABB"},
   {"post": "ABB_RAPID_S4C", "file": "MAIN_1.prg", "language": "ABB"},
   {"post": "Rokae", "file": "MAIN_1.mod", "language": "ABB"},
+  {"post": "GCode_A3200", "file": "MAIN_1.cnc", "language": "Aerotech"},
   {"post": "Comau_C5G", "file": "MAIN_1.pdl", "language": "Comau"},
   {"post": "Comau_C5G_Joints", "file": "MAIN_1.pdl", "language": "Comau"},
   {"post": "Comau_Nodal", "file": "MAIN_1.pdl", "language": "Comau"},

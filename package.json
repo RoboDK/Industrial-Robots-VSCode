@@ -307,6 +307,16 @@
         "configuration": "./cnfg.gcode.json"
       },
       {
+        "id": "Aerotech",
+        "aliases": [
+          "Aerotech",
+          "AeroBasic",
+          "A3200"
+        ],
+        "extensions": [],
+        "configuration": "./cnfg.aerotech.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -431,6 +441,11 @@
         "language": "GCode",
         "scopeName": "robodk.gcode",
         "path": "./syntaxes/syntax.gcode.json"
+      },
+      {
+        "language": "Aerotech",
+        "scopeName": "robodk.aerotech",
+        "path": "./syntaxes/syntax.aerotech.json"
       }
     ],
     "snippets": [
