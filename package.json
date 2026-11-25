@@ -51,14 +51,29 @@
     "Programming Languages",
     "Other"
   ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "scripts": {
-    "test": "node test/manifest.test.js && node test/samples.test.js"
+    "test": "node test/manifest.test.js && node test/samples.test.js && node test/extension.test.js"
   },
   "devDependencies": {
     "vscode-oniguruma": "^2.0.1",
     "vscode-textmate": "^9.0.0"
   },
   "contributes": {
+    "configuration": {
+      "title": "Industrial Robots",
+      "properties": {
+        "industrialRobots.detectLanguage": {
+          "type": "boolean",
+          "default": true,
+          "scope": "resource",
+          "description": "Detect the robot programming language from the content of a file when its extension is used by several robot controllers (.prg, .script, .job...) or is generic (.txt). Disable to always use the default language of the file extension."
+        }
+      }
+    },
     "languages": [
       {
         "aliases": [
@@ -190,7 +205,9 @@
         ],
         "configuration": "./cnfg.omron.json",
         "extensions": [
-          ".pg"
+          ".pg",
+          ".vb1",
+          ".v2"
         ],
         "id": "Omron"
       }

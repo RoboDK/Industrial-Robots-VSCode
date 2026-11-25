@@ -117,7 +117,7 @@ if (fs.existsSync(detectFile)) {
       check(ids.has(c.id) || BUILTIN.has(c.id), `detect.json ${ext}: unknown language ${c.id}`);
       check(Array.isArray(c.patterns) && c.patterns.length > 0, `detect.json ${ext} ${c.id}: needs at least one pattern`);
       for (const p of c.patterns || []) {
-        try { new RegExp(p, 'm'); } catch (e) { errors.push(`detect.json ${ext} ${c.id}: bad pattern ${p} (${e.message})`); }
+        try { require(rel('detect.js')).compile(p); } catch (e) { errors.push(`detect.json ${ext} ${c.id}: bad pattern ${p} (${e.message})`); }
       }
     }
   }

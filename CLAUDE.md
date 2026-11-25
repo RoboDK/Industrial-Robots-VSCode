@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A VS Code / VSCodium extension (publisher `RoboDK`) that provides TextMate syntax highlighting, language configuration, and snippets for industrial robot programming languages. It is bundled with RoboDK and is meant to cover the output of every RoboDK post processor.
 
+Highlighting is purely declarative (JSON). The only code is a small activation script (`extension.js`, plain JavaScript, no build step) that picks the language from the file content when an extension is ambiguous.
+
 ## Everything is hand-edited JSON
 
 There is no generator. (A Python generator existed until 0.1.6 and was retired; do not reintroduce `package_model.json` or `python/`.) A language consists of:
@@ -42,6 +44,14 @@ Language ids are brand names (`ABB`, `KUKA`, `Mitsubishi`, ...); file names use 
 - The same extension can legitimately belong to several controllers (`.prg`: ABB, Epson, Mitsubishi, Yamaha...). Never remove or reassign an extension that a language already claims.
 - A new language only claims an extension statically in `package.json` if no other language claims it; shared extensions are handled by content detection instead.
 - Never claim generic extensions (`.txt`, `.cfg`, `.csv`, `.xml`, `.json`, `.py`, `.lua`, ...).
+- Unusual extensions of generic formats are mapped to VS Code's built-in languages by adding a `contributes.languages` entry with the built-in id and no configuration, e.g. `{ "id": "lua", "extensions": [".aubo"] }`.
+
+## Content detection
+
+- `detect.json` maps a lowercase extension to an ordered candidate list: `{ ".prg": [ { "id": "ABB", "patterns": [...] }, ... ] }`. The first candidate with a matching pattern wins, so order them from most to least specific. Patterns are JavaScript regexes run with the multiline flag over the first 200 lines; a leading `(?i)` makes one case-insensitive. The key `.NNN` matches any three-digit extension. Candidate ids may be built-in languages (`python`, `lua`, `xml`, `json`, `ini`).
+- `detect.js` is the pure matching function (no `vscode` import, unit-testable). `extension.js` calls it when a document opens and switches the language with `setTextDocumentLanguage`.
+- It only replaces `plaintext` or a language that is a candidate/static owner of that extension, so a user's `files.associations` or manual choice is respected. An open event within a second of a close of the same file is treated as a manual language change and left alone. The setting `industrialRobots.detectLanguage` turns it off.
+- When no pattern matches, the file keeps the static default: the last language in `package.json` that claims the extension.
 
 ## Sample programs
 
@@ -57,6 +67,8 @@ npm test
 
 - `test/manifest.test.js` checks `package.json` against the files on disk: every language has its config and grammar, scope names and file names follow the convention, snippet files exist, JSON has no duplicate keys, no extension is claimed by two languages (apart from the grandfathered `.prg` and `.pg` pairs), and no generic extension is claimed.
 - `test/samples.test.js` tokenizes every sample listed in `test/samples.json` with the real VS Code engine and fails if a grammar does not compile, if fewer than 80% of the non-blank lines get any highlighting, or if a comment line is not scoped as a comment. Every language with a grammar needs at least one sample. Useful flags: `--only <LanguageId>`, `--verbose` (lists unscoped lines), `--root <dir>` (check `<dir>/<Post>/<file>`, e.g. the `tests/outputs/MAIN_1/Posts` folder of RoboDK-Post-Processors).
+- When `detect.json` exists, the sample test also asserts that each sample opens as its expected language (detected, or the static default of its extension).
+- `test/extension.test.js` runs `extension.js` against a stub of the `vscode` API (activation, guards, setting).
 - Inspect how a single file is tokenized: `node test/tokenize.js <LanguageId> <file> [maxLines]`.
 
 ## Trying changes
@@ -75,4 +87,4 @@ code --disable-extensions --extensionDevelopmentPath=.
 npx @vscode/vsce package
 ```
 
-The resulting `Industrial-Robots-<version>.vsix` is committed to the repo root (replace the previous one) and is bundled with RoboDK. Bump `version` in `package.json` and add a `CHANGELOG.md` entry first. `.vscodeignore` keeps `examples/`, `test/`, `scripts/` and `node_modules/` out of the package.
+The resulting `Industrial-Robots-<version>.vsix` is committed to the repo root (replace the previous one) and is bundled with RoboDK. Bump `version` in `package.json` and add a `CHANGELOG.md` entry first. `.vscodeignore` keeps `examples/`, `test/`, `scripts/` and `node_modules/` out of the package; `extension.js`, `detect.js` and `detect.json` must be in it.

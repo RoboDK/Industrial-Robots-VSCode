@@ -1,0 +1,10 @@
+{
+  ".prg": [
+    { "id": "ABB", "patterns": ["^%%%\\s*$", "(?i)^\\s*(MODULE|ENDMODULE|PROC|ENDPROC)\\b"] },
+    { "id": "Epson", "patterns": ["(?i)^\\s*Function\\s+\\w+\\s*$", "(?i)^\\s*Fend\\b"] }
+  ],
+  ".pg": [
+    { "id": "Kawasaki", "patterns": ["^\\s*(JMOVE|LMOVE|C1MOVE|C2MOVE|HMOVE|TWAIT|SWAIT|JAPPRO|LAPPRO|LDEPART)\\b"] },
+    { "id": "Omron", "patterns": ["^\\s*(MOVES?|APPROS?|DEPARTS?|ATTACH|DETACH|SELECT ROBOT)\\b", "\\bMMPS\\b"] }
+  ]
+}
