@@ -2,7 +2,8 @@
   ".prg": [
     {"id": "ABB", "patterns": ["^%%%\\s*$", "(?i)^\\s*(MODULE|ENDMODULE|PROC|ENDPROC)\\b"]},
     {"id": "Epson", "patterns": ["(?i)^\\s*Function\\s+\\w+\\s*$", "(?i)^\\s*Fend\\b"]},
-    {"id": "Mitsubishi", "patterns": ["(?i)^\\d+ (Mov|Mvs|Mvr|Spd|Cnt|Dly|Ovrd|JOvrd|Base|Tool|HOpen|HClose)\\b", "^[JP][A-Za-z0-9_]*=\\([-+\\d]", "^\\s*(MJ|MP) -?\\d", "^\\s*GS \\w+\\s*$"]}
+    {"id": "Mitsubishi", "patterns": ["(?i)^\\d+ (Mov|Mvs|Mvr|Spd|Cnt|Dly|Ovrd|JOvrd|Base|Tool|HOpen|HClose)\\b", "^[JP][A-Za-z0-9_]*=\\([-+\\d]", "^\\s*(MJ|MP) -?\\d", "^\\s*GS \\w+\\s*$"]},
+    {"id": "Yamaha", "patterns": ["^\\s*MOVE [PLC],", "^\\s*DRIVE\\(\\d", "^\\s*GOSUB \\*\\w+"]}
   ],
   ".pg": [
     {"id": "Kawasaki", "patterns": ["^\\s*(JMOVE|LMOVE|C1MOVE|C2MOVE|HMOVE|TWAIT|SWAIT|JAPPRO|LAPPRO|LDEPART)\\b"]},

@@ -224,6 +224,16 @@
         "configuration": "./cnfg.mitsubishi.json"
       },
       {
+        "id": "Yamaha",
+        "aliases": [
+          "Yamaha",
+          "RCX",
+          "Yamaha BASIC"
+        ],
+        "extensions": [],
+        "configuration": "./cnfg.yamaha.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -313,6 +323,11 @@
         "language": "Mitsubishi",
         "scopeName": "robodk.mitsubishi",
         "path": "./syntaxes/syntax.mitsubishi.json"
+      },
+      {
+        "language": "Yamaha",
+        "scopeName": "robodk.yamaha",
+        "path": "./syntaxes/syntax.yamaha.json"
       }
     ],
     "snippets": [

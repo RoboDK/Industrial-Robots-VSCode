@@ -63,5 +63,6 @@
   {"post": "Elite_Robots_CS", "file": "MAIN_1.configuration", "language": "xml"},
   {"post": "Elite_Robots_CS", "file": "MAIN_1.task", "language": "xml"},
   {"post": "Omron_PathNode", "file": "Projects/MAIN_1/MAIN_1.dat", "language": "xml"},
-  {"post": "Omron_PathNode", "file": "Projects/MAIN_1/MAIN_1.prog", "language": "xml"}
+  {"post": "Omron_PathNode", "file": "Projects/MAIN_1/MAIN_1.prog", "language": "xml"},
+  {"post": "Yamaha", "file": "MAIN_1.prg", "language": "Yamaha"}
 ]

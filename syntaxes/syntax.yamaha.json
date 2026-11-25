@@ -1,0 +1,140 @@
+{
+    "name": "Yamaha",
+    "scopeName": "robodk.yamaha",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#label"
+        },
+        {
+            "include": "#interpolation"
+        },
+        {
+            "include": "#io"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#constant"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "'",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                },
+                {
+                    "begin": "(?i)^\\s*REM\\b",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "label": {
+            "patterns": [
+                {
+                    "match": "\\*[A-Za-z_]\\w*:?",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "interpolation": {
+            "patterns": [
+                {
+                    "match": "(?i)(?<=\\bMOVE\\s)[PLC]\\b|(?<=\\bMOVEI\\s)[PLC]\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "io": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(DO|DI|MO|SO|SI|TO|LO|IN|OUT)\\d*(?=[\\[(])",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(ABSRST|DRIVEI|ORIGIN|DRIVE|MOVEI|MOVET|PMOVE|SERVO|MOVE|PATH|PUSH)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(DECLARE|HALTALL|HOLDALL|RESTART|SUSPEND|ELSEIF|RETURN|SELECT|SHARED|STOPON|ENDIF|GOSUB|START|WHILE|CALL|CASE|ELSE|EXIT|GOTO|HALT|HOLD|NEXT|STEP|THEN|WEND|CUT|DIM|END|FOR|SUB|SWI|IF|ON|TO)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(TCOUNTER|OFFLINE|TIMEOUT|TRQTIME|ASPEED|CHANGE|CHGPRI|ONLINE|ORGORD|OUTPOS|RIGHTY|TORQUE|WEIGHT|ACCEL|DECEL|DELAY|INPUT|JTOXY|LEFTY|PRINT|RESET|RIGHT|SHIFT|SPEED|TIMER|WHERE|WHRXY|XYTOJ|ARCH|HAND|LEFT|LOCR|LOCX|LOCY|LOCZ|PDEF|SEND|TOLE|WAIT|ABS|ATN|CHR|COS|INT|LEN|MID|SET|SIN|SQR|STR|TAN|VAL)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "constant": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(FALSE|TRUE|OFF|ON)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(AND|MOD|NOT|XOR|OR)\\b",
+                    "name": "keyword.operator"
+                },
+                {
+                    "match": "<>|<=|>=|==|:=|[-+*/=<>]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}
