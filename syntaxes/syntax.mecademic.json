@@ -1,0 +1,65 @@
+{
+    "name": "Mecademic",
+    "scopeName": "robodk.mecademic",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#built-in"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "//",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "\\bMove[A-Z]\\w*",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "\\b(Set|Get|Start|Activate|Deactivate|Reset|Clear|Pause|Resume|Gripper|Wait|Enable|Disable|Vacuum|Expect|Switch)[A-Z]\\w*|\\b(Delay|Home|Rebuild)\\b(?=\\(|\\s*$)",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        }
+    }
+}

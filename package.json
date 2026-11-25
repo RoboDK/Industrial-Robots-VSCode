@@ -448,6 +448,15 @@
         "configuration": "./cnfg.gpl.json"
       },
       {
+        "id": "Mecademic",
+        "aliases": [
+          "Mecademic",
+          "Meca500"
+        ],
+        "extensions": [],
+        "configuration": "./cnfg.mecademic.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -632,6 +641,11 @@
         "language": "GPL",
         "scopeName": "robodk.gpl",
         "path": "./syntaxes/syntax.gpl.json"
+      },
+      {
+        "language": "Mecademic",
+        "scopeName": "robodk.mecademic",
+        "path": "./syntaxes/syntax.mecademic.json"
       }
     ],
     "snippets": [
