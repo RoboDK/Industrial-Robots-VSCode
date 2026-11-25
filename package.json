@@ -601,6 +601,16 @@
         "configuration": "./cnfg.panasonic.json"
       },
       {
+        "id": "QJAR",
+        "aliases": [
+          "QJAR"
+        ],
+        "extensions": [
+          ".rbg"
+        ],
+        "configuration": "./cnfg.qjar.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -855,6 +865,11 @@
         "language": "Panasonic",
         "scopeName": "robodk.panasonic",
         "path": "./syntaxes/syntax.panasonic.json"
+      },
+      {
+        "language": "QJAR",
+        "scopeName": "robodk.qjar",
+        "path": "./syntaxes/syntax.qjar.json"
       }
     ],
     "snippets": [

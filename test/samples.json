@@ -87,6 +87,7 @@
   {"post": "Doosan_Robotics", "file": "MAIN_1.drl", "language": "python"},
   {"post": "Hans", "file": "MAIN_1.script", "language": "python"},
   {"post": "JAKA", "file": "MAIN_1.jks", "language": "python"},
+  {"post": "QJAR", "file": "MAIN_1.rbg", "language": "QJAR"},
   {"post": "Robostar", "file": "MAIN_1.JOB", "language": "Robostar"},
   {"post": "Siasun", "file": "MAIN_1.spf", "language": "Siasun"},
   {"post": "Siasun_JOBTXT", "file": "MAIN_1.txt", "language": "Siasun_JOB"},
