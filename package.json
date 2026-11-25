@@ -611,6 +611,18 @@
         "configuration": "./cnfg.qjar.json"
       },
       {
+        "id": "Rainbow",
+        "aliases": [
+          "Rainbow Robotics",
+          "RB",
+          "WSL"
+        ],
+        "extensions": [
+          ".wsl"
+        ],
+        "configuration": "./cnfg.rainbow.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -870,6 +882,11 @@
         "language": "QJAR",
         "scopeName": "robodk.qjar",
         "path": "./syntaxes/syntax.qjar.json"
+      },
+      {
+        "language": "Rainbow",
+        "scopeName": "robodk.rainbow",
+        "path": "./syntaxes/syntax.rainbow.json"
       }
     ],
     "snippets": [
