@@ -1,0 +1,185 @@
+{
+    "name": "Epson",
+    "patterns": [
+        { "include": "#comment" },
+        { "include": "#preprocessor" },
+        { "include": "#string" },
+        { "include": "#numbers" },
+        { "include": "#program-structure" },
+        { "include": "#declaration" },
+        { "include": "#control" },
+        { "include": "#motion" },
+        { "include": "#speed-accel" },
+        { "include": "#task-control" },
+        { "include": "#io-commands" },
+        { "include": "#robot-control" },
+        { "include": "#point-functions" },
+        { "include": "#built-in-math" },
+        { "include": "#built-in-string" },
+        { "include": "#system-mgmt" },
+        { "include": "#file-mgmt" },
+        { "include": "#constants" },
+        { "include": "#operators" }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "'",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "preprocessor": {
+            "patterns": [
+                {
+                    "match": "(?i)^\\s*(#define|#ifdef|#ifndef|#else|#endif|#include|#undef)\\b",
+                    "name": "keyword.control.preprocessor"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"",
+                    "name": "string"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "\\b-?\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "program-structure": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(Function|Fend)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "declaration": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(Boolean|Byte|Double|Global|Int32|Int64|Integer|Long|Real|Short|String|UByte|UInt32|UInt64|UShort|Dim)\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(If|Then|Else|ElseIf|EndIf|For|To|Step|Next|Do|Loop|Until|While|GoSub|Return|GoTo|Call|Select|Case|Send|Exit|Declare|Trap|OnErr|EResume|Era|Erl|Err|Ert|Errb)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(Jump|Jump3|Jump3CP|JumpTLZ|Go|Pass|Pulse|BGo|BMove|TGo|TMove|Arc|Arc3|Move|Curve|CVMove|Home|HomeClr|HomeSet|Hordr|Brake|Here|Where|AbortMotion|WaitPos|Find|FindPos|Arch|Sense|Calib|AtHome|SyncRobots|JTran|PTran)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "speed-accel": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(Speed|Accel|SpeedS|AccelS|SpeedR|AccelR|SpeedFactor|AccelMax|CP|SoftCP|Fine|FineDist|LimZ|LimZMargin|Till|TillOn|QP|QPDecelR|QPDecelS|Inertia|Weight|VSD|CP_Offset|PTPBoost)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "task-control": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(Xqt|Pause|Cont|Halt|Quit|Resume|MyTask|TaskDone|TaskState|TaskWait|Restart|Recover|RecoverPos|StartMain|SyncLock|SyncUnlock|WaitSig|Signal|Error|ErrorOn|PauseOn|EStopOn)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "io-commands": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(On|Off|Oport|Sw|In|InW|InBCD|Out|OutW|OpBCD|MemOn|MemOff|MemSw|MemIn|MemOut|MemInW|MemOutW|Wait|TMOut|Tw|Input|InReal|Print|SetIn|SetInW|SetSw|OpenCom|CloseCom|SetCom|ChkCom|OpenNet|CloseNet|SetNet|ChkNet|WaitNet|Read|ReadBin|Write|WriteBin|InputBox|MsgBox|RunDialog|LatchEnable|SetLatch|Lof|IONumber|IODef)\\b",
+                    "name": "entity.name.function.c"
+                },
+                {
+                    "match": "(?i)\\b(AIO_TrackingSet|AIO_TrackingStart|AIO_TrackingEnd|AIO_In|AIO_InW|AIO_Out|AIO_OutW|AIO_Set|Hand_On|Hand_Off|FbusIO_GetBusStatus|FbusIO_GetDeviceStatus|FbusIO_SendMsg)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "robot-control": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(Power|Motor|SFree|SLock|Robot|Tool|TLSet|TLDef|TLClr|Base|Local|LocalDef|LocalClr|Arm|ArmSet|ArmDef|ArmClr|ArmCalib|ECP|ECPSet|ECPDef|ECPClr|Elbow|Hand|Wrist|J4Flag|J6Flag|J1Flag|J2Flag|Pallet|PalletClr|CalPls|Hofs|MCal|MCalComplete|MCordr|Payload|JRange|Range|XYLim|XYLimClr|Align|AlignECP|PerformMode|AreaCorrectionSet|AreaCorrectionClr)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "point-functions": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(XY|Dist|DiffPoint|CX|CY|CZ|CU|CV|CW|CR|CS|CT|Pls|Agl|PAgl|JA|AglToPls|DegToRad|RadToDeg|CurPos|TCPSpeed|InPos|RealPos|RealPls|PPls|LJM|AutoLJM|Joint|PosFound|TargetOK|InsideBox|InsidePlane|GetRobotInsideBox)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "built-in-math": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(Sin|Cos|Tan|Acos|Asin|Atan|Atan2|Sqr|Abs|Sgn|Int|Fix|BClr|BSet|BTst|BClr64|BSet64|BTst64|Hex|Randomize|Redim|Rnd|UBound|Ctr|CTReset|Tmr|TmReset|ElapsedTime|ResetElapsedTime|LShift|LShift64|RShift|RShift64|Mask)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "built-in-string": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(Asc|Chr\\$?|Left\\$?|Mid\\$?|Right\\$?|Len|LSet\\$?|RSet\\$?|Space\\$?|Str\\$?|Val|LCase\\$?|UCase\\$?|LTrim\\$?|RTrim\\$?|Trim\\$?|ParseStr|FmtStr\\$?|InStr|Tab\\$?|IOLabel\\$?|ErrMsg\\$?|RobotModel\\$?|RobotName\\$?|RobotSerial\\$?|Date\\$?|Time\\$?|CurDir\\$?|CurDrive\\$?|CurDisk\\$?|PLabel\\$?|PDescription\\$?)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "system-mgmt": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(Reset|SysConfig|SysErr|Date|Time|Hour|Stat|CtrlInfo|RobotInfo|TaskInfo|DispDev|CtrlDev|Cls|Toff|Ton|SafetyOn|Eval|ShutDown|TeachOn|WindowsStatus|MHour|PTPTime|RealTorque|TC|TCSpeed|TCLim|CollisionDetect|SimSet|SimGet)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "file-mgmt": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(ChDir|ChDisk|MkDir|RmDir|RenDir|FileExists|FileLen|FolderExists|Del|Copy|Rename|AOpen|BOpen|ROpen|Uopen|WOpen|Seek|Close|Eof|ChDrive|Flush|ClearPoints|LoadPoints|SavePoints|ImportPoints|ExportPoints|CloseDB|DeleteDB|OpenDB|SelectDB|UpdateDB)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "constants": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(True|False)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(And|Or|Not|Xor|Mod)\\b",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    },
+    "scopeName": "robodk.epson"
+}

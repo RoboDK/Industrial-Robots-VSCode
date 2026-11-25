@@ -1,0 +1,261 @@
+{
+    "name": "Omron",
+    "patterns": [
+        { "include": "#comment" },
+        { "include": "#string" },
+        { "include": "#numbers" },
+        { "include": "#program-structure" },
+        { "include": "#declaration" },
+        { "include": "#control" },
+        { "include": "#motion" },
+        { "include": "#speed-accel" },
+        { "include": "#io-signal" },
+        { "include": "#task-control" },
+        { "include": "#file-io" },
+        { "include": "#var-assignment" },
+        { "include": "#built-in-math" },
+        { "include": "#built-in-string" },
+        { "include": "#location-fn" },
+        { "include": "#io-fn" },
+        { "include": "#system-fn" },
+        { "include": "#constants" },
+        { "include": "#operators" }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": ";",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"",
+                    "name": "string"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "\\b-?\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "program-structure": {
+            "patterns": [
+                {
+                    "match": "(?i)^\\.PROGRAM\\b",
+                    "name": "keyword.control"
+                },
+                {
+                    "match": "(?i)^\\.END\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "declaration": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(AUTO|GLOBAL|LOCAL)\\b",
+                    "name": "storage.type.c"
+                },
+                {
+                    "match": "(?i)\\b(REAL|LOC|TRANS|INTEGER|STRING|SWITCH|VECTOR)\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(IF|THEN|ELSE|END|FOR|TO|BY|DO|WHILE|UNTIL|GOTO|RETURN|RETURNE|CALL|CALLS|EXIT|BREAK|CASE|SELECT|IGNORE|ANY|TYPE)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(MOVE|MOVES|MOVEC|JMOVE|APPRO|APPROS|DEPART|DEPARTS|DRIVE|ALIGN|BRAKE|FLIP|NOFLIP|LEFTY|RIGHTY|ABOVE|BELOW|COARSE|FINE|MULTIPLE|OVERLAP|NOOVERLAP|MC|MCS|DECOMPOSE|PACK|NULL|NONULL|HERE|CALIBRATE)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "speed-accel": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(SPEED|ACCEL|CP|CPOFF|CPON|SINGLE|DURATION|PAYLOAD)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "io-signal": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(SIGNAL|WAIT|REACT|REACTE|REACTI|RUNSIG|ALTOFF|ALTON)\\b",
+                    "name": "entity.name.function.c"
+                },
+                {
+                    "match": "(?i)\\bWAIT\\.EVENT\\b",
+                    "name": "entity.name.function.c"
+                },
+                {
+                    "match": "(?i)\\bCLEAR\\.EVENT\\b",
+                    "name": "entity.name.function.c"
+                },
+                {
+                    "match": "(?i)\\bSET\\.EVENT\\b",
+                    "name": "entity.name.function.c"
+                },
+                {
+                    "match": "(?i)\\bCLEAR\\.LATCHES\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "task-control": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(EXECUTE|KILL|ABORT|HALT|PAUSE|PROCEED|STOP|ESTOP|DISABLE|ENABLE|RESET|RETRY|ATTACH|DETACH|LOCK|RELEASE|KEYMODE|PENDANT|DOS|JOG|VRUN|VWAITI|PRIME|PANIC|CYCLE\\.END)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "file-io": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(FOPEN|FOPENA|FOPEND|FOPENR|FOPENW|FCLOSE|FSEEK|FEMPTY|FCMND|FCOPY|FDELETE|FRENAME|READ|WRITE|PROMPT|WINDOW)\\b",
+                    "name": "entity.name.function.c"
+                },
+                {
+                    "match": "(?i)\\bPDNT\\.(CLEAR|NOTIFY|WRITE)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "var-assignment": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(SET|VALUE|FSET|COPY\\.ARRAY|DEFBELT|DEF\\.DIO|SETBELT|SETDEVICE|BITS|ALTER|READY|RELEASE)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "built-in-math": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(ABS|ACOS|ASIN|ATAN2|COS|SIN|TAN|CUBRT|SQRT|SQR|INT|FRACT|SIGN|RANDOM|MAX|MIN|PI|BCD|DCB|DBLB|FLTB|INTB|LNGB|CAS|COM)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "built-in-string": {
+            "patterns": [
+                {
+                    "match": "\\$CHR|\\$DECODE|\\$DEFAULT|\\$DBLB|\\$ENCODE|\\$ERROR|\\$FLTB|\\$ID|\\$INTB|\\$LNGB|\\$MID|\\$TIME|\\$TIME4|\\$TRANSB|\\$TRUNCATE|\\$UNPACK",
+                    "name": "entity.name.function.c"
+                },
+                {
+                    "match": "(?i)\\b(LEN|ASC|STRDIF|IDENTICAL|VAL)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "location-fn": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(TRANS|FRAME|INVERSE|SHIFT|DEST|POS|DISTANCE|NORMAL|OUTSIDE|INRANGE|SCALE|CONFIG|BASE|TOOL|VLOCATION)\\b",
+                    "name": "entity.name.function.c"
+                },
+                {
+                    "match": "(?i)\\b(DX|DY|DZ|RX|RY|RZ)\\b",
+                    "name": "entity.name.function.c"
+                },
+                {
+                    "match": "(?i)\\bSOLVE\\.ANGLES\\b",
+                    "name": "entity.name.function.c"
+                },
+                {
+                    "match": "(?i)\\bSOLVE\\.TRANS\\b",
+                    "name": "entity.name.function.c"
+                },
+                {
+                    "match": "#[A-Z.]+",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "io-fn": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(BITS|BMASK|BSTATUS|SIG|SWITCH|LATCH|LATCHED|ENCLATCH|IOSTAT|GETC|ON|OFF)\\b",
+                    "name": "entity.name.function.c"
+                },
+                {
+                    "match": "(?i)\\bSIG\\.INS\\b",
+                    "name": "entity.name.function.c"
+                },
+                {
+                    "match": "(?i)\\bGET\\.EVENT\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "system-fn": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(DEFINED|ID|FREE|LAST|NETWORK|PRIORITY|SELECT|STATE|STATUS|TASK|TAS|TPS|DEVICE|TIME|TIMER|VRESULT|VSTATE|VPARAMETER|PARAMETER|WINDOW|BELT|ERROR|ACCEL|SPEED|INRANGE)\\b",
+                    "name": "entity.name.function.c"
+                },
+                {
+                    "match": "(?i)\\bHOUR\\.METER\\b",
+                    "name": "entity.name.function.c"
+                },
+                {
+                    "match": "(?i)\\bFB\\.ERROR\\b",
+                    "name": "entity.name.function.c"
+                },
+                {
+                    "match": "(?i)\\bFB\\.STATE\\b",
+                    "name": "entity.name.function.c"
+                },
+                {
+                    "match": "(?i)\\bSOLVE\\.FLAGS\\b",
+                    "name": "entity.name.function.c"
+                },
+                {
+                    "match": "(?i)\\bNOT\\.CALIBRATED\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "constants": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(TRUE|FALSE|NULL)\\b",
+                    "name": "constant.language"
+                },
+                {
+                    "match": "\\b(IPS|MMPS)\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(AND|OR|NOT|EOR)\\b",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    },
+    "scopeName": "robodk.omron"
+}

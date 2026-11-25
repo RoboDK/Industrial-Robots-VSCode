@@ -1,0 +1,111 @@
+{
+    "program": {
+        "prefix": "prog",
+        "body": [
+            ".PROGRAM ${1:name}()",
+            "\t$0",
+            ".END"
+        ],
+        "description": "Program definition"
+    },
+    "if": {
+        "prefix": "if",
+        "body": [
+            "IF ${1:condition} THEN",
+            "\t$2",
+            "ELSE",
+            "\t$3",
+            "END"
+        ],
+        "description": "If statement"
+    },
+    "for": {
+        "prefix": "for",
+        "body": [
+            "FOR ${1:i} = ${2:start} TO ${3:end}",
+            "\t$0",
+            "END"
+        ],
+        "description": "For loop"
+    },
+    "while": {
+        "prefix": "while",
+        "body": [
+            "WHILE ${1:condition} DO",
+            "\t$0",
+            "END"
+        ],
+        "description": "While loop"
+    },
+    "move": {
+        "prefix": "move",
+        "body": [
+            "MOVE ${1:target}"
+        ],
+        "description": "PTP motion (MOVE)"
+    },
+    "moves": {
+        "prefix": "moves",
+        "body": [
+            "MOVES ${1:target}"
+        ],
+        "description": "Linear motion (MOVES)"
+    },
+    "movec": {
+        "prefix": "movec",
+        "body": [
+            "MOVEC ${1:via}, ${2:target}"
+        ],
+        "description": "Circular motion (MOVEC)"
+    },
+    "appro": {
+        "prefix": "appro",
+        "body": [
+            "APPRO ${1:target}, ${2:dist}"
+        ],
+        "description": "Approach a location"
+    },
+    "depart": {
+        "prefix": "depart",
+        "body": [
+            "DEPART ${1:dist}"
+        ],
+        "description": "Depart from current location"
+    },
+    "speed": {
+        "prefix": "speed",
+        "body": [
+            "SPEED ${1:speed} ${2|MMPS,IPS|}",
+            "ACCEL ${3:accel}, ${4:decel}"
+        ],
+        "description": "Speed and acceleration"
+    },
+    "signal": {
+        "prefix": "signal",
+        "body": [
+            "SIGNAL ${1:output}"
+        ],
+        "description": "Set digital signal"
+    },
+    "wait": {
+        "prefix": "wait",
+        "body": [
+            "WAIT ${1:condition}"
+        ],
+        "description": "Wait for condition or signal"
+    },
+    "execute": {
+        "prefix": "execute",
+        "body": [
+            "EXECUTE ${1:program}"
+        ],
+        "description": "Execute a program as a task"
+    },
+    "set": {
+        "prefix": "set",
+        "body": [
+            "SET ${1:variable} = ${2:value}"
+        ],
+        "description": "Variable assignment"
+    }
+}

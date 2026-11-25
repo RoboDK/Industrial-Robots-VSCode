@@ -93,6 +93,16 @@
             "language": "universal_robots",
             "path": "./syntaxes/syntax.universal_robots.json",
             "scopeName": "robodk.universal_robots"
+        },
+        {
+            "language": "Epson",
+            "path": "./syntaxes/syntax.epson.json",
+            "scopeName": "robodk.epson"
+        },
+        {
+            "language": "Omron",
+            "path": "./syntaxes/syntax.omron.json",
+            "scopeName": "robodk.omron"
         }
     ],
     "languages": [
@@ -204,6 +214,31 @@
                 ".script"
             ],
             "id": "universal_robots"
+        },
+        {
+            "aliases": [
+                "Epson",
+                "SPEL+",
+                "SPEL"
+            ],
+            "configuration": "./cnfg.epson.json",
+            "extensions": [
+                ".prg"
+            ],
+            "id": "Epson"
+        },
+        {
+            "aliases": [
+                "Omron",
+                "Adept",
+                "V+",
+                "eV+"
+            ],
+            "configuration": "./cnfg.omron.json",
+            "extensions": [
+                ".pg"
+            ],
+            "id": "Omron"
         }
     ],
     "snippets": [
@@ -238,6 +273,14 @@
         {
             "language": "universal_robots",
             "path": "./snippets/snippet.universal_robots.json"
+        },
+        {
+            "language": "Epson",
+            "path": "./snippets/snippet.epson.json"
+        },
+        {
+            "language": "Omron",
+            "path": "./snippets/snippet.omron.json"
         }
     ]
 }

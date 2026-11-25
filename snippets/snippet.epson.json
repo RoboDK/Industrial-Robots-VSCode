@@ -1,0 +1,122 @@
+{
+    "function": {
+        "prefix": "func",
+        "body": [
+            "Function ${1:name}()",
+            "\t$0",
+            "Fend"
+        ],
+        "description": "Function definition"
+    },
+    "if": {
+        "prefix": "if",
+        "body": [
+            "If ${1:condition} Then",
+            "\t$2",
+            "Else",
+            "\t$3",
+            "EndIf"
+        ],
+        "description": "If statement"
+    },
+    "for": {
+        "prefix": "for",
+        "body": [
+            "For ${1:i} = ${2:start} To ${3:end}",
+            "\t$0",
+            "Next ${1:i}"
+        ],
+        "description": "For loop"
+    },
+    "do": {
+        "prefix": "do",
+        "body": [
+            "Do",
+            "\t$0",
+            "Loop Until ${1:condition}"
+        ],
+        "description": "Do...Loop Until"
+    },
+    "while": {
+        "prefix": "while",
+        "body": [
+            "Do While ${1:condition}",
+            "\t$0",
+            "Loop"
+        ],
+        "description": "Do While loop"
+    },
+    "select": {
+        "prefix": "select",
+        "body": [
+            "Select ${1:variable}",
+            "Case ${2:value1}",
+            "\t$3",
+            "Case ${4:value2}",
+            "\t$5",
+            "Case Else",
+            "\t$6",
+            "Send"
+        ],
+        "description": "Select/Case statement"
+    },
+    "jump": {
+        "prefix": "jump",
+        "body": [
+            "Jump ${1:target} /Z ${2:lim_z}"
+        ],
+        "description": "PTP motion with arch (Jump)"
+    },
+    "go": {
+        "prefix": "go",
+        "body": [
+            "Go ${1:target}"
+        ],
+        "description": "PTP motion (Go)"
+    },
+    "move": {
+        "prefix": "move",
+        "body": [
+            "Move ${1:target}"
+        ],
+        "description": "Linear motion (Move)"
+    },
+    "speed": {
+        "prefix": "speed",
+        "body": [
+            "Speed ${1:100}",
+            "Accel ${2:100}, ${3:100}"
+        ],
+        "description": "Speed and acceleration"
+    },
+    "xqt": {
+        "prefix": "xqt",
+        "body": [
+            "Xqt ${1:taskname}"
+        ],
+        "description": "Execute task"
+    },
+    "wait": {
+        "prefix": "wait",
+        "body": [
+            "Wait ${1:condition}"
+        ],
+        "description": "Wait for condition"
+    },
+    "on_off": {
+        "prefix": "on",
+        "body": [
+            "On ${1:output}"
+        ],
+        "description": "Set digital output On"
+    },
+    "trap": {
+        "prefix": "trap",
+        "body": [
+            "Trap ${1:trap_number}",
+            "\tGoSub ${2:handler_label}",
+            "EResume"
+        ],
+        "description": "Error trap handler"
+    }
+}

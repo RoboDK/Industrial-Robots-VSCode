@@ -12,7 +12,7 @@
             "    :L P[${1:position_id}] ${1:speed}mm/s FINE ;"
         ],
         "description": "Joint Movement"
-    },
+    }
     
     
 }
