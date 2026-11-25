@@ -4,6 +4,7 @@ All notable changes to the "industrial-robots" extension will be documented in t
 
 ## 0.1.6
 
+- New languages: Epson SPEL+ (`.prg`) and Omron/Adept V+ (`.pg`) with syntax highlighting and snippets (contributed in #12).
 - Fanuc: `IF`/`THEN`/`ELSE`/`ENDIF`/`JMP`/`LBL`, registers (`R[n]`, `TIMER[n]`, ...), `CNTnn` and `nn%` speeds are highlighted; `UFRAME[n]` works; `DO[10]`, `UTOOL[10]`, `PR[12,3]` and other multi-digit indices are accepted.
 - Motoman: `OT#(n)`, `IN#(n)` and `TL#(n)` accept multi-digit numbers.
 - KUKA: `EXT` no longer matches inside identifiers such as `NEXT_IDX`; `$VEL.CP` style system variables are highlighted as a whole.
