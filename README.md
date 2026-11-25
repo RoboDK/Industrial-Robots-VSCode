@@ -36,15 +36,21 @@ If you installed RoboDK v3.8.5 or later you should have VSCodium with this exten
 
 # Building and making changes
 
-The Industrial robots VSCode extension is automatically generated from Python files. Therefore, it is better to understand and modify the Python scripts to automatically update the plugin.
+Each language is described by plain JSON files that you edit directly:
 
-The files in the Python directory of the plugin are used to add keywords and regular expressions to the add-on. Python scripts work with Python 2 and Python 3. Each Python file generates a theme for one programming language. You can add or edit the theme_* files which use a common library to apply the changes to the plugin.
+ - `syntaxes/syntax.<id>.json`: the TextMate grammar (comments, strings, numbers, keywords).
+ - `cnfg.<id>.json`: the language configuration (comment character, brackets, folding).
+ - `package.json`: registers the language id, its aliases and file extensions, and points to the two files above.
+ - `snippets/snippet.<id>.json` (optional): code snippets.
 
-Most of the functions contained within the python files are self descriptive and can be understood by taking a look at the Python/update_themes.py file.
+To add a new language, copy the files of a similar language, adapt the rules and keywords, and add the `languages` and `grammars` entries to `package.json`.
 
-repo_match() can either take a list of keywords to add to that category or a regular expression. If there is a "\\" at the start of the string it will be interpreted as a regular expression and passed as is to the json in field specified in the function. If there isn't a "\\" at the start of the string it will generate a regular expression that highlights all the space separated words in the string. As such you must not have any trailing spaces in these strings or the regular expression generated will break that files syntax.
+A few rules of thumb when editing a grammar:
+ - Rules are tried in the order listed under `patterns`. When two rules match at the same position the first one wins, so list comments and strings first, and specific patterns (for example `DO[10]`) before plain keyword lists.
+ - Use the same scope names as the other grammars (`comment`, `string`, `constant.numeric.c`, `keyword.control`, ...) so that highlighting works with any color theme.
+ - The same file extension can belong to several controllers (for example `.prg`). Do not remove an extension from a language to resolve this.
 
-To add a new language you would create a new python file based on the currently existing ones and modify the keywords as necessary. After modifying and running the script you also need to manually edit the plugins package.json file and the files that were generated.
+To try your changes, press F5 in VS Code (or run `code --disable-extensions --extensionDevelopmentPath=.` from this folder) and open one of the programs in the `examples` folder.
 
 ## Known Issues
 

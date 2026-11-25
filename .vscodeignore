@@ -3,11 +3,13 @@
 .gitignore
 .gitattributes
 vsc-extension-quickstart.md
-package_model.json
-python/**
 examples/**
 screenshots/**
+scripts/**
+test/**
+node_modules/**
+package-lock.json
 CLAUDE.md
-*.py
 *.rdk
 *.ps1
+*.vsix
