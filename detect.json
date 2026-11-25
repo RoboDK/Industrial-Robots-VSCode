@@ -54,5 +54,8 @@
   ],
   ".cnc": [
     {"id": "Aerotech", "patterns": ["^(JOINTS|LINEAR|CIRCULAR) [A-Z]+ -?\\d", "^VELOCITY (ON|OFF)\\s*$"]}
+  ],
+  ".spf": [
+    {"id": "Siemens", "patterns": ["^\\s*N\\d+ ", "^\\s*G\\d+\\b"]}
   ]
 }

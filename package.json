@@ -317,6 +317,19 @@
         "configuration": "./cnfg.aerotech.json"
       },
       {
+        "id": "Siemens",
+        "aliases": [
+          "Siemens",
+          "Sinumerik",
+          "840D",
+          "MPF"
+        ],
+        "extensions": [
+          ".mpf"
+        ],
+        "configuration": "./cnfg.siemens.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -446,6 +459,11 @@
         "language": "Aerotech",
         "scopeName": "robodk.aerotech",
         "path": "./syntaxes/syntax.aerotech.json"
+      },
+      {
+        "language": "Siemens",
+        "scopeName": "robodk.siemens",
+        "path": "./syntaxes/syntax.siemens.json"
       }
     ],
     "snippets": [
