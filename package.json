@@ -432,6 +432,22 @@
         "configuration": "./cnfg.keba.json"
       },
       {
+        "id": "GPL",
+        "aliases": [
+          "GPL",
+          "Guidance Programming Language",
+          "Brooks",
+          "Precise",
+          "PreciseFlex",
+          "MARS"
+        ],
+        "extensions": [
+          ".gpl",
+          ".gpo"
+        ],
+        "configuration": "./cnfg.gpl.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -611,6 +627,11 @@
         "language": "KEBA",
         "scopeName": "robodk.keba",
         "path": "./syntaxes/syntax.keba.json"
+      },
+      {
+        "language": "GPL",
+        "scopeName": "robodk.gpl",
+        "path": "./syntaxes/syntax.gpl.json"
       }
     ],
     "snippets": [
