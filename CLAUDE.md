@@ -21,6 +21,7 @@ This executes every `theme_*.py` via `exec()`, writes `../syntaxes/syntax.<id>.j
 
 - Extension metadata (version, description, keywords) lives in `package_model.json`, not `package.json`. Bump the version there.
 - Importing `theme_Fanuc.py` directly (not via `update_themes.py`) also regenerates just that language, since each theme file calls `update_syntax()`/`update_config()` at module level.
+- Languages with hand-written grammars (currently Epson and Omron, contributed without theme files) are registered in `python/manual_languages.json`; the generator appends them to `package.json` after the theme-based ones. Do not hand-edit `package.json` for them.
 - Snippet files are hand-written, not generated. The generator only emits a `snippets` entry for languages whose `snippets/snippet.<id>.json` exists (currently ABB, Fanuc, KUKA, Motoman).
 - Output is written with LF line endings and themes are processed in sorted order, so a regeneration with no source change produces no diff.
 

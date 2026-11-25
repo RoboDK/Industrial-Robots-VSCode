@@ -259,14 +259,6 @@
             "path": "./snippets/snippet.motoman.json"
         },
         {
-            "language": "Staubli",
-            "path": "./snippets/snippet.staubli.json"
-        },
-        {
-            "language": "universal_robots",
-            "path": "./snippets/snippet.universal_robots.json"
-        },
-        {
             "language": "Epson",
             "path": "./snippets/snippet.epson.json"
         },

@@ -156,6 +156,16 @@ def update_themes_all():
         print("Len = %i" % len(languages))
         
 
+    # Languages whose grammar and configuration are written by hand
+    # (no theme_*.py): their package.json entries live in manual_languages.json
+    manual_file = "./manual_languages.json"
+    if os.path.isfile(manual_file):
+        import json
+        with open(manual_file, "r", encoding="utf-8") as fid:
+            for lang in json.load(fid):
+                print("Adding hand-written language: " + lang["id"])
+                languages.append(lang)
+
     print("\n\nUpdating configuration file (%i languages) ..." % len(languages))
     package = {}
     package["languages"] = languages
@@ -169,6 +179,15 @@ def update_themes_all():
         scope_name = getScopeName(id_lang) 
         file_syntax = getFileSyntax(id_lang) 
         file_snippet = getFileSnippet(id_lang) 
+
+        syntax_path = "../" + file_syntax
+        if os.path.isfile(syntax_path):
+            # Hand-written grammars define their own scope name
+            import json
+            with open(syntax_path, "r", encoding="utf-8") as fid:
+                scope_name = json.load(fid).get("scopeName", scope_name)
+        else:
+            print("WARNING: missing grammar file %s for %s" % (file_syntax, id_lang))
 
         grammar_i = {}
         snippets_i = {}
