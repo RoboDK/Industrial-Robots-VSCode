@@ -500,6 +500,18 @@
         "configuration": "./cnfg.annin.json"
       },
       {
+        "id": "Cloos",
+        "aliases": [
+          "CLOOS",
+          "Rotrol",
+          "Carola"
+        ],
+        "extensions": [
+          ".pkt"
+        ],
+        "configuration": "./cnfg.cloos.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -709,6 +721,11 @@
         "language": "Annin",
         "scopeName": "robodk.annin",
         "path": "./syntaxes/syntax.annin.json"
+      },
+      {
+        "language": "Cloos",
+        "scopeName": "robodk.cloos",
+        "path": "./syntaxes/syntax.cloos.json"
       }
     ],
     "snippets": [
