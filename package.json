@@ -543,6 +543,17 @@
         "configuration": "./cnfg.chaifu.json"
       },
       {
+        "id": "Comau_LSV",
+        "aliases": [
+          "Comau LSV",
+          "PDL2 variables"
+        ],
+        "extensions": [
+          ".lsv"
+        ],
+        "configuration": "./cnfg.comau_lsv.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -772,6 +783,11 @@
         "language": "Chaifu",
         "scopeName": "robodk.chaifu",
         "path": "./syntaxes/syntax.chaifu.json"
+      },
+      {
+        "language": "Comau_LSV",
+        "scopeName": "robodk.comau_lsv",
+        "path": "./syntaxes/syntax.comau_lsv.json"
       }
     ],
     "snippets": [

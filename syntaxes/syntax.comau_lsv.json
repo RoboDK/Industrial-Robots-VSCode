@@ -1,0 +1,97 @@
+{
+    "name": "Comau_LSV",
+    "scopeName": "robodk.comau_lsv",
+    "patterns": [
+        {
+            "include": "#type-declaration"
+        },
+        {
+            "include": "#data-type"
+        },
+        {
+            "include": "#system-variable"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#field"
+        },
+        {
+            "include": "#constant"
+        },
+        {
+            "include": "#component"
+        },
+        {
+            "include": "#numbers"
+        }
+    ],
+    "repository": {
+        "type-declaration": {
+            "patterns": [
+                {
+                    "match": "^\\s*TYPE\\b|\\b(RECORD|NODE|Glob|Priv|Fields|Len|Arm|Ax)\\b(?=[\\s:]|$)",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "data-type": {
+            "patterns": [
+                {
+                    "match": "\\b(STR|BOO|INT|REA|POS|JNTP|XTND|REC|ARR|VEC)\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "system-variable": {
+            "patterns": [
+                {
+                    "match": "\\$\\w+",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "'",
+                    "end": "'|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "field": {
+            "patterns": [
+                {
+                    "match": "^\\s*[A-Za-z_$]\\w*(?=\\s*:)",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "constant": {
+            "patterns": [
+                {
+                    "match": "\\b(FALSE|TRUE|OFF|ON)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "component": {
+            "patterns": [
+                {
+                    "match": "\\b([XYZAER]|\\d+)(?=:)",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "-?(?<![\\w.])\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        }
+    }
+}
