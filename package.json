@@ -534,6 +534,19 @@
         "configuration": "./cnfg.crp.json"
       },
       {
+        "id": "Estun",
+        "aliases": [
+          "Estun",
+          "Estun RCS2",
+          "ERP"
+        ],
+        "extensions": [
+          ".erp",
+          ".erd"
+        ],
+        "configuration": "./cnfg.estun.json"
+      },
+      {
         "id": "Chaifu",
         "aliases": [
           "Chaifu",
@@ -778,6 +791,11 @@
         "language": "CRP",
         "scopeName": "robodk.crp",
         "path": "./syntaxes/syntax.crp.json"
+      },
+      {
+        "language": "Estun",
+        "scopeName": "robodk.estun",
+        "path": "./syntaxes/syntax.estun.json"
       },
       {
         "language": "Chaifu",

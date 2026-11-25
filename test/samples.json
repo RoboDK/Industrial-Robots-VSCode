@@ -24,6 +24,8 @@
   {"post": "Elite_Robots_EC_movE", "file": "MAIN_1.jbi", "language": "Elite"},
   {"post": "Elite_Robots_EC_V3", "file": "MAIN_1.jbi", "language": "Elite"},
   {"post": "Epson_RC", "file": "MAIN_1.prg", "language": "Epson"},
+  {"post": "Estun_RCS2", "file": "MAIN_1.erd", "language": "Estun"},
+  {"post": "Estun_RCS2", "file": "MAIN_1.erp", "language": "Estun"},
   {"post": "Fanuc_R30i", "file": "MAIN_1.LS", "language": "Fanuc"},
   {"post": "Fanuc_R30i", "file": "PROG1_with.LS", "language": "Fanuc"},
   {"post": "Fanuc_RJ3", "file": "MAIN_1.LS", "language": "Fanuc"},
