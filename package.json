@@ -534,6 +534,15 @@
         "configuration": "./cnfg.crp.json"
       },
       {
+        "id": "Chaifu",
+        "aliases": [
+          "Chaifu",
+          "Chaifu C2"
+        ],
+        "extensions": [],
+        "configuration": "./cnfg.chaifu.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -758,6 +767,11 @@
         "language": "CRP",
         "scopeName": "robodk.crp",
         "path": "./syntaxes/syntax.crp.json"
+      },
+      {
+        "language": "Chaifu",
+        "scopeName": "robodk.chaifu",
+        "path": "./syntaxes/syntax.chaifu.json"
       }
     ],
     "snippets": [

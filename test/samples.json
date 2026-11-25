@@ -8,6 +8,7 @@
   {"post": "GCode_A3200", "file": "MAIN_1.cnc", "language": "Aerotech"},
   {"post": "Allen_Bradley_Logix5000", "file": "MAIN_1.txt", "language": "AllenBradley"},
   {"post": "Annin_Robotics", "file": "MAIN_1.ar4", "language": "Annin"},
+  {"post": "Chaifu", "file": "MAIN_1.cfg", "language": "Chaifu"},
   {"post": "CLOOS", "file": "MAIN_1.pkt", "language": "Cloos"},
   {"post": "CLOOS", "file": "MAIN_1.txt", "language": "Cloos"},
   {"post": "Comau_C5G", "file": "MAIN_1.pdl", "language": "Comau"},
