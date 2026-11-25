@@ -170,7 +170,8 @@
         "extensions": [
           ".pgx",
           ".pjx",
-          ".dtx"
+          ".dtx",
+          ".ltx"
         ],
         "id": "Staubli"
       },
