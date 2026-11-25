@@ -1,0 +1,84 @@
+{
+  "FlowFile": {
+    "Version": "-1.11"
+  },
+  "BaseMathDefine": null,
+  "BaseStart": {
+    "Name": "Start",
+    "ParentNode": "",
+    "ChildNode": "Path1",
+    "ReplaceName": "Start",
+    "InitValue": "YES",
+    "NodeType": "Start",
+    "StickSpeed": "5",
+    "Trialed": "False",
+    "UpdateFlag": "",
+    "ObjectNode": {
+      "ProfileName": "All Full Speed Operation Space",
+      "BindingSpace": "",
+      "BindingBase": "RobotBase"
+    },
+    "SubFlowName": "",
+    "ThreadName": "",
+    "CompileOption": null,
+    "Version": "1.76.6300.33760",
+    "NonPauseFlag": false,
+    "NoIOInitial": false,
+    "Tag": "Main",
+    "Attribute": 0,
+    "EnableBlendingSetCmd": false
+  },
+  "BaseObjectSingle": [
+    {
+      "Name": "Path1",
+      "NodeID": 1,
+      "ParentNode": "Start",
+      "ChildNode": "",
+      "ReplaceName": "Path1",
+      "HMIFlowPoint": [
+        100,
+        250
+      ],
+      "NodeType": "Path",
+      "NodeIcon": "",
+      "GroupName": null,
+      "ThreadName": "",
+      "SubFlowName": "",
+      "InitValue": "YES",
+      "UpdateFlag": "",
+      "ObjectNode": {
+        "FileName": "MAIN_1",
+        "PathSpeed": 100,
+        "InitialPointMotion": "PTP",
+        "InitialPointBlend": "NO",
+        "InitialPointBlendValue": 1,
+        "PSPercentage": 100,
+        "PSTTTS": 231.25,
+        "PSTTTSOF": "ON",
+        "PTPType": 0,
+        "LineABS": "OFF",
+        "LSPercentage": "100",
+        "LSAVelocity": "250",
+        "LSTTTS": "500",
+        "PLSAVelocity": "250",
+        "PLSTTTS": "500",
+        "BaseName": "Frame1_withaverylongnameandspecialcharacters",
+        "TCPName": "Tool1_withaverylongnameands",
+        "EnableLoad": false,
+        "LoadValue": "0",
+        "IsKeepPose": true,
+        "DisablePrecisePositioning": false,
+        "DisableStickSpeedLink": false,
+        "SmartPTPConfig": false,
+        "pathBaseName": "RobotBase",
+        "pathTcpName": "NOTOOL",
+        "IsBaseShifting": false,
+        "IsToolShifting": false
+      },
+      "Attribute": 0
+    }
+  ],
+  "BaseObjectMulti": null,
+  "SubFlowStart": null,
+  "MultiThreadStart": null
+}

@@ -1,0 +1,35 @@
+<ConfigurationSettings robotType="62Industrial" savedTime="2022-12-31 19:00:00">
+  <ToolsManager Active="e3e70682-c209-4cac-a29f-6fbed82c07cd">
+    <TcpTool name="TCP" uuid="e3e70682-c209-4cac-a29f-6fbed82c07cd">
+      <ToolShape value="0, 0, 0, 0.0, 0.0, 0.0" />
+    </TcpTool>
+    <TcpTool name="Tool_1" uuid="f728b4fa-4248-4e3a-8a5d-2f346baa9455">
+      <ToolShape value="129.073, 0, 85.477, 0.0, 0.39879028078818435, 0.0" />
+    </TcpTool>
+    <TcpTool name="Tool_1_________" uuid="eb1167b3-67a9-4378-bc65-c1e582e2e662">
+      <ToolShape value="0, 0, 200, 0.0, 0.0, 0.0" />
+    </TcpTool>
+  </ToolsManager>
+  <FramesManager>
+    <Frame name="Frame_Pick_and_" isValid="true" isVariable="true" uuid="f7c1bd87-4da5-4709-9471-3d60c8a70639">
+      <Transform value="719.013, -664.003, 0, 0.0, 0.0, 0.0" />
+    </Frame>
+    <Frame name="Frame_Circular" isValid="true" isVariable="true" uuid="e443df78-9558-467f-9ba9-1faf7a024204">
+      <Transform value="577.67, 392.25, 0, 0.0, 0.0, 0.679971549930731" />
+    </Frame>
+    <Frame name="Frame_Inspectio" isValid="true" isVariable="true" uuid="23a7711a-8133-4876-b7eb-dcd9e87a1613">
+      <Transform value="0, 782.714, 377.61, 0.0, 0.0, 0.0" />
+    </Frame>
+    <Frame name="Frame_Inspect_1" isValid="true" isVariable="true" uuid="1846d424-c17c-4279-a3c6-612f48268673">
+      <Transform value="13.637, -840.08, 0, 0.0, 0.0, -1.5707963267948966" />
+    </Frame>
+    <Frame name="Frame_1________" isValid="true" isVariable="true" uuid="fcbd04c3-4021-4ef7-8ca5-a5a19e4d6e3c">
+      <Transform value="0, 1000, 0, 0.0, 0.0, 0.0" />
+    </Frame>
+  </FramesManager>
+  <IOConfig>
+  </IOConfig>
+  <StartupConfigsManager>
+    <config needAutoLoad="false" triggerValueToRunTask="false" triggerValueToInit="false" />
+  </StartupConfigsManager>
+</ConfigurationSettings>

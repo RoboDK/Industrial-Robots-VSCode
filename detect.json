@@ -1,10 +1,47 @@
 {
   ".prg": [
-    { "id": "ABB", "patterns": ["^%%%\\s*$", "(?i)^\\s*(MODULE|ENDMODULE|PROC|ENDPROC)\\b"] },
-    { "id": "Epson", "patterns": ["(?i)^\\s*Function\\s+\\w+\\s*$", "(?i)^\\s*Fend\\b"] }
+    {"id": "ABB", "patterns": ["^%%%\\s*$", "(?i)^\\s*(MODULE|ENDMODULE|PROC|ENDPROC)\\b"]},
+    {"id": "Epson", "patterns": ["(?i)^\\s*Function\\s+\\w+\\s*$", "(?i)^\\s*Fend\\b"]}
   ],
   ".pg": [
-    { "id": "Kawasaki", "patterns": ["^\\s*(JMOVE|LMOVE|C1MOVE|C2MOVE|HMOVE|TWAIT|SWAIT|JAPPRO|LAPPRO|LDEPART)\\b"] },
-    { "id": "Omron", "patterns": ["^\\s*(MOVES?|APPROS?|DEPARTS?|ATTACH|DETACH|SELECT ROBOT)\\b", "\\bMMPS\\b"] }
+    {"id": "Kawasaki", "patterns": ["^\\s*(JMOVE|LMOVE|C1MOVE|C2MOVE|HMOVE|TWAIT|SWAIT|JAPPRO|LAPPRO|LDEPART)\\b"]},
+    {"id": "Omron", "patterns": ["^\\s*(MOVES?|APPROS?|DEPARTS?|ATTACH|DETACH|SELECT ROBOT)\\b", "\\bMMPS\\b"]}
+  ],
+  ".script": [
+    {"id": "python", "patterns": ["\\bcc_client\\.\\w+\\("]},
+    {"id": "lua", "patterns": ["^\\s*function\\s+[\\w.:]+\\s*\\(.*\\)\\s*$"]}
+  ],
+  ".dat": [
+    {"id": "xml", "patterns": ["^\\s*<\\?xml\\b", "^\\s*<[A-Za-z][\\w:.-]*[\\s/>]"]}
+  ],
+  ".job": [
+    {"id": "ini", "patterns": ["^\\[(Comment|Version|Info|Files)\\]\\s*$"]}
+  ],
+  ".txt": [
+    {"id": "python", "patterns": ["^\\s*global speed_mms\\b", "# move_id = \\d+\\s*$"]}
+  ],
+  ".task": [
+    {"id": "xml", "patterns": ["^\\s*<\\?xml\\b", "^\\s*<[A-Za-z][\\w:.-]*[\\s/>]"]}
+  ],
+  ".configuration": [
+    {"id": "xml", "patterns": ["^\\s*<\\?xml\\b", "^\\s*<[A-Za-z][\\w:.-]*[\\s/>]"]}
+  ],
+  ".ins": [
+    {"id": "xml", "patterns": ["^\\s*<\\?xml\\b", "^\\s*<[A-Za-z][\\w:.-]*[\\s/>]"]}
+  ],
+  ".prog": [
+    {"id": "xml", "patterns": ["^\\s*<\\?xml\\b", "^\\s*<[A-Za-z][\\w:.-]*[\\s/>]"]}
+  ],
+  ".path": [
+    {"id": "xml", "patterns": ["^\\s*<\\?xml\\b", "^\\s*<[A-Za-z][\\w:.-]*[\\s/>]"]}
+  ],
+  ".pro": [
+    {"id": "xml", "patterns": ["^\\s*<\\?xml\\b", "^\\s*<[A-Za-z][\\w:.-]*[\\s/>]"]}
+  ],
+  ".flow": [
+    {"id": "json", "patterns": ["^\\s*[\\[{]"]}
+  ],
+  ".vi": [
+    {"id": "json", "patterns": ["^\\s*[\\[{]"]}
   ]
 }

@@ -210,6 +210,40 @@
           ".v2"
         ],
         "id": "Omron"
+      },
+      {
+        "id": "python",
+        "extensions": [
+          ".drl",
+          ".jks"
+        ]
+      },
+      {
+        "id": "lua",
+        "extensions": [
+          ".aubo"
+        ]
+      },
+      {
+        "id": "json",
+        "extensions": [
+          ".kr2",
+          ".rcp",
+          ".zu",
+          ".zus"
+        ]
+      },
+      {
+        "id": "jsonl",
+        "extensions": [
+          ".act"
+        ]
+      },
+      {
+        "id": "properties",
+        "extensions": [
+          ".gpr"
+        ]
       }
     ],
     "grammars": [
