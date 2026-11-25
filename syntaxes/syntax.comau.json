@@ -8,7 +8,16 @@
             "include": "#string"
         },
         {
+            "include": "#string-single"
+        },
+        {
             "include": "#numbers"
+        },
+        {
+            "include": "#nodal-move"
+        },
+        {
+            "include": "#nodal-data"
         },
         {
             "include": "#control"
@@ -23,14 +32,36 @@
             "include": "#built-in-var"
         },
         {
+            "include": "#built-in-types"
+        },
+        {
+            "include": "#built-in-fcn"
+        },
+        {
             "include": "#operator"
         }
     ],
     "repository": {
+        "built-in-fcn": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(DEACTIVATE|CONDITION|ACTIVATE|ARM_COLL|DISABLE|ATTACH|CANCEL|DETACH|ENABLE|RESUME|UNLOCK|PAUSE|PULSE|PURGE|WRITE|LOCK|READ|JNT|POS|VEC)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "built-in-types": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(JSpeedData|SpeedData|JOINTPOS|POSITION|ZoneData|BOOLEAN|INTEGER|XTNDPOS|RECORD|STRING|VECTOR|ARRAY|NODE|REAL)\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
         "built-in-var": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(SPD_LIN|ON|OFF|TRUE|FALSE|RS_WORLD|JOINT|LINEAR|CIRCULAR|NOSETTLE|FLY_CART|FLY_PASS|POS)\\b",
+                    "match": "(?i)\\b(SPD_LIN|ON|OFF|TRUE|FALSE|RS_WORLD|JOINT|LINEAR|CIRCULAR|NOSETTLE|FLY_CART|FLY_PASS|POS|SPD_JNT|SPD_ROT|FLY_NORM|FLY_AUTO|FLY_TOL|COARSE|FINE|RS_TRAJ|EUL_WORLD|WRIST_JNT|ARM|NL|LUN_TP|LUN_CRT)\\b",
                     "name": "constant.language"
                 }
             ]
@@ -47,7 +78,7 @@
         "control": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(PROGRAM|IMPORT|VAR|ROUTINE|BEGIN|END|EXPORTED|FROM|GLOBAL|REPEAT|UNTIL|IF|THEN|ENDIF)\\b",
+                    "match": "(?i)\\b(PROGRAM|IMPORT|VAR|ROUTINE|BEGIN|END|EXPORTED|FROM|GLOBAL|REPEAT|UNTIL|IF|THEN|ENDIF|WHILE|ENDWHILE|FOR|ENDFOR|ELSE|CALL|RETURN|OR|AND|NOT|CONST|TYPE|ENDTYPE|SELECT|ENDSELECT|CASE|OF|EXIT|CYCLE|WAIT|NOHOLD|HOLD)\\b",
                     "name": "keyword.control"
                 }
             ]
@@ -55,7 +86,7 @@
         "movement": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(MOVE|TO|DELAY)\\b",
+                    "match": "(?i)\\b(MOVE|TO|DELAY|MOVEFLY|ADVANCE|VIA|NEAR|ENDMOVE|WITH|TIL)\\b",
                     "name": "entity.name.function.preprocessor.c"
                 }
             ]
@@ -64,6 +95,22 @@
             "patterns": [
                 {
                     "match": "\\$\\w+",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "nodal-data": {
+            "patterns": [
+                {
+                    "match": "\\b(VJ|VL|ZJ|Z|D)(Max|Fine|\\d+)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "nodal-move": {
+            "patterns": [
+                {
+                    "match": "\\b(MJ|ML|MC)\\b(?=\\s+\\w)",
                     "name": "entity.name.function.preprocessor.c"
                 }
             ]
@@ -89,6 +136,15 @@
                 {
                     "begin": "\"",
                     "end": "\"",
+                    "name": "string"
+                }
+            ]
+        },
+        "string-single": {
+            "patterns": [
+                {
+                    "begin": "'",
+                    "end": "'|(?=\\n)",
                     "name": "string"
                 }
             ]

@@ -7,7 +7,7 @@
   {"post": "Rokae", "file": "MAIN_1.mod", "language": "ABB"},
   {"post": "Comau_C5G", "file": "MAIN_1.pdl", "language": "Comau"},
   {"post": "Comau_C5G_Joints", "file": "MAIN_1.pdl", "language": "Comau"},
-  {"post": "Comau_Nodal", "file": "MAIN_1.pdl", "language": "Comau", "minCoverage": 0.6},
+  {"post": "Comau_Nodal", "file": "MAIN_1.pdl", "language": "Comau"},
   {"post": "Epson_RC", "file": "MAIN_1.prg", "language": "Epson"},
   {"post": "Fanuc_R30i", "file": "MAIN_1.LS", "language": "Fanuc"},
   {"post": "Fanuc_R30i", "file": "PROG1_with.LS", "language": "Fanuc"},
