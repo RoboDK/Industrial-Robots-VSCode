@@ -476,6 +476,17 @@
         "configuration": "./cnfg.turin.json"
       },
       {
+        "id": "AllenBradley",
+        "aliases": [
+          "Allen Bradley",
+          "Rockwell",
+          "Logix5000",
+          "Structured Text"
+        ],
+        "extensions": [],
+        "configuration": "./cnfg.allenbradley.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -675,6 +686,11 @@
         "language": "Turin",
         "scopeName": "robodk.turin",
         "path": "./syntaxes/syntax.turin.json"
+      },
+      {
+        "language": "AllenBradley",
+        "scopeName": "robodk.allenbradley",
+        "path": "./syntaxes/syntax.allenbradley.json"
       }
     ],
     "snippets": [

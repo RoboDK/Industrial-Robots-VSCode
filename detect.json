@@ -28,7 +28,8 @@
     {"id": "Siasun_JOB", "patterns": ["^/JOBMES\\s*$", "^/JOBINST\\s*$"]},
     {"id": "Mecademic", "patterns": ["^(MoveJoints|MoveLin|MovePose)\\(-?\\d", "^Set(WRF|TRF|JointVel|CartLinVel|Blending)\\(-?\\d"]},
     {"id": "Toshiba", "patterns": ["^\\s*MOVE[SC]? (POINT\\(|\\{)-?\\d", "^\\s*REMARK "]},
-    {"id": "Turin", "patterns": ["^Move[JLC]\\((-?[\\d.]+,){20}", "^(IOOut|DAOut)=\\(", "^Set(User|Tool)Param\\(\\d"]}
+    {"id": "Turin", "patterns": ["^Move[JLC]\\((-?[\\d.]+,){20}", "^(IOOut|DAOut)=\\(", "^Set(User|Tool)Param\\(\\d"]},
+    {"id": "AllenBradley", "patterns": ["(?i)^\\s*(MAM|MSO|MAJ)\\(Axis_\\d", "(?i)^\\s*if \\(?Axis_\\d+_\\w+\\.PC\\b", "^\\(\\*\\*.*Logix5000"]}
   ],
   ".task": [
     {"id": "xml", "patterns": ["^\\s*<\\?xml\\b", "^\\s*<[A-Za-z][\\w:.-]*[\\s/>]"]}
