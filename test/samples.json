@@ -1,5 +1,6 @@
 [
   {"post": "ABB_RAPID_IRC5", "file": "MAIN_1.mod", "language": "ABB"},
+  {"post": "ABB_RAPID_IRC5", "file": "WeldingAddin.mod", "language": "ABB"},
   {"post": "ABB_RAPID_IRC5_Robtargets", "file": "MAIN_1.mod", "language": "ABB"},
   {"post": "ABB_RAPID_OmniCore", "file": "MAIN_1.modx", "language": "ABB"},
   {"post": "ABB_RAPID_S4C", "file": "MAIN_1.prg", "language": "ABB"},
