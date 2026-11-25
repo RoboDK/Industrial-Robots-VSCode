@@ -13,6 +13,8 @@
   {"post": "Denso_RC8", "file": "MAIN_1.pcs", "language": "Denso"},
   {"post": "Denso_RC9", "file": "MAIN_1.pcs", "language": "Denso"},
   {"post": "Foxbot", "file": "MAIN_1.pac", "language": "Denso"},
+  {"post": "Elite_Robots_EC_movE", "file": "MAIN_1.jbi", "language": "Elite"},
+  {"post": "Elite_Robots_EC_V3", "file": "MAIN_1.jbi", "language": "Elite"},
   {"post": "Epson_RC", "file": "MAIN_1.prg", "language": "Epson"},
   {"post": "Fanuc_R30i", "file": "MAIN_1.LS", "language": "Fanuc"},
   {"post": "Fanuc_R30i", "file": "PROG1_with.LS", "language": "Fanuc"},

@@ -59,5 +59,8 @@
   ],
   ".spf": [
     {"id": "Siemens", "patterns": ["^\\s*N\\d+ ", "^\\s*G\\d+\\b"]}
+  ],
+  ".jbi": [
+    {"id": "Elite", "patterns": ["^(SETJOINT|SETPOSE) [PV]\\d{3}\\b", "^MOVE[JLC] .*Const[PV]=", "^// HEADER\\s*$"]}
   ]
 }

@@ -352,6 +352,17 @@
         "configuration": "./cnfg.techman.json"
       },
       {
+        "id": "Elite",
+        "aliases": [
+          "Elite Robots",
+          "Elite",
+          "Elite EC",
+          "Elite JBI"
+        ],
+        "extensions": [],
+        "configuration": "./cnfg.elite.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -496,6 +507,11 @@
         "language": "Techman",
         "scopeName": "robodk.techman",
         "path": "./syntaxes/syntax.techman.json"
+      },
+      {
+        "language": "Elite",
+        "scopeName": "robodk.elite",
+        "path": "./syntaxes/syntax.elite.json"
       }
     ],
     "snippets": [
