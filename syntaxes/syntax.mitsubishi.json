@@ -1,0 +1,148 @@
+{
+    "name": "Mitsubishi",
+    "scopeName": "robodk.mitsubishi",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#label"
+        },
+        {
+            "include": "#movemaster"
+        },
+        {
+            "include": "#system-variable"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#motion"
+        },
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#built-in"
+        },
+        {
+            "include": "#types"
+        },
+        {
+            "include": "#operator"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "'",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                },
+                {
+                    "begin": "(?i)\\bRem\\b",
+                    "end": "(?=\\n)",
+                    "name": "comment"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"|(?=\\n)",
+                    "name": "string"
+                }
+            ]
+        },
+        "label": {
+            "patterns": [
+                {
+                    "match": "\\*[A-Za-z_]\\w*",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "movemaster": {
+            "patterns": [
+                {
+                    "match": "^\\s*(MJ|MP|MO|MS|MC|MA|MR|MT|DJ|DW|DS|IP|DP|NT|OG|HE)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                },
+                {
+                    "match": "^\\s*(GS|RT|SP|TL|TI|ED|GO|GC|GF|GP|OB|OD|NW|PD|GT|RC|NX|EQ|NE|LG|SM|ID|IN|OC|TB|RS)\\b(?=\\s|$)",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "system-variable": {
+            "patterns": [
+                {
+                    "match": "\\b[MPJC]_[A-Za-z]\\w*",
+                    "name": "constant.language"
+                },
+                {
+                    "match": "\\b(OUT|IN)(?=\\()|#\\d+",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "[-+]?(?<![\\w.])\\d+(\\.\\d+)?([eE][-+]?\\d+)?\\b",
+                    "name": "constant.numeric.c"
+                }
+            ]
+        },
+        "motion": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(EMvSpl|MvTune|MvSpl|Mvr2|Mvr3|Jrc|Mov|Mva|Mvc|Mvr|Mvs|Mxt)\\b",
+                    "name": "entity.name.function.preprocessor.c"
+                }
+            ]
+        },
+        "control": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(Function|Default|ElseIf|Resume|Return|Select|Break|CallP|EndIf|Error|GoSub|While|Case|Else|Exit|FEnd|FPrm|GoTo|Next|Skip|Step|Stop|Then|WEnd|Wait|Com|End|For|Hlt|Off|If|On|To)\\b",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "built-in": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(Priority|Loadset|ColChk|ColLvl|HClose|PosMid|TrBase|Accel|Align|Close|HOpen|Input|JOvrd|PosCq|Print|Reset|Right|Servo|Title|TrClr|TrWrt|WthIf|XLoad|Zone2|Zone3|Atn2|Base|Cmpg|Dist|Fine|Fram|GetM|JtoP|Left|Oadl|Open|Ovrd|Prec|PtoJ|Relm|Tool|Torq|TrRd|Type|XClr|XRst|XRun|XStp|Zone|Abs|Act|Asc|Atn|Chr|Clr|Cmp|Cnt|Cos|Def|Deg|Dim|Dly|Fix|Int|Inv|Len|Max|Mid|Min|Plt|Rad|Sin|Spd|Sqr|Str|Tan|Tbl|Val|Wth|As)\\b",
+                    "name": "entity.name.function.c"
+                }
+            ]
+        },
+        "types": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(Double|Float|Arch|Char|Inte|Long|Jnt|Pos|Io)\\b",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(And|Mod|Not|Xor|Or)\\b",
+                    "name": "keyword.operator"
+                },
+                {
+                    "match": "<>|<=|>=|==|:=|[-+*/=<>]",
+                    "name": "keyword.operator"
+                }
+            ]
+        }
+    }
+}

@@ -32,6 +32,8 @@
   {"post": "KUKA_KRC5", "file": "MAIN_1.src", "language": "KUKA"},
   {"post": "AUBO_Move_Track", "file": "MAIN_1/main.aubo", "language": "lua"},
   {"post": "Siasun_DUCO", "file": "MAIN_1.script", "language": "lua"},
+  {"post": "Mitsubishi", "file": "MAIN_1.prg", "language": "Mitsubishi"},
+  {"post": "Mitsubishi_Movemaster_EX", "file": "MAIN_1.prg", "language": "Mitsubishi"},
   {"post": "Motoman", "file": "MAIN_1.JBI", "language": "Motoman"},
   {"post": "Motoman", "file": "PROG1_w.JBI", "language": "Motoman"},
   {"post": "Motoman_Cartesian", "file": "MAIN_1.JBI", "language": "Motoman"},

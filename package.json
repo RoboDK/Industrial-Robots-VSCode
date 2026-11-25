@@ -213,6 +213,17 @@
         "id": "Omron"
       },
       {
+        "id": "Mitsubishi",
+        "aliases": [
+          "Mitsubishi",
+          "MELFA",
+          "MELFA BASIC",
+          "MOVEMASTER"
+        ],
+        "extensions": [],
+        "configuration": "./cnfg.mitsubishi.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -297,6 +308,11 @@
         "language": "Omron",
         "path": "./syntaxes/syntax.omron.json",
         "scopeName": "robodk.omron"
+      },
+      {
+        "language": "Mitsubishi",
+        "scopeName": "robodk.mitsubishi",
+        "path": "./syntaxes/syntax.mitsubishi.json"
       }
     ],
     "snippets": [
