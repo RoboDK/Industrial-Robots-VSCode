@@ -15,6 +15,10 @@ repo_match(repository, match, name_numeric, "numbers")
 
 match = "PROG_SIZE CREATE MODIFIED FILE_NAME VERSION LINE_COUNT MEMORY_SIZE PROTECT TCD DEFAULT_GROUP CONTROL_CODE OWNER COMMENT"
 repo_match(repository, match, name_control, "control")
+match = r'\bLBL\[\d+\]' #regex for labels ex LBL[1] (before the keyword list so the full token wins)
+repo_match(repository, match, name_control, "control")
+match = "IF THEN ELSE ENDIF JMP LBL FOR ENDFOR SELECT RUN ABORT AND OR NOT"
+repo_match(repository, match, name_control, "control")
 match = r'\s\d+:' #regex for line count ex 1:
 repo_match(repository, match, name_control, "control")
 match = r'\/PROG' #regex for /PROG
@@ -30,38 +34,46 @@ repo_match(repository, match, name_control, "control")
 #More of a built-in type but looks better as control
 match = r'\d+mm/sec' #regex for NUMmm/s
 repo_match(repository, match, name_control, "control")
+match = r'\d+%' #regex for joint speed ex 50%
+repo_match(repository, match, name_control, "control")
 
 
-match = "MN POS WAIT DI END"
+# Specific patterns go before the keyword list: when two rules match at the
+# same position TextMate keeps the first one, so DO[10] must come before DO
+match = r'\bD[OI]\[\d+\]' #regex for DI and DO ex DO[1], DI[101]
 repo_match(repository, match, name_movements, "movement")
-match = r'\sD[OI]\[\d\]' #regex for DI and DO ex DO[1]
+match = "MN POS WAIT DI END"
 repo_match(repository, match, name_movements, "movement")
 
 
 match = "STACK_SIZE TASK_PRIORITY TIME_SLICE BUSY_LAMP_OFF ABORT_REQUEST PAUSE_REQUEST CONFIG"
 repo_match(repository, match, name_builtInVar, "built-in-var")
+match = r'\b(R|AR|SR|GI|GO|AI|AO|RI|RO|UI|UO|SI|SO|F|TIMER)\[\d+\]' #regex for registers and I/O ex R[1], TIMER[2]
+repo_match(repository, match, name_builtInVar, "built-in-var")
 
+match = r'\bMESSAGE\[[^\]]*\]' #regex for MESSAGE command
+repo_match(repository, match, name_builtInFcn, "built-in-fcn")
+match = r'\bUTOOL\[\d+\]' #regex for UTOOL configuration
+repo_match(repository, match, name_builtInFcn, "built-in-fcn")
+match = r'\bUFRAME\[\d+\]' #regex for UFRAME configuration
+repo_match(repository, match, name_builtInFcn, "built-in-fcn")
 match = "GP1 MESSAGE UFRAME UTOOL PAUSE UFRAME_NUM UTOOL_NUM"
 repo_match(repository, match, name_builtInFcn, "built-in-fcn")
-match = r'\sMESSAGE\[[a-zA-Z0-9\s]+\]' #regex for MESSAGE command
-repo_match(repository, match, name_builtInFcn, "built-in-fcn")
-match = r'\sUTOOL\[\d\]' #regex for UTOOL configuration
-repo_match(repository, match, name_builtInFcn, "built-in-fcn")
-match = r'\sUFRAME\[\d+\]3' #regex for UFRAME configuration
-repo_match(repository, match, name_builtInFcn, "built-in-fcn")
 
 
+match = r'\bCNT\d+' #regex for continuous termination ex CNT50
+repo_match(repository, match, name_builtInTypes, "built-in-types")
 match = "DATE TIME deg mm FINE UF UT J1 J2 J3 J4 J5 J6 J7 J8 X Y Z W R READ_WRITE ON OFF"
 repo_match(repository, match, name_builtInTypes, "built-in-types")
 match = r'\b[LJ][\s]P\[\d+\]' #regex for linear and joint movement
 repo_match(repository, match, name_builtInTypes, "built-in-types")
-match = r'\sPR\[\d,\d\]' #regex for single joint movement PR[]
+match = r'\bPR\[\d+,\d+\]' #regex for position register element ex PR[9,1]
 repo_match(repository, match, name_builtInTypes, "built-in-types")
-match = r'\PR?\[\d+\]' #regex for position configuration ex p[4]
+match = r'\bPR?\[\d+\]' #regex for position or position register ex P[4], PR[9]
 repo_match(repository, match, name_builtInTypes, "built-in-types")
 
 
-match = "[ ]" # &lt;TDN&gt; &lt;DDN&gt; &lt;RDN&gt; &lt;PAR&gt; &lt;ALT&gt; &lt;DIM&gt; &lt;SMT&gt; &lt;VAR&gt; &lt;EIT&gt; &lt;CSE&gt; &lt;EXP&gt; &lt;ARG&gt; &lt;ID&gt; "
+match = r'\<>|<=|>=|[-+*/=<>]' #regex for operators
 repo_match(repository, match, name_operator, "operator")
 
 
@@ -74,8 +86,8 @@ language_i["configuration"] = getFileConfig(language_i["id"])
 config_i["comments"] = {"lineComment": "!" }
 config_i["folding"] = {
         "markers": {
-            "start": r'POS',
-            "end": r'END'
+            "start": r'^/POS\b',
+            "end": r'^/END\b'
         }
     }
 

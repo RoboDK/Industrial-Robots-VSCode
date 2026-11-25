@@ -40,8 +40,8 @@
     },
     "folding": {
         "markers": {
-            "end": "end",
-            "start": "def"
+            "end": "^\\s*end\\b",
+            "start": "^\\s*(def|thread|if|while)\\b"
         }
     },
     "surroundingPairs": [

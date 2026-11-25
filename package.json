@@ -3,10 +3,10 @@
   "displayName": "Industrial Robots",
   "description": "Robot Programming Syntax Highlighting for Industrial Robots. Supported languages include: ABB RAPID, Fanuc LS, KUKA KRC, Kawasaki PRG, Yaskawa/Motoman INFORM, Stäubli VAL3, Universal Robots Script, ...",
   "icon": "icon.png",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "publisher": "RoboDK",
   "engines": {
-    "vscode": "^1.5.0"
+    "vscode": "^1.60.0"
   },
   "author": {
     "name": "RoboDK Inc."
@@ -247,16 +247,8 @@
             "path": "./snippets/snippet.abb.json"
         },
         {
-            "language": "Comau",
-            "path": "./snippets/snippet.comau.json"
-        },
-        {
             "language": "Fanuc",
             "path": "./snippets/snippet.fanuc.json"
-        },
-        {
-            "language": "Kawasaki",
-            "path": "./snippets/snippet.kawasaki.json"
         },
         {
             "language": "KUKA",
@@ -265,14 +257,6 @@
         {
             "language": "Motoman",
             "path": "./snippets/snippet.motoman.json"
-        },
-        {
-            "language": "Staubli",
-            "path": "./snippets/snippet.staubli.json"
-        },
-        {
-            "language": "universal_robots",
-            "path": "./snippets/snippet.universal_robots.json"
         },
         {
             "language": "Epson",

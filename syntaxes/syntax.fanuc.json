@@ -38,6 +38,15 @@
             "include": "#control7"
         },
         {
+            "include": "#control8"
+        },
+        {
+            "include": "#control9"
+        },
+        {
+            "include": "#control10"
+        },
+        {
             "include": "#movement"
         },
         {
@@ -45,6 +54,9 @@
         },
         {
             "include": "#built-in-var"
+        },
+        {
+            "include": "#built-in-var1"
         },
         {
             "include": "#built-in-fcn"
@@ -71,6 +83,9 @@
             "include": "#built-in-types3"
         },
         {
+            "include": "#built-in-types4"
+        },
+        {
             "include": "#operator"
         }
     ],
@@ -78,7 +93,7 @@
         "built-in-fcn": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(GP1|MESSAGE|UFRAME|UTOOL|PAUSE|UFRAME_NUM|UTOOL_NUM)\\b",
+                    "match": "\\bMESSAGE\\[[^\\]]*\\]",
                     "name": "entity.name.function.c"
                 }
             ]
@@ -86,7 +101,7 @@
         "built-in-fcn1": {
             "patterns": [
                 {
-                    "match": "\\sMESSAGE\\[[a-zA-Z0-9\\s]+\\]",
+                    "match": "\\bUTOOL\\[\\d+\\]",
                     "name": "entity.name.function.c"
                 }
             ]
@@ -94,7 +109,7 @@
         "built-in-fcn2": {
             "patterns": [
                 {
-                    "match": "\\sUTOOL\\[\\d\\]",
+                    "match": "\\bUFRAME\\[\\d+\\]",
                     "name": "entity.name.function.c"
                 }
             ]
@@ -102,7 +117,7 @@
         "built-in-fcn3": {
             "patterns": [
                 {
-                    "match": "\\sUFRAME\\[\\d+\\]3",
+                    "match": "(?i)\\b(GP1|MESSAGE|UFRAME|UTOOL|PAUSE|UFRAME_NUM|UTOOL_NUM)\\b",
                     "name": "entity.name.function.c"
                 }
             ]
@@ -110,7 +125,7 @@
         "built-in-types": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(DATE|TIME|deg|mm|FINE|UF|UT|J1|J2|J3|J4|J5|J6|J7|J8|X|Y|Z|W|R|READ_WRITE|ON|OFF)\\b",
+                    "match": "\\bCNT\\d+",
                     "name": "storage.type.c"
                 }
             ]
@@ -118,7 +133,7 @@
         "built-in-types1": {
             "patterns": [
                 {
-                    "match": "\\b[LJ][\\s]P\\[\\d+\\]",
+                    "match": "(?i)\\b(DATE|TIME|deg|mm|FINE|UF|UT|J1|J2|J3|J4|J5|J6|J7|J8|X|Y|Z|W|R|READ_WRITE|ON|OFF)\\b",
                     "name": "storage.type.c"
                 }
             ]
@@ -126,7 +141,7 @@
         "built-in-types2": {
             "patterns": [
                 {
-                    "match": "\\sPR\\[\\d,\\d\\]",
+                    "match": "\\b[LJ][\\s]P\\[\\d+\\]",
                     "name": "storage.type.c"
                 }
             ]
@@ -134,7 +149,15 @@
         "built-in-types3": {
             "patterns": [
                 {
-                    "match": "\\PR?\\[\\d+\\]",
+                    "match": "\\bPR\\[\\d+,\\d+\\]",
+                    "name": "storage.type.c"
+                }
+            ]
+        },
+        "built-in-types4": {
+            "patterns": [
+                {
+                    "match": "\\bPR?\\[\\d+\\]",
                     "name": "storage.type.c"
                 }
             ]
@@ -143,6 +166,14 @@
             "patterns": [
                 {
                     "match": "(?i)\\b(STACK_SIZE|TASK_PRIORITY|TIME_SLICE|BUSY_LAMP_OFF|ABORT_REQUEST|PAUSE_REQUEST|CONFIG)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "built-in-var1": {
+            "patterns": [
+                {
+                    "match": "\\b(R|AR|SR|GI|GO|AI|AO|RI|RO|UI|UO|SI|SO|F|TIMER)\\[\\d+\\]",
                     "name": "constant.language"
                 }
             ]
@@ -167,7 +198,15 @@
         "control1": {
             "patterns": [
                 {
-                    "match": "\\s\\d+:",
+                    "match": "\\bLBL\\[\\d+\\]",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control10": {
+            "patterns": [
+                {
+                    "match": "\\d+%",
                     "name": "keyword.control"
                 }
             ]
@@ -175,7 +214,7 @@
         "control2": {
             "patterns": [
                 {
-                    "match": "\\/PROG",
+                    "match": "(?i)\\b(IF|THEN|ELSE|ENDIF|JMP|LBL|FOR|ENDFOR|SELECT|RUN|ABORT|AND|OR|NOT)\\b",
                     "name": "keyword.control"
                 }
             ]
@@ -183,7 +222,7 @@
         "control3": {
             "patterns": [
                 {
-                    "match": "\\/ATTR",
+                    "match": "\\s\\d+:",
                     "name": "keyword.control"
                 }
             ]
@@ -191,7 +230,7 @@
         "control4": {
             "patterns": [
                 {
-                    "match": "\\/MN",
+                    "match": "\\/PROG",
                     "name": "keyword.control"
                 }
             ]
@@ -199,7 +238,7 @@
         "control5": {
             "patterns": [
                 {
-                    "match": "\\/POS",
+                    "match": "\\/ATTR",
                     "name": "keyword.control"
                 }
             ]
@@ -207,12 +246,28 @@
         "control6": {
             "patterns": [
                 {
-                    "match": "\\/END",
+                    "match": "\\/MN",
                     "name": "keyword.control"
                 }
             ]
         },
         "control7": {
+            "patterns": [
+                {
+                    "match": "\\/POS",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control8": {
+            "patterns": [
+                {
+                    "match": "\\/END",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "control9": {
             "patterns": [
                 {
                     "match": "\\d+mm/sec",
@@ -232,7 +287,7 @@
         "movement": {
             "patterns": [
                 {
-                    "match": "(?i)\\b(MN|POS|WAIT|DI|END)\\b",
+                    "match": "\\bD[OI]\\[\\d+\\]",
                     "name": "entity.name.function.preprocessor.c"
                 }
             ]
@@ -240,7 +295,7 @@
         "movement1": {
             "patterns": [
                 {
-                    "match": "\\sD[OI]\\[\\d\\]",
+                    "match": "(?i)\\b(MN|POS|WAIT|DI|END)\\b",
                     "name": "entity.name.function.preprocessor.c"
                 }
             ]
@@ -256,7 +311,7 @@
         "operator": {
             "patterns": [
                 {
-                    "match": "(?i)\\b([|])\\b",
+                    "match": "\\<>|<=|>=|[-+*/=<>]",
                     "name": "keyword.operator"
                 }
             ]

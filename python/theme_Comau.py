@@ -6,11 +6,10 @@ repository = {}
 
 repo_begin_end(repository, "--", r'(?=\n)', name_comment, "comment")
 repo_begin_end(repository, r'"', r'"', name_string, "string")
-repo_begin_end(repository, r'CALL', r';', name_string, "fcn-call")
 
 #match = r'\\b[0-9]\\b'
 #match = '\\b-?\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b'
-match = r'\W\-?\d+(\.\d+)?' #regex for numeric constants
+match = r'\-?(?<![\w.])\d+(\.\d+)?\b' #regex for numeric constants (not digits inside identifiers)
 repo_match(repository, match, name_numeric, "numbers")
 
 match = "PROGRAM IMPORT VAR ROUTINE BEGIN END EXPORTED FROM GLOBAL"
@@ -20,7 +19,7 @@ repo_match(repository, match, name_control, "control")
 
 match = "MOVE TO DELAY"
 repo_match(repository, match, name_movements, "movement")
-match = r"\W\$\w+" # regex $NAME is used for control variables ex $ORNT_TYPE
+match = r"\$\w+" # regex $NAME is used for control variables ex $ORNT_TYPE
 repo_match(repository, match, name_movements, "movement")
 
 match = "SPD_LIN ON OFF TRUE FALSE RS_WORLD JOINT LINEAR CIRCULAR NOSETTLE FLY_CART FLY_PASS POS"
@@ -30,11 +29,11 @@ repo_match(repository, match, name_builtInVar, "built-in-var")
 #repo_match(repository, match, name_builtInFcn, "built-in-fcn")
 
 
-#match = r"\W\$\w+" # regex $NAME is used for control variables ex $ORNT_TYPE
+#match = r"\$\w+" # regex $NAME is used for control variables ex $ORNT_TYPE
 #repo_match(repository, match, name_builtInTypes, "built-in-types")
 
 
-match = "[ ]" # &lt;TDN&gt; &lt;DDN&gt; &lt;RDN&gt; &lt;PAR&gt; &lt;ALT&gt; &lt;DIM&gt; &lt;SMT&gt; &lt;VAR&gt; &lt;EIT&gt; &lt;CSE&gt; &lt;EXP&gt; &lt;ARG&gt; &lt;ID&gt; "
+match = r'\:=|<>|<=|>=|[-+*/=<>]' #regex for operators
 repo_match(repository, match, name_operator, "operator")
 
 
@@ -47,8 +46,8 @@ language_i["configuration"] = getFileConfig(language_i["id"])
 config_i["comments"] = {"lineComment": "--" }
 config_i["folding"] = {
         "markers": {
-            "start": r'POS',
-            "end": r'END'
+            "start": r'^\s*BEGIN\b',
+            "end": r'^\s*END\b'
         }
     }
 

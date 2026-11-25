@@ -111,7 +111,7 @@
         "built-in-var1": {
             "patterns": [
                 {
-                    "match": "\\WOT#\\(\\d\\)",
+                    "match": "\\bOT#\\(\\d+\\)",
                     "name": "constant.language"
                 }
             ]
@@ -119,7 +119,7 @@
         "built-in-var2": {
             "patterns": [
                 {
-                    "match": "\\WIN#\\(\\d\\)",
+                    "match": "\\bIN#\\(\\d+\\)",
                     "name": "constant.language"
                 }
             ]
@@ -200,7 +200,7 @@
         "control16": {
             "patterns": [
                 {
-                    "match": "\\WTL#\\(\\d\\)",
+                    "match": "\\bTL#\\(\\d+\\)",
                     "name": "keyword.control"
                 }
             ]
@@ -289,7 +289,7 @@
         "numbers": {
             "patterns": [
                 {
-                    "match": "\\-?\\d+(\\.\\d+)?",
+                    "match": "\\-?(?<![\\w.])\\d+(\\.\\d+)?\\b",
                     "name": "constant.numeric.c"
                 }
             ]

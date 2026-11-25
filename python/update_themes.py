@@ -28,7 +28,8 @@ def matchRegex(string):
     if string.startswith("\\"):
         return string
     
-    return "(?i)\\b(" + string.replace(" ", "|") +")\\b"
+    # Escape dots so that keywords such as VEL.CP do not use . as a wildcard
+    return "(?i)\\b(" + string.replace(".", "\\.").replace(" ", "|") +")\\b"
     
     
 def repo_begin_end(repo, begin, end, name, match_type):
@@ -57,7 +58,7 @@ def repo_match(repo, match, name, match_type):
 def update_config(id_lang, config_i):
     file_config = getFileConfig(id_lang) 
     file_str = ToJSON(config_i)
-    with open("../" + file_config, "w") as fid:
+    with open("../" + file_config, "w", newline="\n") as fid:
         fid.write(file_str)
 
 def update_syntax(id_lang, repository_i):
@@ -78,7 +79,7 @@ def update_syntax(id_lang, repository_i):
         syntax_i["repository"] = repository_i
         file_str = ToJSON(syntax_i)
         #print(file_str)
-        with open("../" + file_syntax, "w") as fid:
+        with open("../" + file_syntax, "w", newline="\n") as fid:
             fid.write(file_str)
 
 
@@ -130,7 +131,7 @@ def update_themes_all():
     #global config_i
     languages = []
 
-    import os, glob, codecs
+    import os, glob
     import copy
     #os.chdir(".")
 
@@ -139,11 +140,13 @@ def update_themes_all():
     language_i = {}
 
     # Iterate through all theme files
-    theme_files = glob.glob("./theme_*.py")
+    # Sort so that package.json does not depend on filesystem order
+    theme_files = sorted(glob.glob("./theme_*.py"), key=str.lower)
     for file in theme_files:
         # Execute the file
         print("\nRunning theme: " + file + " ...")
-        file_text = codecs.open(file, "r", "utf-8").read()
+        with open(file, "r", encoding="utf-8") as fid:
+            file_text = fid.read()
         exec(file_text, globals())
         print("Done with " + file)
 
@@ -152,6 +155,16 @@ def update_themes_all():
         languages.append(language_i_copy)
         print("Len = %i" % len(languages))
         
+
+    # Languages whose grammar and configuration are written by hand
+    # (no theme_*.py): their package.json entries live in manual_languages.json
+    manual_file = "./manual_languages.json"
+    if os.path.isfile(manual_file):
+        import json
+        with open(manual_file, "r", encoding="utf-8") as fid:
+            for lang in json.load(fid):
+                print("Adding hand-written language: " + lang["id"])
+                languages.append(lang)
 
     print("\n\nUpdating configuration file (%i languages) ..." % len(languages))
     package = {}
@@ -167,6 +180,15 @@ def update_themes_all():
         file_syntax = getFileSyntax(id_lang) 
         file_snippet = getFileSnippet(id_lang) 
 
+        syntax_path = "../" + file_syntax
+        if os.path.isfile(syntax_path):
+            # Hand-written grammars define their own scope name
+            import json
+            with open(syntax_path, "r", encoding="utf-8") as fid:
+                scope_name = json.load(fid).get("scopeName", scope_name)
+        else:
+            print("WARNING: missing grammar file %s for %s" % (file_syntax, id_lang))
+
         grammar_i = {}
         snippets_i = {}
         
@@ -177,15 +199,19 @@ def update_themes_all():
         snippets_i["path"] = file_snippet    
 
         grammars.append(grammar_i)
-        snippets.append(snippets_i)
+        # Snippet files are hand written: only reference the ones that exist
+        if os.path.isfile("../" + file_snippet):
+            snippets.append(snippets_i)
+        else:
+            print("No snippet file for %s (%s)" % (id_lang, file_snippet))
 
     package["grammars"] = grammars
     package["snippets"] = snippets
 
     str_package_contributes = ToJSON(package)
 
-    with open("../package.json", "w") as fout:
-        with open("../package_model.json") as fin:
+    with open("../package.json", "w", newline="\n") as fout:
+        with open("../package_model.json", newline="") as fin:
             for line in fin:
                 fout.write(line.replace("###contributes###", str_package_contributes))
                 

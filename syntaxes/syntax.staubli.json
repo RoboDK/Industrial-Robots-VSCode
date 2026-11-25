@@ -33,9 +33,6 @@
         },
         {
             "include": "#built-in-fcn3"
-        },
-        {
-            "include": "#operator"
         }
     ],
     "repository": {
@@ -50,7 +47,7 @@
         "built-in-fcn1": {
             "patterns": [
                 {
-                    "match": "\\Wd[oi]\\d+",
+                    "match": "\\bd[oi]\\d+\\b",
                     "name": "entity.name.function.c"
                 }
             ]
@@ -58,7 +55,7 @@
         "built-in-fcn2": {
             "patterns": [
                 {
-                    "match": "\\W[a-zA-Z]+\\(\\)",
+                    "match": "\\b[a-zA-Z]+\\(\\)",
                     "name": "entity.name.function.c"
                 }
             ]
@@ -118,14 +115,6 @@
                 {
                     "match": "\\b-?\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b",
                     "name": "constant.numeric.c"
-                }
-            ]
-        },
-        "operator": {
-            "patterns": [
-                {
-                    "match": "(?i)\\b(!)\\b",
-                    "name": "keyword.operator"
                 }
             ]
         },

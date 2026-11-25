@@ -27,9 +27,9 @@ match = r'\\On' #regex for \On
 repo_match(repository, match, name_builtInVar, "built-in-var")
 match = r'\\Off' #regex for \Off
 repo_match(repository, match, name_builtInVar, "built-in-var")
-match = r'\WD_OUT_\d+' #regex for D_OUT_#
+match = r'\bD_OUT_\d+' #regex for D_OUT_#
 repo_match(repository, match, name_builtInVar, "built-in-var")
-match = r'\WD_IN_\d+' #regex for D_IN_#
+match = r'\bD_IN_\d+' #regex for D_IN_#
 repo_match(repository, match, name_builtInVar, "built-in-var")
 match = r'\\WObj:' #regex for \WObj:
 repo_match(repository, match, name_builtInVar, "built-in-var")
@@ -44,7 +44,7 @@ match = "C_MOTSET C_PROGDISP ERRNO INTNO ROB_ID TUNE_DF TUNE_KP TUNE_KV TUNE_TI 
 match += " AIOTRIGG BOOL BTNRES BUSSTATE BUTTONDATA BYTE CLOCK CONFDATA CORRDESCR DATAPOS DIONUM DIR DNUM ERRDOMAIN ERRNUM ERRSTR ERRTYPE EVENT_TYPE EXEC_LEVEL EXTJOINT HANDLER_TYPE ICONDATA IDENTNO INTNUM IODEV IOUNIT_STATE JOINTTARGET LISTITEM LOADDATA LOADIDNUM LOADSESSION MECUNIT MOTSETDATA NUM OPCALC OPNUM ORIENT PARIDNUM PARIDVALIDNUM PATHRECID POS POSE PROGDISP RAWBYTES RESTARTDATA RMQHEADER RMQMESSAGE RMQSLOT ROBJOINT ROBTARGET SHAPEDATA SIGNALAI SIGNALAO SIGNALDI SIGNALDO SIGNALGI SIGNALGO SOCKETDEV SOCKETSTATUS SPEEDDATA STOPPOINTDATA STRING STRINGDIG SWITCH SYMNUM SYNCIDENT TASKID TASKS TESTSIGNAL TOOLDATA TPNUM TRAPDATA TRIGGDATA TRIGGIOS TRIGGIOSDNUM TRIGGSTRGO TUNETYPE UISHOWNUM WOBJDATA WZSTATIONARY WZTEMPORARY ZONEDATA"
 repo_match(repository, match, name_builtInTypes, "built-in-types")
 
-match = "< >" # &lt;TDN&gt; &lt;DDN&gt; &lt;RDN&gt; &lt;PAR&gt; &lt;ALT&gt; &lt;DIM&gt; &lt;SMT&gt; &lt;VAR&gt; &lt;EIT&gt; &lt;CSE&gt; &lt;EXP&gt; &lt;ARG&gt; &lt;ID&gt; "
+match = r'\:=|<>|<=|>=|[-+*/=<>]' #regex for operators
 repo_match(repository, match, name_operator, "operator")
 
 

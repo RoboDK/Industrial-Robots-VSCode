@@ -8,9 +8,6 @@
             "include": "#string"
         },
         {
-            "include": "#fcn-call"
-        },
-        {
             "include": "#numbers"
         },
         {
@@ -55,15 +52,6 @@
                 }
             ]
         },
-        "fcn-call": {
-            "patterns": [
-                {
-                    "begin": "CALL",
-                    "end": ";",
-                    "name": "string"
-                }
-            ]
-        },
         "movement": {
             "patterns": [
                 {
@@ -75,7 +63,7 @@
         "movement1": {
             "patterns": [
                 {
-                    "match": "\\W\\$\\w+",
+                    "match": "\\$\\w+",
                     "name": "entity.name.function.preprocessor.c"
                 }
             ]
@@ -83,7 +71,7 @@
         "numbers": {
             "patterns": [
                 {
-                    "match": "\\W\\-?\\d+(\\.\\d+)?",
+                    "match": "\\-?(?<![\\w.])\\d+(\\.\\d+)?\\b",
                     "name": "constant.numeric.c"
                 }
             ]
@@ -91,7 +79,7 @@
         "operator": {
             "patterns": [
                 {
-                    "match": "(?i)\\b([|])\\b",
+                    "match": "\\:=|<>|<=|>=|[-+*/=<>]",
                     "name": "keyword.operator"
                 }
             ]

@@ -40,8 +40,8 @@
     },
     "folding": {
         "markers": {
-            "end": "%%%",
-            "start": "%%%"
+            "end": "^\\s*\\.END\\b",
+            "start": "^\\s*\\.PROGRAM\\b"
         }
     },
     "surroundingPairs": [
