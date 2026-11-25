@@ -67,6 +67,7 @@
   {"post": "Hans", "file": "MAIN_1.script", "language": "python"},
   {"post": "JAKA", "file": "MAIN_1.jks", "language": "python"},
   {"post": "Robostar", "file": "MAIN_1.JOB", "language": "Robostar"},
+  {"post": "Siasun", "file": "MAIN_1.spf", "language": "Siasun"},
   {"post": "Siemens_840D_PKM", "file": "MAIN_1.mpf", "language": "Siemens"},
   {"post": "Siemens_Sinumerik", "file": "MAIN_1.mpf", "language": "Siemens"},
   {"post": "Siemens_Sinumerik_Inch", "file": "MAIN_1.mpf", "language": "Siemens"},

@@ -375,6 +375,18 @@
         "configuration": "./cnfg.inexbot.json"
       },
       {
+        "id": "Siasun",
+        "aliases": [
+          "Siasun",
+          "SIASUN",
+          "SPF"
+        ],
+        "extensions": [
+          ".spf"
+        ],
+        "configuration": "./cnfg.siasun.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -529,6 +541,11 @@
         "language": "Inexbot",
         "scopeName": "robodk.inexbot",
         "path": "./syntaxes/syntax.inexbot.json"
+      },
+      {
+        "language": "Siasun",
+        "scopeName": "robodk.siasun",
+        "path": "./syntaxes/syntax.siasun.json"
       }
     ],
     "snippets": [
