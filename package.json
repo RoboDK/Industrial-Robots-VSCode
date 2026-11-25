@@ -467,6 +467,15 @@
         "configuration": "./cnfg.toshiba.json"
       },
       {
+        "id": "Turin",
+        "aliases": [
+          "Turin",
+          "Turin Robot"
+        ],
+        "extensions": [],
+        "configuration": "./cnfg.turin.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -661,6 +670,11 @@
         "language": "Toshiba",
         "scopeName": "robodk.toshiba",
         "path": "./syntaxes/syntax.toshiba.json"
+      },
+      {
+        "language": "Turin",
+        "scopeName": "robodk.turin",
+        "path": "./syntaxes/syntax.turin.json"
       }
     ],
     "snippets": [

@@ -93,6 +93,7 @@
   {"post": "Techman_Remote", "file": "MAIN_1.script", "language": "Techman"},
   {"post": "Techman_TMscript", "file": "PROG1_withaverylongnameandspecialcharacters.scpt", "language": "Techman"},
   {"post": "Toshiba", "file": "MAIN_1.txt", "language": "Toshiba"},
+  {"post": "Turin", "file": "MAIN_1.txt", "language": "Turin"},
   {"post": "Elite_Robots_CS_Script", "file": "MAIN_1.script", "language": "universal_robots"},
   {"post": "Universal_Robots", "file": "MAIN_1.script", "language": "universal_robots"},
   {"post": "Universal_Robots_Conveyor", "file": "MAIN_1.script", "language": "universal_robots"},
