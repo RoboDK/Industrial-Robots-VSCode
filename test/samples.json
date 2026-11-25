@@ -36,6 +36,8 @@
   {"post": "Omron_PathNode", "file": "Projects/MAIN_1/MAIN_1.flow", "language": "json"},
   {"post": "Borunte", "file": "PROG1_withaverylongnameandspecialcharacters.act", "language": "jsonl"},
   {"post": "Kawasaki", "file": "MAIN_1.pg", "language": "Kawasaki"},
+  {"post": "KEBA_KAIRO", "file": "MAIN_1.tid", "language": "KEBA"},
+  {"post": "KEBA_KAIRO", "file": "MAIN_1.tip", "language": "KEBA"},
   {"post": "KUKA_IISY", "file": "MAIN_1.src", "language": "KUKA"},
   {"post": "KUKA_KRC2", "file": "MAIN_1.src", "language": "KUKA"},
   {"post": "KUKA_KRC2_CamRob", "file": "MAIN_1.src", "language": "KUKA"},

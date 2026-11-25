@@ -419,6 +419,19 @@
         "configuration": "./cnfg.hiwin.json"
       },
       {
+        "id": "KEBA",
+        "aliases": [
+          "KEBA",
+          "KAIRO",
+          "KeMotion"
+        ],
+        "extensions": [
+          ".tip",
+          ".tid"
+        ],
+        "configuration": "./cnfg.keba.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -593,6 +606,11 @@
         "language": "HIWIN",
         "scopeName": "robodk.hiwin",
         "path": "./syntaxes/syntax.hiwin.json"
+      },
+      {
+        "language": "KEBA",
+        "scopeName": "robodk.keba",
+        "path": "./syntaxes/syntax.keba.json"
       }
     ],
     "snippets": [
