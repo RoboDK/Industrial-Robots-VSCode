@@ -387,6 +387,15 @@
         "configuration": "./cnfg.siasun.json"
       },
       {
+        "id": "Siasun_JOB",
+        "aliases": [
+          "Siasun JOB",
+          "SIASUN JOB"
+        ],
+        "extensions": [],
+        "configuration": "./cnfg.siasun_job.json"
+      },
+      {
         "id": "python",
         "extensions": [
           ".drl",
@@ -546,6 +555,11 @@
         "language": "Siasun",
         "scopeName": "robodk.siasun",
         "path": "./syntaxes/syntax.siasun.json"
+      },
+      {
+        "language": "Siasun_JOB",
+        "scopeName": "robodk.siasun_job",
+        "path": "./syntaxes/syntax.siasun_job.json"
       }
     ],
     "snippets": [
