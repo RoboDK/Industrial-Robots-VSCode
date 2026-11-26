@@ -52,6 +52,7 @@ Language ids are brand names (`ABB`, `KUKA`, `Mitsubishi`, ...); file names use 
 - `detect.js` is the pure matching function (no `vscode` import, unit-testable). `extension.js` calls it when a document opens and switches the language with `setTextDocumentLanguage`.
 - It only replaces `plaintext` or a language that is a candidate/static owner of that extension, so a user's `files.associations` or manual choice is respected. An open event within a second of a close of the same file is treated as a manual language change and left alone. The setting `industrialRobots.detectLanguage` turns it off.
 - When no pattern matches, the file keeps the static default: the last language in `package.json` that claims the extension.
+- Some of our extensions are also claimed by languages built into VS Code (`.mod`: XML, `.pac`: JavaScript, `.ltx`: LaTeX, `.cfg`: Properties), and the built-in language wins. For each of these, `detect.json` lists the robot language first and the built-in language last, so detection can replace the built-in language and real XML/JavaScript/LaTeX/INI files keep it. `test/vscode-builtin-languages.json` lists the extensions of the built-in languages; the manifest test fails if a new collision has no such entry. Regenerate it after a VS Code update with `node test/update-builtin-languages.js "/Applications/Visual Studio Code.app"`.
 
 ## Sample programs
 

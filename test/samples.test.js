@@ -18,7 +18,11 @@ const only = arg('--only');
 const verbose = args.includes('--verbose');
 
 const DEFAULT_MIN_COVERAGE = 0.8;
-const BUILTIN = new Set(['python', 'lua', 'json', 'jsonl', 'xml', 'ini', 'properties', 'javascript', 'java', 'plaintext']);
+const BUILTIN = new Set(['python', 'lua', 'json', 'jsonl', 'xml', 'ini', 'properties', 'javascript', 'java', 'latex', 'plaintext']);
+
+// Extensions claimed by the languages that ship with VS Code: these win over this extension's claim
+const builtinFile = path.join(__dirname, 'vscode-builtin-languages.json');
+const builtinExtensions = fs.existsSync(builtinFile) ? JSON.parse(fs.readFileSync(builtinFile, 'utf8')).extensions : {};
 
 let detect = null;
 let detectTable = null;
@@ -50,8 +54,10 @@ async function main() {
       const staticOwners = manifest.contributes.languages
         .filter((l) => (l.extensions || []).some((e) => e.toLowerCase() === path.extname(file).toLowerCase()))
         .map((l) => l.id);
-      // VS Code uses the last registered language for an extension
-      const staticDefault = staticOwners.length ? staticOwners[staticOwners.length - 1] : 'plaintext';
+      // A built-in VS Code language claiming the extension wins; otherwise the last registered language
+      const ext = path.extname(file).toLowerCase();
+      const staticDefault = builtinExtensions[ext] ||
+        (staticOwners.length ? staticOwners[staticOwners.length - 1] : 'plaintext');
       const effective = detected || staticDefault;
       if (effective !== s.language) {
         failures.push(`${label}: opens as ${effective} (detected: ${detected}, default for extension: ${staticDefault})`);

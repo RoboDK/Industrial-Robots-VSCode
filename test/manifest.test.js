@@ -5,7 +5,7 @@ const path = require('path');
 const { ROOT, readManifest } = require('./tokenize');
 
 // Languages that ship with VS Code: this extension may add file extensions to them
-const BUILTIN = new Set(['python', 'lua', 'json', 'jsonc', 'jsonl', 'xml', 'ini', 'properties', 'javascript', 'java', 'plaintext']);
+const BUILTIN = new Set(['python', 'lua', 'json', 'jsonc', 'jsonl', 'xml', 'ini', 'properties', 'javascript', 'java', 'latex', 'plaintext']);
 
 // Extensions that were already shared before this rule existed. Do not extend this list:
 // a new language must not statically claim an extension another language already claims.
@@ -120,6 +120,34 @@ if (fs.existsSync(detectFile)) {
         try { require(rel('detect.js')).compile(p); } catch (e) { errors.push(`detect.json ${ext} ${c.id}: bad pattern ${p} (${e.message})`); }
       }
     }
+  }
+}
+
+// A built-in VS Code language that claims one of our extensions wins over our claim, and extension.js only
+// replaces a language that is a candidate in detect.json. So every such extension needs a detect.json entry
+// that lists our language(s) and the built-in language.
+const builtinFile = path.join(__dirname, 'vscode-builtin-languages.json');
+if (fs.existsSync(builtinFile)) {
+  const builtinExt = JSON.parse(fs.readFileSync(builtinFile, 'utf8')).extensions;
+  const table = fs.existsSync(detectFile) ? JSON.parse(fs.readFileSync(detectFile, 'utf8')) : {};
+  const ours = {};
+  for (const [ext, owners] of Object.entries(claims)) {
+    const robot = [...owners].filter((o) => !BUILTIN.has(o));
+    if (robot.length) ours[ext] = robot;
+  }
+  for (const [ext, candidates] of Object.entries(table)) {
+    if (ext === '.NNN') continue;
+    const robot = candidates.map((c) => c.id).filter((id) => !BUILTIN.has(id));
+    if (robot.length) ours[ext] = [...new Set([...(ours[ext] || []), ...robot])];
+  }
+  for (const [ext, robot] of Object.entries(ours)) {
+    const builtin = builtinExt[ext];
+    if (!builtin || robot.includes(builtin)) continue;
+    const ids = (table[ext] || []).map((c) => c.id);
+    for (const id of robot) {
+      check(ids.includes(id), `${ext}: VS Code's built-in ${builtin} language claims it, so ${id} needs a detect.json entry for ${ext}`);
+    }
+    check(ids.includes(builtin), `${ext}: VS Code's built-in ${builtin} language claims it, so detect.json ${ext} must list "${builtin}" as a candidate (otherwise detection never replaces it)`);
   }
 }
 
