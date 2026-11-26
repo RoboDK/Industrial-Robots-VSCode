@@ -76,6 +76,19 @@ close(manual);
 open(manual);
 expect('reopen right after close is a manual language change', '');
 
+// VS Code's built-in XML language claims .mod and wins over ABB: detection must take it back
+open(doc('/w/main.mod', 'xml', RAPID));
+expect('.mod opened as built-in XML with RAPID content', 'ABB');
+
+open(doc('/w/entities.mod', 'xml', '<!ENTITY % common SYSTEM "common.ent">\n<!ELEMENT a (#PCDATA)>'));
+expect('.mod that really is an XML DTD module stays XML', '');
+
+open(doc('/w/robot.cfg', 'properties', 'MOVJ(-0.0000005,0.0000000)\nDO5 = 1'));
+expect('.cfg opened as built-in properties with Chaifu content', 'Chaifu');
+
+open(doc('/w/app.cfg', 'properties', '[section]\nkey = value'));
+expect('.cfg that really is an INI file stays properties', '');
+
 detectEnabled = false;
 open(doc('/w/i.prg', 'Epson', RAPID));
 expect('setting disabled', '');
